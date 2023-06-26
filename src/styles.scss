@@ -312,7 +312,7 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 }
 
 .star-color {
-  fill: yellow;
+
 }
 
 .roundCap {
@@ -322,22 +322,6 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 .colonizable {
   stroke: #306f91;
   stroke-width: 1;
-}
-
-.colonized-by-others {
-  fill: #6f1585;
-}
-
-.colonized-by-npc {
-  fill: darkred;
-}
-
-.colonized-by-user {
-  fill: darkolivegreen;
-}
-
-.not-colonized {
-  fill: darkgoldenrod;
 }
 
 .orbit {

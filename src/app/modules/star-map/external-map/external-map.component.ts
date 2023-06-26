@@ -92,7 +92,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         return BasicViewHelperData.CELESTIAL_BODY_SELECTOR_ID_PREFIX + "-" + orbit.x + "-" + orbit.y;
     }
 
-    mouseoutForCelestial = (event: PointerEvent) => {
+    mouseoutForCelestial = () => {
         this.hoveredSystem = this.center;
     }
 

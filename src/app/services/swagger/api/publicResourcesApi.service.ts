@@ -6,6 +6,9 @@ import {Observable} from 'rxjs';
 import {CoordsBlob} from '../model/coordsBlob';
 import {Junction} from '../model/junction';
 
+export interface WikiEntry {
+    title: string
+}
 
 @Injectable()
 export class PublicResourcesApiService {
@@ -21,4 +24,19 @@ export class PublicResourcesApiService {
         return this.httpClient.get<Junction[]>('assets/junctions.json');
     }
 
+    public getSolarianSystems(): Observable<WikiEntry[]> {
+        return this.httpClient.get<WikiEntry[]>('assets/solarian_systems.json');
+    }
+
+    public getHaveniteSystems(): Observable<WikiEntry[]> {
+        return this.httpClient.get<WikiEntry[]>('assets/havenite_system.json');
+    }
+
+    public getManticorianSystems(): Observable<WikiEntry[]> {
+        return this.httpClient.get<WikiEntry[]>('assets/manticorian_systems.json');
+    }
+
+    public getAndermanSystems(): Observable<WikiEntry[]> {
+        return this.httpClient.get<WikiEntry[]>('assets/anderman_systems.json');
+    }
 }

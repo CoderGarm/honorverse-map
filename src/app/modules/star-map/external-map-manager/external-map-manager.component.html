@@ -4,9 +4,6 @@
         <a mat-raised-button color="primary" href="{{ basePath }}/api/public/resources/system-coordinates" target="_blank">
             <span matListItemLine>List all system coordinates</span>
         </a>
-        <a mat-raised-button color="primary" href="{{ basePath }}/api/public/resources/distances" target="_blank">
-            <span matListItemLine>List all distances to each other</span>
-        </a>
     </div>
 
     <mat-accordion>
@@ -38,6 +35,8 @@
                     </mat-autocomplete>
                 </mat-form-field>
             </form>
+
+            <mat-checkbox [(ngModel)]="isCanonMapPreselected" (change)="defineMapPreselection()">Push da button</mat-checkbox>
 
             <form>
                 <mat-form-field class="coords-chip-list" appearance="fill">
@@ -81,7 +80,6 @@
                     <div *ngFor="let colorGroup of colorGroups" class="fleet-container">
                         <div cdkDropList
                              [cdkDropListData]="colorGroup.coords"
-                             class="warship-list"
                              (cdkDropListDropped)="drop($event)">
                             <mat-chip-row class="warship-box" *ngFor="let coord of colorGroup.coords" cdkDrag [ngStyle]="{'background-color' :getColor(coord)}">
                                 {{coord.name}}

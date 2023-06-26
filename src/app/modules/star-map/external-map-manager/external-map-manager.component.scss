@@ -52,9 +52,6 @@ $max-width: 120px;
   vertical-align: top;
 }
 
-.warship-list {
-}
-
 .warship-box {
   padding: 10px 10px;
   margin: 5px 0;
@@ -91,6 +88,7 @@ $max-width: 120px;
 }
 
 .inner-list {
+  cursor: move;
 }
 
 .inner-list > * {

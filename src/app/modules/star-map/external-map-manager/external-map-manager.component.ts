@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {Coords, CoordsBlob, PublicResourcesApiService} from "../../../services/swagger";
+import {Coords, CoordsBlob, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
 import {Observable} from "rxjs";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {FormControl} from "@angular/forms";
@@ -68,6 +68,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     color: string = '#5e8c6a';
 
     colorGroups: ColorGroup[] = [];
+    isCanonMapPreselected: boolean = false;
 
     constructor(private publicResourcesService: PublicResourcesApiService) {
         super();
@@ -139,7 +140,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         }
     }
 
-    cleanColorGroup(coord: Coords) {
+    private cleanColorGroup(coord: Coords) {
         this.colorGroups.forEach(cg => {
             const coords = cg.coords.filter(c => ExternalMapManagerComponent.matches(c, coord));
             const simpleCoords = cg.simpleCoords.filter(c => ExternalMapManagerComponent.matches(c, coord));
@@ -150,6 +151,54 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
                 cg.simpleCoords.splice(indexOf, 1);
             }
         });
+    }
+
+    defineMapPreselection() {
+        if (this.isCanonMapPreselected) {
+            let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.addToColors('#B31616', this.extractCoordsByName(systems)));
+            this.subscriptions.push(sub);
+            sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.addToColors('#AE19AB', this.extractCoordsByName(systems)));
+            this.subscriptions.push(sub);
+            sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.addToColors('#80D4B8', this.extractCoordsByName(systems)));
+            this.subscriptions.push(sub);
+            sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.addToColors('#967B0B', this.extractCoordsByName(systems)));
+            this.subscriptions.push(sub);
+        } else {
+            let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
+            this.subscriptions.push(sub);
+            sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
+            this.subscriptions.push(sub);
+            sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
+            this.subscriptions.push(sub);
+            sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
+            this.subscriptions.push(sub);
+        }
+    }
+
+    private extractCoordsByName(toSearch: WikiEntry[]) {
+        let found: Coords[] = [];
+        toSearch.forEach(c => {
+            let name = c.title.replace('System', '').trim().toLowerCase();
+            let f: Coords[] = this.allCoords!.filter(known => known.name.toLowerCase() === name);
+            if (f.length > 0) {
+                found.push(f[0]);
+            }
+        });
+        return found;
+    }
+
+    addToColors(color: string, coords: Coords[]) {
+        if (coords.length > 0) {
+            this.coords.push(...coords);
+            this.colorGroups.push({
+                color: color,
+                simpleCoords: coords.map(c => <SimpleCoord>{
+                    x: c.x,
+                    y: c.y
+                }),
+                coords: coords
+            });
+        }
     }
 
     buildURL() {
