@@ -1,0 +1,13 @@
+{
+	"distance": {
+		"lightyear": {
+			"abbrev": "ly",
+			"name": "Light year"
+		}
+	},
+	"star-map": {
+		"universe-map": {
+			"loading-spinner-message": "Gather information for star map..."
+		}
+	}
+}

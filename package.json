@@ -1,0 +1,50 @@
+{
+  "name": "honorverse-map",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "i18n:init": "ngx-translate-extract --input ./src --output ./src/assets/i18n/template.json --replace --format json",
+    "i18n:extract": "ngx-translate-extract --input ./src --output ./src/assets/i18n/{en,de}.json --sort --format namespaced-json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.1.0",
+    "@angular/cdk": "^16.1.2",
+    "@angular/common": "^16.1.0",
+    "@angular/compiler": "^16.1.0",
+    "@angular/core": "^16.1.0",
+    "@angular/forms": "^16.1.0",
+    "@angular/material": "^16.1.2",
+    "@angular/platform-browser": "^16.1.0",
+    "@angular/platform-browser-dynamic": "^16.1.0",
+    "@angular/router": "^16.1.0",
+    "@bartholomej/ngx-translate-extract": "^8.0.2",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "@svgdotjs/svg.draggable.js": "^3.0.3",
+    "@svgdotjs/svg.js": "^3.2.0",
+    "@svgdotjs/svg.panzoom.js": "^2.1.2",
+    "ngx-color-picker": "^14.0.0",
+    "ngx-translate": "^0.0.1-security",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.1.1",
+    "@angular/cli": "~16.1.1",
+    "@angular/compiler-cli": "^16.1.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"
+  }
+}

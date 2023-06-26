@@ -1,0 +1,13 @@
+{
+	"distance": {
+		"lightyear": {
+			"abbrev": "ly",
+			"name": "Lichtjahr"
+		}
+	},
+	"star-map": {
+		"universe-map": {
+			"loading-spinner-message": "Lade Sternenkarte..."
+		}
+	}
+}

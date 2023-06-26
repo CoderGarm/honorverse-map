@@ -1,0 +1,73 @@
+$black: #000;
+$white: #fff;
+$success: #5e8c6a;
+$warning-color: #872727;
+$metal-glance: #B0B0B0;
+
+/* Text colors */
+$body-text-color: rgba(255, 255, 255, 1);
+$accent-text-color: rgba(255, 255, 255, 1);
+$secondary-text-color: rgba(255, 255, 255, 0.7);
+$disabled-text-color: rgba(255, 255, 255, 0.5);
+
+/* Primary colors */
+// old purple $primary-color: #7b1fa2;
+$primary-color: #375a7f;
+$primary-text-color: #b794f6;
+
+/* Error colors */
+$error-color: #de2839;
+$error-text-color: $error-color;
+
+/* Background colors */
+$purple-green-background-color: #383838;
+$new-background-color: #3E444C;
+
+$purple-green-secondary-background-color: #3b3b3b;
+$new-secondary-background-color: #2E3338;
+
+$background-color: $purple-green-background-color;
+$secondary-background-color: $purple-green-secondary-background-color;
+// todo define useful color set
+
+$tertiary-background-color: hsla(214, 90%, 52%, 0.1);
+$disabled-color: rgba(255, 255, 255, 0.3);
+$element-background-color: rgb(66, 66, 66);
+
+$divider-color: rgba(255, 255, 255, 0.12);
+
+$page-width: 90%;
+
+$bfh-palette: (
+        50 : #e7ebf0,
+        100 : #c3ced9,
+        200 : #9badbf,
+        300 : #738ca5,
+        400 : #557392,
+        500 : #375a7f,
+        600 : #315277,
+        700 : #2a486c,
+        800 : #233f62,
+        900 : #162e4f,
+        A100 : #8bb8ff,
+        A200 : #5898ff,
+        A400 : #2579ff,
+        A700 : #0c69ff,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #ffffff,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #ffffff,
+                A700 : #ffffff,
+        )
+);
+

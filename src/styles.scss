@@ -1,0 +1,396 @@
+@import "src/styles/variables";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+/** normal styles **/
+html,
+body {
+  height: 100%;
+}
+
+div .mat-subheader {
+  font-weight: 500;
+}
+
+.bottom-spacer {
+  // margin at the bottom of every tab body wrapper
+  margin-bottom: 60px;
+}
+
+.content-area {
+  margin: 25px 25px 25px 25px;
+}
+
+.clear-float {
+  clear: both;
+}
+
+.mat-mdc-tab-body-wrapper {
+  // make sure that the tab body grows to the full height
+  flex-grow: 1;
+  //flex: 1 1 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $background-color;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.mat-mdc-snack-bar-container {
+  //--mat-mdc-snack-bar-button-color: #ffffff;
+  --mdc-snackbar-container-color: #{$background-color};
+  --mdc-snackbar-supporting-text-color: #{$secondary-text-color};
+
+  &.error-snackbar {
+  }
+
+  &.notification-snackbar {
+  }
+}
+
+.no-scrolling {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+.drawer-container {
+  height: 100%;
+}
+
+.drawer-list {
+  padding: 15px;
+  width: 180px;
+}
+
+.mat-mdc-tab-body-content {
+  padding-left: 50px;
+}
+
+.no-pad > .mat-mdc-tab-body-content {
+  padding-left: 0;
+}
+
+.mat-expansion-panel-header:not([aria-disabled=true]) {
+  height: 64px;
+}
+
+.sidenav-expansion-panel {
+
+  max-width: 250px;
+
+  & .mat-content {
+    color: white;
+  }
+
+  & .mat-expansion-panel {
+    width: auto;
+  }
+
+  & .mat-expansion-panel-header {
+    padding: 0 16px 0 16px;
+  }
+
+  & .mat-expansion-panel-header:not([aria-disabled=true]) {
+    height: 48px;
+  }
+}
+
+.side-nav-open-change-area {
+  position: sticky;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  float: left;
+}
+
+.side-nav-open-change-area-fixed {
+  position: sticky;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  float: left;
+}
+
+.short-field {
+  width: 80px;
+}
+
+.description-field {
+  width: 300px;
+}
+
+.flex-items-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-end-items-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+// removes the ripple effect - it's needed in order to keep position in mat-expansion-panel
+.mat-mdc-radio-ripple {
+  display: none;
+}
+
+.holder {
+  margin-top: 25px;
+  width: 90%;
+}
+
+.mat-mdc-cell {
+  text-align: center;
+}
+
+.mat-mdc-header-cell {
+  text-align: center;
+}
+
+.sticky-on-top {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}
+
+.height-fit-content-forced {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+
+.height-fit-content {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.width-fit-content {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.width-fit-content-forced {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
+.mat-expansion-panel-header-title {
+  justify-content: flex-start;
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: flex-end;
+}
+
+.mat-mdc-tab-label-content > .mat-mdc-icon {
+  margin-left: 5px;
+}
+
+.no-checkmark {
+  & span.mdc-evolution-chip__cell.mdc-evolution-chip__cell--primary > button > span.mdc-evolution-chip__graphic.mat-mdc-chip-graphic {
+    width: 6px;
+  }
+
+  & .mdc-list-item__end {
+    display: none;
+  }
+
+  & span.mdc-evolution-chip__cell.mdc-evolution-chip__cell--primary > button > span.mdc-evolution-chip__graphic.mat-mdc-chip-graphic .mdc-evolution-chip__checkmark {
+    display: none;
+  }
+}
+
+.margin-bottom {
+  margin-bottom: 15px !important;
+}
+
+.mat-expansion-panel {
+  width: $page-width;
+}
+
+app-numeric-counter > mat-form-field > div.mat-mdc-form-field-subscript-wrapper {
+  height: 0;
+}
+
+app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined > div > div.mat-mdc-form-field-infix {
+  min-height: 0;
+  height: 48px;
+}
+
+.mat-step-header .mat-step-icon {
+  background-color: $primary-color;
+}
+
+app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-content > app-outlined > .mat-mdc-text-field-wrapper {
+  margin: 0;
+}
+
+.planetary-tab-group #mat-tab-content-1-2 .mat-mdc-tab-body-content,
+.planetary-tab-group #mat-tab-content-1-1 .mat-mdc-tab-body-content {
+  // to create scrollbar inside planetary tabs construction and shipyard for .app-resource-display
+  position: relative;
+}
+
+.streamline-background {
+  background-color: $background-color;
+}
+
+
+.info-div {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50em;
+
+  & .mat-mdc-form-field {
+    margin: 15px 15px 0 0;
+  }
+}
+
+#universe, #starsystem, #arena {
+  height: 100vh;
+  width: 100%;
+}
+
+#universe-canvas, #star-system-canvas, #combat-arena {
+  height: 100%;
+  width: 100%;
+  contain: paint;
+}
+
+.coordCross {
+  stroke: cadetblue;
+  stroke-width: 1;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.wormhole {
+  opacity: 0.3;
+  stroke: dimgray;
+}
+
+.star {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.star-color {
+  fill: yellow;
+}
+
+.roundCap {
+  stroke-linecap: round;
+}
+
+.colonizable {
+  stroke: #306f91;
+  stroke-width: 1;
+}
+
+.colonized-by-others {
+  fill: #6f1585;
+}
+
+.colonized-by-npc {
+  fill: darkred;
+}
+
+.colonized-by-user {
+  fill: darkolivegreen;
+}
+
+.not-colonized {
+  fill: darkgoldenrod;
+}
+
+.orbit {
+  stroke: cadetblue;
+  stroke-width: 1;
+}
+
+.hyper-limit {
+  stroke: darkblue;
+  stroke-width: 1;
+}
+
+.svg-text {
+  fill: cadetblue;
+}
+
+.notch-container {
+  position: fixed;
+  bottom: 25px;
+  margin: 0 auto;
+  left: 180px; // width of nav bar
+  right: 0;
+  z-index: 1000;
+  text-align: center;
+  pointer-events: none;
+}
+
+.coursePlot {
+  fill: transparent;
+  stroke: #000;
+  stroke-width: 1px;
+  stroke-opacity: 0.2;
+  stroke-dasharray: 0 20 28.284;
+  animation: infinite;
+}
+
+
+.circle-cycle {
+  animation: cycling-circle 5s infinite;
+  stroke-linecap: square;
+  animation-timing-function: linear;
+  transform-origin: center;
+  transform-box: fill-box;
+  fill: transparent;
+}
+
+@keyframes cycling-circle {
+  // animation for the selected object and subject
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

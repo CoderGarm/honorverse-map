@@ -1,0 +1,560 @@
+import {
+    ArrayXY,
+    Circle,
+    CurveCommand,
+    Dom,
+    Element,
+    G,
+    LineCommand,
+    Path,
+    PathArrayAlias,
+    StrokeData,
+    SVG,
+    Svg,
+    Text
+} from "@svgdotjs/svg.js";
+import {Component, HostListener} from "@angular/core";
+import {BasicViewHelperData} from "./basic-view-helper-data";
+import {OrbitDefinition} from "../payload/orbit-definition";
+import '@svgdotjs/svg.panzoom.js'
+import {Coords} from "../../../services/swagger";
+
+interface ElementToParent {
+    parent: Dom;
+    element?: Element;
+}
+
+@Component({
+    template: ''
+})
+export class BasicViewHelper extends BasicViewHelperData {
+
+    protected canvas?: Svg;
+
+    public static readonly PAN_ZOOM_OPTIONS = {
+        // https://github.com/svgdotjs/svg.panzoom.js/blob/master/readme.md
+        zoomFactor: 0.3, // zooming per wheel tick
+        zoomMin: 0.1, // zoom max out to display the full svg payload as 20% of the screen
+        zoomMax: 4 // zoom max 4 times in
+    };
+
+    constructor() {
+        super();
+    }
+
+    // noinspection CssConvertColorToRgbInspection
+    protected static readonly STROKE_CYCLING_CIRCLE: StrokeData = {color: "#B0B0B0", width: 3, dasharray: "15px"}; // $metal-glance in variables
+
+    protected static readonly ROUND_CAP_MARKER_X_PIXEL_SHIFT: number = 9;
+    protected static readonly ROUND_CAP_MARKER_Y_PIXEL_SHIFT: number = 8;
+
+    public static readonly NONE_FILL_COLOR = "none";
+
+    private static readonly COORD_CROSS = "coordCross";
+
+    protected static readonly NOT_COLONIZED_COLOR_CSS_CLASS = "not-colonized";
+    protected static readonly IS_COLONIZED_BY_USER_COLOR_CSS_CLASS = "colonized-by-user";
+    protected static readonly COLONIZED_BY_OTHERS_COLOR_CSS_CLASS = "colonized-by-others";
+    protected static readonly COLONIZED_BY_NPC_COLOR_CSS_CLASS = "colonized-by-npc";
+    protected static readonly COLONIZABLE_SYSTEM_MARKER_CSS_CLASS = "colonizable";
+
+    protected static readonly PLANET_RADIUS = 5;
+    protected static readonly STAR_RADIUS = 5;
+    protected static readonly STAR_RADIUS_IN_SYSTEM = 15;
+
+    protected static readonly INVISIBLE_CLASS = "invisible";
+
+    /**
+     * If the map is used as external this prefix will be added to all necessary css selectors.
+     * Is an ugly idea, but it works until a full rework and separating the external map from the internal one.
+     */
+    private externalMapPrefix: string = '';
+
+    protected aspectRatio: number = 1;
+
+    protected zoomLevel: number = 1;
+
+    // noinspection JSUnusedLocalSymbols
+    @HostListener('window:resize', ['$event'])
+    onResize(event?: UIEvent) {
+        this.determineAspectRatio();
+    }
+
+    // noinspection JSUnusedLocalSymbols
+    @HostListener('window:click', ['$event'])
+    onClick(event?: UIEvent) {
+        this.determineAspectRatio();
+    }
+
+    private determineAspectRatio() {
+        let screenHeight = window.innerHeight;
+        let screenWidth = window.innerWidth;
+        this.aspectRatio = screenWidth / screenHeight;
+    }
+
+    override clearData() {
+        if (!!this.canvas) {
+            // remove all elements from canvas a little bit more performant
+            this.canvas.node.innerHTML = '';
+            super.clearData();
+        }
+    }
+
+    createCanvas(id: string, parentCssId: string, externalMapPrefix: string = ''): Svg {
+        if (!this.canvas) {
+            this.externalMapPrefix = externalMapPrefix;
+            this.canvas = SVG().id(id).addTo(parentCssId).panZoom(BasicViewHelper.PAN_ZOOM_OPTIONS);
+            this.canvas
+                .on('zoom', this.zoomModification)
+                .mouseover(this.mouseoverForText)
+                .mouseout(this.mouseoutForText)
+                .click(this.clickEventForCelestial)
+        }
+        return this.canvas;
+    }
+
+    private zoomModification = (ev: any) => {
+        this.zoomLevel = ev.detail.level;
+        this.zoomResizableContents();
+        // must be zoomed after all others
+        this.zoomCyclingCircles();
+        this.zoomTexts();
+    }
+
+    private zoomTexts() {
+        if (this.zoomLevel <= 1) {
+            return;
+        }
+
+        let texts = this.canvas!.children()
+            // dont resize dot texts
+            .filter(c => c.classes().filter(css => css == BasicViewHelperData.MOVABLE_STATE_DOT_MARKER).length == 0)
+            .filter(c => c.classes().filter(css => css == BasicViewHelperData.TEXT_MARKER).length > 0);
+        texts.forEach(text => this.resizeText(<Text>text));
+    }
+
+    private zoomCyclingCircles() {
+        if (this.zoomLevel <= 1) {
+            return;
+        }
+
+        const circles: Element[] = this.canvas!.children().filter(elem => elem.id().endsWith(BasicViewHelperData.CYCLING_CIRCLE_SUFFIX));
+        circles.forEach(dot => {
+            if (dot instanceof Circle) {
+                const cssClass = dot.classes().filter(css => css.startsWith(BasicViewHelperData.ICON_ID_MARKER));
+                const id = cssClass![0].replace(BasicViewHelperData.ICON_ID_MARKER, '');
+                const isInvisible = dot.classes().filter(css => css === BasicViewHelper.INVISIBLE_CLASS).length > 0;
+                const fleet: G | undefined = this.getGroupById(id);
+                const celestial: Circle | undefined = this.getCelestialByID(id);
+                let element: Element | undefined = !!fleet ? fleet : !!celestial ? celestial : undefined;
+                if (!!element) {
+                    this.canvas?.removeElement(dot)
+                    this.drawCyclingCircle(element.cx(), element.cy(), id, isInvisible);
+                }
+            }
+        });
+    }
+
+    protected zoomStroke(strokeData: StrokeData) {
+        const stroke = strokeData;
+        const width = stroke.width! / this.zoomLevel;
+        stroke.width = width < 0.3 ? 0.3 : width;
+        if (!!stroke.dasharray) {
+            let number = stroke.width * 3 < 4 ? 4 : stroke.width * 3;
+            stroke.dasharray = (number / this.zoomLevel) + "px";
+        }
+        return stroke;
+    }
+
+    private zoomResizableContents() {
+        const drawingGroup = this.getOrCreateMainCelestialGroup();
+        const elements = drawingGroup.children().filter(c => c.classes().filter(c => c == BasicViewHelperData.RESIZE_ON_ZOOM_MARKER).length != 0);
+        elements!.forEach(c => {
+            if ('radius' in c) {
+                this.resizeCelestial(c);
+            }
+            if (c.classes().filter(c => c == BasicViewHelperData.ROUND_CAP_MARKER).length != 0) {
+                this.repositioningRoundCapMarker(c);
+            }
+            if (c.classes().filter(c => c == BasicViewHelperData.WORMHOLE_MARKER).length != 0) {
+                c.stroke(this.zoomStroke({width: 1, color: 'irrelevant'}));
+            }
+        });
+    }
+
+    protected getOrCreateMainCelestialGroup() {
+        const mainGroups = this.canvas!.children().filter(c => c.id() === BasicViewHelperData.CELESTIAL_MAIN_GROUP);
+        if (mainGroups.length > 0) {
+            return <G>mainGroups[0]!;
+        } else {
+            return this.canvas!.group().id(BasicViewHelperData.CELESTIAL_MAIN_GROUP);
+        }
+    }
+
+    private repositioningRoundCapMarker(c: Element) {
+        const path = <Path>c;
+        const center = this.getCoordsFromCenterMarker(path);
+        if (!!center) {
+            const x = center[0];
+            const y = center[1];
+            let xShifter = undefined;
+            let yShifter = undefined;
+            if (this.zoomLevel > 1) {
+                xShifter = BasicViewHelper.ROUND_CAP_MARKER_X_PIXEL_SHIFT / this.zoomLevel;
+                yShifter = BasicViewHelper.ROUND_CAP_MARKER_Y_PIXEL_SHIFT / this.zoomLevel;
+            }
+            let arr = this.createRoundCapMarkerNorthPoints(x, y, xShifter, yShifter);
+            path.plot(arr)
+        }
+    }
+
+    private resizeCelestial(c: Element) {
+        let baseRadius = BasicViewHelper.PLANET_RADIUS;
+        const isStar = c.classes().filter(c => c == BasicViewHelperData.STAR_MARKER).length != 0;
+        if (isStar) {
+            baseRadius = BasicViewHelper.STAR_RADIUS;
+        }
+        const isStarInSystem = c.classes().filter(c => c == BasicViewHelperData.STAR_IN_SYSTEM_MARKER).length != 0;
+        if (isStarInSystem) {
+            baseRadius = BasicViewHelper.STAR_RADIUS_IN_SYSTEM;
+        }
+
+        const circle = <Circle>c;
+
+        let newRadius = baseRadius
+        if (this.zoomLevel > 1) {
+            newRadius = baseRadius / this.zoomLevel;
+        }
+        const radius = circle.node.r.baseVal.value;
+        if (newRadius != radius) {
+            circle.radius(newRadius);
+        }
+    }
+
+    protected drawCelestial(orbitDefinition: OrbitDefinition) {
+        let mainGroup = this.getOrCreateMainCelestialGroup();
+
+        const orbit: Coords = orbitDefinition.celestial;
+        let orbitID = this.getOrbitID(orbit);
+        let celestialBodyID = this.getCelestialBodyID(orbit);
+        this.setOrbitById(orbitID, orbit);
+
+        const x = orbit.x;
+        const y = orbit.y;
+        if (false) {
+            // fixme make some nice stuff around it
+            // to rotate around the center just flip the + and -
+            this.createRoundCapMarkerNorth(mainGroup, celestialBodyID, x, y);
+        }
+
+        const circle = mainGroup.circle()
+            .x(x)
+            .y(y)
+            .id(celestialBodyID)
+            .addClass(BasicViewHelper.CLICKABLE_CSS_CLASS);
+
+        circle.addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER);
+        circle.addClass(BasicViewHelperData.STAR_MARKER);
+        circle.addClass(BasicViewHelperData.STAR_COLOR_MARKER);
+        circle.radius(BasicViewHelper.STAR_RADIUS);
+
+        if (!!orbitDefinition.color) {
+            // if there is a color, we are at the external map, it's ugly, I know
+            circle.fill(orbitDefinition.color);
+        }
+
+        this.setCelestialCircleById(celestialBodyID, circle);
+        this.setCelestialOrbitById(celestialBodyID, orbit);
+        this.setCelestialObjectById(orbitID, orbitDefinition.celestial);
+        this.setCelestialObjectById(celestialBodyID, orbitDefinition.celestial);
+
+        let text: Text = new Text()
+            .addClass(BasicViewHelperData.TEXT_MARKER)
+            .addClass(BasicViewHelperData.ICON_ID_MARKER + celestialBodyID)
+            .text(orbitDefinition.celestial.name)
+            .x(circle.cx() + 10)
+            .y(circle.cy() - 20);
+
+        this.setTextOptions(text);
+
+        if (true) {
+            /* fixme set only main planets */
+            // add only texts which must be switched
+            this.setTextById(orbitID, text);
+        } else {
+            // display constantly
+            mainGroup.add(text);
+        }
+    }
+
+    createRoundCapMarkerNorth(mainGroup: G, id: string, x: number, y: number, xShifter?: number, yShifter?: number) {
+        let arr = this.createRoundCapMarkerNorthPoints(x, y, xShifter, yShifter);
+        mainGroup.path(arr)
+            .fill(BasicViewHelper.NONE_FILL_COLOR)
+            .id(id + BasicViewHelperData.ROUND_CAP_SUFFIX)
+            .addClass(BasicViewHelper.COLONIZABLE_SYSTEM_MARKER_CSS_CLASS)
+            .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
+            .addClass(BasicViewHelperData.ROUND_CAP_MARKER)
+            .addClass(this.getCenterMarker(x, y));
+    }
+
+    private getCenterMarker(x: number, y: number) {
+        return BasicViewHelperData.CENTER_COORDINATES_MARKER + x + BasicViewHelperData.CENTER_COORDINATES_SEPARATOR + y;
+    }
+
+    private getCoordsFromCenterMarker(element: Element): ArrayXY | undefined {
+        const markers = element.classes().filter(c => c.startsWith(BasicViewHelperData.CENTER_COORDINATES_MARKER));
+        if (!!markers && markers.length == 1) {
+            const center = this.getCenterCoordinatesFromMarker(markers[0]);
+            if (!!center) {
+                const x = center[0];
+                const y = center[1];
+                return [x, y];
+            }
+        }
+        return undefined;
+    }
+
+    createRoundCapMarkerNorthPoints(x: number, y: number, xShifter: number | undefined, yShifter: number | undefined) {
+        if (!xShifter) {
+            xShifter = BasicViewHelper.ROUND_CAP_MARKER_X_PIXEL_SHIFT;
+        }
+        if (!yShifter) {
+            yShifter = BasicViewHelper.ROUND_CAP_MARKER_Y_PIXEL_SHIFT;
+        }
+        let x1 = x - xShifter;
+        let y1 = y - yShifter;
+        let x2 = x + xShifter;
+        let y2 = y + yShifter;
+
+        let p1: LineCommand = ["M", x1, y1];
+        let p2: CurveCommand = ["A", 1, 1, 1, 1, 1, x2, y2];
+
+        let arr: PathArrayAlias = [p1, p2];
+        return arr;
+    }
+
+    getCenterCoordinatesFromMarker(cssClass: string): ArrayXY | undefined {
+        const split = cssClass.replace(BasicViewHelperData.CENTER_COORDINATES_MARKER, '').split(BasicViewHelperData.CENTER_COORDINATES_SEPARATOR);
+        if (!split) {
+            return undefined;
+        }
+        const x = split[0];
+        const y = split[1];
+        return [Number.parseFloat(x), Number.parseFloat(y)];
+    }
+
+    private clickEventForCelestial = (event: PointerEvent) => {
+        let id = this.getIdFromEvent(event);
+        if (!this.isCelestialId(id)) {
+            return;
+        }
+
+        const celestialCircle = this.getCelestialByEvent(event);
+        if (!celestialCircle) {
+            return;
+        }
+        // noinspection JSUnusedLocalSymbols
+        let x = celestialCircle.cx();
+        // noinspection JSUnusedLocalSymbols
+        let y = celestialCircle.cy();
+        const celestial = this.getCelestialObjectByID(id);
+        if (!celestial) {
+            return;
+        }
+    };
+
+
+    // noinspection JSUnusedLocalSymbols
+    private getRadius(element: Element, zoomFactor: number) {
+        const box = element.bbox();
+        let diameter = Math.ceil(Math.sqrt(Math.pow(Math.ceil(box.width), 2) + Math.pow(Math.ceil(box.height), 2)));
+
+        const linkedElements = this.canvas!.children()
+            .filter(c => c.id().startsWith(element.id()))
+            .filter(c => !c.id().endsWith(BasicViewHelperData.ORBIT_SUFFIX));
+        linkedElements.forEach(inner => {
+            const iBox = inner.bbox();
+            const dia = Math.ceil(Math.sqrt(Math.pow(Math.ceil(iBox.width), 2) + Math.pow(Math.ceil(iBox.height), 2)));
+            if (dia > diameter) {
+                diameter = dia;
+            }
+        });
+        // todo bbox is broken and returns incorrect value https://github.com/svgdotjs/svgdom/issues/89
+        const zoomedRadius = (diameter / 2);// / zoomFactor; todo zoom needed
+        return Math.ceil(zoomedRadius);
+    }
+
+    private findElementAndParentById(id: string): ElementToParent {
+        let parent: Dom = this.canvas!;
+        let element: Element | undefined;
+        const group = this.getGroupById(id);
+        if (!group) {
+            const drawingGroup = this.getOrCreateMainCelestialGroup();
+            let elements = drawingGroup.children().filter(value => value.id() == id);
+            if (elements.length == 1) {
+                element = elements[0];
+                parent = drawingGroup;
+            } else {
+                elements = this.canvas!.children().filter(value => value.id() == id);
+                if (elements.length == 1) {
+                    element = elements[0];
+                }
+            }
+        } else {
+            element = group;
+        }
+        return {
+            parent: parent,
+            element: element
+        }
+    }
+
+    private drawCyclingCircle(x: number, y: number, id: string, isInvisible: boolean) {
+        const zoomFactor = this.getOrDefaultZoomFactor(this.zoomLevel);
+
+        const elementToParent = this.findElementAndParentById(id);
+        let parent: Dom = elementToParent.parent;
+        let element: Element | undefined = elementToParent.element;
+        if (!!element) {
+            const radius = this.getRadius(element, zoomFactor);
+            const circle = new Circle().x(x).y(y)
+                .radius(radius)
+                .stroke(this.zoomStroke(BasicViewHelper.STROKE_CYCLING_CIRCLE))
+                .addClass(BasicViewHelper.CYCLING_CIRCLE_MARKER)
+                .addClass(BasicViewHelper.CLICKABLE_CSS_CLASS)
+                .addClass(BasicViewHelperData.ICON_ID_MARKER + id)
+                .id(this.getCyclingCircleId(id));
+
+            if (isInvisible) {
+                circle.addClass(BasicViewHelper.INVISIBLE_CLASS);
+            }
+
+            parent.removeElement(element);
+            parent.add(circle);
+            parent.add(element);
+        }
+    }
+
+    private removeCyclingCircle(id: string) {
+        if (!id.endsWith(BasicViewHelperData.CYCLING_CIRCLE_SUFFIX)) {
+            id = this.getCyclingCircleId(id);
+        }
+
+        const elementToParent = this.findElementAndParentById(id);
+        let parent: Dom = elementToParent.parent;
+        let element: Element | undefined = elementToParent.element;
+        if (!!element) {
+            parent.removeElement(element);
+        }
+    }
+
+    private getStarSystemByEvent = (event: PointerEvent): Coords | undefined => {
+        return this.getOrbitOfCelestialByEvent(event);
+    };
+
+    mouseoverForText = (event: PointerEvent) => {
+        const text = this.getTextByEvent(event);
+        if (!!text) {
+            this.resizeText(text);
+            this.canvas?.add(text)
+        }
+    }
+
+    private resizeText(text: Text) { // todo text positioned false the first time - why?
+        const idMarker = text.classes().filter(css => css.startsWith(BasicViewHelperData.ICON_ID_MARKER));
+        if (idMarker.length > 0) {
+            const id = idMarker[0].replace(BasicViewHelperData.ICON_ID_MARKER, '');
+            const celestial: Circle | undefined = this.getCelestialByID(id);
+            let x = undefined;
+            let y = undefined;
+            if (!!celestial) {
+                x = celestial.cx() + (10 / this.zoomLevel);
+                y = celestial.cy() - (20 / this.zoomLevel);
+            }
+            if (!!x && !!y) {
+                text.x(x).y(y);
+            }
+            this.setTextOptions(text);
+        }
+    }
+
+    private setTextOptions(text: Text) {
+        text.font({
+            size: 10 / this.zoomLevel
+        });
+    }
+
+    mouseoutForText = (event: PointerEvent) => {
+        const text = this.getTextByEvent(event);
+        if (!!text) {
+            this.canvas?.removeElement(text)
+        }
+    }
+
+    public static calculateDistance(firstCoordinate: number, secondCoordinate: number): number {
+        return Math.sqrt(Math.pow(firstCoordinate, 2) + Math.pow(secondCoordinate, 2));
+    }
+
+    protected override setOrbits(orbits: OrbitDefinition[]) {
+        super.setOrbits(orbits);
+        this.createPolarCoordinateSystem();
+    }
+
+    private createPolarCoordinateSystem() {
+        let {x, y} = this.getWidestExpanse();
+        this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y);
+        this.radiusOfCoordinateCross *= 1.1;
+
+        this.createLocalPolarCoordinateSystem(0, 0, this.radiusOfCoordinateCross, 'main');
+    }
+
+    protected createLocalPolarCoordinateSystem(xBase: number, yBase: number, radius: number, idPrefix: string) {
+        let mainGroup = this.getOrCreateMainCelestialGroup();
+        const group = mainGroup.group().id(idPrefix + "-" + BasicViewHelper.COORD_CROSS);
+        let steps = 6;
+        const radiusSteps = radius / steps;
+        for (let i = 1; i < steps; i++) {
+            group.circle()
+                .x(xBase)
+                .y(yBase)
+                .fill(BasicViewHelper.NONE_FILL_COLOR)
+                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + i)
+                .addClass(this.externalMapPrefix + BasicViewHelper.COORD_CROSS)
+                .radius(radiusSteps * i);
+        }
+        const degree = 12;
+        for (let j = 1; j <= 30; j++) {
+            const angle = j * degree;
+            const x = radius * Math.cos(angle * Math.PI / 180);
+            const y = radius * Math.sin(angle * Math.PI / 180);
+            const points: ArrayXY[] = [[xBase, yBase], [xBase + x, yBase + y]];
+            group.line(points)
+                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + "-line" + j)
+                .addClass(this.externalMapPrefix + BasicViewHelper.COORD_CROSS)
+        }
+    }
+
+    /**
+     * returns the view box string for the svg
+     */
+    public setViewBox(orbit: Coords | undefined, factor: number) {
+        let viewBoxDef: string = "0 0 0 0";
+        if (!!this.radiusOfCoordinateCross) {
+            let width = this.radiusOfCoordinateCross! * factor;
+            let height = this.radiusOfCoordinateCross! * factor;
+            let startX = -width;
+            let startY = -height / this.aspectRatio;
+
+            let xOffset = 0;
+            let yOffset = 0;
+            if (!!orbit) {
+                xOffset = orbit.x;
+                yOffset = orbit.y;
+            }
+
+            viewBoxDef = (startX + xOffset) + " " + (startY + yOffset) + " " + width * 2 + " " + height * 2;
+        }
+        this.canvas!.viewbox(viewBoxDef);
+    }
+}
