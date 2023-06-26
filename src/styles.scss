@@ -1,7 +1,13 @@
 @import "src/styles/variables";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .clearfix:after {
   content: ".";
@@ -311,15 +317,16 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   filter: alpha(opacity=50);
 }
 
-.star-color {
-
-}
-
 .roundCap {
   stroke-linecap: round;
 }
 
-.colonizable {
+.opaque {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+.highlighted {
   stroke: #306f91;
   stroke-width: 1;
 }

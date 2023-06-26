@@ -8,13 +8,13 @@ export class OrbitDefinition {
 
     readonly celestial: Coords;
 
-    readonly color?: string;
+    readonly color: string;
 
     readonly isMain: boolean;
 
     constructor(celestial: Coords,
                 isMain: boolean,
-                color?: string) {
+                color: string) {
         this.celestial = celestial;
         this.color = color;
         this.isMain = isMain;
@@ -23,9 +23,9 @@ export class OrbitDefinition {
     public static getOrbitDefinitionsForExternalStarMap(center: Coords, systems: Coords[], colors: Map<string, string>): OrbitDefinition[] {
         const od: OrbitDefinition[] = [];
         systems.forEach(system => {
-            let id = ExternalMapComponent.getStarSystemCircleID(center);
+            let id = ExternalMapComponent.getStarSystemCircleID(system);
             let isMain: boolean = system.name === center.name;
-            od.push(new OrbitDefinition(system, isMain, colors.get(id)));
+            od.push(new OrbitDefinition(system, isMain, colors.get(id)!));
         });
         return od;
     }

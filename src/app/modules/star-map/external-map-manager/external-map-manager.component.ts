@@ -91,7 +91,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     ngAfterViewInit(): void {
         let sub = this.publicResourcesService.getAllSystemCoordinates().subscribe(resp => {
             this.allCoords = resp;
-            this.centerCoord = resp.filter(sys => sys.name === 'Sol')[0];
+            this.centerCoord = resp.filter(sys => sys.name === 'Manticore')[0];
         });
         this.subscriptions.push(sub);
     }

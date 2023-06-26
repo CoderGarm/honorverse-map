@@ -46,13 +46,13 @@ mat-expansion-panel {
 // drag and drop list
 $max-width: 120px;
 
-.fleet-container {
+.system-box-container {
   margin: 5px;
   display: inline-block;
   vertical-align: top;
 }
 
-.warship-box {
+.system-box {
   padding: 10px 10px;
   margin: 5px 0;
   display: flex;
@@ -79,23 +79,23 @@ $max-width: 120px;
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.warship-box:last-child {
+.system-box:last-child {
   border: none;
 }
 
-.warship-list.cdk-drop-list-dragging .warship-box:not(.cdk-drag-placeholder) {
+.inner-list.cdk-drop-list-dragging .system-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .inner-list {
-  cursor: move;
+
 }
 
 .inner-list > * {
   flex: 1 1 80px;
 }
 
-.fleet-container div .mat-mdc-subheader {
+.system-box-container div .mat-mdc-subheader {
   padding: 5px;
 }
 

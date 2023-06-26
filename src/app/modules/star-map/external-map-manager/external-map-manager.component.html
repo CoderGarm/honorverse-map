@@ -77,11 +77,11 @@
 
             <div class="flex-items-container">
                 <div cdkDropListGroup class="clearfix inner-list">
-                    <div *ngFor="let colorGroup of colorGroups" class="fleet-container">
+                    <div *ngFor="let colorGroup of colorGroups" class="system-box-container">
                         <div cdkDropList
                              [cdkDropListData]="colorGroup.coords"
                              (cdkDropListDropped)="drop($event)">
-                            <mat-chip-row class="warship-box" *ngFor="let coord of colorGroup.coords" cdkDrag [ngStyle]="{'background-color' :getColor(coord)}">
+                            <mat-chip-row class="system-box" *ngFor="let coord of colorGroup.coords" cdkDrag [ngStyle]="{'background-color' :getColor(coord)}">
                                 {{coord.name}}
                                 <button matChipRemove [attr.aria-label]="'remove ' + coord" (click)="remove(coord)">
                                     <mat-icon>cancel</mat-icon>

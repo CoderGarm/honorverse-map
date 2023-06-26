@@ -22,6 +22,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     static path: string = 'external-star-map';
 
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
+    public static readonly UN_FOCUSSED_COLOR: string = '#FB8C00';
 
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];
@@ -46,6 +47,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.detectHighlight(map);
             this.detectCenter(map);
             this.detectRadialGroups(map);
+            this.createUniverseMap();
         });
     }
 
@@ -115,8 +117,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             const colors: Map<string, string> = new Map<string, string>();
             this.coords.forEach(coord => {
                 let id = ExternalMapComponent.getStarSystemCircleID(coord);
-                const color = this.colorByCircle.get(id)!;
-                colors.set(id, color);
+                const color = this.colorByCircle.has(id) ? this.colorByCircle.get(id) : ExternalMapComponent.UN_FOCUSSED_COLOR;
+                colors.set(id, color!);
             });
 
             if (this.radialGroups.length > 0) {

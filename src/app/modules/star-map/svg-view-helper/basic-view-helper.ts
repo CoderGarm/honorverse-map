@@ -18,6 +18,7 @@ import {BasicViewHelperData} from "./basic-view-helper-data";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import '@svgdotjs/svg.panzoom.js'
 import {Coords} from "../../../services/swagger";
+import {ExternalMapComponent} from "../external-map/external-map.component";
 
 interface ElementToParent {
     parent: Dom;
@@ -51,12 +52,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     public static readonly NONE_FILL_COLOR = "none";
 
     private static readonly COORD_CROSS = "coordCross";
-
-    protected static readonly NOT_COLONIZED_COLOR_CSS_CLASS = "not-colonized";
-    protected static readonly IS_COLONIZED_BY_USER_COLOR_CSS_CLASS = "colonized-by-user";
-    protected static readonly COLONIZED_BY_OTHERS_COLOR_CSS_CLASS = "colonized-by-others";
-    protected static readonly COLONIZED_BY_NPC_COLOR_CSS_CLASS = "colonized-by-npc";
-    protected static readonly COLONIZABLE_SYSTEM_MARKER_CSS_CLASS = "colonizable";
+    protected static readonly HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS = "highlighted";
 
     protected static readonly PLANET_RADIUS = 5;
     protected static readonly STAR_RADIUS = 5;
@@ -241,27 +237,23 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         const x = orbit.x;
         const y = orbit.y;
-        if (false) {
-            // fixme make some nice stuff around it
-            // to rotate around the center just flip the + and -
+        if (orbitDefinition.color != ExternalMapComponent.UN_FOCUSSED_COLOR) {
             this.createRoundCapMarkerNorth(mainGroup, celestialBodyID, x, y);
         }
 
         const circle = mainGroup.circle()
             .x(x)
             .y(y)
-            .id(celestialBodyID)
-            .addClass(BasicViewHelper.CLICKABLE_CSS_CLASS);
+            .fill(orbitDefinition.color)
+            .id(celestialBodyID);
+
+        if (orbitDefinition.color === ExternalMapComponent.UN_FOCUSSED_COLOR) {
+            circle.addClass(BasicViewHelper.OPAQUE_CSS_CLASS)
+        }
 
         circle.addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER);
         circle.addClass(BasicViewHelperData.STAR_MARKER);
-        circle.addClass(BasicViewHelperData.STAR_COLOR_MARKER);
         circle.radius(BasicViewHelper.STAR_RADIUS);
-
-        if (!!orbitDefinition.color) {
-            // if there is a color, we are at the external map, it's ugly, I know
-            circle.fill(orbitDefinition.color);
-        }
 
         this.setCelestialCircleById(celestialBodyID, circle);
         this.setCelestialOrbitById(celestialBodyID, orbit);
@@ -278,7 +270,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.setTextOptions(text);
 
         if (true) {
-            /* fixme set only main planets */
+            // todo maybe later
             // add only texts which must be switched
             this.setTextById(orbitID, text);
         } else {
@@ -292,7 +284,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         mainGroup.path(arr)
             .fill(BasicViewHelper.NONE_FILL_COLOR)
             .id(id + BasicViewHelperData.ROUND_CAP_SUFFIX)
-            .addClass(BasicViewHelper.COLONIZABLE_SYSTEM_MARKER_CSS_CLASS)
+            .addClass(BasicViewHelper.HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS)
             .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
             .addClass(BasicViewHelperData.ROUND_CAP_MARKER)
             .addClass(this.getCenterMarker(x, y));

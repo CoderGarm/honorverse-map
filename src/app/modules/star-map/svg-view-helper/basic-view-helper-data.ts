@@ -20,6 +20,7 @@ export class BasicViewHelperData extends SubscriptionManager {
     protected static readonly ORBIT_SELECTOR_ID_PREFIX: string = "-orbit";
 
     protected static readonly CLICKABLE_CSS_CLASS = "clickable";
+    protected static readonly OPAQUE_CSS_CLASS = "opaque";
     protected static readonly CYCLING_CIRCLE_MARKER = "circle-cycle";
     protected static readonly ICON_ID_MARKER: string = "iconId-";
     protected static readonly MOVABLE_STATE_DOT_MARKER: string = "movableStateDot";
@@ -29,7 +30,6 @@ export class BasicViewHelperData extends SubscriptionManager {
     protected static readonly RESIZE_ON_ZOOM_MARKER = "no-resize";
     protected static readonly WORMHOLE_MARKER = "wormhole";
     protected static readonly STAR_MARKER = "star";
-    protected static readonly STAR_COLOR_MARKER = "star-color";
     protected static readonly STAR_IN_SYSTEM_MARKER = "star-in-system";
     protected static readonly HYPER_LIMIT_MARKER = "hyper-limit";
     protected static readonly CENTER_COORDINATES_MARKER = "center-";
@@ -102,12 +102,6 @@ export class BasicViewHelperData extends SubscriptionManager {
             zoomFactor = 1;
         }
         return zoomFactor;
-    }
-
-    protected sortPoints(points: ArrayXY[]) {
-        let sortedPointsX = points.sort((a, b) => a[0] > b[0] ? 1 : -1);
-        let sortedPointsY = points.sort((a, b) => a[1] < b[1] ? 1 : -1);
-        return {sortedPointsX, sortedPointsY};
     }
 
     protected getOrbitID(orbit: Coords): string {
