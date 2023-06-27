@@ -8,6 +8,7 @@ import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {SubscriptionManager} from "../../../services/subscription.manager";
 import {environment} from "../../../../environments/environment";
+import {ExternalMapComponent} from "../external-map/external-map.component";
 
 
 export interface ColorGroup {
@@ -33,7 +34,7 @@ export interface RadialGroup {
 })
 export class ExternalMapManagerComponent extends SubscriptionManager implements AfterViewInit {
 
-    static path: string = 'external-star-map-manager';
+    static path: string = '';
 
     allCoords?: CoordsBlob;
     coords: Coords[] = [];
@@ -62,7 +63,6 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     url: string = '';
 
     iFrameTxt: string = '';
-    readonly basePath: string;
     readonly frontendPath: string;
 
     color: string = '#5e8c6a';
@@ -84,8 +84,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             startWith(null),
             map((c: string | null) => (c ? this._filter(c) : this.coords.slice()))
         );
-        this.basePath = environment.backendServer;
-        this.frontendPath = this.basePath.replace('8080', '4200');
+        this.frontendPath = environment.frontendServer;
     }
 
     ngAfterViewInit(): void {
@@ -213,7 +212,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             if (key !== "coords")
                 return val;
         });
-        this.url = this.frontendPath + '/external-star-map?highlight=' + encodeURIComponent(highlight) + '&center=' + encodeURIComponent(center);
+        this.url = this.frontendPath + '/' + ExternalMapComponent.path + '?highlight=' + encodeURIComponent(highlight) + '&center=' + encodeURIComponent(center);
         this.iFrameTxt = '<iframe width="900px" height="600px" src="' + this.url + '"></iframe>';
     }
 
@@ -223,7 +222,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             return;
         }
         let radialGroup = JSON.stringify(this.radialGroups);
-        this.url = this.frontendPath + '/external-star-map?radialGroup=' + encodeURIComponent(radialGroup);
+        this.url = this.frontendPath + '/' + ExternalMapComponent.path + '?radialGroup=' + encodeURIComponent(radialGroup);
         this.iFrameTxt = '<iframe width="900px" height="600px" [src]="' + this.url + '"></iframe>';
     }
 

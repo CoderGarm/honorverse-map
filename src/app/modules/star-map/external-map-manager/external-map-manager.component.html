@@ -1,7 +1,7 @@
 <div class="content-pane">
 
     <div class="flex-items-container btn-area">
-        <a mat-raised-button color="primary" href="{{ basePath }}/api/public/resources/system-coordinates" target="_blank">
+        <a mat-raised-button color="primary" href="{{ frontendPath }}/assets/systems.json" target="_blank">
             <span matListItemLine>List all system coordinates</span>
         </a>
     </div>
@@ -36,7 +36,7 @@
                 </mat-form-field>
             </form>
 
-            <mat-checkbox [(ngModel)]="isCanonMapPreselected" (change)="defineMapPreselection()">Push da button</mat-checkbox>
+            <mat-checkbox [(ngModel)]="isCanonMapPreselected" (change)="defineMapPreselection()">Set up canon factions</mat-checkbox>
 
             <form>
                 <mat-form-field class="coords-chip-list" appearance="fill">
@@ -135,9 +135,11 @@
                 </mat-form-field>
             </form>
 
-
-            <div class="flex-items-container">
-                <button mat-flat-button color="primary" (click)='buildRadialGroupURL()' [disabled]="radiusCoords.length < 2">Generate Radius Map</button>
+            <div class="flex-items-container" *ngIf="radiusCoords.length < 2" matTooltip="Take at least two systems to create an intersection.">
+                <button mat-flat-button color="primary" disabled>Generate Radius Map</button>
+            </div>
+            <div class="flex-items-container" *ngIf="radiusCoords.length >= 2">
+                <button mat-flat-button color="primary" (click)='buildRadialGroupURL()'>Generate Radius Map</button>
             </div>
 
         </mat-expansion-panel>

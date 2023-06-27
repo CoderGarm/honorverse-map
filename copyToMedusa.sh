@@ -2,8 +2,8 @@
 
 # run it on build system
 
-rm -f dist.tar.gz
-tar -czf dist.tar.gz dist/
-scp dist.tar.gz medusa:uploadTarget/honorverse-map.tar.gz
+rm -f honorverse-map.tar.gz
+tar -czf honorverse-map.tar.gz dist/
+scp honorverse-map.tar.gz scripts/htaccess medusa:uploadTarget/
 rm -rf dist/
-rm -f dist.tar.gz
+rm -f honorverse-map.tar.gz
