@@ -283,6 +283,7 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   left: 50%;
   transform: translateX(-50%);
   width: 50em;
+  z-index: 999;
 
   & .mat-mdc-form-field {
     margin: 15px 15px 0 0;

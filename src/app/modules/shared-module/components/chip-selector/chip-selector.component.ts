@@ -71,7 +71,6 @@ export class ChipSelectorComponent implements AfterContentInit, OnChanges {
     chipControl: UntypedFormControl = new UntypedFormControl({});
 
     constructor() {
-        /* todo give me trailing icons*/
     }
 
     ngOnChanges(changes: SimpleChanges) {

@@ -1,4 +1,4 @@
-import {ArrayXY, Circle, G, Shape, Text} from "@svgdotjs/svg.js";
+import {Circle, G, Shape, Text} from "@svgdotjs/svg.js";
 import {Component} from "@angular/core";
 import {SubscriptionManager} from "../../../services/subscription.manager";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -44,13 +44,13 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     protected radiusOfCoordinateCross?: number;
 
-    private textById: Map<String, Text> = new Map<String, Text>();
-    private celestialObjectById: Map<String, Coords> = new Map<String, Coords>();
-    private celestialBodyById: Map<String, Circle> = new Map<String, Circle>();
-    private celestialOrbitById: Map<String, Coords> = new Map<String, Coords>();
-    private orbitsById: Map<String, Coords> = new Map<String, Coords>();
+    private textById: Map<string, Text> = new Map<string, Text>();
+    private celestialObjectById: Map<string, Coords> = new Map<string, Coords>();
+    private celestialBodyById: Map<string, Circle> = new Map<string, Circle>();
+    private celestialOrbitById: Map<string, Coords> = new Map<string, Coords>();
+    private orbitsById: Map<string, Coords> = new Map<string, Coords>();
 
-    private groupsByID: Map<String, G> = new Map<String, G>();
+    private groupsByID: Map<string, G> = new Map<string, G>();
 
     constructor() {
         super();
@@ -65,6 +65,9 @@ export class BasicViewHelperData extends SubscriptionManager {
         this.groupsByID.clear();
     }
 
+    protected getCelestialBodyIDs(): string[] {
+        return Array.from(this.celestialBodyById.keys());
+    }
 
     private sortByOrbit() {
         if (!this.orbits) {
@@ -132,6 +135,10 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     protected getTextByEvent(event: PointerEvent | MouseEvent): Text | undefined {
         let id = this.getIdFromEvent(event);
+        return this.getTextById(id);
+    }
+
+    protected getTextById(id: string) {
         return this.textById.get(id);
     }
 

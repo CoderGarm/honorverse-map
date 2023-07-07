@@ -268,15 +268,21 @@ export class BasicViewHelper extends BasicViewHelperData {
             .y(circle.cy() - 20);
 
         this.setTextOptions(text);
+        this.setTextById(celestialBodyID, text);
+    }
 
-        if (true) {
-            // todo maybe later
-            // add only texts which must be switched
-            this.setTextById(orbitID, text);
-        } else {
-            // display constantly
-            mainGroup.add(text);
-        }
+    toggleNames() {
+        let mainGroup = this.getOrCreateMainCelestialGroup();
+        let bodyIDs = this.getCelestialBodyIDs();
+        bodyIDs.forEach(celestialId => {
+            let text = this.getTextById(celestialId)!;
+            let present = mainGroup.children().filter(t => t === text).length > 0;
+            if (present) {
+                mainGroup.removeElement(text);
+            } else {
+                mainGroup.add(text);
+            }
+        })
     }
 
     createRoundCapMarkerNorth(mainGroup: G, id: string, x: number, y: number, xShifter?: number, yShifter?: number) {

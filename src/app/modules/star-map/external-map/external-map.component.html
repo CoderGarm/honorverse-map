@@ -14,6 +14,12 @@
             <mat-label>Y-Coordinate</mat-label>
             <input matInput disabled value="{{-hoveredSystem!.y}} {{ 'distance.lightyear.abbrev' | translate }}">
         </mat-form-field>
+
+        <button mat-icon-button class="info-btn"
+                (click)="toggleNames()"
+                matTooltip="Show all system names - this will slow down the map!">
+            <mat-icon>info</mat-icon>
+        </button>
     </div>
 
     <div id="universe">
