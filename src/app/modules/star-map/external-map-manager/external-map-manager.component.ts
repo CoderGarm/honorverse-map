@@ -93,6 +93,12 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             this.centerCoord = resp.filter(sys => sys.name === 'Manticore')[0];
         });
         this.subscriptions.push(sub);
+        this.canonPreselection();
+    }
+
+    private canonPreselection() {
+        this.isCanonMapPreselected = true;
+        this.defineMapPreselection();
     }
 
     buildColorGroups() {
