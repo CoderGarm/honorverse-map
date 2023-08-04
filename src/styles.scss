@@ -53,6 +53,10 @@ div .mat-subheader {
   clear: both;
 }
 
+.small-field {
+  width: 125px;
+}
+
 .mat-mdc-tab-body-wrapper {
   // make sure that the tab body grows to the full height
   flex-grow: 1;
@@ -279,6 +283,7 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 
 
 .info-div {
+  background-color: #2E3338;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

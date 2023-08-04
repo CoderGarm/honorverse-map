@@ -28,12 +28,18 @@ $bgColor: black;
   display: inline-grid;
   grid-column-gap: 0;
   align-content: center;
-  margin: 0 25px;
+  margin: 0 25px 25px 25px;
 }
 
 app-outlined {
   background-color: #2E3338;
   border-radius: 20px;
+}
+
+.name-field {
+  margin: auto;
+  align-content: center;
+  display: inline-grid;
 }
 
 .map-nav {

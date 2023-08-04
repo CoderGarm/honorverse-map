@@ -11,6 +11,7 @@ import {
     SimpleCoord
 } from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
+import {interval} from "rxjs";
 
 @Component({
     selector: 'app-external-map',
@@ -39,7 +40,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     selectedStarSystem?: Coords;
 
-    showBackgroundNav: boolean = true; /*fixme replace by storage "last setting" */
+    showBackgroundNav: boolean = false;
+    showUpload: boolean = false;
 
     backgroundImage?: File;
     backgroundScaleX: number = 100;
@@ -97,7 +99,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             // called twice but never cleared why
             const canvas = this.createCanvas("universe-canvas", '#universe', 'ext-');
             canvas.mouseover(this.mouseoverForCelestial).mouseout(this.mouseoutForCelestial).click(this.clickEventForCelestial);
-            this.createUniverseMap();
         }
     }
 
@@ -157,11 +158,31 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
     }
 
-    private createUniverseMap() {
+    uploadCoordinates(file: File) {
+        let parse: Coords[] | undefined;
+        let reader = new FileReader();
+        reader.onloadend = function () {
+            let content = reader.result!.toString();
+            parse = JSON.parse(content);
+        }
+        if (file) {
+            reader.readAsText(file);
+            const source = interval(100);
+            let sub = source.subscribe(() => {
+                if (!!parse) {
+                    this.createUniverseMap(parse);
+                    sub.unsubscribe();
+                }
+            });
+            this.subscriptions.push(sub);
+        }
+    }
+
+    private createUniverseMap(coords?: Coords[]) {
         this.clearData();
 
         let sub = this.publicResourcesApiService.getAllSystemCoordinates().subscribe(resp => {
-            this.coords = resp;
+            this.coords = !!coords ? coords : resp;
             const colors: Map<string, string> = new Map<string, string>();
             this.coords.forEach(coord => {
                 let id = ExternalMapComponent.getStarSystemCircleID(coord);
@@ -177,6 +198,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 this.center = this.coords.filter(sys => ExternalMapManagerComponent.matches(this.highlightedCenter!, sys))[0];
             } else {
                 this.center = this.coords.filter(sys => sys.name === 'Sol')[0];
+            }
+            if (!this.center) {
+                this.center = this.coords[0];
             }
             this.hoveredSystem = this.center;
 
@@ -225,8 +249,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
     }
 
-    private handlePosChange(key: string) {
-        console.log(key)
+    handlePosChange(key: string) {
         if (!this.selectedStarSystem) {
             return;
         }
@@ -322,5 +345,30 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
         this.handleButtonPress(event.key);
+    }
+
+    download() {
+
+        const result: Coords[] = [];
+        let stars = this.canvas!.children()
+            .filter(c => c.classes().filter(css => css === BasicViewHelperData.STAR_MARKER).length > 0);
+        stars.forEach(celestial => {
+            let celestialBodyID = celestial.id();
+            let name = celestial.classes().filter(c => c.startsWith('name'))[0].split('<>')[1].replaceAll('<|>', ' ');
+            result.push({
+                name: name,
+                x: Math.ceil(<number>celestial.x()),
+                y: Math.ceil(<number>celestial.y())
+            });
+        });
+        let stringify = JSON.stringify(result);
+
+        let element = document.createElement('a');
+        element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(stringify));
+        element.setAttribute('download', 'coordinates.json');
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
     }
 }

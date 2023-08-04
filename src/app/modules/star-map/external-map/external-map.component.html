@@ -23,8 +23,20 @@
 
         <button mat-icon-button class="info-btn"
                 (click)="showBackgroundNav = !showBackgroundNav"
-                matTooltip="Display background manipulation.">
+                matTooltip="Display background manipulation">
             <mat-icon>map</mat-icon>
+        </button>
+
+        <button mat-icon-button class="info-btn"
+                (click)="download()"
+                matTooltip="Download coordinates">
+            <mat-icon>file_download</mat-icon>
+        </button>
+
+        <button mat-icon-button class="info-btn"
+                (click)="showUpload = !showUpload"
+                matTooltip="Upload coordinates">
+            <mat-icon>file_upload</mat-icon>
         </button>
 
         <div class="control-container flex-items-container">
@@ -85,12 +97,26 @@
             </div>
 
             <div *ngIf="!!selectedStarSystem" class="coord-control flex-items-container">
-                <app-outlined titleValue="Celestial controls" style="margin: auto">
+                <app-outlined titleValue="Celestial controls" style="margin: auto;">
                     <div class="celestial-controls">
                         <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
                         <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
                         <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
                         <button class="kbc-button key-right" (click)="handleButtonPress('l')">L</button>
+                    </div>
+
+                    <mat-form-field class="name-field">
+                        <input type="text" matInput [(ngModel)]="selectedStarSystem.name" (keyup)="handlePosChange('xxx')">
+                    </mat-form-field>
+
+                </app-outlined>
+            </div>
+            <div *ngIf="showUpload" class="coord-control flex-items-container">
+                <app-outlined titleValue="Upload coordinates" style="margin: auto">
+                    <div class="upload-container">
+                        <app-file-upload
+                                class="file-upload"
+                                (upload)="uploadCoordinates($event)"></app-file-upload>
                     </div>
                 </app-outlined>
             </div>

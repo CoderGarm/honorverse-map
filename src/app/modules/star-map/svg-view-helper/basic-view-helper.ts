@@ -221,12 +221,6 @@ export class BasicViewHelper extends BasicViewHelperData {
         let orbitID = this.getOrbitID(orbit);
         let celestialBodyID = this.getCelestialBodyID(orbit);
 
-        let celestialByID = this.getCelestialByID(celestialBodyID);
-        if (!!celestialByID) {
-            // fixme why is present? Must be drawn only once
-            this.canvas!.removeElement(celestialByID);
-        }
-
         this.setOrbitById(orbitID, orbit);
 
         const x = orbit.x;
@@ -239,6 +233,7 @@ export class BasicViewHelper extends BasicViewHelperData {
             .x(x)
             .y(y)
             .fill(orbitDefinition.color)
+            .addClass('name<>' + orbitDefinition.celestial.name.replaceAll(' ', '<|>'))
             .id(celestialBodyID);
 
         if (orbitDefinition.color === ExternalMapComponent.UN_FOCUSSED_COLOR) {
