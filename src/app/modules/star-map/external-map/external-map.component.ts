@@ -36,6 +36,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     radialGroups: RadialGroup[] = [];
 
+    showBackgroundNav: boolean = true; /*fixme*/
+
     backgroundImage?: File;
     backgroundScaleX: number = 100;
     backgroundScaleY: number = 100;
@@ -170,50 +172,55 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
         if (file) {
             reader.readAsDataURL(file);
-            let htmlElement = document.getElementById('universe')!;
-            this.backgroundScaleX = 100;
-            this.backgroundScaleY = 100;
-            this.backgroundTranslateX = 0;
-            this.backgroundTranslateY = 0;
-            htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
-            htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
+            this.resetBackgroundModification();
         }
+    }
+
+    resetBackgroundModification() {
+        let htmlElement = document.getElementById('universe')!;
+        this.backgroundScaleX = 100;
+        this.backgroundScaleY = 100;
+        this.backgroundTranslateX = 0;
+        this.backgroundTranslateY = 0;
+        htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
+        htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
+        /* fixme add reset button*/
     }
 
     handleButtonPress(key: string) {
         let htmlElement = document.getElementById('universe')!;
         switch (key) {
             case '+':
-                this.backgroundScaleX *= 1.1;
-                this.backgroundScaleY *= 1.1;
+                this.backgroundScaleX *= 1.01;
+                this.backgroundScaleY *= 1.01;
                 break;
             case '-':
-                this.backgroundScaleX -= this.backgroundScaleX * 0.1;
-                this.backgroundScaleY -= this.backgroundScaleY * 0.1;
+                this.backgroundScaleX -= this.backgroundScaleX * 0.01; /* fixme how detailed to scroll */
+                this.backgroundScaleY -= this.backgroundScaleY * 0.01;
                 break;
             case 'w':
-                this.backgroundTranslateY += 100;
+                this.backgroundTranslateY += 10;
                 break;
             case 's':
-                this.backgroundTranslateY -= 100;
+                this.backgroundTranslateY -= 10;
                 break;
             case 'a':
-                this.backgroundTranslateX -= 100;
+                this.backgroundTranslateX -= 10;
                 break;
             case 'd':
-                this.backgroundTranslateX += 100;
+                this.backgroundTranslateX += 10;
                 break;
             case 'ArrowUp':
-                this.backgroundScaleY *= 1.1;
+                this.backgroundScaleY *= 1.01;
                 break;
             case 'ArrowDown':
-                this.backgroundScaleY -= this.backgroundScaleY * 0.1;
+                this.backgroundScaleY -= this.backgroundScaleY * 0.01;
                 break;
             case 'ArrowLeft':
-                this.backgroundScaleX -= this.backgroundScaleX * 0.1;
+                this.backgroundScaleX -= this.backgroundScaleX * 0.01;
                 break;
             case 'ArrowRight':
-                this.backgroundScaleX *= 1.1;
+                this.backgroundScaleX *= 1.01;
                 break;
             default:
                 break;

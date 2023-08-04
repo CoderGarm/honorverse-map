@@ -17,3 +17,47 @@ $bgColor: black;
 .info-btn {
   color: $success;
 }
+
+.controls {
+  display: inline-grid;
+  grid-column-gap: 0;
+  margin-right: 25px;
+}
+
+.file-upload {
+  width: 50%;
+  display: inline-block;
+}
+
+.reset-btn {
+  float: right;
+}
+
+.upload-container {
+  margin-bottom: 25px;
+}
+
+.plusminus {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plusminus > button {
+  width: 40px;
+}
+
+.key-up {
+  grid-column-start: 2;
+}
+
+.key-left {
+  grid-column-start: 1;
+}
+
+.key-down {
+}
+
+.key-right {
+  grid-column-start: 3;
+}

@@ -21,19 +21,45 @@
             <mat-icon>info</mat-icon>
         </button>
 
-        <app-file-upload (upload)="setBackground($event)"></app-file-upload>
+        <button mat-icon-button class="info-btn"
+                (click)="showBackgroundNav = !showBackgroundNav"
+                matTooltip="Display background manipulation.">
+            <mat-icon>map</mat-icon>
+        </button>
 
-        <button class="kbc-button" (click)="handleButtonPress('w')">W</button>
-        <button class="kbc-button" (click)="handleButtonPress('a')">A</button>
-        <button class="kbc-button" (click)="handleButtonPress('s')">S</button>
-        <button class="kbc-button" (click)="handleButtonPress('d')">D</button>
+        <div *ngIf="showBackgroundNav" class="map-nav">
 
-        <button class="kbc-button" (click)="handleButtonPress('+')">+</button>
-        <button class="kbc-button" (click)="handleButtonPress('-')">-</button>
-        <button class="kbc-button" (click)="handleButtonPress('ArrowUp')">⇧</button>
-        <button class="kbc-button" (click)="handleButtonPress('ArrowLeft')">⇦</button>
-        <button class="kbc-button" (click)="handleButtonPress('ArrowDown')">⇩</button>
-        <button class="kbc-button" (click)="handleButtonPress('ArrowRight')">⇨</button>
+            <div class="upload-container">
+                <app-file-upload
+                        class="file-upload"
+                        (upload)="setBackground($event)"></app-file-upload>
+                <button mat-raised-button color="primary"
+                        class="reset-btn"
+                        (click)="resetBackgroundModification()">
+                    Reset Background modification
+                </button>
+            </div>
+            <div class="controls">
+                <button class="kbc-button key-up" (click)="handleButtonPress('w')">W</button>
+                <button class="kbc-button key-left" (click)="handleButtonPress('a')">A</button>
+                <button class="kbc-button key-down" (click)="handleButtonPress('s')">S</button>
+                <button class="kbc-button key-right" (click)="handleButtonPress('d')">D</button>
+            </div>
+
+            <div class="controls">
+                <button class="kbc-button key-up" (click)="handleButtonPress('ArrowUp')">⇧</button>
+                <button class="kbc-button key-left" (click)="handleButtonPress('ArrowLeft')">⇦</button>
+                <button class="kbc-button key-down" (click)="handleButtonPress('ArrowDown')">⇩</button>
+                <button class="kbc-button key-right" (click)="handleButtonPress('ArrowRight')">⇨</button>
+            </div>
+
+
+            <div class="plusminus">
+                <button class="kbc-button key-down" (click)="handleButtonPress('-')">-</button>
+                <button class="kbc-button key-up" (click)="handleButtonPress('+')">+</button>
+            </div>
+
+        </div>
     </div>
 
     <div id="universe">

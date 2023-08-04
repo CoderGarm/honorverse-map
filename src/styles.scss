@@ -284,13 +284,19 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   transform: translateX(-50%);
   width: 50em;
   z-index: 999;
-  background-color: #2E3338;
   padding: 25px;
   border-radius: 5px 5px 20px 20px;
 
   & .mat-mdc-form-field {
     margin: 15px 15px 0 0;
   }
+}
+
+.map-nav {
+  background-color: #2E3338;
+  z-index: 999;
+  padding: 25px;
+  border-radius: 20px;
 }
 
 #universe {
@@ -315,7 +321,7 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 }
 
 .wormhole {
-  opacity: 0.3;
+  opacity: 0.3; /* fixme remove opacity when image load */
   stroke: dimgray;
 }
 
