@@ -1,0 +1,6 @@
+<div>
+    <div><label><input type="file" (change)="selectFile($event)"/></label></div>
+    <div>
+        <button [disabled]="!selectedFiles" (click)="doUpload()">Upload</button>
+    </div>
+</div>

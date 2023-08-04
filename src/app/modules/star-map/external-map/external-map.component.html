@@ -20,6 +20,20 @@
                 matTooltip="Show all system names - this will slow down the map!">
             <mat-icon>info</mat-icon>
         </button>
+
+        <app-file-upload (upload)="setBackground($event)"></app-file-upload>
+
+        <button class="kbc-button" (click)="handleButtonPress('w')">W</button>
+        <button class="kbc-button" (click)="handleButtonPress('a')">A</button>
+        <button class="kbc-button" (click)="handleButtonPress('s')">S</button>
+        <button class="kbc-button" (click)="handleButtonPress('d')">D</button>
+
+        <button class="kbc-button" (click)="handleButtonPress('+')">+</button>
+        <button class="kbc-button" (click)="handleButtonPress('-')">-</button>
+        <button class="kbc-button" (click)="handleButtonPress('ArrowUp')">⇧</button>
+        <button class="kbc-button" (click)="handleButtonPress('ArrowLeft')">⇦</button>
+        <button class="kbc-button" (click)="handleButtonPress('ArrowDown')">⇩</button>
+        <button class="kbc-button" (click)="handleButtonPress('ArrowRight')">⇨</button>
     </div>
 
     <div id="universe">

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {InterstellarViewHelper} from "../payload/interstellar-view-helper";
 import {Coords, CoordsBlob, PublicResourcesApiService} from "../../../services/swagger";
 import {TranslateService} from "@ngx-translate/core";
@@ -35,6 +35,12 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     hoveredSystem?: Coords;
 
     radialGroups: RadialGroup[] = [];
+
+    backgroundImage?: File;
+    backgroundScaleX: number = 100;
+    backgroundScaleY: number = 100;
+    backgroundTranslateX: number = 0;
+    backgroundTranslateY: number = 0;
 
     constructor(private route: ActivatedRoute,
                 private publicResourcesApiService: PublicResourcesApiService,
@@ -154,5 +160,70 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             });
         });
         this.subscriptions.push(sub);
+    }
+
+    setBackground(file: File) {
+        this.backgroundImage = file;
+        let reader = new FileReader();
+        reader.onloadend = function () {
+            document.getElementById('universe')!.style.backgroundImage = "url(" + reader.result + ")";
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+            let htmlElement = document.getElementById('universe')!;
+            this.backgroundScaleX = 100;
+            this.backgroundScaleY = 100;
+            this.backgroundTranslateX = 0;
+            this.backgroundTranslateY = 0;
+            htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
+            htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
+        }
+    }
+
+    handleButtonPress(key: string) {
+        let htmlElement = document.getElementById('universe')!;
+        switch (key) {
+            case '+':
+                this.backgroundScaleX *= 1.1;
+                this.backgroundScaleY *= 1.1;
+                break;
+            case '-':
+                this.backgroundScaleX -= this.backgroundScaleX * 0.1;
+                this.backgroundScaleY -= this.backgroundScaleY * 0.1;
+                break;
+            case 'w':
+                this.backgroundTranslateY += 100;
+                break;
+            case 's':
+                this.backgroundTranslateY -= 100;
+                break;
+            case 'a':
+                this.backgroundTranslateX -= 100;
+                break;
+            case 'd':
+                this.backgroundTranslateX += 100;
+                break;
+            case 'ArrowUp':
+                this.backgroundScaleY *= 1.1;
+                break;
+            case 'ArrowDown':
+                this.backgroundScaleY -= this.backgroundScaleY * 0.1;
+                break;
+            case 'ArrowLeft':
+                this.backgroundScaleX -= this.backgroundScaleX * 0.1;
+                break;
+            case 'ArrowRight':
+                this.backgroundScaleX *= 1.1;
+                break;
+            default:
+                break;
+        }
+        htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
+        htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+        this.handleButtonPress(event.key);
     }
 }
