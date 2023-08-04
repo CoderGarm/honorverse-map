@@ -44,7 +44,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     // noinspection CssConvertColorToRgbInspection
-    protected static readonly STROKE_CYCLING_CIRCLE: StrokeData = {color: "#B0B0B0", width: 3, dasharray: "15px"}; // $metal-glance in variables
+    protected static readonly STROKE_CYCLING_CIRCLE: StrokeData = {color: "orange", width: 3, dasharray: "15px"}; // $metal-glance in variables
 
     protected static readonly ROUND_CAP_MARKER_X_PIXEL_SHIFT: number = 9;
     protected static readonly ROUND_CAP_MARKER_Y_PIXEL_SHIFT: number = 8;
@@ -103,8 +103,7 @@ export class BasicViewHelper extends BasicViewHelperData {
             this.canvas
                 .on('zoom', this.zoomModification)
                 .mouseover(this.mouseoverForText)
-                .mouseout(this.mouseoutForText)
-                .click(this.clickEventForCelestial)
+                .mouseout(this.mouseoutForText);
         }
         return this.canvas;
     }
@@ -163,8 +162,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     private zoomResizableContents() {
-        const drawingGroup = this.getOrCreateMainCelestialGroup();
-        const elements = drawingGroup.children().filter(c => c.classes().filter(c => c == BasicViewHelperData.RESIZE_ON_ZOOM_MARKER).length != 0);
+        const elements = this.canvas!.children().filter(c => c.classes().filter(c => c == BasicViewHelperData.RESIZE_ON_ZOOM_MARKER).length != 0);
         elements!.forEach(c => {
             if ('radius' in c) {
                 this.resizeCelestial(c);
@@ -176,15 +174,6 @@ export class BasicViewHelper extends BasicViewHelperData {
                 c.stroke(this.zoomStroke({width: 1, color: 'irrelevant'}));
             }
         });
-    }
-
-    protected getOrCreateMainCelestialGroup() {
-        const mainGroups = this.canvas!.children().filter(c => c.id() === BasicViewHelperData.CELESTIAL_MAIN_GROUP);
-        if (mainGroups.length > 0) {
-            return <G>mainGroups[0]!;
-        } else {
-            return this.canvas!.group().id(BasicViewHelperData.CELESTIAL_MAIN_GROUP);
-        }
     }
 
     private repositioningRoundCapMarker(c: Element) {
@@ -228,20 +217,25 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     protected drawCelestial(orbitDefinition: OrbitDefinition) {
-        let mainGroup = this.getOrCreateMainCelestialGroup();
-
         const orbit: Coords = orbitDefinition.celestial;
         let orbitID = this.getOrbitID(orbit);
         let celestialBodyID = this.getCelestialBodyID(orbit);
+
+        let celestialByID = this.getCelestialByID(celestialBodyID);
+        if (!!celestialByID) {
+            // fixme why is present? Must be drawn only once
+            this.canvas!.removeElement(celestialByID);
+        }
+
         this.setOrbitById(orbitID, orbit);
 
         const x = orbit.x;
         const y = orbit.y;
         if (orbitDefinition.color != ExternalMapComponent.UN_FOCUSSED_COLOR) {
-            this.createRoundCapMarkerNorth(mainGroup, celestialBodyID, x, y);
+            this.createRoundCapMarkerNorth(celestialBodyID, x, y);
         }
 
-        const circle = mainGroup.circle()
+        const circle = this.canvas!.circle()
             .x(x)
             .y(y)
             .fill(orbitDefinition.color)
@@ -272,22 +266,21 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     toggleNames() {
-        let mainGroup = this.getOrCreateMainCelestialGroup();
         let bodyIDs = this.getCelestialBodyIDs();
         bodyIDs.forEach(celestialId => {
             let text = this.getTextById(celestialId)!;
-            let present = mainGroup.children().filter(t => t === text).length > 0;
+            let present = this.canvas!.children().filter(t => t === text).length > 0;
             if (present) {
-                mainGroup.removeElement(text);
+                this.canvas!.removeElement(text);
             } else {
-                mainGroup.add(text);
+                this.canvas!.add(text);
             }
         })
     }
 
-    createRoundCapMarkerNorth(mainGroup: G, id: string, x: number, y: number, xShifter?: number, yShifter?: number) {
+    createRoundCapMarkerNorth(id: string, x: number, y: number, xShifter?: number, yShifter?: number) {
         let arr = this.createRoundCapMarkerNorthPoints(x, y, xShifter, yShifter);
-        mainGroup.path(arr)
+        this.canvas!.path(arr)
             .fill(BasicViewHelper.NONE_FILL_COLOR)
             .id(id + BasicViewHelperData.ROUND_CAP_SUFFIX)
             .addClass(BasicViewHelper.HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS)
@@ -342,27 +335,6 @@ export class BasicViewHelper extends BasicViewHelperData {
         return [Number.parseFloat(x), Number.parseFloat(y)];
     }
 
-    private clickEventForCelestial = (event: PointerEvent) => {
-        let id = this.getIdFromEvent(event);
-        if (!this.isCelestialId(id)) {
-            return;
-        }
-
-        const celestialCircle = this.getCelestialByEvent(event);
-        if (!celestialCircle) {
-            return;
-        }
-        // noinspection JSUnusedLocalSymbols
-        let x = celestialCircle.cx();
-        // noinspection JSUnusedLocalSymbols
-        let y = celestialCircle.cy();
-        const celestial = this.getCelestialObjectByID(id);
-        if (!celestial) {
-            return;
-        }
-    };
-
-
     // noinspection JSUnusedLocalSymbols
     private getRadius(element: Element, zoomFactor: number) {
         const box = element.bbox();
@@ -386,29 +358,25 @@ export class BasicViewHelper extends BasicViewHelperData {
     private findElementAndParentById(id: string): ElementToParent {
         let parent: Dom = this.canvas!;
         let element: Element | undefined;
-        const group = this.getGroupById(id);
-        if (!group) {
-            const drawingGroup = this.getOrCreateMainCelestialGroup();
-            let elements = drawingGroup.children().filter(value => value.id() == id);
+        let elements = this.canvas!.children().filter(value => value.id() == id);
+        console.log(id, elements)
+        if (elements.length == 1) {
+            element = elements[0];
+            parent = this.canvas!;
+        } else {
+            elements = this.canvas!.children().filter(value => value.id() == id);
             if (elements.length == 1) {
                 element = elements[0];
-                parent = drawingGroup;
-            } else {
-                elements = this.canvas!.children().filter(value => value.id() == id);
-                if (elements.length == 1) {
-                    element = elements[0];
-                }
             }
-        } else {
-            element = group;
         }
+
         return {
             parent: parent,
             element: element
         }
     }
 
-    private drawCyclingCircle(x: number, y: number, id: string, isInvisible: boolean) {
+    drawCyclingCircle(x: number, y: number, id: string, isInvisible: boolean) {
         const zoomFactor = this.getOrDefaultZoomFactor(this.zoomLevel);
 
         const elementToParent = this.findElementAndParentById(id);
@@ -434,7 +402,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         }
     }
 
-    private removeCyclingCircle(id: string) {
+    removeCyclingCircle(id: string) {
         if (!id.endsWith(BasicViewHelperData.CYCLING_CIRCLE_SUFFIX)) {
             id = this.getCyclingCircleId(id);
         }
@@ -445,6 +413,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         if (!!element) {
             parent.removeElement(element);
         }
+        return !!element;
     }
 
     private getStarSystemByEvent = (event: PointerEvent): Coords | undefined => {
@@ -508,12 +477,10 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     protected createLocalPolarCoordinateSystem(xBase: number, yBase: number, radius: number, idPrefix: string) {
-        let mainGroup = this.getOrCreateMainCelestialGroup();
-        const group = mainGroup.group().id(idPrefix + "-" + BasicViewHelper.COORD_CROSS);
         let steps = 6;
         const radiusSteps = radius / steps;
         for (let i = 1; i < steps; i++) {
-            group.circle()
+            this.canvas!.circle()
                 .x(xBase)
                 .y(yBase)
                 .fill(BasicViewHelper.NONE_FILL_COLOR)
@@ -527,7 +494,7 @@ export class BasicViewHelper extends BasicViewHelperData {
             const x = radius * Math.cos(angle * Math.PI / 180);
             const y = radius * Math.sin(angle * Math.PI / 180);
             const points: ArrayXY[] = [[xBase, yBase], [xBase + x, yBase + y]];
-            group.line(points)
+            this.canvas!.line(points)
                 .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + "-line" + j)
                 .addClass(this.externalMapPrefix + BasicViewHelper.COORD_CROSS)
         }

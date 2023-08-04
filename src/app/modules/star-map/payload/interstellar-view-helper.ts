@@ -22,14 +22,13 @@ export class InterstellarViewHelper extends BasicViewHelper {
             return;
         }
 
-        let mainGroup = this.getOrCreateMainCelestialGroup();
         radialGroups.forEach(rg => {
             const coord = rg.coord;
             const id = ExternalMapComponent.getStarSystemCircleID(coord);
             const x = coord.x;
             const y = coord.y;
             const radius = rg.radius;
-            mainGroup.circle()
+            this.canvas!.circle()
                 .x(x)
                 .y(y)
                 .id("radius-" + id)

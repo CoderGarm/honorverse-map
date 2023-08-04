@@ -36,6 +36,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     radialGroups: RadialGroup[] = [];
 
+
+    selectedStarSystem?: Coords;
+
     showBackgroundNav: boolean = true; /*fixme*/
 
     backgroundImage?: File;
@@ -93,9 +96,46 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         if (length == 0) {
             // called twice but never cleared why
             const canvas = this.createCanvas("universe-canvas", '#universe', 'ext-');
-            canvas.mouseover(this.mouseoverForCelestial).mouseout(this.mouseoutForCelestial);
+            canvas.mouseover(this.mouseoverForCelestial).mouseout(this.mouseoutForCelestial).click(this.clickEventForCelestial);
             this.createUniverseMap();
         }
+    }
+
+    clickEventForCelestial = (event: PointerEvent) => {
+        let id = this.getIdFromEvent(event);
+        if (!this.isCelestialId(id)) {
+            return;
+        }
+
+        const celestialCircle = this.getCelestialByEvent(event);
+        if (!celestialCircle) {
+            return;
+        }
+        // noinspection JSUnusedLocalSymbols
+        let x = celestialCircle.cx();
+        // noinspection JSUnusedLocalSymbols
+        let y = celestialCircle.cy();
+        const celestial = this.getCelestialObjectByID(id);
+        if (!celestial) {
+            return;
+        }
+        this.handleClickedStarSystem(x, y, id);
+    };
+
+    private handleClickedStarSystem(x: number, y: number, id: string) {
+
+        const selectionRemoved = this.removeCyclingCircle(id);
+        if (selectionRemoved) {
+            this.selectedStarSystem = undefined;
+            return;
+        }
+
+        if (!!this.selectedStarSystem) {
+            return;
+        }
+        // add selected system
+        this.drawCyclingCircle(x, y, id, false);
+        this.selectedStarSystem = this.hoveredSystem;
     }
 
     static getStarSystemCircleID(orbit: SimpleCoord): string {
@@ -152,8 +192,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         let sub = this.publicResourcesApiService.getAllWormholeJunctions().subscribe(junctions => {
             junctions.forEach(junction => {
                 junction.termini.forEach(terminus => {
-                    const mainCelestialGroup = this.getOrCreateMainCelestialGroup();
-                    mainCelestialGroup
+                    this.canvas!
                         .line(junction.position.x, junction.position.y, terminus.x, terminus.y)
                         .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
                         .addClass(BasicViewHelperData.WORMHOLE_MARKER)

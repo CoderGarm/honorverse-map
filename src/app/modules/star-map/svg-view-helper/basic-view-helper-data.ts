@@ -10,8 +10,6 @@ import {Coords} from "../../../services/swagger";
 })
 export class BasicViewHelperData extends SubscriptionManager {
 
-    protected static readonly CELESTIAL_MAIN_GROUP = 'celestial-main-group';
-
     protected static readonly GROUP_SELECTOR_SUFFIX: string = "-group";
     protected static readonly CYCLING_CIRCLE_SUFFIX = "-circle-cycle";
     protected static readonly ORBIT_SUFFIX = "-orbit";
