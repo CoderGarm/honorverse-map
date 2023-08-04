@@ -263,6 +263,7 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         this.setTextOptions(text);
         this.setTextById(celestialBodyID, text);
+        return circle;
     }
 
     toggleNames() {
@@ -359,7 +360,6 @@ export class BasicViewHelper extends BasicViewHelperData {
         let parent: Dom = this.canvas!;
         let element: Element | undefined;
         let elements = this.canvas!.children().filter(value => value.id() == id);
-        console.log(id, elements)
         if (elements.length == 1) {
             element = elements[0];
             parent = this.canvas!;

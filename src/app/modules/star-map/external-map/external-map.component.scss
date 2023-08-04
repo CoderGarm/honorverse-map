@@ -24,13 +24,46 @@ $bgColor: black;
   margin-right: 25px;
 }
 
+.celestial-controls {
+  display: inline-grid;
+  grid-column-gap: 0;
+  align-content: center;
+  margin: 0 25px;
+}
+
+app-outlined {
+  background-color: #2E3338;
+  border-radius: 20px;
+}
+
+.map-nav {
+  background-color: #2E3338;
+  z-index: 999;
+  border-radius: 20px;
+  width: 535px;
+}
+
+.coord-control {
+  z-index: 999;
+  max-width: 250px;
+  max-height: 240px;
+}
+
+.control-container {
+  height: fit-content;
+}
+
 .file-upload {
-  width: 50%;
+  max-width: 500px;
   display: inline-block;
 }
 
 .reset-btn {
   float: right;
+}
+
+.kbc-button {
+  height: 38px;
 }
 
 .upload-container {

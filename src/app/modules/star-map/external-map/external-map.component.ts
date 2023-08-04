@@ -39,7 +39,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     selectedStarSystem?: Coords;
 
-    showBackgroundNav: boolean = true; /*fixme*/
+    showBackgroundNav: boolean = true; /*fixme replace by storage "last setting" */
 
     backgroundImage?: File;
     backgroundScaleX: number = 100;
@@ -143,7 +143,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     mouseoutForCelestial = () => {
-        this.hoveredSystem = this.center;
+        this.hoveredSystem = !!this.selectedStarSystem ? this.selectedStarSystem : this.center;
     }
 
     mouseoverForCelestial = (event: PointerEvent) => {
@@ -223,7 +223,52 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.backgroundTranslateY = 0;
         htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
-        /* fixme add reset button*/
+    }
+
+    private handlePosChange(key: string) {
+        console.log(key)
+        if (!this.selectedStarSystem) {
+            return;
+        }
+
+        let celestialBodyID = this.getCelestialBodyID(this.selectedStarSystem);
+        let celestialByID = this.getCelestialByID(celestialBodyID);
+        if (!!celestialByID) {
+            this.canvas!.removeElement(celestialByID);
+        }
+
+        let roundCapMarkers = this.canvas!.children()
+            .filter(c => c.id() === celestialBodyID + BasicViewHelperData.ROUND_CAP_SUFFIX);
+        roundCapMarkers.forEach(m => this.canvas!.removeElement(m));
+
+        this.removeCyclingCircle(celestialBodyID);
+
+        switch (key) {
+            case 'i':
+                this.selectedStarSystem.y -= 1;
+                break;
+            case 'k':
+                this.selectedStarSystem.y += 1;
+                break;
+            case 'j':
+                this.selectedStarSystem.x -= 1;
+                break;
+            case 'l':
+                this.selectedStarSystem.x += 1;
+                break;
+            default:
+                break;
+        }
+
+        let selectedColor = this.colorByCircle.has(celestialBodyID) ? this.colorByCircle.get(celestialBodyID)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
+        let orbitDefinition: OrbitDefinition = {
+            celestial: this.selectedStarSystem,
+            color: selectedColor,
+            isMain: false
+        };
+        let circle = this.drawCelestial(orbitDefinition);
+        this.colorByCircle.set(circle.id(), selectedColor);
+        this.drawCyclingCircle(this.selectedStarSystem.x, this.selectedStarSystem.y, circle.id(), false);
     }
 
     handleButtonPress(key: string) {
@@ -234,7 +279,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 this.backgroundScaleY *= 1.01;
                 break;
             case '-':
-                this.backgroundScaleX -= this.backgroundScaleX * 0.01; /* fixme how detailed to scroll */
+                this.backgroundScaleX -= this.backgroundScaleX * 0.01;
                 this.backgroundScaleY -= this.backgroundScaleY * 0.01;
                 break;
             case 'w':
@@ -260,6 +305,12 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 break;
             case 'ArrowRight':
                 this.backgroundScaleX *= 1.01;
+                break;
+            case 'i':
+            case 'k':
+            case 'j':
+            case 'l':
+                this.handlePosChange(key);
                 break;
             default:
                 break;

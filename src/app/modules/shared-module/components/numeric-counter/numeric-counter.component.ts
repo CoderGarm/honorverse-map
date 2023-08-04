@@ -23,7 +23,7 @@ export class NumericCounterComponent implements OnInit, OnChanges {
      * defines the minimum value
      */
     @Input()
-    min: number = 0;
+    min: number = -Number.MAX_VALUE;
 
     /**
      * defines the maximum value
