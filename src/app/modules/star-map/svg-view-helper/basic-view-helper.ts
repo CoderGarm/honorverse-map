@@ -1,18 +1,4 @@
-import {
-    ArrayXY,
-    Circle,
-    CurveCommand,
-    Dom,
-    Element,
-    G,
-    LineCommand,
-    Path,
-    PathArrayAlias,
-    StrokeData,
-    SVG,
-    Svg,
-    Text
-} from "@svgdotjs/svg.js";
+import {ArrayXY, Circle, CurveCommand, Dom, Element, G, LineCommand, Path, PathArrayAlias, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
 import {Component, HostListener} from "@angular/core";
 import {BasicViewHelperData} from "./basic-view-helper-data";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -42,9 +28,6 @@ export class BasicViewHelper extends BasicViewHelperData {
     constructor() {
         super();
     }
-
-    // noinspection CssConvertColorToRgbInspection
-    protected static readonly STROKE_CYCLING_CIRCLE: StrokeData = {color: "orange", width: 3, dasharray: "15px"}; // $metal-glance in variables
 
     protected static readonly ROUND_CAP_MARKER_X_PIXEL_SHIFT: number = 9;
     protected static readonly ROUND_CAP_MARKER_Y_PIXEL_SHIFT: number = 8;
@@ -381,7 +364,6 @@ export class BasicViewHelper extends BasicViewHelperData {
             const radius = this.getRadius(element, zoomFactor);
             const circle = new Circle().x(x).y(y)
                 .radius(radius)
-                .stroke(this.zoomStroke(BasicViewHelper.STROKE_CYCLING_CIRCLE))
                 .addClass(BasicViewHelper.CYCLING_CIRCLE_MARKER)
                 .addClass(BasicViewHelper.CLICKABLE_CSS_CLASS)
                 .addClass(BasicViewHelperData.ICON_ID_MARKER + id)

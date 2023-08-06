@@ -1,5 +1,5 @@
 <div id="external-map">
-    <div class="info-div" *ngIf="!!hoveredSystem">
+    <div class="info-div flex-items-container" *ngIf="!!hoveredSystem">
         <mat-form-field appearance="outline">
             <mat-label>System</mat-label>
             <input matInput disabled value="{{hoveredSystem.name}}">
@@ -38,88 +38,87 @@
                 matTooltip="Upload coordinates">
             <mat-icon>file_upload</mat-icon>
         </button>
+    </div>
 
-        <div class="control-container flex-items-container">
+    <div class="control-container flex-items-container">
+        <div *ngIf="showBackgroundNav" class="map-nav">
+            <app-outlined titleValue="Background controls">
+                <div class="upload-container">
+                    <app-file-upload
+                            class="file-upload"
+                            (upload)="setBackground($event)"></app-file-upload>
+                    <button mat-raised-button color="primary"
+                            class="reset-btn"
+                            [disabled]="!backgroundImage"
+                            (click)="resetBackgroundModification()">
+                        Reset Background modification
+                    </button>
+                </div>
+                <div class="controls">
+                    <button class="kbc-button key-up"
+                            (click)="handleButtonPress('w')"
+                            [disabled]="!backgroundImage">W
+                    </button>
+                    <button class="kbc-button key-left" (click)="handleButtonPress('a')"
+                            [disabled]="!backgroundImage">A
+                    </button>
+                    <button class="kbc-button key-down" (click)="handleButtonPress('s')"
+                            [disabled]="!backgroundImage">S
+                    </button>
+                    <button class="kbc-button key-right" (click)="handleButtonPress('d')"
+                            [disabled]="!backgroundImage">D
+                    </button>
+                </div>
 
-            <div *ngIf="showBackgroundNav" class="map-nav">
-                <app-outlined titleValue="Background controls">
-                    <div class="upload-container">
-                        <app-file-upload
-                                class="file-upload"
-                                (upload)="setBackground($event)"></app-file-upload>
-                        <button mat-raised-button color="primary"
-                                class="reset-btn"
-                                [disabled]="!backgroundImage"
-                                (click)="resetBackgroundModification()">
-                            Reset Background modification
-                        </button>
-                    </div>
-                    <div class="controls">
-                        <button class="kbc-button key-up"
-                                (click)="handleButtonPress('w')"
-                                [disabled]="!backgroundImage">W
-                        </button>
-                        <button class="kbc-button key-left" (click)="handleButtonPress('a')"
-                                [disabled]="!backgroundImage">A
-                        </button>
-                        <button class="kbc-button key-down" (click)="handleButtonPress('s')"
-                                [disabled]="!backgroundImage">S
-                        </button>
-                        <button class="kbc-button key-right" (click)="handleButtonPress('d')"
-                                [disabled]="!backgroundImage">D
-                        </button>
-                    </div>
+                <div class="controls">
+                    <button class="kbc-button key-up" (click)="handleButtonPress('ArrowUp')"
+                            [disabled]="!backgroundImage">⇧
+                    </button>
+                    <button class="kbc-button key-left" (click)="handleButtonPress('ArrowLeft')"
+                            [disabled]="!backgroundImage">⇦
+                    </button>
+                    <button class="kbc-button key-down" (click)="handleButtonPress('ArrowDown')"
+                            [disabled]="!backgroundImage">⇩
+                    </button>
+                    <button class="kbc-button key-right" (click)="handleButtonPress('ArrowRight')"
+                            [disabled]="!backgroundImage">⇨
+                    </button>
+                </div>
 
-                    <div class="controls">
-                        <button class="kbc-button key-up" (click)="handleButtonPress('ArrowUp')"
-                                [disabled]="!backgroundImage">⇧
-                        </button>
-                        <button class="kbc-button key-left" (click)="handleButtonPress('ArrowLeft')"
-                                [disabled]="!backgroundImage">⇦
-                        </button>
-                        <button class="kbc-button key-down" (click)="handleButtonPress('ArrowDown')"
-                                [disabled]="!backgroundImage">⇩
-                        </button>
-                        <button class="kbc-button key-right" (click)="handleButtonPress('ArrowRight')"
-                                [disabled]="!backgroundImage">⇨
-                        </button>
-                    </div>
+                <div class="plusminus">
+                    <button class="kbc-button key-down" (click)="handleButtonPress('-')"
+                            [disabled]="!backgroundImage">-
+                    </button>
+                    <button class="kbc-button key-up" (click)="handleButtonPress('+')"
+                            [disabled]="!backgroundImage">+
+                    </button>
+                </div>
+            </app-outlined>
+        </div>
 
-                    <div class="plusminus">
-                        <button class="kbc-button key-down" (click)="handleButtonPress('-')"
-                                [disabled]="!backgroundImage">-
-                        </button>
-                        <button class="kbc-button key-up" (click)="handleButtonPress('+')"
-                                [disabled]="!backgroundImage">+
-                        </button>
-                    </div>
-                </app-outlined>
-            </div>
+        <div *ngIf="!!selectedStarSystem" class="coord-control flex-items-container">
+            <app-outlined titleValue="Celestial controls" style="margin: auto;">
+                <div class="celestial-controls">
+                    <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
+                    <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
+                    <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
+                    <button class="kbc-button key-right" (click)="handleButtonPress('l')">L</button>
+                </div>
 
-            <div *ngIf="!!selectedStarSystem" class="coord-control flex-items-container">
-                <app-outlined titleValue="Celestial controls" style="margin: auto;">
-                    <div class="celestial-controls">
-                        <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
-                        <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
-                        <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
-                        <button class="kbc-button key-right" (click)="handleButtonPress('l')">L</button>
-                    </div>
+                <mat-form-field class="name-field">
+                    <input type="text" matInput [(ngModel)]="selectedStarSystem.name" (keyup)="handlePosChange('xxx')">
+                </mat-form-field>
 
-                    <mat-form-field class="name-field">
-                        <input type="text" matInput [(ngModel)]="selectedStarSystem.name" (keyup)="handlePosChange('xxx')">
-                    </mat-form-field>
-
-                </app-outlined>
-            </div>
-            <div *ngIf="showUpload" class="coord-control flex-items-container">
-                <app-outlined titleValue="Upload coordinates" style="margin: auto">
-                    <div class="upload-container">
-                        <app-file-upload
-                                class="file-upload"
-                                (upload)="uploadCoordinates($event)"></app-file-upload>
-                    </div>
-                </app-outlined>
-            </div>
+            </app-outlined>
+        </div>
+        <div *ngIf="showUpload" class="coord-control flex-items-container">
+            <app-outlined titleValue="Upload coordinates" style="margin: auto">
+                <div class="upload-container">
+                    <app-file-upload
+                            class="file-upload"
+                            (upload)="uploadCoordinates($event)"></app-file-upload>
+                </div>
+            </app-outlined>
         </div>
     </div>
 

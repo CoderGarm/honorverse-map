@@ -22,6 +22,7 @@ $bgColor: black;
   display: inline-grid;
   grid-column-gap: 0;
   margin-right: 25px;
+  pointer-events: auto;
 }
 
 .celestial-controls {
@@ -74,6 +75,7 @@ app-outlined {
 
 .upload-container {
   margin-bottom: 25px;
+  pointer-events: auto;
 }
 
 .plusminus {

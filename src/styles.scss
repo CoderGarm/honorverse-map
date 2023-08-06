@@ -289,12 +289,24 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   transform: translateX(-50%);
   width: 50em;
   z-index: 999;
-  padding: 25px;
+  padding: 15px 25px 10px 25px;
   border-radius: 5px 5px 20px 20px;
 
   & .mat-mdc-form-field {
     margin: 15px 15px 0 0;
   }
+}
+
+.control-container {
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%);
+  width: 50em;
+  z-index: 999;
+  padding: 25px;
+  border-radius: 5px 5px 20px 20px;
+  pointer-events: none;
 }
 
 #universe {
@@ -385,6 +397,8 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   transform-origin: center;
   transform-box: fill-box;
   fill: transparent;
+  stroke: orange;
+  stroke-dasharray: 4px;
 }
 
 @keyframes cycling-circle {
