@@ -102,3 +102,7 @@ app-outlined {
 .key-right {
   grid-column-start: 3;
 }
+
+.red {
+  background-image: radial-gradient(black, black, black, black, black, black, $warning-color);
+}

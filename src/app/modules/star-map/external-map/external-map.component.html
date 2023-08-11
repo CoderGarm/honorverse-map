@@ -1,5 +1,5 @@
-<div id="external-map">
-    <div class="info-div flex-items-container" *ngIf="!!hoveredSystem">
+<div id="external-map" [ngClass]="{'red':lockedToBackground}">
+    <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red':lockedToBackground}">
         <mat-form-field appearance="outline">
             <mat-label>System</mat-label>
             <input matInput disabled value="{{hoveredSystem.name}}">
@@ -91,6 +91,12 @@
                     </button>
                     <button class="kbc-button key-up" (click)="handleButtonPress('+')"
                             [disabled]="!backgroundImage">+
+                    </button>
+                </div>
+
+                <div class="plusminus">
+                    <button class="kbc-button key-up" (click)="handleButtonPress('Escape')">
+                        Esc
                     </button>
                 </div>
             </app-outlined>

@@ -49,6 +49,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     backgroundTranslateX: number = 0;
     backgroundTranslateY: number = 0;
 
+    lockedToBackground: boolean = false;
+
     constructor(private route: ActivatedRoute,
                 private publicResourcesApiService: PublicResourcesApiService,
                 private translate: TranslateService) {
@@ -345,6 +347,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
         this.handleButtonPress(event.key);
+        if (event.key == 'Escape') {
+            this.lockedToBackground = !this.lockedToBackground;
+            /* fixme display the lock better and implement relative locking */
+        }
     }
 
     download() {
