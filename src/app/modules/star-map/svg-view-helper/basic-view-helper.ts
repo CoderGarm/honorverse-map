@@ -1,4 +1,18 @@
-import {ArrayXY, Circle, CurveCommand, Dom, Element, G, LineCommand, Path, PathArrayAlias, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
+import {
+    ArrayXY,
+    Circle,
+    CurveCommand,
+    Dom,
+    Element,
+    G,
+    LineCommand,
+    Path,
+    PathArrayAlias,
+    StrokeData,
+    SVG,
+    Svg,
+    Text
+} from "@svgdotjs/svg.js";
 import {Component, HostListener} from "@angular/core";
 import {BasicViewHelperData} from "./basic-view-helper-data";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -34,7 +48,6 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     public static readonly NONE_FILL_COLOR = "none";
 
-    private static readonly COORD_CROSS = "coordCross";
     protected static readonly HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS = "highlighted";
 
     protected static readonly PLANET_RADIUS = 5;
@@ -442,39 +455,12 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     protected override setOrbits(orbits: OrbitDefinition[]) {
         super.setOrbits(orbits);
-        this.createPolarCoordinateSystem();
+        this.detectBoundaries();
     }
 
-    private createPolarCoordinateSystem() {
+    private detectBoundaries() {
         let {x, y} = this.getWidestExpanse();
-        this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y);
-        this.radiusOfCoordinateCross *= 1.1;
-
-        this.createLocalPolarCoordinateSystem(0, 0, this.radiusOfCoordinateCross, 'main');
-    }
-
-    protected createLocalPolarCoordinateSystem(xBase: number, yBase: number, radius: number, idPrefix: string) {
-        let steps = 6;
-        const radiusSteps = radius / steps;
-        for (let i = 1; i < steps; i++) {
-            this.canvas!.circle()
-                .x(xBase)
-                .y(yBase)
-                .fill(BasicViewHelper.NONE_FILL_COLOR)
-                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + i)
-                .addClass(this.externalMapPrefix + BasicViewHelper.COORD_CROSS)
-                .radius(radiusSteps * i);
-        }
-        const degree = 12;
-        for (let j = 1; j <= 30; j++) {
-            const angle = j * degree;
-            const x = radius * Math.cos(angle * Math.PI / 180);
-            const y = radius * Math.sin(angle * Math.PI / 180);
-            const points: ArrayXY[] = [[xBase, yBase], [xBase + x, yBase + y]];
-            this.canvas!.line(points)
-                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + "-line" + j)
-                .addClass(this.externalMapPrefix + BasicViewHelper.COORD_CROSS)
-        }
+        this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y) * 1.1;
     }
 
     /**

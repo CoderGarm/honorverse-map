@@ -226,6 +226,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                         .line(junction.position.x, junction.position.y, terminus.x, terminus.y)
                         .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
                         .addClass(BasicViewHelperData.WORMHOLE_MARKER)
+                        .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
                         .stroke({width: 1, color: 'irrelevant'});
                 });
             });
@@ -242,6 +243,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         if (file) {
             reader.readAsDataURL(file);
             this.resetBackgroundModification();
+            this.canvas!.children().filter(c => c.classes().includes(ExternalMapComponent.WORMHOLE_MARKER))
+                .forEach(c => c.removeClass(ExternalMapComponent.LOW_OPACITY_MARKER));
         }
     }
 
@@ -258,6 +261,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.backgroundTranslateY = 0;
         htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
+
+        this.canvas!.children().filter(c => c.classes().includes(ExternalMapComponent.WORMHOLE_MARKER))
+            .forEach(c => c.addClass(ExternalMapComponent.LOW_OPACITY_MARKER));
+
     }
 
     handlePosChange(key: string) {
@@ -306,12 +313,15 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     handleButtonPress(key: string) {
-        let htmlElement = document.getElementById('universe')!;
 
         if (this.controlsInvalid(key)) {
             return;
         }
 
+        let htmlElement = document.getElementById('universe')!;
+        let viewBox = this.canvas!.viewbox();
+        console.log("1:", document.getElementById('universe')!.style.backgroundPosition)
+        console.log("1:", this.canvas!.viewbox())
         switch (key) {
             case '+':
                 this.backgroundScaleX *= 1.01;
@@ -323,15 +333,29 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 break;
             case 'w':
                 this.backgroundTranslateY += 10;
+                if (this.lockedToBackground) {
+                    /* fixme find reason for different speed from image */
+                    /* fixme find scaling mechanism to fit image to displayed map */
+                    this.canvas?.viewbox(viewBox.x, viewBox.y - 10, viewBox.height, viewBox.width);
+                }
                 break;
             case 's':
                 this.backgroundTranslateY -= 10;
+                if (this.lockedToBackground) {
+                    this.canvas?.viewbox(viewBox.x, viewBox.y + 10, viewBox.height, viewBox.width);
+                }
                 break;
             case 'a':
                 this.backgroundTranslateX -= 10;
+                if (this.lockedToBackground) {
+                    this.canvas?.viewbox(viewBox.x + 10, viewBox.y, viewBox.height, viewBox.width);
+                }
                 break;
             case 'd':
                 this.backgroundTranslateX += 10;
+                if (this.lockedToBackground) {
+                    this.canvas?.viewbox(viewBox.x - 10, viewBox.y, viewBox.height, viewBox.width);
+                }
                 break;
             case 'ArrowUp':
                 this.backgroundScaleY *= 1.01;
@@ -360,6 +384,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
         htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
+        console.log("2:", document.getElementById('universe')!.style.backgroundPosition)
+        console.log("2:", this.canvas!.viewbox())
     }
 
     private setPanZoomByLockState() {

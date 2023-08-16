@@ -323,15 +323,11 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   contain: paint;
 }
 
-.coordCross {
-  stroke: cadetblue;
-  stroke-width: 1;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+.low-opacity {
+  opacity: 0.5;
 }
 
 .wormhole {
-  opacity: 0.3; /* fixme remove opacity when image load */
   stroke: dimgray;
 }
 
