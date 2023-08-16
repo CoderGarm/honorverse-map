@@ -22,6 +22,11 @@ button {
   pointer-events: auto;
 }
 
+.control-container-block {
+  width: fit-content;
+  display: block;
+}
+
 .controls {
   pointer-events: auto;
   display: inline-grid;
@@ -52,7 +57,7 @@ app-outlined {
   background-color: #2E3338;
   z-index: 999;
   border-radius: 20px;
-  width: 535px;
+  width: 550px;
 }
 
 .coord-control {
@@ -79,16 +84,12 @@ app-outlined {
 }
 
 .upload-container {
-  height: 100px;
   margin-bottom: 25px;
   pointer-events: auto;
 }
 
 .plusminus, .locking {
   pointer-events: auto;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .plusminus > button {

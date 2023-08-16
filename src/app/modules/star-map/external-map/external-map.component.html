@@ -43,68 +43,81 @@
     <div class="control-container flex-items-container">
         <div *ngIf="showBackgroundNav" class="map-nav">
             <app-outlined titleValue="Background controls">
-                <div class="upload-container">
-                    <app-file-upload
-                            class="file-upload"
-                            (upload)="setBackground($event)"></app-file-upload>
-                    <button mat-raised-button color="primary"
-                            class="reset-btn"
-                            [disabled]="!backgroundImage"
-                            (click)="removeBackground()">
-                        Remove Background
-                    </button>
-                    <button mat-raised-button color="primary"
-                            class="reset-btn"
-                            [disabled]="!backgroundImage"
-                            (click)="resetBackgroundModification()">
-                        Reset Background modification
-                    </button>
-                </div>
-                <div class="controls">
-                    <button class="kbc-button key-up"
-                            (click)="handleButtonPress('w')"
-                            [disabled]="!backgroundImage">W
-                    </button>
-                    <button class="kbc-button key-left" (click)="handleButtonPress('a')"
-                            [disabled]="!backgroundImage">A
-                    </button>
-                    <button class="kbc-button key-down" (click)="handleButtonPress('s')"
-                            [disabled]="!backgroundImage">S
-                    </button>
-                    <button class="kbc-button key-right" (click)="handleButtonPress('d')"
-                            [disabled]="!backgroundImage">D
-                    </button>
-                </div>
+                <app-outlined titleValue="Move background">
+                    <div class="upload-container">
+                        <app-file-upload
+                                class="file-upload"
+                                (upload)="setBackground($event)"></app-file-upload>
+                        <button mat-raised-button color="primary"
+                                class="reset-btn"
+                                [disabled]="!backgroundImage"
+                                (click)="removeBackground()">
+                            Remove Background
+                        </button>
+                        <button mat-raised-button color="primary"
+                                class="reset-btn"
+                                [disabled]="!backgroundImage"
+                                (click)="resetBackgroundModification()">
+                            Reset Background modification
+                        </button>
+                    </div>
+                </app-outlined>
 
-                <div class="controls">
-                    <button class="kbc-button key-up" (click)="handleButtonPress('ArrowUp')"
-                            [disabled]="!backgroundImage">⇧
-                    </button>
-                    <button class="kbc-button key-left" (click)="handleButtonPress('ArrowLeft')"
-                            [disabled]="!backgroundImage">⇦
-                    </button>
-                    <button class="kbc-button key-down" (click)="handleButtonPress('ArrowDown')"
-                            [disabled]="!backgroundImage">⇩
-                    </button>
-                    <button class="kbc-button key-right" (click)="handleButtonPress('ArrowRight')"
-                            [disabled]="!backgroundImage">⇨
-                    </button>
-                </div>
+                <div class="flex-items-container">
+                    <app-outlined titleValue="Move background" class="control-container-block">
+                        <div class="controls">
+                            <button class="kbc-button key-up"
+                                    (click)="handleButtonPress('w')"
+                                    [disabled]="!backgroundImage">W
+                            </button>
+                            <button class="kbc-button key-left" (click)="handleButtonPress('a')"
+                                    [disabled]="!backgroundImage">A
+                            </button>
+                            <button class="kbc-button key-down" (click)="handleButtonPress('s')"
+                                    [disabled]="!backgroundImage">S
+                            </button>
+                            <button class="kbc-button key-right" (click)="handleButtonPress('d')"
+                                    [disabled]="!backgroundImage">D
+                            </button>
+                        </div>
+                    </app-outlined>
 
-                <div class="plusminus">
-                    <button class="kbc-button key-down" (click)="handleButtonPress('-')"
-                            [disabled]="!backgroundImage">-
-                    </button>
-                    <button class="kbc-button key-up" (click)="handleButtonPress('+')"
-                            [disabled]="!backgroundImage">+
-                    </button>
-                </div>
+                    <app-outlined titleValue="Stretch background" class="control-container-block">
+                        <div class="controls">
+                            <button class="kbc-button key-up" (click)="handleButtonPress('ArrowUp')"
+                                    [disabled]="!backgroundImage">⇧
+                            </button>
+                            <button class="kbc-button key-left" (click)="handleButtonPress('ArrowLeft')"
+                                    [disabled]="!backgroundImage">⇦
+                            </button>
+                            <button class="kbc-button key-down" (click)="handleButtonPress('ArrowDown')"
+                                    [disabled]="!backgroundImage">⇩
+                            </button>
+                            <button class="kbc-button key-right" (click)="handleButtonPress('ArrowRight')"
+                                    [disabled]="!backgroundImage">⇨
+                            </button>
+                        </div>
+                    </app-outlined>
 
-                <div class="locking">
-                    <button class="kbc-button key-up" (click)="handleButtonPress('Escape')"
-                            [disabled]="!backgroundImage">
-                        Esc
-                    </button>
+                    <app-outlined titleValue="Zoom background" class="control-container-block">
+                        <div class="plusminus">
+                            <button class="kbc-button key-down" (click)="handleButtonPress('-')"
+                                    [disabled]="!backgroundImage">-
+                            </button>
+                            <button class="kbc-button key-up" (click)="handleButtonPress('+')"
+                                    [disabled]="!backgroundImage">+
+                            </button>
+                        </div>
+                    </app-outlined>
+
+                    <app-outlined titleValue="Relative Locking" class="control-container-block">
+                        <div class="locking">
+                            <button class="kbc-button key-up" (click)="handleButtonPress('Escape')"
+                                    [disabled]="!backgroundImage">
+                                Esc
+                            </button>
+                        </div>
+                    </app-outlined>
                 </div>
             </app-outlined>
         </div>
@@ -115,7 +128,8 @@
                     <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
                     <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
                     <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
-                    <button mat-mini-fab color="primary" (click)="zoomTo()" matTooltip="Zoom to target" class="zoom-btn">
+                    <button mat-mini-fab color="primary" (click)="zoomTo()" matTooltip="Zoom to target"
+                            class="zoom-btn">
                         <mat-icon>zoom_in_map</mat-icon>
                     </button>
                     <button class="kbc-button key-right" (click)="handleButtonPress('l')">L</button>
