@@ -353,6 +353,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 break;
             case 'Escape':
                 this.lockedToBackground = !this.lockedToBackground;
+                this.setPanZoomByLockState();
                 break;
             default:
                 break;
@@ -361,13 +362,18 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
     }
 
+    private setPanZoomByLockState() {
+        // @ts-ignore
+        let opts = this.lockedToBackground ? {panning: false} : ExternalMapComponent.PAN_ZOOM_OPTIONS;
+        this.canvas?.panZoom(opts);
+    }
+
     @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
         this.handleButtonPress(event.key);
     }
 
     download() {
-
         const result: Coords[] = [];
         let stars = this.canvas!.children()
             .filter(c => c.classes().filter(css => css === BasicViewHelperData.STAR_MARKER).length > 0);
