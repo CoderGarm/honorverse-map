@@ -12,6 +12,7 @@ import {
 } from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval} from "rxjs";
+import {Point} from "@svgdotjs/svg.js";
 
 @Component({
     selector: 'app-external-map',
@@ -100,7 +101,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         if (length == 0) {
             // called twice but never cleared why
             const canvas = this.createCanvas("universe-canvas", '#universe', 'ext-');
-            canvas.mouseover(this.mouseoverForCelestial).mouseout(this.mouseoutForCelestial).click(this.clickEventForCelestial);
+            canvas
+                .mouseover(this.mouseoverForCelestial)
+                .mouseout(this.mouseoutForCelestial)
+                .click(this.clickEventForCelestial);
         }
     }
 
@@ -241,6 +245,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
     }
 
+    removeBackground() {
+        this.resetBackgroundModification();
+        document.getElementById('universe')!.style.backgroundImage = "";
+    }
+
     resetBackgroundModification() {
         let htmlElement = document.getElementById('universe')!;
         this.backgroundScaleX = 100;
@@ -298,6 +307,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     handleButtonPress(key: string) {
         let htmlElement = document.getElementById('universe')!;
+
+        if (this.controlsInvalid(key)) {
+            return;
+        }
+
         switch (key) {
             case '+':
                 this.backgroundScaleX *= 1.01;
@@ -337,6 +351,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             case 'l':
                 this.handlePosChange(key);
                 break;
+            case 'Escape':
+                this.lockedToBackground = !this.lockedToBackground;
+                break;
             default:
                 break;
         }
@@ -347,10 +364,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
         this.handleButtonPress(event.key);
-        if (event.key == 'Escape') {
-            this.lockedToBackground = !this.lockedToBackground;
-            /* fixme display the lock better and implement relative locking */
-        }
     }
 
     download() {
@@ -377,4 +390,37 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         element.click();
         document.body.removeChild(element);
     }
+
+    zoomTo() {
+        if (!this.selectedStarSystem) {
+            return;
+        }
+        let x = this.selectedStarSystem!.x!;
+        let y = this.selectedStarSystem!.y!;
+        this.canvas!.zoom(0).animate().zoom(2, new Point(x, y));
+    }
+
+    private controlsInvalid(key: string) {
+        switch (key) {
+            case '+':
+            case '-':
+            case 'w':
+            case 's':
+            case 'a':
+            case 'd':
+            case 'ArrowUp':
+            case 'ArrowDown':
+            case 'ArrowLeft':
+            case 'ArrowRight':
+            default:
+            case 'Escape':
+                return !this.backgroundImage;
+            case 'i':
+            case 'k':
+            case 'j':
+            case 'l':
+                return false;
+        }
+    }
+
 }

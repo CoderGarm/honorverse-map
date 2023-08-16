@@ -18,14 +18,19 @@ $bgColor: black;
   color: $success;
 }
 
-.controls {
-  display: inline-grid;
-  grid-column-gap: 0;
-  margin-right: 25px;
+button {
   pointer-events: auto;
 }
 
+.controls {
+  pointer-events: auto;
+  display: inline-grid;
+  grid-column-gap: 0;
+  margin-right: 25px;
+}
+
 .celestial-controls {
+  pointer-events: auto;
   display: inline-grid;
   grid-column-gap: 0;
   align-content: center;
@@ -74,18 +79,24 @@ app-outlined {
 }
 
 .upload-container {
+  height: 100px;
   margin-bottom: 25px;
   pointer-events: auto;
 }
 
-.plusminus {
+.plusminus, .locking {
+  pointer-events: auto;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
 }
 
 .plusminus > button {
-  width: 40px;
+  width: 30px;
+}
+
+.locking > button {
+  width: 50px;
 }
 
 .key-up {
@@ -103,6 +114,13 @@ app-outlined {
   grid-column-start: 3;
 }
 
+.zoom-btn {
+  grid-row-start: 1;
+  grid-column-start: 3;
+  top: 10px;
+  left: 5px;
+}
+
 .red {
-  background-image: radial-gradient(black, black, black, black, black, black, $warning-color);
+  background-image: radial-gradient(transparent, transparent, transparent, $warning-color);
 }

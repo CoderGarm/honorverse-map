@@ -1,4 +1,4 @@
-<div id="external-map" [ngClass]="{'red':lockedToBackground}">
+<div id="external-map">
     <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red':lockedToBackground}">
         <mat-form-field appearance="outline">
             <mat-label>System</mat-label>
@@ -50,6 +50,12 @@
                     <button mat-raised-button color="primary"
                             class="reset-btn"
                             [disabled]="!backgroundImage"
+                            (click)="removeBackground()">
+                        Remove Background
+                    </button>
+                    <button mat-raised-button color="primary"
+                            class="reset-btn"
+                            [disabled]="!backgroundImage"
                             (click)="resetBackgroundModification()">
                         Reset Background modification
                     </button>
@@ -94,8 +100,9 @@
                     </button>
                 </div>
 
-                <div class="plusminus">
-                    <button class="kbc-button key-up" (click)="handleButtonPress('Escape')">
+                <div class="locking">
+                    <button class="kbc-button key-up" (click)="handleButtonPress('Escape')"
+                            [disabled]="!backgroundImage">
                         Esc
                     </button>
                 </div>
@@ -108,6 +115,9 @@
                     <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
                     <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
                     <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
+                    <button mat-mini-fab color="primary" (click)="zoomTo()" matTooltip="Zoom to target" class="zoom-btn">
+                        <mat-icon>zoom_in_map</mat-icon>
+                    </button>
                     <button class="kbc-button key-right" (click)="handleButtonPress('l')">L</button>
                 </div>
 
