@@ -128,7 +128,9 @@
                     <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
                     <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
                     <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
-                    <button mat-mini-fab color="primary" (click)="zoomTo()" matTooltip="Zoom to target"
+                    <button mat-mini-fab color="primary" (click)="zoomTo()"
+                            [disabled]="lockedToBackground"
+                            matTooltip="Zoom to target"
                             class="zoom-btn">
                         <mat-icon>zoom_in_map</mat-icon>
                     </button>

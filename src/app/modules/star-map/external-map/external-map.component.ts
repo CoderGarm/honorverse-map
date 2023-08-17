@@ -45,8 +45,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     showUpload: boolean = false;
 
     backgroundImage?: File;
-    backgroundScaleX: number = 100;
-    backgroundScaleY: number = 100;
     backgroundTranslateX: number = 0;
     backgroundTranslateY: number = 0;
 
@@ -236,9 +234,18 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     setBackground(file: File) {
         this.backgroundImage = file;
+
+        let newImg = new Image();
+        newImg.onload = function (e) {
+            let htmlElement = document.getElementById('universe')!;
+            htmlElement.style.backgroundSize = newImg.naturalWidth + "px " + newImg.naturalHeight + "px";
+        }
+
         let reader = new FileReader();
         reader.onloadend = function () {
             document.getElementById('universe')!.style.backgroundImage = "url(" + reader.result + ")";
+            newImg.src = document.getElementById('universe')!.style.backgroundImage
+                .replace(/(?:^url\(["']?|["']?\)$)/g, "");
         }
         if (file) {
             reader.readAsDataURL(file);
@@ -255,11 +262,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     resetBackgroundModification() {
         let htmlElement = document.getElementById('universe')!;
-        this.backgroundScaleX = 100;
-        this.backgroundScaleY = 100;
         this.backgroundTranslateX = 0;
         this.backgroundTranslateY = 0;
-        htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
+        htmlElement.style.backgroundSize = "100% " + "100%";
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
 
         this.canvas!.children().filter(c => c.classes().includes(ExternalMapComponent.WORMHOLE_MARKER))
@@ -319,17 +324,25 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
 
         let htmlElement = document.getElementById('universe')!;
+
+        let backgroundSize = htmlElement.style.backgroundSize;
+        let split = backgroundSize.split(' ');
+        let backgroundScaleX = Number.parseFloat(
+            split[0].replaceAll('px', '').replaceAll('%', ''));
+        let backgroundScaleY = Number.parseFloat(
+            split[1].replaceAll('px', '').replaceAll('%', ''));
+
         let viewBox = this.canvas!.viewbox();
-        console.log("1:", document.getElementById('universe')!.style.backgroundPosition)
-        console.log("1:", this.canvas!.viewbox())
+        //console.log("1:", document.getElementById('universe')!.style.backgroundPosition)
+        //console.log("1:", this.canvas!.viewbox())
         switch (key) {
             case '+':
-                this.backgroundScaleX *= 1.01;
-                this.backgroundScaleY *= 1.01;
+                backgroundScaleX *= 1.01;
+                backgroundScaleY *= 1.01;
                 break;
             case '-':
-                this.backgroundScaleX -= this.backgroundScaleX * 0.01;
-                this.backgroundScaleY -= this.backgroundScaleY * 0.01;
+                backgroundScaleX -= backgroundScaleX * 0.01;
+                backgroundScaleY -= backgroundScaleY * 0.01;
                 break;
             case 'w':
                 this.backgroundTranslateY += 10;
@@ -358,16 +371,16 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 }
                 break;
             case 'ArrowUp':
-                this.backgroundScaleY *= 1.01;
+                backgroundScaleY *= 1.01;
                 break;
             case 'ArrowDown':
-                this.backgroundScaleY -= this.backgroundScaleY * 0.01;
+                backgroundScaleY -= backgroundScaleY * 0.01;
                 break;
             case 'ArrowLeft':
-                this.backgroundScaleX -= this.backgroundScaleX * 0.01;
+                backgroundScaleX -= backgroundScaleX * 0.01;
                 break;
             case 'ArrowRight':
-                this.backgroundScaleX *= 1.01;
+                backgroundScaleX *= 1.01;
                 break;
             case 'i':
             case 'k':
@@ -382,15 +395,15 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             default:
                 break;
         }
-        htmlElement.style.backgroundSize = this.backgroundScaleX + "% " + this.backgroundScaleY + "%";
+        htmlElement.style.backgroundSize = backgroundScaleX + "px " + backgroundScaleY + "px";
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
-        console.log("2:", document.getElementById('universe')!.style.backgroundPosition)
-        console.log("2:", this.canvas!.viewbox())
+        //console.log("2:", document.getElementById('universe')!.style.backgroundPosition)
+        //console.log("2:", this.canvas!.viewbox())
     }
 
     private setPanZoomByLockState() {
         // @ts-ignore
-        let opts = this.lockedToBackground ? {panning: false} : ExternalMapComponent.PAN_ZOOM_OPTIONS;
+        let opts = this.lockedToBackground ? {panning: false, wheelZoom: false} : ExternalMapComponent.PAN_ZOOM_OPTIONS;
         this.canvas?.panZoom(opts);
     }
 
@@ -404,7 +417,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         let stars = this.canvas!.children()
             .filter(c => c.classes().filter(css => css === BasicViewHelperData.STAR_MARKER).length > 0);
         stars.forEach(celestial => {
-            let celestialBodyID = celestial.id();
             let name = celestial.classes().filter(c => c.startsWith('name'))[0].split('<>')[1].replaceAll('<|>', ' ');
             result.push({
                 name: name,
