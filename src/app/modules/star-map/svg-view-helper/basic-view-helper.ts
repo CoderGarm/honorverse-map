@@ -34,7 +34,7 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     public static readonly PAN_ZOOM_OPTIONS = {
         // https://github.com/svgdotjs/svg.panzoom.js/blob/master/readme.md
-        zoomFactor: 0.3, // zooming per wheel tick
+        zoomFactor: 0.01, // zooming per wheel tick
         zoomMin: 0.1, // zoom max out to display the full svg payload as 20% of the screen
         zoomMax: 4 // zoom max 4 times in
     };
@@ -453,36 +453,37 @@ export class BasicViewHelper extends BasicViewHelperData {
         return Math.sqrt(Math.pow(firstCoordinate, 2) + Math.pow(secondCoordinate, 2));
     }
 
-    protected override setOrbits(orbits: OrbitDefinition[]) {
-        super.setOrbits(orbits);
-        this.detectBoundaries();
+    protected getWidestExpanse(): { x: number, y: number } {
+        let coords = this.orbits!.sort((a, b) => a.x - b.x);
+
+        let smallestX = this.orbits!.reduce((a, b) => a.x >= b.x ? b : a).x;
+        let biggestX = this.orbits!.reduce((a, b) => a.x >= b.x ? a : b).x;
+        let smallestY = this.orbits!.reduce((a, b) => a.y >= b.y ? b : a).y;
+        let biggestY = this.orbits!.reduce((a, b) => a.y >= b.y ? a : b).y;
+
+        let x = Math.max(Math.abs(smallestX), Math.abs(biggestX));
+        let y = Math.max(Math.abs(smallestY), Math.abs(biggestY));
+
+        return {x, y};
     }
 
-    private detectBoundaries() {
+    public setViewBox(orbit: Coords) {
+
         let {x, y} = this.getWidestExpanse();
-        this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y) * 1.1;
-    }
+        let radius = BasicViewHelper.calculateDistance(x, y) / 3; /* todo factor must be parametrized */
+        let width = radius;
+        let height = radius;
+        let startX = -width;
+        let startY = -height / this.aspectRatio;
 
-    /**
-     * returns the view box string for the svg
-     */
-    public setViewBox(orbit: Coords | undefined, factor: number) {
-        let viewBoxDef: string = "0 0 0 0";
-        if (!!this.radiusOfCoordinateCross) {
-            let width = this.radiusOfCoordinateCross! * factor;
-            let height = this.radiusOfCoordinateCross! * factor;
-            let startX = -width;
-            let startY = -height / this.aspectRatio;
-
-            let xOffset = 0;
-            let yOffset = 0;
-            if (!!orbit) {
-                xOffset = orbit.x;
-                yOffset = orbit.y;
-            }
-
-            viewBoxDef = (startX + xOffset) + " " + (startY + yOffset) + " " + width * 2 + " " + height * 2;
+        let xOffset = 0;
+        let yOffset = 0;
+        if (!!orbit) {
+            xOffset = orbit.x;
+            yOffset = orbit.y;
         }
+
+        let viewBoxDef: string = (startX + xOffset) + " " + (startY + yOffset) + " " + width * 2 + " " + height * 2;
         this.canvas!.viewbox(viewBoxDef);
     }
 }

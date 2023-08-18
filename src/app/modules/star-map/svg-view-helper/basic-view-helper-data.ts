@@ -34,14 +34,7 @@ export class BasicViewHelperData extends SubscriptionManager {
     protected static readonly CENTER_COORDINATES_MARKER = "center-";
     protected static readonly CENTER_COORDINATES_SEPARATOR = "|";
 
-    private orbits?: Coords[];
-
-    private smallestXOrbit?: Coords;
-    private biggestXOrbit?: Coords;
-    private smallestYOrbit?: Coords;
-    private biggestYOrbit?: Coords;
-
-    protected radiusOfCoordinateCross?: number;
+    protected orbits?: Coords[];
 
     private textById: Map<string, Text> = new Map<string, Text>();
     private celestialObjectById: Map<string, Coords> = new Map<string, Coords>();
@@ -66,37 +59,6 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     protected getCelestialBodyIDs(): string[] {
         return Array.from(this.celestialBodyById.keys());
-    }
-
-    private sortByOrbit() {
-        if (!this.orbits) {
-            throw new Error("The orbits must be present to calculate the map view.");
-        }
-        let sortedByX: Coords[] = this.orbits.sort((a, b) => {
-            return a.x < b.x ? -1 : 1;
-        });
-        this.smallestXOrbit = sortedByX[0];
-        this.biggestXOrbit = sortedByX[sortedByX.length - 1];
-        let sortedByY: Coords[] = this.orbits.sort((a, b) => {
-            return a.y < b.y ? -1 : 1;
-        });
-        this.smallestYOrbit = sortedByY[0];
-        this.biggestYOrbit = sortedByY[sortedByY.length - 1];
-    }
-
-    protected getWidestExpanse(): { x: number, y: number } {
-        let x = 100;
-        let y = 100;
-        if (!!this.smallestXOrbit && !!this.smallestYOrbit && !!this.biggestXOrbit && !!this.biggestYOrbit) {
-            // getting biggest, absolute coord because
-            let minXCoord = Math.abs(this.smallestXOrbit.x);
-            let maxXCoord = Math.abs(this.biggestXOrbit.x);
-            x = Math.max(minXCoord, maxXCoord);
-            let minYCoord = Math.abs(this.smallestYOrbit.y);
-            let maxYCoord = Math.abs(this.biggestYOrbit.y);
-            y = Math.max(minYCoord, maxYCoord);
-        }
-        return {x, y};
     }
 
     protected getOrDefaultZoomFactor(zoomFactor?: number) {
@@ -192,6 +154,5 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     protected setOrbits(orbits: OrbitDefinition[]) {
         this.orbits = orbits.map(od => od.celestial);
-        this.sortByOrbit();
     }
 }

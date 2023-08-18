@@ -12,7 +12,7 @@ export class InterstellarViewHelper extends BasicViewHelper {
     drawOrbits(orbits: OrbitDefinition[]) {
         this.setOrbits(orbits);
         const homeDef = orbits.filter(od => od.isMain)[0];
-        this.setViewBox(homeDef.celestial, 0.2);
+        this.setViewBox(homeDef.celestial);
 
         orbits.forEach(orbitDefinition => this.drawCelestial(orbitDefinition));
     }
