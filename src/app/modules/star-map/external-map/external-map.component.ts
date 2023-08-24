@@ -324,17 +324,13 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
 
         let htmlElement = document.getElementById('universe')!;
-
-        let backgroundSize = htmlElement.style.backgroundSize;
-        let split = backgroundSize.split(' ');
+        let split = htmlElement.style.backgroundSize.split(' ');
         let backgroundScaleX = Number.parseFloat(
             split[0].replaceAll('px', '').replaceAll('%', ''));
         let backgroundScaleY = Number.parseFloat(
             split[1].replaceAll('px', '').replaceAll('%', ''));
 
         let viewBox = this.canvas!.viewbox();
-        //console.log("1:", document.getElementById('universe')!.style.backgroundPosition)
-        //console.log("1:", this.canvas!.viewbox())
         switch (key) {
             case '+':
                 backgroundScaleX *= 1.01;
@@ -345,29 +341,27 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 backgroundScaleY -= backgroundScaleY * 0.01;
                 break;
             case 'w':
-                this.backgroundTranslateY += 10;
+                this.backgroundTranslateY += backgroundScaleY * 0.01;
                 if (this.lockedToBackground) {
-                    /* fixme find reason for different speed from image */
-                    /* fixme find scaling mechanism to fit image to displayed map */
-                    this.canvas?.viewbox(viewBox.x, viewBox.y - 10, viewBox.height, viewBox.width);
+                    this.canvas?.viewbox(viewBox.x, viewBox.y - viewBox.height * 0.01, viewBox.height, viewBox.width);
                 }
                 break;
             case 's':
-                this.backgroundTranslateY -= 10;
+                this.backgroundTranslateY -= backgroundScaleY * 0.01;
                 if (this.lockedToBackground) {
-                    this.canvas?.viewbox(viewBox.x, viewBox.y + 10, viewBox.height, viewBox.width);
+                    this.canvas?.viewbox(viewBox.x, viewBox.y + viewBox.height * 0.01, viewBox.height, viewBox.width);
                 }
                 break;
             case 'a':
-                this.backgroundTranslateX -= 10;
+                this.backgroundTranslateX -= backgroundScaleX * 0.01;
                 if (this.lockedToBackground) {
-                    this.canvas?.viewbox(viewBox.x + 10, viewBox.y, viewBox.height, viewBox.width);
+                    this.canvas?.viewbox(viewBox.x + viewBox.width * 0.01, viewBox.y, viewBox.height, viewBox.width);
                 }
                 break;
             case 'd':
-                this.backgroundTranslateX += 10;
+                this.backgroundTranslateX += backgroundScaleX * 0.01;
                 if (this.lockedToBackground) {
-                    this.canvas?.viewbox(viewBox.x - 10, viewBox.y, viewBox.height, viewBox.width);
+                    this.canvas?.viewbox(viewBox.x - viewBox.width * 0.01, viewBox.y, viewBox.height, viewBox.width);
                 }
                 break;
             case 'ArrowUp':
@@ -397,8 +391,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
         htmlElement.style.backgroundSize = backgroundScaleX + "px " + backgroundScaleY + "px";
         htmlElement.style.backgroundPosition = this.backgroundTranslateX + "px " + this.backgroundTranslateY + "px";
-        //console.log("2:", document.getElementById('universe')!.style.backgroundPosition)
-        //console.log("2:", this.canvas!.viewbox())
     }
 
     private setPanZoomByLockState() {
@@ -448,6 +440,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         switch (key) {
             case '+':
             case '-':
+                return this.lockedToBackground;
             case 'w':
             case 's':
             case 'a':
