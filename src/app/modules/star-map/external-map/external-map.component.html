@@ -102,10 +102,10 @@
                     <app-outlined titleValue="Zoom background" class="control-container-block wider">
                         <div class="plusminus">
                             <button class="kbc-button key-down" (click)="handleButtonPress('-')"
-                                    [disabled]="!backgroundImage">-
+                                    [disabled]="!backgroundImage || lockedToBackground">-
                             </button>
                             <button class="kbc-button key-up" (click)="handleButtonPress('+')"
-                                    [disabled]="!backgroundImage">+
+                                    [disabled]="!backgroundImage || lockedToBackground">+
                             </button>
                         </div>
                     </app-outlined>
