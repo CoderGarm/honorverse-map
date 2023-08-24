@@ -32,8 +32,12 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     protected canvas?: Svg;
 
-    public static readonly PAN_ZOOM_OPTIONS = {
-        // https://github.com/svgdotjs/svg.panzoom.js/blob/master/readme.md
+    public static readonly PAN_ZOOM_STANDARD_OPTIONS = {
+        zoomFactor: 0.1, // zooming per wheel tick
+        zoomMin: 0.1, // zoom max out to display the full svg payload as 20% of the screen
+        zoomMax: 4 // zoom max 4 times in
+    };
+    public static readonly PAN_ZOOM_MAX_ZOOM_GRANULARITY_OPTIONS = {
         zoomFactor: 0.01, // zooming per wheel tick
         zoomMin: 0.1, // zoom max out to display the full svg payload as 20% of the screen
         zoomMax: 4 // zoom max 4 times in
@@ -95,7 +99,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     createCanvas(id: string, parentCssId: string, externalMapPrefix: string = ''): Svg {
         if (!this.canvas) {
             this.externalMapPrefix = externalMapPrefix;
-            this.canvas = SVG().id(id).addTo(parentCssId).panZoom(BasicViewHelper.PAN_ZOOM_OPTIONS);
+            this.canvas = SVG().id(id).addTo(parentCssId).panZoom(BasicViewHelper.PAN_ZOOM_STANDARD_OPTIONS);
             this.canvas
                 .on('zoom', this.zoomModification)
                 .mouseover(this.mouseoverForText)

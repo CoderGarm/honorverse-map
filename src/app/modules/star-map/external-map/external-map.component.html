@@ -43,7 +43,7 @@
     <div class="control-container flex-items-container">
         <div *ngIf="showBackgroundNav" class="map-nav">
             <app-outlined titleValue="Background controls">
-                <app-outlined titleValue="Move background">
+                <app-outlined titleValue="Upload background">
                     <div class="upload-container">
                         <app-file-upload
                                 class="file-upload"
@@ -99,7 +99,7 @@
                         </div>
                     </app-outlined>
 
-                    <app-outlined titleValue="Zoom background" class="control-container-block">
+                    <app-outlined titleValue="Zoom background" class="control-container-block wider">
                         <div class="plusminus">
                             <button class="kbc-button key-down" (click)="handleButtonPress('-')"
                                     [disabled]="!backgroundImage">-
@@ -110,13 +110,19 @@
                         </div>
                     </app-outlined>
 
-                    <app-outlined titleValue="Relative Locking" class="control-container-block">
+                    <app-outlined titleValue="Relative Locking" class="control-container-block wider">
                         <div class="locking">
                             <button class="kbc-button key-up" (click)="handleButtonPress('Escape')"
                                     [disabled]="!backgroundImage">
                                 Esc
                             </button>
                         </div>
+                    </app-outlined>
+
+                    <app-outlined titleValue="Granularity control" class="wider">
+                        <mat-slide-toggle [(ngModel)]="maxGranularity"
+                                          (click)="setPanZoomByState()"
+                                          matTooltip="Home or Pos1 Button"></mat-slide-toggle>
                     </app-outlined>
                 </div>
             </app-outlined>

@@ -25,7 +25,10 @@ button {
   pointer-events: auto;
   display: inline-grid;
   grid-column-gap: 0;
-  margin-right: 25px;
+}
+
+.wider {
+  width: 160px;
 }
 
 .celestial-controls {
