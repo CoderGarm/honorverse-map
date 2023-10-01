@@ -1,18 +1,4 @@
-import {
-    ArrayXY,
-    Circle,
-    CurveCommand,
-    Dom,
-    Element,
-    G,
-    LineCommand,
-    Path,
-    PathArrayAlias,
-    StrokeData,
-    SVG,
-    Svg,
-    Text
-} from "@svgdotjs/svg.js";
+import {ArrayXY, Box, Circle, CurveCommand, Dom, Element, G, LineCommand, Path, PathArrayAlias, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
 import {Component, HostListener} from "@angular/core";
 import {BasicViewHelperData} from "./basic-view-helper-data";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -176,6 +162,12 @@ export class BasicViewHelper extends BasicViewHelperData {
         });
     }
 
+
+    dropCyclingCircles() {
+        const circles: Element[] = this.canvas!.children().filter(elem => elem.id().endsWith(BasicViewHelperData.CYCLING_CIRCLE_SUFFIX));
+        circles.forEach(e => this.canvas?.removeElement(e));
+    }
+
     private repositioningRoundCapMarker(c: Element) {
         const path = <Path>c;
         const center = this.getCoordsFromCenterMarker(path);
@@ -248,30 +240,64 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.setCelestialOrbitById(celestialBodyID, orbit);
         this.setCelestialObjectById(orbitID, orbitDefinition.celestial);
         this.setCelestialObjectById(celestialBodyID, orbitDefinition.celestial);
+        this.createTextForCelestial(celestialBodyID, orbitDefinition.celestial.name, circle);
+        return circle;
+    }
 
+    private createTextForCelestial(celestialBodyID: string, name: string, circle: Circle) {
         let text: Text = new Text()
             .addClass(BasicViewHelperData.TEXT_MARKER)
             .addClass(BasicViewHelperData.ICON_ID_MARKER + celestialBodyID)
-            .text(orbitDefinition.celestial.name)
+            .text(name)
             .x(circle.cx() + 10)
             .y(circle.cy() - 20);
 
         this.setTextOptions(text);
         this.setTextById(celestialBodyID, text);
-        return circle;
+        return text;
+    }
+
+    getNameFromCircle(celestial: Element): string | undefined {
+        return celestial.classes().filter(c => c.startsWith('name'))[0].split('<>')[1].replaceAll('<|>', ' ');
     }
 
     toggleNames() {
         let bodyIDs = this.getCelestialBodyIDs();
+        let box = this.canvas!.viewbox();
+
         bodyIDs.forEach(celestialId => {
             let text = this.getTextById(celestialId)!;
+            let circle = this.getCelestialByID(celestialId)!;
+
+            let insideViewbox = this.isInsideViewbox(box, <number>circle.x(), <number>circle.y());
+
             let present = this.canvas!.children().filter(t => t === text).length > 0;
             if (present) {
                 this.canvas!.removeElement(text);
-            } else {
+            } else if (insideViewbox) {
+                text = this.createTextForCelestial(celestialId, this.getNameFromCircle(circle)!, circle);
                 this.canvas!.add(text);
             }
         })
+    }
+
+    isInsideViewbox(box: Box, x: number, y: number) {
+        let x1 = box.x;
+        let x2 = x1 + box.width;
+
+        let y1 = box.y;
+        let y2 = y1 + box.height;
+
+        let xFit: boolean = false;
+        let yFit: boolean = false;
+        if (x >= x1 && x <= x2) {
+            xFit = true;
+        }
+        if (y >= y1 && y <= y2) {
+            yFit = true;
+        }
+
+        return xFit && yFit;
     }
 
     createRoundCapMarkerNorth(id: string, x: number, y: number, xShifter?: number, yShifter?: number) {
@@ -489,5 +515,11 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         let viewBoxDef: string = (startX + xOffset) + " " + (startY + yOffset) + " " + width * 2 + " " + height * 2;
         this.canvas!.viewbox(viewBoxDef);
+    }
+
+
+    getSvgCoordinateFromPointerEvent(event: PointerEvent) {
+        let p = new DOMPoint(event.clientX, event.clientY).matrixTransform(this.canvas!.screenCTM().inverse());
+        return {x: p.x, y: p.y};
     }
 }

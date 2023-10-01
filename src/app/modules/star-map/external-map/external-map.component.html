@@ -131,6 +131,11 @@
         <div *ngIf="!!selectedStarSystem" class="coord-control flex-items-container">
             <app-outlined titleValue="Celestial controls" style="margin: auto;">
                 <div class="celestial-controls">
+                    <button mat-mini-fab color="primary" (click)="deselectSystem()"
+                            matTooltip="Deselect system"
+                            class="deselect-btn">
+                        <mat-icon>close</mat-icon>
+                    </button>
                     <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
                     <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
                     <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
@@ -147,6 +152,11 @@
                     <input type="text" matInput [(ngModel)]="selectedStarSystem.name" (keyup)="handlePosChange('xxx')">
                 </mat-form-field>
 
+                <button mat-mini-fab color="warn" (click)="dropSystem()"
+                        matTooltip="Delete system"
+                        class="drop-system-btn">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </app-outlined>
         </div>
         <div *ngIf="showUpload" class="coord-control flex-items-container">

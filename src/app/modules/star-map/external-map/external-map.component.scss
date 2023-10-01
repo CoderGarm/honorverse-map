@@ -119,6 +119,19 @@ app-outlined {
   left: 5px;
 }
 
+.deselect-btn {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  top: 10px;
+  left: 5px;
+}
+
+.drop-system-btn {
+  position: absolute;
+  top: -30px;
+  left: -40px;
+}
+
 .red {
   background-image: radial-gradient(transparent, transparent, transparent, $warning-color);
 }
