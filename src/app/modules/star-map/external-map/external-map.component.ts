@@ -105,6 +105,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     clickEventForCreateCelestial = (event: PointerEvent) => {
+        if (!this.lockedToBackground) {
+            return;
+        }
         let id = this.getIdFromEvent(event);
         if (id === 'universe-canvas' && !this.starSystemCreationState) {
             let box = this.canvas!.viewbox();
