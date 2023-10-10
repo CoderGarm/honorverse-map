@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {InterstellarViewHelper} from "../payload/interstellar-view-helper";
-import {Coords, CoordsBlob, PublicResourcesApiService} from "../../../services/swagger";
+import {Coords, CoordsBlob, Junction, PublicResourcesApiService} from "../../../services/swagger";
 import {TranslateService} from "@ngx-translate/core";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import {ActivatedRoute, ParamMap} from "@angular/router";
@@ -46,6 +46,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     lockedToBackground: boolean = false;
 
     maxGranularity: boolean = false;
+    private junctions: Junction[] = [];
 
     constructor(private route: ActivatedRoute,
                 private publicResourcesApiService: PublicResourcesApiService,
@@ -109,14 +110,12 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             return;
         }
         let id = this.getIdFromEvent(event);
-        if (id === 'universe-canvas' && !this.starSystemCreationState) {
-            let box = this.canvas!.viewbox();
-
-            let {x, y} = this.getSvgCoordinateFromPointerEvent(event);
-
-            let insideViewbox = this.isInsideViewbox(box, x, y);
-
+        if (id === 'universe-canvas' && !this.starSystemCreationState && !this.selectedStarSystem) {
             this.starSystemCreationState = true;
+
+            let box = this.canvas!.viewbox();
+            let {x, y} = this.getSvgCoordinateFromPointerEvent(event);
+            let insideViewbox = this.isInsideViewbox(box, x, y);
             this.selectedStarSystem = {
                 name: 'new System',
                 x: x,
@@ -131,6 +130,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
 
     clickEventForCelestial = (event: PointerEvent) => {
+        if (!!this.selectedStarSystem) {
+            return;
+        }
+
         let id = this.getIdFromEvent(event);
         if (!this.isCelestialId(id)) {
             return;
@@ -209,6 +212,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private createUniverseMap(coords?: Coords[]) {
         this.clearData();
 
+        this.fetchJunctions();
         let sub = this.publicResourcesApiService.getAllSystemCoordinates().subscribe(resp => {
             this.coords = !!coords ? coords : resp;
             const colors: Map<string, string> = new Map<string, string>();
@@ -241,19 +245,34 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private drawJunctions() {
-        let sub = this.publicResourcesApiService.getAllWormholeJunctions().subscribe(junctions => {
-            junctions.forEach(junction => {
-                junction.termini.forEach(terminus => {
-                    this.canvas!
-                        .line(junction.position.x, junction.position.y, terminus.x, terminus.y)
-                        .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
-                        .addClass(BasicViewHelperData.WORMHOLE_MARKER)
-                        .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
-                        .stroke({width: 1, color: 'irrelevant'});
-                });
+        this.canvas!.children().filter(c => c.hasClass(BasicViewHelperData.WORMHOLE_MARKER)).forEach(c => this.canvas!.removeElement(c));
+        this.junctions.forEach(junction => {
+            junction.termini.forEach(terminus => {
+                let nexus = this.getBySystemName(junction.nexus.name);
+                let terminal = this.getBySystemName(terminus.name);
+                this.canvas!
+                    .line(nexus.x!, nexus.y!, terminal.x!, terminal.y!)
+                    .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
+                    .addClass(BasicViewHelperData.WORMHOLE_MARKER)
+                    .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
+                    .stroke({width: 1, color: 'irrelevant'});
             });
         });
+    }
+
+    private fetchJunctions() {
+        let sub = this.publicResourcesApiService.getAllWormholeJunctions().subscribe(junctions => {
+            this.junctions = junctions;
+        });
         this.subscriptions.push(sub);
+    }
+
+    private getBySystemName(name: string): Coords {
+        let filteredByName = this.coords!.filter(c => c.name === name);
+        if (filteredByName.length == 0) {
+            throw new Error('The junction doesnt found a system for ' + name);
+        }
+        return filteredByName[0];
     }
 
     setBackground(file: File) {
@@ -298,7 +317,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     handlePosChange(key: string) {
-        if (!this.selectedStarSystem) {
+        if (!this.selectedStarSystem || !this.selectedStarSystem.x || !this.selectedStarSystem.y) {
             return;
         }
         let celestialBodyID = this.removeSelectedSystemFromCanvas();
@@ -329,6 +348,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         let circle = this.drawCelestial(orbitDefinition);
         this.colorByCircle.set(circle.id(), selectedColor);
         this.drawCyclingCircle(this.selectedStarSystem.x, this.selectedStarSystem.y, circle.id(), false);
+        this.drawJunctions();
     }
 
     private removeSelectedSystemFromCanvas() {

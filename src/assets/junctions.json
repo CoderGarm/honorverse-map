@@ -1,14 +1,59 @@
 [
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Basilisk",             "x": 140, "y": -2829 }]},
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Trevor’s Star",        "x": 819, "y": -2373 }]},
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Hennesy",              "x": 2424, "y": -550  }]},
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Sigma Draconis",       "x": -61, "y": -205 }]},
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Lynx B (Terminus)",    "x": -1202, "y": -100   }]},
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Matapan",              "x": -1653, "y": -1865 }]},
-{ "position": {"name": "Manticore", "x": 142, "y": -2065}, "termini": [ {"name": "Gregor",               "x": -474,  "y": -2267 }]},
-{ "position": {"name": "Erewhon",    "x": 1481, "y": -1601}, "termini": [ {"name": "Terra Haute",        "x": 2449,  "y": -462  }]},
-{ "position": {"name": "Erewhon",    "x": 1481, "y": -1601}, "termini": [ {"name": "Joshua",             "x": 427,   "y": 328 }]},
-{ "position": {"name": "Erewhon",    "x": 1481, "y": -1601}, "termini": [ {"name": "Sasebo",             "x": -619,  "y": 41  }]},
-{ "position": {"name": "Asgard",    "x": -1088, "y": -1479}, "termini": [ {"name": "Durandel",           "x": -646,  "y": -2231 }]},
-{ "position": {"name": "Asgard",    "x": -1088, "y": -1479}, "termini": [ {"name": "Midgard",            "x": -1507, "y": -2561 }]}
+  {
+    "nexus": {
+      "name": "Manticore"
+    },
+    "termini": [
+      {
+        "name": "Basilisk"
+      },
+      {
+        "name": "Trevor’s Star"
+      },
+      {
+        "name": "Hennesy"
+      },
+      {
+        "name": "Sigma Draconis"
+      },
+      {
+        "name": "Lynx B (Terminus)"
+      },
+      {
+        "name": "Matapan"
+      },
+      {
+        "name": "Gregor"
+      }
+    ]
+  },
+  {
+    "nexus": {
+      "name": "Erewhon"
+    },
+    "termini": [
+      {
+        "name": "Terra Haute"
+      },
+      {
+        "name": "Joshua"
+      },
+      {
+        "name": "Sasebo"
+      }
+    ]
+  },
+  {
+    "nexus": {
+      "name": "Asgard"
+    },
+    "termini": [
+      {
+        "name": "Durandel"
+      },
+      {
+        "name": "Midgard"
+      }
+    ]
+  }
 ]

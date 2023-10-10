@@ -9,15 +9,15 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-import {Coords} from './coords';
+import {NamedThing} from "../../../modules/star-map/external-map-manager/external-map-manager.component";
 
 /**
  * .
  */
 export interface Junction { 
-    position: Coords;
+    nexus: NamedThing;
     /**
      * All termini of the junction.
      */
-    termini: Array<Coords>;
+    termini: Array<NamedThing>;
 }

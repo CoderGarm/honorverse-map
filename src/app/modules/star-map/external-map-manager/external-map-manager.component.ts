@@ -27,6 +27,10 @@ export interface RadialGroup {
     radius: number
 }
 
+export interface NamedThing {
+    name: string;
+}
+
 @Component({
     selector: 'app-external-map-manager',
     templateUrl: './external-map-manager.component.html',
