@@ -56,6 +56,8 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     protected zoomLevel: number = 1;
 
+    private showNames: boolean = false;
+
     // noinspection JSUnusedLocalSymbols
     @HostListener('window:resize', ['$event'])
     onResize(event?: UIEvent) {
@@ -262,23 +264,23 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     toggleNames() {
+
+        this.showNames = !this.showNames;
+
         let bodyIDs = this.getCelestialBodyIDs();
         let box = this.canvas!.viewbox();
 
+        // remove all text
+        bodyIDs.forEach(celestialId => this.canvas!.children().filter(t => t === this.getTextById(celestialId)!).forEach(t => this.canvas!.removeElement(t)));
+
+        // add in viewport
         bodyIDs.forEach(celestialId => {
-            let text = this.getTextById(celestialId)!;
             let circle = this.getCelestialByID(celestialId)!;
-
             let insideViewbox = this.isInsideViewbox(box, <number>circle.x(), <number>circle.y());
-
-            let present = this.canvas!.children().filter(t => t === text).length > 0;
-            if (present) {
-                this.canvas!.removeElement(text);
-            } else if (insideViewbox) {
-                text = this.createTextForCelestial(celestialId, this.getNameFromCircle(circle)!, circle);
-                this.canvas!.add(text);
+            if (insideViewbox && this.showNames) {
+                this.canvas!.add(this.createTextForCelestial(celestialId, this.getNameFromCircle(circle)!, circle));
             }
-        })
+        });
     }
 
     isInsideViewbox(box: Box, x: number, y: number) {
