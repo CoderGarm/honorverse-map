@@ -136,3 +136,8 @@ app-outlined {
 .red {
   background-image: radial-gradient(transparent, transparent, transparent, $warning-color);
 }
+
+#toggleManipulator {
+  position: absolute;
+  z-index: 99;
+}

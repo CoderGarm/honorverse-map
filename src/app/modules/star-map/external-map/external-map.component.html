@@ -1,18 +1,19 @@
 <div id="external-map">
+    <button mat-button (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
     <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red':lockedToBackground}">
         <mat-form-field appearance="outline">
             <mat-label>System</mat-label>
-            <input matInput disabled value="{{hoveredSystem.name}}">
+            <input matInput disabled value="{{ hoveredSystem.name }}">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="small-field">
             <mat-label>X-Coordinate</mat-label>
-            <input matInput disabled value="{{hoveredSystem!.x}} {{ 'distance.lightyear.abbrev' | translate }}">
+            <input matInput disabled value="{{ hoveredSystem!.x }} {{ 'distance.lightyear.abbrev' | translate }}">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="small-field">
             <mat-label>Y-Coordinate</mat-label>
-            <input matInput disabled value="{{-hoveredSystem!.y}} {{ 'distance.lightyear.abbrev' | translate }}">
+            <input matInput disabled value="{{ -hoveredSystem!.y }} {{ 'distance.lightyear.abbrev' | translate }}">
         </mat-form-field>
 
         <button mat-icon-button class="info-btn"
@@ -22,18 +23,21 @@
         </button>
 
         <button mat-icon-button class="info-btn"
+                *ngIf="showBackgroundManipulation"
                 (click)="showBackgroundNav = !showBackgroundNav"
                 matTooltip="Display background manipulation">
             <mat-icon>map</mat-icon>
         </button>
 
         <button mat-icon-button class="info-btn"
+                *ngIf="showBackgroundManipulation"
                 (click)="download()"
                 matTooltip="Download coordinates">
             <mat-icon>file_download</mat-icon>
         </button>
 
         <button mat-icon-button class="info-btn"
+                *ngIf="showBackgroundManipulation"
                 (click)="showUpload = !showUpload"
                 matTooltip="Upload coordinates">
             <mat-icon>file_upload</mat-icon>

@@ -45,6 +45,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     lockedToBackground: boolean = false;
 
+    showBackgroundManipulation: boolean = false;
+
     maxGranularity: boolean = false;
     private junctions: Junction[] = [];
 
@@ -106,7 +108,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     clickEventForCreateCelestial = (event: PointerEvent) => {
-        if (!this.lockedToBackground || !!this.selectedStarSystem) {
+        if (!this.showBackgroundManipulation || !this.lockedToBackground || !!this.selectedStarSystem) {
             return;
         }
         let id = this.getIdFromEvent(event);
@@ -130,7 +132,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
 
     clickEventForCelestial = (event: PointerEvent) => {
-        if (!!this.selectedStarSystem) {
+        if (!this.showBackgroundManipulation || !!this.selectedStarSystem) {
             return;
         }
 
@@ -236,10 +238,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             }
             this.hoveredSystem = this.center;
 
+            this.drawJunctions();
             let orbitDefinitions: OrbitDefinition[] = OrbitDefinition.getOrbitDefinitionsForExternalStarMap(this.center, this.coords, colors);
             this.drawRadialGroups(this.radialGroups);
             this.drawOrbits(orbitDefinitions);
-            this.drawJunctions();
         });
         this.subscriptions.push(sub);
     }
@@ -345,10 +347,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             color: selectedColor,
             isMain: false
         };
+        this.drawJunctions();
         let circle = this.drawCelestial(orbitDefinition);
         this.colorByCircle.set(circle.id(), selectedColor);
         this.drawCyclingCircle(this.selectedStarSystem.x, this.selectedStarSystem.y, circle.id(), false);
-        this.drawJunctions();
     }
 
     private removeSelectedSystemFromCanvas() {
@@ -370,7 +372,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     handleButtonPress(key: string) {
-        if (this.controlsInvalid(key)) {
+        if (!this.showBackgroundManipulation || this.controlsInvalid(key)) {
             return;
         }
 
