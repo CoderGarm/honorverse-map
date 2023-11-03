@@ -38,6 +38,11 @@ export interface NamedThing {
 })
 export class ExternalMapManagerComponent extends SubscriptionManager implements AfterViewInit {
 
+    public static readonly SOLARIAN_LEAGUE_COLOR = '#B31616';
+    public static readonly MANTICORE_COLOR = '#AE19AB';
+    public static readonly HAVEN_COLOR = '#80D4B8';
+    public static readonly ANDERMAN_COLOR = '#967B0B';
+
     static path: string = '';
 
     allCoords?: CoordsBlob;
@@ -164,14 +169,14 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     defineMapPreselection() {
         if (this.isCanonMapPreselected) {
-            let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.addToColors('#B31616', this.extractCoordsByName(systems)));
+            // gregor, clairmont and welladay in multiple nations
+            let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR, this.extractCoordsByName(systems)));
             this.subscriptions.push(sub);
-            // todo gregor, clairmont and welladay in multiple nations
-            sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.addToColors('#AE19AB', this.extractCoordsByName(systems)));
+            sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.MANTICORE_COLOR, this.extractCoordsByName(systems)));
             this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.addToColors('#80D4B8', this.extractCoordsByName(systems)));
+            sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.HAVEN_COLOR, this.extractCoordsByName(systems)));
             this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.addToColors('#967B0B', this.extractCoordsByName(systems)));
+            sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.ANDERMAN_COLOR, this.extractCoordsByName(systems)));
             this.subscriptions.push(sub);
         } else {
             let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
@@ -188,14 +193,38 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     private extractCoordsByName(toSearch: WikiEntry[]) {
         let found: Coords[] = [];
         toSearch.forEach(c => {
-            let name = c.title.replace('-System', '').trim().toLowerCase();
-            let f: Coords[] = this.allCoords!.filter(known => known.name.toLowerCase() === name);
+            let name = ExternalMapManagerComponent.getSystemNameFromEntry(c);
+            let f: Coords[] = this.allCoords!.filter(known => ExternalMapManagerComponent.compareSystemNames(known.name, name));
             if (f.length > 0) {
                 found.push(f[0]);
             }
         });
         return found;
     }
+
+    static getSystemNameFromEntry(c: WikiEntry) {
+        return c.title;
+    }
+
+    static compareSystemNames(o1: string, o2: string) {
+        return ExternalMapManagerComponent.stripSystemName(o1) === ExternalMapManagerComponent.stripSystemName(o2);
+    }
+
+    static stripSystemName(name: string) {
+        return name
+            .replace('-System', '')
+            .replace('_System', '')
+            .replace('Stern', 'Star')
+            .replace('Neu', 'New')
+            .replace('_', '')
+            .replace('-', '')
+            .replace(' ', '')
+            .replace('’', '')
+            .replace("'", '')
+            .trim()
+            .toLowerCase();
+    }
+
 
     addToColors(color: string, coords: Coords[]) {
         if (coords.length > 0) {
@@ -223,10 +252,24 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             if (key !== "coords")
                 return val;
         });
-        this.url = this.frontendPath + '/' + ExternalMapComponent.path + '?highlight=' + encodeURIComponent(highlight) + '&center=' + encodeURIComponent(center);
+        this.url = this.frontendPath + '/' + ExternalMapComponent.path;
+        this.addUrlParamConnector();
+        this.url += 'center=' + encodeURIComponent(center);
+        if (!this.isCanonMapPreselected) {
+            this.addUrlParamConnector();
+            this.url += 'highlight=' + encodeURIComponent(highlight);
+        }
         this.iFrameTxt = '<iframe width="900px" height="600px" src="' + this.url + '"></iframe>';
     }
 
+
+    private addUrlParamConnector() {
+        if (this.url.endsWith(ExternalMapManagerComponent.path)) {
+            this.url += '?';
+        } else {
+            this.url += '&';
+        }
+    }
 
     buildRadialGroupURL() {
         if (this.radialGroups.length < 2) {

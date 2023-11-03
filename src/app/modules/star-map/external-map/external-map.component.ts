@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {InterstellarViewHelper} from "../payload/interstellar-view-helper";
-import {Coords, CoordsBlob, Junction, PublicResourcesApiService} from "../../../services/swagger";
+import {Coords, CoordsBlob, Junction, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
 import {TranslateService} from "@ngx-translate/core";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import {ActivatedRoute, ParamMap} from "@angular/router";
@@ -45,13 +45,20 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     lockedToBackground: boolean = false;
 
+    isCanonMapPreselected: boolean = false;
+
     showBackgroundManipulation: boolean = false;
 
     maxGranularity: boolean = false;
     private junctions: Junction[] = [];
+    private solarianSystems: WikiEntry[] = [];
+    private manticoreSystems: WikiEntry[] = [];
+    private andermanSystems: WikiEntry[] = [];
+    private havenSystems: WikiEntry[] = [];
+    private highlightedCenterSystemName?: string;
 
     constructor(private route: ActivatedRoute,
-                private publicResourcesApiService: PublicResourcesApiService,
+                private publicResourcesService: PublicResourcesApiService,
                 private translate: TranslateService) {
         super();
 
@@ -61,14 +68,15 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.detectHighlight(map);
             this.detectCenter(map);
             this.detectRadialGroups(map);
+            this.fetchCanonMap();
             this.createUniverseMap();
         });
     }
 
     private detectRadialGroups(map: ParamMap) {
-        const center = map.get(ExternalMapComponent.queryParam[2]);
-        if (!!center) {
-            this.radialGroups = JSON.parse(center);
+        const radialGroups = map.get(ExternalMapComponent.queryParam[2]);
+        if (!!radialGroups) {
+            this.radialGroups = JSON.parse(radialGroups);
             this.radialGroups.forEach(rg => this.colorByCircle.set(ExternalMapComponent.getStarSystemCircleID(rg.coord), ExternalMapComponent.RADIAL_HIGHLIGHTING_COLOR));
         }
     }
@@ -76,7 +84,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private detectCenter(map: ParamMap) {
         const center = map.get(ExternalMapComponent.queryParam[1]);
         if (!!center) {
-            this.highlightedCenter = JSON.parse(center);
+            if (center.includes('{')) {
+                this.highlightedCenter = JSON.parse(center);
+            } else {
+                this.highlightedCenterSystemName = encodeURIComponent(center);
+            }
         }
     }
 
@@ -91,6 +103,36 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 });
             });
         }
+        this.isCanonMapPreselected = !highlight;
+    }
+
+    private fetchCanonMap() {
+        let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.solarianSystems = systems);
+        this.subscriptions.push(sub);
+        sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.manticoreSystems = systems);
+        this.subscriptions.push(sub);
+        sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.havenSystems = systems);
+        this.subscriptions.push(sub);
+        sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.andermanSystems = systems);
+        this.subscriptions.push(sub);
+    }
+
+    private setUpCanonMap() {
+        this.setUpCanonColor(this.solarianSystems, ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR);
+        this.setUpCanonColor(this.manticoreSystems, ExternalMapManagerComponent.MANTICORE_COLOR);
+        this.setUpCanonColor(this.havenSystems, ExternalMapManagerComponent.HAVEN_COLOR);
+        this.setUpCanonColor(this.andermanSystems, ExternalMapManagerComponent.ANDERMAN_COLOR);
+    }
+
+    private setUpCanonColor(systems: WikiEntry[], color: string) {
+        systems.forEach(e => {
+            let name = ExternalMapManagerComponent.getSystemNameFromEntry(e);
+            let coord = this.getBySystemName(name);
+            if (!!coord) {
+                const id = ExternalMapComponent.getStarSystemCircleID(coord);
+                this.colorByCircle.set(id, color);
+            }
+        });
     }
 
     ngAfterViewInit(): void {
@@ -114,10 +156,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         let id = this.getIdFromEvent(event);
         if (id === 'universe-canvas' && !this.starSystemCreationState && !this.selectedStarSystem) {
             this.starSystemCreationState = true;
-
-            let box = this.canvas!.viewbox();
             let {x, y} = this.getSvgCoordinateFromPointerEvent(event);
-            let insideViewbox = this.isInsideViewbox(box, x, y);
             this.selectedStarSystem = {
                 name: 'new System',
                 x: x,
@@ -215,8 +254,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.clearData();
 
         this.fetchJunctions();
-        let sub = this.publicResourcesApiService.getAllSystemCoordinates().subscribe(resp => {
+        let sub = this.publicResourcesService.getAllSystemCoordinates().subscribe(resp => {
             this.coords = !!coords ? coords : resp;
+            this.setUpCanonMap();
             const colors: Map<string, string> = new Map<string, string>();
             this.coords.forEach(coord => {
                 let id = ExternalMapComponent.getStarSystemCircleID(coord);
@@ -226,6 +266,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
             if (this.radialGroups.length > 0) {
                 this.highlightedCenter = this.radialGroups[0].coord;
+            }
+            if (!!this.highlightedCenterSystemName) {
+                this.highlightedCenter = this.getBySystemName(this.highlightedCenterSystemName);
             }
 
             if (!!this.highlightedCenter) {
@@ -250,8 +293,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.canvas!.children().filter(c => c.hasClass(BasicViewHelperData.WORMHOLE_MARKER)).forEach(c => this.canvas!.removeElement(c));
         this.junctions.forEach(junction => {
             junction.termini.forEach(terminus => {
-                let nexus = this.getBySystemName(junction.nexus.name);
-                let terminal = this.getBySystemName(terminus.name);
+                let nexus = this.getBySystemName(junction.nexus.name)!;
+                let terminal = this.getBySystemName(terminus.name)!;
                 this.canvas!
                     .line(nexus.x!, nexus.y!, terminal.x!, terminal.y!)
                     .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
@@ -263,16 +306,17 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private fetchJunctions() {
-        let sub = this.publicResourcesApiService.getAllWormholeJunctions().subscribe(junctions => {
+        let sub = this.publicResourcesService.getAllWormholeJunctions().subscribe(junctions => {
             this.junctions = junctions;
         });
         this.subscriptions.push(sub);
     }
 
-    private getBySystemName(name: string): Coords {
-        let filteredByName = this.coords!.filter(c => c.name === name);
+    private getBySystemName(name: string): Coords | undefined {
+        let filteredByName = this.coords!.filter(c => ExternalMapManagerComponent.compareSystemNames(c.name, name));
         if (filteredByName.length == 0) {
-            throw new Error('The junction doesnt found a system for ' + name);
+            console.log("A system for the name wasn't found: " + name);
+            return undefined;
         }
         return filteredByName[0];
     }
