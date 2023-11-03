@@ -1,5 +1,6 @@
 <div id="external-map">
     <button mat-button (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
+    <span id="ctto">Map proudly presented by NovaBallard and <a target="_blank" href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
     <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red':lockedToBackground}">
         <mat-form-field appearance="outline">
             <mat-label>System</mat-label>

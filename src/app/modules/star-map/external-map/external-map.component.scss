@@ -141,3 +141,17 @@ app-outlined {
   position: absolute;
   z-index: 99;
 }
+
+#ctto {
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  font-size: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  color: hsla(0, 100%, 30%, 0.3);
+
+  & a {
+    color: hsla(0, 100%, 30%, 0.3);
+  }
+}
