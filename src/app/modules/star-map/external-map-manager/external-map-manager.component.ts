@@ -95,9 +95,9 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         let sub = this.publicResourcesService.getAllSystemCoordinates().subscribe(resp => {
             this.allCoords = resp;
             this.centerCoord = resp.filter(sys => sys.name === 'Manticore')[0];
+            this.canonPreselection();
         });
         this.subscriptions.push(sub);
-        this.canonPreselection();
     }
 
     private canonPreselection() {
@@ -166,6 +166,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         if (this.isCanonMapPreselected) {
             let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.addToColors('#B31616', this.extractCoordsByName(systems)));
             this.subscriptions.push(sub);
+            // todo gregor, clairmont and welladay in multiple nations
             sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.addToColors('#AE19AB', this.extractCoordsByName(systems)));
             this.subscriptions.push(sub);
             sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.addToColors('#80D4B8', this.extractCoordsByName(systems)));
@@ -187,7 +188,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     private extractCoordsByName(toSearch: WikiEntry[]) {
         let found: Coords[] = [];
         toSearch.forEach(c => {
-            let name = c.title.replace('System', '').trim().toLowerCase();
+            let name = c.title.replace('-System', '').trim().toLowerCase();
             let f: Coords[] = this.allCoords!.filter(known => known.name.toLowerCase() === name);
             if (f.length > 0) {
                 found.push(f[0]);

@@ -12,7 +12,6 @@ export interface WikiEntry {
 
 @Injectable()
 export class PublicResourcesApiService {
-
     constructor(private httpClient: HttpClient) {
     }
 
@@ -25,18 +24,18 @@ export class PublicResourcesApiService {
     }
 
     public getSolarianSystems(): Observable<WikiEntry[]> {
-        return this.httpClient.get<WikiEntry[]>('assets/solarian_systems.json');
+        return this.httpClient.get<WikiEntry[]>('assets/system_assignments/Solarian_League_Systems.json');
     }
 
     public getHaveniteSystems(): Observable<WikiEntry[]> {
-        return this.httpClient.get<WikiEntry[]>('assets/havenite_system.json');
+        return this.httpClient.get<WikiEntry[]>('assets/system_assignments/Havenite_Systems.json');
     }
 
     public getManticorianSystems(): Observable<WikiEntry[]> {
-        return this.httpClient.get<WikiEntry[]>('assets/manticorian_systems.json');
+        return this.httpClient.get<WikiEntry[]>('assets/system_assignments/Manticoran_Systems.json');
     }
 
     public getAndermanSystems(): Observable<WikiEntry[]> {
-        return this.httpClient.get<WikiEntry[]>('assets/anderman_systems.json');
+        return this.httpClient.get<WikiEntry[]>('assets/system_assignments/Andermani_Systems.json');
     }
 }
