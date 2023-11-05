@@ -1,4 +1,4 @@
-import {Circle, G, Shape, Text} from "@svgdotjs/svg.js";
+import {G, Path, Shape, Text} from "@svgdotjs/svg.js";
 import {Component} from "@angular/core";
 import {SubscriptionManager} from "../../../services/subscription.manager";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -18,7 +18,6 @@ export class BasicViewHelperData extends SubscriptionManager {
     protected static readonly ORBIT_SELECTOR_ID_PREFIX: string = "-orbit";
 
     protected static readonly CLICKABLE_CSS_CLASS = "clickable";
-    protected static readonly OPAQUE_CSS_CLASS = "opaque";
     protected static readonly CYCLING_CIRCLE_MARKER = "circle-cycle";
     protected static readonly ICON_ID_MARKER: string = "iconId-";
     protected static readonly MOVABLE_STATE_DOT_MARKER: string = "movableStateDot";
@@ -38,7 +37,7 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     private textById: Map<string, Text> = new Map<string, Text>();
     private celestialObjectById: Map<string, Coords> = new Map<string, Coords>();
-    private celestialBodyById: Map<string, Circle> = new Map<string, Circle>();
+    private celestialBodyById: Map<string, Path> = new Map<string, Path>();
     private celestialOrbitById: Map<string, Coords> = new Map<string, Coords>();
     private orbitsById: Map<string, Coords> = new Map<string, Coords>();
 
@@ -76,12 +75,12 @@ export class BasicViewHelperData extends SubscriptionManager {
         return this.celestialOrbitById.get(id);
     }
 
-    protected getCelestialByEvent(event: PointerEvent | MouseEvent): Circle | undefined {
+    protected getCelestialByEvent(event: PointerEvent | MouseEvent): Path | undefined {
         let id = this.getIdFromEvent(event);
         return this.getCelestialByID(id);
     }
 
-    protected getCelestialByID(id: string): Circle | undefined {
+    protected getCelestialByID(id: string): Path | undefined {
         return this.celestialBodyById.get(id);
     }
 
@@ -136,7 +135,7 @@ export class BasicViewHelperData extends SubscriptionManager {
         return this.groupsByID.get(id);
     }
 
-    protected setCelestialCircleById(celestialBodyID: string, circle: Circle) {
+    protected setCelestialCircleById(celestialBodyID: string, circle: Path) {
         this.celestialBodyById.set(celestialBodyID, circle);
     }
 

@@ -19,7 +19,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     static path: string = 'external-star-map';
 
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
-    public static readonly UN_FOCUSSED_COLOR: string = '#FB8C00';
+    public static readonly UN_FOCUSSED_COLOR: string = '#FFF';
 
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];

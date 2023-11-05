@@ -5,6 +5,7 @@ import {OrbitDefinition} from "../payload/orbit-definition";
 import '@svgdotjs/svg.panzoom.js'
 import {Coords} from "../../../services/swagger";
 import {ExternalMapComponent} from "../external-map/external-map.component";
+import {StarHelper} from "./star-helper";
 
 interface ElementToParent {
     parent: Dom;
@@ -128,7 +129,7 @@ export class BasicViewHelper extends BasicViewHelperData {
                 const id = cssClass![0].replace(BasicViewHelperData.ICON_ID_MARKER, '');
                 const isInvisible = dot.classes().filter(css => css === BasicViewHelper.INVISIBLE_CLASS).length > 0;
                 const fleet: G | undefined = this.getGroupById(id);
-                const celestial: Circle | undefined = this.getCelestialByID(id);
+                const celestial: Path | undefined = this.getCelestialByID(id);
                 let element: Element | undefined = !!fleet ? fleet : !!celestial ? celestial : undefined;
                 if (!!element) {
                     this.canvas?.removeElement(dot)
@@ -219,24 +220,22 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         const x = orbit.x;
         const y = orbit.y;
+
+        let circle = StarHelper.star()
         if (orbitDefinition.color != ExternalMapComponent.UN_FOCUSSED_COLOR) {
-            this.createRoundCapMarkerNorth(celestialBodyID, x, y);
+            circle = StarHelper.starMarked();
         }
 
-        const circle = this.canvas!.circle()
-            .x(x)
-            .y(y)
+        circle
+            .x(x - 7)
+            .y(y - 7)
             .fill(orbitDefinition.color)
             .addClass('name<>' + orbitDefinition.celestial.name.replaceAll(' ', '<|>'))
             .id(celestialBodyID);
-
-        if (orbitDefinition.color === ExternalMapComponent.UN_FOCUSSED_COLOR) {
-            circle.addClass(BasicViewHelper.OPAQUE_CSS_CLASS)
-        }
+        this.canvas!.add(circle)
 
         circle.addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER);
         circle.addClass(BasicViewHelperData.STAR_MARKER);
-        circle.radius(BasicViewHelper.STAR_RADIUS);
 
         this.setCelestialCircleById(celestialBodyID, circle);
         this.setCelestialOrbitById(celestialBodyID, orbit);
@@ -246,7 +245,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         return circle;
     }
 
-    private createTextForCelestial(celestialBodyID: string, name: string, circle: Circle) {
+    private createTextForCelestial(celestialBodyID: string, name: string, circle: Path) {
         let text: Text = new Text()
             .addClass(BasicViewHelperData.TEXT_MARKER)
             .addClass(BasicViewHelperData.ICON_ID_MARKER + celestialBodyID)
@@ -454,7 +453,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         const idMarker = text.classes().filter(css => css.startsWith(BasicViewHelperData.ICON_ID_MARKER));
         if (idMarker.length > 0) {
             const id = idMarker[0].replace(BasicViewHelperData.ICON_ID_MARKER, '');
-            const celestial: Circle | undefined = this.getCelestialByID(id);
+            const celestial: Path | undefined = this.getCelestialByID(id);
             let x = undefined;
             let y = undefined;
             if (!!celestial) {

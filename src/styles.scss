@@ -332,18 +332,13 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 }
 
 .star {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
   cursor: pointer;
 }
 
 .roundCap {
   stroke-linecap: round;
-}
-
-.opaque {
-  opacity: 0.3;
-  filter: alpha(opacity=30);
 }
 
 .highlighted {
@@ -362,7 +357,7 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 }
 
 .svg-text {
-  fill: cadetblue;
+  fill: #FFF;
 }
 
 
