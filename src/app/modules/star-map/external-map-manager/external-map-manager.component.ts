@@ -60,6 +60,11 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     filteredCenter: Observable<Coords[]>;
     filteredRadius: Observable<Coords[]>;
 
+    private solarianSystems: WikiEntry[] = [];
+    private manticoreSystems: WikiEntry[] = [];
+    private andermanSystems: WikiEntry[] = [];
+    private havenSystems: WikiEntry[] = [];
+
     @ViewChild('coordInput')
     coordInput?: ElementRef<HTMLInputElement>;
 
@@ -97,6 +102,8 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     ngAfterViewInit(): void {
+        this.fetchCanonMap();
+
         let sub = this.publicResourcesService.getAllSystemCoordinates().subscribe(resp => {
             this.allCoords = resp;
             this.centerCoord = resp.filter(sys => sys.name === 'Manticore')[0];
@@ -108,6 +115,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     private canonPreselection() {
         this.isCanonMapPreselected = true;
         this.defineMapPreselection();
+        this.buildURL();
     }
 
     buildColorGroups() {
@@ -167,26 +175,29 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         });
     }
 
+    private fetchCanonMap() {
+        let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.solarianSystems = systems);
+        this.subscriptions.push(sub);
+        sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.manticoreSystems = systems);
+        this.subscriptions.push(sub);
+        sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.havenSystems = systems);
+        this.subscriptions.push(sub);
+        sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.andermanSystems = systems);
+        this.subscriptions.push(sub);
+    }
+
     defineMapPreselection() {
         if (this.isCanonMapPreselected) {
             // gregor, clairmont and welladay in multiple nations
-            let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR, this.extractCoordsByName(systems)));
-            this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.MANTICORE_COLOR, this.extractCoordsByName(systems)));
-            this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.HAVEN_COLOR, this.extractCoordsByName(systems)));
-            this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.addToColors(ExternalMapManagerComponent.ANDERMAN_COLOR, this.extractCoordsByName(systems)));
-            this.subscriptions.push(sub);
+            this.addToColors(ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR, this.extractCoordsByName(this.solarianSystems));
+            this.addToColors(ExternalMapManagerComponent.MANTICORE_COLOR, this.extractCoordsByName(this.manticoreSystems));
+            this.addToColors(ExternalMapManagerComponent.HAVEN_COLOR, this.extractCoordsByName(this.havenSystems));
+            this.addToColors(ExternalMapManagerComponent.ANDERMAN_COLOR, this.extractCoordsByName(this.andermanSystems));
         } else {
-            let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
-            this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
-            this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
-            this.subscriptions.push(sub);
-            sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
-            this.subscriptions.push(sub);
+            this.extractCoordsByName(this.solarianSystems).forEach(c => this.remove(c));
+            this.extractCoordsByName(this.manticoreSystems).forEach(c => this.remove(c));
+            this.extractCoordsByName(this.havenSystems).forEach(c => this.remove(c));
+            this.extractCoordsByName(this.andermanSystems).forEach(c => this.remove(c));
         }
     }
 
@@ -241,13 +252,10 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     buildURL() {
-        if (this.coords.length == 0) {
+        if (this.coords.length == 0 || !this.centerCoord) {
             return;
         }
-        let center = JSON.stringify(this.centerCoord, function (key, val) {
-            if (key !== "name")
-                return val;
-        });
+        let center = this.centerCoord.name + '_System';
         let highlight = JSON.stringify(this.colorGroups, function (key, val) {
             if (key !== "coords")
                 return val;
@@ -288,6 +296,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         }
         this.coords.splice(index, 1);
         this.cleanColorGroup(coord);
+        this.isCanonMapPreselected = false;
     }
 
     selectedRadius(event: MatAutocompleteSelectedEvent): void {
@@ -316,6 +325,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             this.coordInput.nativeElement.value = '';
         }
         this.highlightFormControl.setValue(null);
+        this.isCanonMapPreselected = false;
     }
 
     private _filter(value: string): Coords[] {
