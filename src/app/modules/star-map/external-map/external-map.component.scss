@@ -1,6 +1,11 @@
 @import "src/styles/variables";
 @import "src/styles/keyboard";
 
+
+* {
+  color: $secondary-text-color;
+}
+
 $bgColor: black;
 
 #external-map {
@@ -153,5 +158,12 @@ app-outlined {
 
   & a {
     color: hsla(0, 100%, 30%, 0.3);
+  }
+}
+
+.small-box {
+  & span {
+    margin: 5px 10px;
+    font-size: small;
   }
 }

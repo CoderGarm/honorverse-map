@@ -83,6 +83,8 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     colorGroups: ColorGroup[] = [];
     isCanonMapPreselected: boolean = false;
+    iFrameHeight: number = 600;
+    iFrameWidth: number = 900;
 
     constructor(private publicResourcesService: PublicResourcesApiService) {
         super();
@@ -267,9 +269,12 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
             this.addUrlParamConnector();
             this.url += 'highlight=' + encodeURIComponent(highlight);
         }
-        this.iFrameTxt = '<iframe width="900px" height="600px" src="' + this.url + '"></iframe>';
+        this.buildIFrame();
     }
 
+    buildIFrame() {
+        this.iFrameTxt = '<iframe width="' + this.iFrameWidth + 'px" height="' + this.iFrameHeight + 'px" src="' + this.url + '"></iframe>';
+    }
 
     private addUrlParamConnector() {
         if (this.url.endsWith(ExternalMapManagerComponent.path)) {
@@ -285,7 +290,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         }
         let radialGroup = JSON.stringify(this.radialGroups);
         this.url = this.frontendPath + '/' + ExternalMapComponent.path + '?radialGroup=' + encodeURIComponent(radialGroup);
-        this.iFrameTxt = '<iframe width="900px" height="600px" [src]="' + this.url + '"></iframe>';
+        this.buildIFrame();
     }
 
     remove(coord: Coords): void {

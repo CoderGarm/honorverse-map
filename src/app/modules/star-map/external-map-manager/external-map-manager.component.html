@@ -167,7 +167,24 @@
         </button>
     </mat-form-field>
 
-    <iframe width="900px" height="600px" [src]="url | safe"></iframe>
+    <div class="flex-items-container" style="align-items: center;">
+
+        <div class="column-flex">
+            <mat-form-field style="width: 150px;">
+                <mat-label>Width</mat-label>
+                <input type="number" matInput [(ngModel)]="iFrameWidth" (click)="buildIFrame()">
+                <span matSuffix style="margin-right: 15px;">&nbsp; px</span>
+            </mat-form-field>
+
+            <mat-form-field style="width: 150px;">
+                <mat-label>Height</mat-label>
+                <input type="number" matInput [(ngModel)]="iFrameHeight" (click)="buildIFrame()">
+                <span matSuffix style="margin-right: 15px;">&nbsp; px</span>
+            </mat-form-field>
+        </div>
+
+        <iframe [width]="iFrameWidth" [height]="iFrameHeight" [src]="url | safe"></iframe>
+    </div>
 
 </div>
 <div id="spacer"></div>

@@ -8,6 +8,7 @@ import {ColorGroup, ExternalMapManagerComponent, RadialGroup, SimpleCoord} from 
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval} from "rxjs";
 import {Point} from "@svgdotjs/svg.js";
+import {BreakpointObserver} from "@angular/cdk/layout";
 
 @Component({
     selector: 'app-external-map',
@@ -56,11 +57,17 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private andermanSystems: WikiEntry[] = [];
     private havenSystems: WikiEntry[] = [];
     private highlightedCenterSystemName?: string;
+    smallWidth: boolean = false;
 
     constructor(private route: ActivatedRoute,
+                private breakpointObserver: BreakpointObserver,
                 private publicResourcesService: PublicResourcesApiService,
                 private translate: TranslateService) {
         super();
+
+        this.breakpointObserver.observe('(max-width: 950px)').subscribe(result => {
+            this.smallWidth = result.matches;
+        });
 
         // just make sure that the key exists
         this.translate.get('star-map.universe-map.loading-spinner-message');
@@ -71,6 +78,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.fetchCanonMap();
             this.createUniverseMap();
         });
+
     }
 
     private detectRadialGroups(map: ParamMap) {
@@ -285,8 +293,16 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             let orbitDefinitions: OrbitDefinition[] = OrbitDefinition.getOrbitDefinitionsForExternalStarMap(this.center, this.coords, colors);
             this.drawRadialGroups(this.radialGroups);
             this.drawOrbits(orbitDefinitions);
+            setTimeout(() => {
+                this.zoomToCenter();
+            }, 20);
         });
         this.subscriptions.push(sub);
+    }
+
+    private zoomToCenter() {
+        let level: number = this.smallWidth ? 0.5 : 0.8;
+        this.canvas!.zoom(0).animate().zoom(level, new Point(this.center!.x, this.center!.y));
     }
 
     private drawJunctions() {
