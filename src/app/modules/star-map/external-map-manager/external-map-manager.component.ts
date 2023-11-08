@@ -277,7 +277,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     private addUrlParamConnector() {
-        if (this.url.endsWith(ExternalMapManagerComponent.path)) {
+        if (this.url.endsWith(ExternalMapComponent.path)) {
             this.url += '?';
         } else {
             this.url += '&';
