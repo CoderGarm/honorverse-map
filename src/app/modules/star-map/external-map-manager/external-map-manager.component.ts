@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {Coords, CoordsBlob, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
+import {Coords, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
 import {Observable} from "rxjs";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {FormControl} from "@angular/forms";
@@ -45,7 +45,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     static path: string = '';
 
-    allCoords?: CoordsBlob;
+    allCoords: Coords[] = [];
     coords: Coords[] = [];
 
     centerCoord?: Coords;

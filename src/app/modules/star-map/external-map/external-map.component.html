@@ -1,4 +1,28 @@
 <div id="external-map">
+
+    <form class="search-box">
+        <mat-form-field class="center-field" appearance="outline">
+            <mat-label>Search for system</mat-label>
+            <input matInput
+                   placeholder="Search for system"
+                   #centerInput
+                   [formControl]="centerFormControl"
+                   matAutocompletePosition="above"
+                   [matAutocomplete]="auto1"/>
+            <mat-icon matSuffix (click)="selectedCenter(undefined); $event.stopPropagation();">clear</mat-icon>
+            <mat-autocomplete #auto1="matAutocomplete" (optionSelected)="selectedCenter($event)">
+                <mat-option *ngFor="let coord of filteredCenter | async" [value]="coord">
+                    {{coord.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <button mat-mini-fab color="primary" (click)="zoomTo(searchedStarSystem)"
+                matTooltip="Zoom to target"
+                class="zoom-btn">
+            <mat-icon>zoom_in_map</mat-icon>
+        </button>
+    </form>
+
     <button mat-button (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
     <span id="ctto">Map proudly presented by NovaBallard and <a target="_blank" href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
     <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red': lockedToBackground }">
@@ -149,7 +173,7 @@
                     <button class="kbc-button key-up" (click)="handleButtonPress('i')">I</button>
                     <button class="kbc-button key-left" (click)="handleButtonPress('j')">J</button>
                     <button class="kbc-button key-down" (click)="handleButtonPress('k')">K</button>
-                    <button mat-mini-fab color="primary" (click)="zoomTo()"
+                    <button mat-mini-fab color="primary" (click)="zoomTo(selectedStarSystem)"
                             [disabled]="lockedToBackground"
                             matTooltip="Zoom to target"
                             class="zoom-btn">

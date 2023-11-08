@@ -3,8 +3,8 @@ import {HttpClient} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
 
-import {CoordsBlob} from '../model/coordsBlob';
 import {Junction} from '../model/junction';
+import {Coords} from "../model/coords";
 
 export interface WikiEntry {
     title: string
@@ -15,8 +15,8 @@ export class PublicResourcesApiService {
     constructor(private httpClient: HttpClient) {
     }
 
-    getAllSystemCoordinates(): Observable<CoordsBlob> {
-        return this.httpClient.get<CoordsBlob>('assets/systems.json');
+    getAllSystemCoordinates(): Observable<Coords[]> {
+        return this.httpClient.get<Coords[]>('assets/systems.json');
     }
 
     public getAllWormholeJunctions(): Observable<Junction[]> {

@@ -1,14 +1,17 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {InterstellarViewHelper} from "../payload/interstellar-view-helper";
-import {Coords, CoordsBlob, Junction, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
+import {Coords, Junction, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
 import {TranslateService} from "@ngx-translate/core";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {ColorGroup, ExternalMapManagerComponent, RadialGroup, SimpleCoord} from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
-import {interval} from "rxjs";
+import {interval, Observable} from "rxjs";
 import {Point} from "@svgdotjs/svg.js";
 import {BreakpointObserver} from "@angular/cdk/layout";
+import {FormControl} from "@angular/forms";
+import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
+import {map, startWith} from "rxjs/operators";
 
 @Component({
     selector: 'app-external-map',
@@ -27,7 +30,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     colorByCircle: Map<string, string> = new Map<string, string>();
     highlightedCenter?: SimpleCoord;
 
-    coords?: CoordsBlob;
+    coords: Coords[] = [];
 
     center?: Coords;
     hoveredSystem?: Coords;
@@ -36,6 +39,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     starSystemCreationState: boolean = false;
     selectedStarSystem?: Coords;
+    searchedStarSystem?: Coords;
 
     showBackgroundNav: boolean = false;
     showUpload: boolean = false;
@@ -59,6 +63,13 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private highlightedCenterSystemName?: string;
     smallWidth: boolean = false;
 
+    @ViewChild('centerInput')
+    centerInput?: ElementRef<HTMLInputElement>;
+
+    filteredCenter: Observable<Coords[]>;
+
+    centerFormControl = new FormControl('');
+
     constructor(private route: ActivatedRoute,
                 private breakpointObserver: BreakpointObserver,
                 private publicResourcesService: PublicResourcesApiService,
@@ -79,6 +90,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.createUniverseMap();
         });
 
+        this.filteredCenter = this.centerFormControl.valueChanges.pipe(
+            startWith(null),
+            map((c: string | null) => (c ? this._filter(c) : this.coords.slice()))
+        );
     }
 
     private detectRadialGroups(map: ParamMap) {
@@ -553,13 +568,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
 
-    zoomTo() {
-        if (!this.selectedStarSystem) {
+    zoomTo(coords?: Coords) {
+        if (!coords) {
             return;
         }
-        let x = this.selectedStarSystem!.x!;
-        let y = this.selectedStarSystem!.y!;
-        this.canvas!.zoom(0).animate().zoom(2, new Point(x, y));
+        this.canvas!.zoom(0).animate().zoom(2, new Point(coords.x, coords.y));
     }
 
     private controlsInvalid(key: string) {
@@ -596,5 +609,29 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     dropSystem() {
         this.removeSelectedSystemFromCanvas();
         this.deselectSystem();
+    }
+
+    private _filter(value: string): Coords[] {
+        let filterValue = '';
+        try {
+            filterValue = value.toLowerCase();
+        } catch (e) {
+            filterValue = (<Coords><unknown>value).name.toLowerCase();
+        }
+        return this.coords!.filter(c => c.name.toLowerCase().includes(filterValue));
+    }
+
+    selectedCenter(event?: MatAutocompleteSelectedEvent): void {
+
+        if (!!event) {
+            this.searchedStarSystem = event.option.value;
+        } else {
+            this.searchedStarSystem = undefined;
+        }
+        if (!!this.searchedStarSystem) {
+            this.centerFormControl.setValue(this.searchedStarSystem.name);
+        } else {
+            this.centerFormControl.setValue(null);
+        }
     }
 }

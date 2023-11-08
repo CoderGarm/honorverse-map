@@ -167,3 +167,10 @@ app-outlined {
     font-size: small;
   }
 }
+
+.search-box {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  z-index: 999;
+}
