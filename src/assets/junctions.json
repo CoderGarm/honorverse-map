@@ -1,59 +1,16 @@
 [
-  {
-    "nexus": {
-      "name": "Manticore"
-    },
-    "termini": [
-      {
-        "name": "Basilisk"
-      },
-      {
-        "name": "Trevor's Star"
-      },
-      {
-        "name": "Hennesy"
-      },
-      {
-        "name": "Sigma Draconis"
-      },
-      {
-        "name": "Lynx B (Terminus)"
-      },
-      {
-        "name": "Matapan"
-      },
-      {
-        "name": "Gregor"
-      }
-    ]
-  },
-  {
-    "nexus": {
-      "name": "Erewhon"
-    },
-    "termini": [
-      {
-        "name": "Terra Haute"
-      },
-      {
-        "name": "Joshua"
-      },
-      {
-        "name": "Sasebo"
-      }
-    ]
-  },
-  {
-    "nexus": {
-      "name": "Asgard"
-    },
-    "termini": [
-      {
-        "name": "Durandel"
-      },
-      {
-        "name": "Midgard"
-      }
-    ]
-  }
+  {"nexus": {"name": "Manticore"}, "termini": [{"name": "Basilisk"}, {"name": "Trevor's Star"}, {"name": "Hennesy"}, {"name": "Sigma Draconis"}, {"name": "Lynx B (Terminus)"}, {"name": "Matapan"}, {"name": "Gregor"}]},
+  {"nexus": {"name": "Erewhon"}, "termini": [{"name": "Terra Haute"}, {"name": "Joshua"}, {"name": "Sasebo"}]},
+  {"nexus": {"name": "Asgard"}, "termini": [{"name": "Durandel"}, {"name": "Midgard"}]},
+  {"nexus": {"name": "Prime"}, "termini": [{"name": "Ajay"}]},
+  {"nexus": {"name": "Agueda"}, "termini": [{"name": "Stine"}]},
+  {"nexus": {"name": "Clarence"}, "termini": [{"name": "Artesia"}]},
+  {"nexus": {"name": "Dionigi"}, "termini": [{"name": "Katharina"}]},
+  {"nexus": {"name": "Franzeki"}, "termini": [{"name": "Bessie"}]},
+  {"nexus": {"name": "Idaho"}, "termini": [{"name": "Zunker"}]},
+  {"nexus": {"name": "J-156-18(L)"}, "termini": [{"name": "Calvin"}]},
+  {"nexus": {"name": "Mannerheim"}, "termini": [{"name": "Warner"}]},
+  {"nexus": {"name": "Nolan"}, "termini": [{"name": "Katharina"}]},
+  {"nexus": {"name": "Syou-tang"}, "termini": [{"name": "Olivia"}]},
+  {"nexus": {"name": "Włocławek"}, "termini": [{"name": "Sarduchi"}]}
 ]
