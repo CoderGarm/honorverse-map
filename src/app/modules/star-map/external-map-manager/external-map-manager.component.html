@@ -67,11 +67,12 @@
             </form>
 
             <div class="flex-items-container">
-                <span [style.color]="color"
-                      [cpPosition]="'top'"
-                      [cpPositionOffset]="'50%'"
-                      [cpPositionRelativeToArrow]="true"
-                      [(colorPicker)]="color">Change me!</span>
+                <button mat-flat-button [style.color]="color"
+                        [cpPosition]="'top'"
+                        [cpPositionOffset]="'50%'"
+                        [cpPositionRelativeToArrow]="true"
+                        [(colorPicker)]="color">Change me!
+                </button>
 
                 <button mat-flat-button color="primary" (click)='addToColorGroup()' [disabled]="coords.length == 0">Add to color</button>
 

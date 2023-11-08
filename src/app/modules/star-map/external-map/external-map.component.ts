@@ -521,7 +521,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         } else {
             opts = ExternalMapComponent.PAN_ZOOM_STANDARD_OPTIONS;
         }
-        console.log(opts)
         this.canvas?.panZoom(opts);
     }
 
