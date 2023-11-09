@@ -25,6 +25,14 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
     public static readonly UN_FOCUSSED_COLOR: string = '#FFF';
 
+    static CAPITOL_NAMES: string[] = [
+        'Gregor', 'Manticore', 'Haven', 'Sol', 'Erewhon', 'Spindle', 'Mesa', 'Basilisk',
+        "Trevor's Star", 'Hennesy', 'Sigma Draconis', 'Lynx B (Terminus)',
+        'Matapan', 'Terra Haute', 'Joshua', 'Sasebo', 'Asgard', 'Durandel',
+        'Midgard', 'Prime', 'Ajay', 'Agueda', 'Stine', 'Clarence', 'Artesia', 'Dionigi',
+        'Katharina', 'Franzeki', 'Bessie', 'Idaho', 'Zunker', 'J-156-18(L)', 'Calvin',
+        'Mannerheim', 'Warner', 'Nolan', 'Katharina', 'Syou-tang', 'Olivia', 'Włocławek', 'Sarduchi'
+    ];
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];
     colorByCircle: Map<string, string> = new Map<string, string>();

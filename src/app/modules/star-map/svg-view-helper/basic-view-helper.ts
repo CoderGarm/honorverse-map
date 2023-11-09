@@ -255,6 +255,11 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         this.setTextOptions(text);
         this.setTextById(celestialBodyID, text);
+
+        if (ExternalMapComponent.CAPITOL_NAMES.includes(name)) {
+            this.canvas?.add(text);
+        }
+
         return text;
     }
 
@@ -270,14 +275,18 @@ export class BasicViewHelper extends BasicViewHelperData {
         let box = this.canvas!.viewbox();
 
         // remove all text
-        bodyIDs.forEach(celestialId => this.canvas!.children().filter(t => t === this.getTextById(celestialId)!).forEach(t => this.canvas!.removeElement(t)));
+        bodyIDs.forEach(celestialId => this.canvas!.children()
+            .filter(t => t === this.getTextById(celestialId)!)
+            .forEach(t => this.removeText(<Text>t)));
 
         // add in viewport
         bodyIDs.forEach(celestialId => {
             let circle = this.getCelestialByID(celestialId)!;
             let insideViewbox = this.isInsideViewbox(box, <number>circle.x(), <number>circle.y());
             if (insideViewbox && this.showNames) {
-                this.canvas!.add(this.createTextForCelestial(celestialId, this.getNameFromCircle(circle)!, circle));
+                let text = this.getTextById(celestialId);
+                this.addResizedText(text);
+                //this.canvas!.add(this.createTextForCelestial(celestialId, this.getNameFromCircle(circle)!, circle));
             }
         });
     }
@@ -443,13 +452,19 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     mouseoverForText = (event: PointerEvent) => {
         const text = this.getTextByEvent(event);
+        this.addResizedText(text);
+    }
+
+    protected addResizedText(text?: Text) {
         if (!!text) {
             this.resizeText(text);
-            this.canvas?.add(text)
+            if (!this.canvas?.has(text)) {
+                this.canvas?.add(text);
+            }
         }
     }
 
-    private resizeText(text: Text) { // todo text positioned false the first time - why?
+    private resizeText(text: Text) {
         const idMarker = text.classes().filter(css => css.startsWith(BasicViewHelperData.ICON_ID_MARKER));
         if (idMarker.length > 0) {
             const id = idMarker[0].replace(BasicViewHelperData.ICON_ID_MARKER, '');
@@ -475,8 +490,14 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     mouseoutForText = (event: PointerEvent) => {
         const text = this.getTextByEvent(event);
+        this.removeText(text);
+    }
+
+    removeText(text: Text | undefined) {
         if (!!text) {
-            this.canvas?.removeElement(text)
+            if (!ExternalMapComponent.CAPITOL_NAMES.includes(text.text())) {
+                this.canvas?.removeElement(text)
+            }
         }
     }
 
