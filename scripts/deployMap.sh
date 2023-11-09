@@ -11,5 +11,6 @@ tar -xf /home/karsten/uploadTarget/honorverse-map.tar.gz -C /home/karsten/upload
 sudo rm -r /var/www/html/honorverse-map/
 sudo cp -r /home/karsten/uploadTarget/dist/honorverse-map/ /var/www/html/
 sudo cp /home/karsten/uploadTarget/htaccess /var/www/html/honorverse-map/.htaccess
+sudo cp /home/karsten/uploadTarget/google2cbaff394ce44864.html /var/www/html/honorverse-map/
 sudo chown -R www-data:www-data /var/www/html/honorverse-map/
 echo 'deployment of map tool done'
