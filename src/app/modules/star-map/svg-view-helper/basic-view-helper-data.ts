@@ -26,6 +26,9 @@ export class BasicViewHelperData extends SubscriptionManager {
     protected static readonly ROUND_CAP_SUFFIX = "-roundCapSuffix";
     protected static readonly RESIZE_ON_ZOOM_MARKER = "no-resize";
     protected static readonly WORMHOLE_MARKER = "wormhole";
+    protected static readonly WORMHOLE_MARKER_ID_PREFIX = "wormholeName-";
+    protected static readonly WORMHOLE_MARKER_ID_CONNECTOR = "-id-";
+    protected static readonly WORMHOLE_HIGHLIGHT_MARKER = "wormhole-highlight";
     protected static readonly LOW_OPACITY_MARKER = 'low-opacity';
     protected static readonly STAR_MARKER = "star";
     protected static readonly STAR_IN_SYSTEM_MARKER = "star-in-system";

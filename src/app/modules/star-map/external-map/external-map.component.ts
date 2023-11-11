@@ -4,7 +4,7 @@ import {Coords, Junction, PublicResourcesApiService, WikiEntry} from "../../../s
 import {TranslateService} from "@ngx-translate/core";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {ColorGroup, ExternalMapManagerComponent, RadialGroup, SimpleCoord} from "../external-map-manager/external-map-manager.component";
+import {ColorGroup, ExternalMapManagerComponent, NamedThing, RadialGroup, SimpleCoord} from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval, Observable} from "rxjs";
 import {Point} from "@svgdotjs/svg.js";
@@ -175,8 +175,29 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             canvas
                 .mouseover(this.mouseoverForCelestial)
                 .mouseout(this.mouseoutForCelestial)
+                .mouseover(this.mouseoverForWormhole)
+                .mouseout(this.mouseoutForWormhole)
                 .click(this.clickEventForCelestial)
                 .click(this.clickEventForCreateCelestial);
+        }
+    }
+
+    mouseoverForWormhole = (event: PointerEvent) => {
+        let id = this.getIdFromEvent(event);
+        if (id.includes(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX) && id.includes(ExternalMapComponent.WORMHOLE_MARKER_ID_CONNECTOR)) {
+            let wormholeName = id.replaceAll(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX, '').split(ExternalMapComponent.WORMHOLE_MARKER_ID_CONNECTOR)[0];
+            this.canvas!.children()
+                .filter(e => e.id().includes(wormholeName))
+                .forEach(e => e.addClass(ExternalMapComponent.WORMHOLE_HIGHLIGHT_MARKER));
+        }
+    }
+
+    mouseoutForWormhole = (event: PointerEvent) => {
+        let id = this.getIdFromEvent(event);
+        if (id.includes(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX) && id.includes(ExternalMapComponent.WORMHOLE_MARKER_ID_CONNECTOR)) {
+            this.canvas!.children()
+                .filter(e => e.id().includes(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX))
+                .forEach(e => e.removeClass(ExternalMapComponent.WORMHOLE_HIGHLIGHT_MARKER));
         }
     }
 
@@ -336,12 +357,23 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 let terminal = this.getBySystemName(terminus.name)!;
                 this.canvas!
                     .line(nexus.x!, nexus.y!, terminal.x!, terminal.y!)
+                    .id(this.getIdForWormhole(junction, terminus))
                     .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
                     .addClass(BasicViewHelperData.WORMHOLE_MARKER)
                     .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
                     .stroke({width: 1, color: 'irrelevant'});
             });
         });
+    }
+
+    private getIdForWormhole(junction: Junction, terminus: NamedThing) {
+        return BasicViewHelperData.WORMHOLE_MARKER_ID_PREFIX + this.getWormholeTrip(junction) + BasicViewHelperData.WORMHOLE_MARKER_ID_CONNECTOR + terminus.name;
+    }
+
+    private getWormholeTrip(junction: Junction) {
+        let name = junction.nexus.name;
+        junction.termini.forEach(terminus => name += '-' + terminus.name);
+        return name;
     }
 
     private fetchJunctions() {
