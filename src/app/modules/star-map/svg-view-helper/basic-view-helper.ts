@@ -6,6 +6,7 @@ import '@svgdotjs/svg.panzoom.js'
 import {Coords} from "../../../services/swagger";
 import {ExternalMapComponent} from "../external-map/external-map.component";
 import {StarHelper} from "./star-helper";
+import {SimpleCoord} from "../external-map-manager/external-map-manager.component";
 
 interface ElementToParent {
     parent: Dom;
@@ -543,5 +544,9 @@ export class BasicViewHelper extends BasicViewHelperData {
     getSvgCoordinateFromPointerEvent(event: PointerEvent) {
         let p = new DOMPoint(event.clientX, event.clientY).matrixTransform(this.canvas!.screenCTM().inverse());
         return {x: p.x, y: p.y};
+    }
+
+    static calculateDistanceOfPoints(first: SimpleCoord, second: SimpleCoord): number {
+        return Math.sqrt(Math.pow(first.x - second.x, 2) + Math.pow(first.y - second.y, 2));
     }
 }

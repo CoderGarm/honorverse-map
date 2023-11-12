@@ -9,6 +9,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 import {SubscriptionManager} from "../../../services/subscription.manager";
 import {environment} from "../../../../environments/environment";
 import {ExternalMapComponent} from "../external-map/external-map.component";
+import {BasicViewHelper} from "../svg-view-helper/basic-view-helper";
 
 
 export interface ColorGroup {
@@ -38,9 +39,11 @@ export interface NamedThing {
 })
 export class ExternalMapManagerComponent extends SubscriptionManager implements AfterViewInit {
 
+    public static readonly LS_TO_LY_FACTOR = 3.159;
+
     public static readonly SOLARIAN_LEAGUE_COLOR = '#B31616';
     public static readonly MANTICORE_COLOR = '#AE19AB';
-    public static readonly HAVEN_COLOR = '#80D4B8';
+    public static readonly HAVEN_COLOR = '#57ffc7';
     public static readonly ANDERMAN_COLOR = '#967B0B';
 
     static path: string = '';
@@ -285,12 +288,10 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     buildRadialGroupURL() {
-        if (this.radialGroups.length < 2) {
-            return;
-        }
         let radialGroup = JSON.stringify(this.radialGroups);
         this.url = this.frontendPath + '/' + ExternalMapComponent.path + '?radialGroup=' + encodeURIComponent(radialGroup);
         this.buildIFrame();
+        this.printRadialGroups();
     }
 
     remove(coord: Coords): void {
@@ -302,6 +303,36 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         this.coords.splice(index, 1);
         this.cleanColorGroup(coord);
         this.isCanonMapPreselected = false;
+    }
+
+    removeRadius(coord: Coords): void {
+        const isPresent = this.radiusCoords.filter(rc => ExternalMapManagerComponent.matches(rc, coord));
+        if (isPresent.length == 1) {
+            let indexOf = this.radiusCoords.indexOf(isPresent[0]);
+            this.radiusCoords.splice(indexOf, 1);
+
+            let groups = this.radialGroups.filter(rd => ExternalMapManagerComponent.matches(rd.coord, coord));
+            if (groups.length == 1) {
+                let indexOf = this.radialGroups.indexOf(groups[0]);
+                this.radialGroups.splice(indexOf, 1);
+            }
+        }
+    }
+
+    private printRadialGroups() {
+        console.log('----------------------------------')
+        this.radialGroups.forEach(group => {
+            let coord = group.coord;
+            this.allCoords
+                .filter(c => ExternalMapManagerComponent.matches(c, coord))
+                .forEach(c => console.log('Radial group ', c.name, ' with radius of ', group.radius / ExternalMapManagerComponent.LS_TO_LY_FACTOR, ' ly'));
+
+            this.allCoords
+                .filter(c => BasicViewHelper.calculateDistanceOfPoints(c, coord) <= group.radius)
+                .forEach(c => console.log(c.name))
+        });
+
+
     }
 
     selectedRadius(event: MatAutocompleteSelectedEvent): void {
@@ -375,7 +406,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     addRadius(coord: Coords, input: HTMLInputElement) {
-        const radius = <number><unknown>input.value;
+        const radius = <number><unknown>input.value * ExternalMapManagerComponent.LS_TO_LY_FACTOR;
         const filter = this.radialGroups.filter(rg => ExternalMapManagerComponent.matches(coord, rg.coord));
         const isPresent = filter.length > 0;
         if (isPresent) {
