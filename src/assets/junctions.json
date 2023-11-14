@@ -16,5 +16,6 @@
   {"nexus": {"name": "Visigoth"}, "termini": [{"name": "Mesa"}, {"name": "Epsilon Virgo"}]},
   {"nexus": {"name": "Titania"}, "termini": [{"name": "Mullins"}]},
   {"nexus": {"name": "Yildun"}, "termini": [{"name": "Templar"}, {"name": "Dickerson"}, {"name": "Mascot"}]},
-  {"nexus": {"name": "Congo"}, "termini": [{"name": "SGC-902-36-G"}]}
+  {"nexus": {"name": "Congo"}, "termini": [{"name": "SGC-902-36-G"}]},
+  {"nexus": {"name": "Felix"}, "termini": [{"name": "SGC-902-36-G"}, {"name": "Darius"}]}
 ]

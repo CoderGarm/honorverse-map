@@ -7,7 +7,7 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {ColorGroup, ExternalMapManagerComponent, NamedThing, RadialGroup, SimpleCoord} from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval, Observable} from "rxjs";
-import {Point} from "@svgdotjs/svg.js";
+import {Array, Point} from "@svgdotjs/svg.js";
 import {BreakpointObserver} from "@angular/cdk/layout";
 import {FormControl} from "@angular/forms";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
@@ -31,7 +31,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         'Matapan', 'Terra Haute', 'Joshua', 'Sasebo', 'Asgard', 'Durandel',
         'Midgard', 'Prime', 'Ajay', 'Agueda', 'Stine', 'Clarence', 'Artesia', 'Dionigi',
         'Katharina', 'Franzeki', 'Bessie', 'Idaho', 'Zunker', 'J-156-18(L)', 'Calvin',
-        'Mannerheim', 'Warner', 'Nolan', 'Katharina', 'Syou-tang', 'Olivia', 'Włocławek', 'Sarduchi'
+        'Mannerheim', 'Warner', 'Nolan', 'Katharina', 'Syou-tang', 'Olivia', 'Włocławek', 'Sarduchi',
+        "Visigoth", "Mesa", "Epsilon Virgo", "Titania", "Mullins", "Yildun", "Templar", "Dickerson",
+        "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius"
     ];
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];
@@ -187,9 +189,21 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         if (id.includes(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX) && id.includes(ExternalMapComponent.WORMHOLE_MARKER_ID_CONNECTOR)) {
             let wormholeName = id.replaceAll(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX, '').split(ExternalMapComponent.WORMHOLE_MARKER_ID_CONNECTOR)[0];
             this.canvas!.children()
-                .filter(e => e.id().includes(wormholeName))
+                .filter(e => this.filterWormhole(e.id(), wormholeName))
                 .forEach(e => e.addClass(ExternalMapComponent.WORMHOLE_HIGHLIGHT_MARKER));
         }
+    }
+
+    private filterWormhole(id: string, wormholeName: string) {
+        let fromWH = new Set<string>(wormholeName.split('|').map(s => ExternalMapManagerComponent.stripSystemName(s)));
+        let fromId = new Set<string>(
+            id.replaceAll(ExternalMapComponent.WORMHOLE_MARKER_ID_PREFIX, '')
+                .replaceAll(ExternalMapComponent.WORMHOLE_MARKER_ID_CONNECTOR, '')
+                .split('|').map(s => ExternalMapManagerComponent.stripSystemName(s)));
+
+        let presentInWH = Array.from(fromId.keys()).filter(id => Array.from(fromWH).includes(id)).length > 0;
+        let presentInID = Array.from(fromWH.keys()).filter(id => Array.from(fromId).includes(id)).length > 0;
+        return presentInID || presentInWH;
     }
 
     mouseoutForWormhole = (event: PointerEvent) => {
@@ -372,7 +386,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private getWormholeTrip(junction: Junction) {
         let name = junction.nexus.name;
-        junction.termini.forEach(terminus => name += '-' + terminus.name);
+        junction.termini.forEach(terminus => name += '|' + terminus.name);
         return name;
     }
 
