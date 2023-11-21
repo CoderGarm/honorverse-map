@@ -10,6 +10,11 @@ export interface WikiEntry {
     title: string
 }
 
+export interface LanguagePresence {
+    title: string
+    titleDE: string
+}
+
 @Injectable()
 export class PublicResourcesApiService {
     constructor(private httpClient: HttpClient) {
@@ -37,5 +42,17 @@ export class PublicResourcesApiService {
 
     public getAndermanSystems(): Observable<WikiEntry[]> {
         return this.httpClient.get<WikiEntry[]>('assets/system_assignments/Andermani_Systems.json');
+    }
+
+    public getWikiSystemsDE(): Observable<WikiEntry[]> {
+        return this.httpClient.get<WikiEntry[]>('assets/wiki-integration/de_systems.json');
+    }
+
+    public getWikiSystemsEN(): Observable<WikiEntry[]> {
+        return this.httpClient.get<WikiEntry[]>('assets/wiki-integration/en_systems.json');
+    }
+
+    public getWikiSystemsPresence(): Observable<LanguagePresence[]> {
+        return this.httpClient.get<LanguagePresence[]>('assets/wiki-integration/system_translations.json');
     }
 }

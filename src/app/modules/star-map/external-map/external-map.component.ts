@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {InterstellarViewHelper} from "../payload/interstellar-view-helper";
-import {Coords, Junction, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
+import {Coords, Junction, LanguagePresence, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
 import {TranslateService} from "@ngx-translate/core";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import {ActivatedRoute, ParamMap} from "@angular/router";
@@ -12,6 +12,8 @@ import {BreakpointObserver} from "@angular/cdk/layout";
 import {FormControl} from "@angular/forms";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {map, startWith} from "rxjs/operators";
+import {MatDialog} from "@angular/material/dialog";
+import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/wiki-display.component";
 
 @Component({
     selector: 'app-external-map',
@@ -24,6 +26,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
     public static readonly UN_FOCUSSED_COLOR: string = '#FFF';
+
+    readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/XYZ';
+    readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/XYZ';
+    baseURL?: string;
 
     static CAPITOL_NAMES: string[] = [
         'Gregor', 'Manticore', 'Haven', 'Sol', 'Erewhon', 'Spindle', 'Mesa', 'Basilisk',
@@ -79,12 +85,25 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     filteredCenter: Observable<Coords[]>;
 
     centerFormControl = new FormControl('');
+    private enWikiSystems: string[] = [];
+    private deWikiSystems: string[] = [];
+    private wikiSystemsPresence: LanguagePresence[] = [];
 
     constructor(private route: ActivatedRoute,
                 private breakpointObserver: BreakpointObserver,
                 private publicResourcesService: PublicResourcesApiService,
+                public dialog: MatDialog,
                 private translate: TranslateService) {
         super();
+
+        let sub = this.publicResourcesService.getWikiSystemsEN().subscribe(resp => this.enWikiSystems = resp.map(w => w.title));
+        this.subscriptions.push(sub);
+
+        sub = this.publicResourcesService.getWikiSystemsDE().subscribe(resp => this.deWikiSystems = resp.map(w => w.title));
+        this.subscriptions.push(sub);
+
+        sub = this.publicResourcesService.getWikiSystemsPresence().subscribe(resp => this.wikiSystemsPresence = resp);
+        this.subscriptions.push(sub);
 
         this.breakpointObserver.observe('(max-width: 950px)').subscribe(result => {
             this.smallWidth = result.matches;
@@ -180,7 +199,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 .mouseover(this.mouseoverForWormhole)
                 .mouseout(this.mouseoutForWormhole)
                 .click(this.clickEventForCelestial)
-                .click(this.clickEventForCreateCelestial);
+                .click(this.clickEventForCreateCelestial)
+                .click(this.clickEventForCelestialWithWiki);
         }
     }
 
@@ -215,6 +235,71 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
     }
 
+    clickEventForCelestialWithWiki = (event: PointerEvent) => {
+        if (!this.baseURL || !!this.selectedStarSystem) {
+            return;
+        }
+
+        let id = this.getIdFromEvent(event);
+        if (!this.isCelestialId(id)) {
+            return;
+        }
+
+        const celestialCircle = this.getCelestialByEvent(event);
+        if (!celestialCircle) {
+            return;
+        }
+        // noinspection JSUnusedLocalSymbols
+        let x = celestialCircle.cx();
+        // noinspection JSUnusedLocalSymbols
+        let y = celestialCircle.cy();
+        const celestial = this.getCelestialObjectByID(id);
+        if (!celestial) {
+            return;
+        }
+
+        this.handleClickedStarSystem(x, y, id);
+
+        let name = this.selectedStarSystem!.name;
+        if (this.EN_FANDOM_URL === this.baseURL) {
+            if (this.enWikiSystems.includes(name + ' System')) {
+                name += '_System'
+            }
+        } else {
+
+            let languagePresences = this.wikiSystemsPresence
+                .filter(w => {
+                    console.log(ExternalMapManagerComponent.stripSystemName(w.title), ExternalMapManagerComponent.stripSystemName(name + ' System'))
+                    return ExternalMapManagerComponent.stripSystemName(w.title) == ExternalMapManagerComponent.stripSystemName(name + ' System')
+                });
+            if (languagePresences.length > 0) {
+                name = languagePresences[0].titleDE;
+            } else if (this.deWikiSystems.includes(name + ' System')) {
+                name += '_System'
+            }
+        }
+        const link = this.baseURL
+            .replaceAll('XYZ', name)
+            .replaceAll(' ', '_');
+        let dialogRef = this.dialog.open(WikiDisplayComponent, {
+            data: {
+                url: link
+            },
+            panelClass: ['confirm-mat-dialog-panel', 'mat-elevation-z8'],
+            width: '80%',
+            height: '80%',
+            enterAnimationDuration: '500ms',
+            exitAnimationDuration: '500ms'
+        });
+        dialogRef.afterClosed().subscribe(() => {
+            const selectionRemoved = this.removeCyclingCircle(id);
+            if (selectionRemoved) {
+                this.selectedStarSystem = undefined;
+                return;
+            }
+        })
+    };
+
     clickEventForCreateCelestial = (event: PointerEvent) => {
         if (!this.showBackgroundManipulation || !this.lockedToBackground || !!this.selectedStarSystem) {
             return;
@@ -234,7 +319,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.drawCyclingCircle(x, y, celestialBodyID, false);
         }
     }
-
 
     clickEventForCelestial = (event: PointerEvent) => {
         if (!this.showBackgroundManipulation || !!this.selectedStarSystem) {

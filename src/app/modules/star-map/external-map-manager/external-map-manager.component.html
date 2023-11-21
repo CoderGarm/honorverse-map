@@ -184,7 +184,7 @@
             </mat-form-field>
         </div>
 
-        <iframe [width]="iFrameWidth" [height]="iFrameHeight" [src]="url | safe"></iframe>
+        <iframe [width]="iFrameWidth" [height]="iFrameHeight" [src]="url | safe: 'resourceUrl' "></iframe>
     </div>
 
 </div>

@@ -384,3 +384,7 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   margin-left: 10px;
   margin-right: 5px;
 }
+
+.confirm-mat-dialog-panel .mat-mdc-dialog-container {
+  // todo resize: both;
+}

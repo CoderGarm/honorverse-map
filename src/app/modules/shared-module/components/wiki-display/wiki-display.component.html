@@ -1,0 +1,12 @@
+<div class="header"
+     cdkDrag
+     cdkDragRootElement=".confirm-mat-dialog-panel"
+     cdkDragBoundary=".cdk-overlay-container">
+    <h1 mat-dialog-title>
+        <a mat-stroked-button href="{{ $any(data).url }}" target="_blank">
+            {{ $any(data).url }}
+            <mat-icon>open_in_new</mat-icon>
+        </a>
+    </h1>
+</div>
+<iframe [src]="$any(data).url | safe: 'resourceUrl'" width="98%" height="90%"></iframe>

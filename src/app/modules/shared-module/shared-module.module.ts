@@ -21,6 +21,7 @@ import {ColorPickerModule} from "ngx-color-picker";
 import {OverlayModule} from "@angular/cdk/overlay";
 import {SafePipe} from "../../services/pipes/safe.pipe";
 import {FileUploadComponent} from "./components/file-upload/file-upload.component";
+import {WikiDisplayComponent} from "./components/wiki-display/wiki-display.component";
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import {FileUploadComponent} from "./components/file-upload/file-upload.componen
         ChipSelectorComponent,
         NumericSliderCounterComponent,
         FileUploadComponent,
+        WikiDisplayComponent,
     ],
     imports: [
         CommonModule,
@@ -74,6 +76,7 @@ import {FileUploadComponent} from "./components/file-upload/file-upload.componen
         ClipboardModule,
         ColorPickerModule,
         FileUploadComponent,
+        WikiDisplayComponent,
     ]
 })
 export class SharedModuleModule {
