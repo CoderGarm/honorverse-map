@@ -266,7 +266,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 name += '_System'
             }
         } else {
-
+/* fixme something wrong at prod - nothing displayed */
             let languagePresences = this.wikiSystemsPresence
                 .filter(w => ExternalMapManagerComponent.stripSystemName(w.title) == ExternalMapManagerComponent.stripSystemName(name + ' System'));
             if (languagePresences.length > 0) {
