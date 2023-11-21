@@ -268,10 +268,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         } else {
 
             let languagePresences = this.wikiSystemsPresence
-                .filter(w => {
-                    console.log(ExternalMapManagerComponent.stripSystemName(w.title), ExternalMapManagerComponent.stripSystemName(name + ' System'))
-                    return ExternalMapManagerComponent.stripSystemName(w.title) == ExternalMapManagerComponent.stripSystemName(name + ' System')
-                });
+                .filter(w => ExternalMapManagerComponent.stripSystemName(w.title) == ExternalMapManagerComponent.stripSystemName(name + ' System'));
             if (languagePresences.length > 0) {
                 name = languagePresences[0].titleDE;
             } else if (this.deWikiSystems.includes(name + ' System')) {
