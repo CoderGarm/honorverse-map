@@ -42,12 +42,6 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     public static readonly LS_TO_LY_FACTOR = 3.159;
 
-    public static readonly SOLARIAN_LEAGUE_COLOR = '#B31616';
-    public static readonly MANTICORE_COLOR = '#AE19AB';
-    public static readonly HAVEN_COLOR = '#57ffc7';
-    public static readonly ANDERMAN_COLOR = '#967B0B';
-    public static readonly SILESIA_COLOR = '#99ff33';
-
     static path: string = '';
 
     allCoords: Coords[] = [];
@@ -177,18 +171,9 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     defineMapPreselection() {
         if (this.isCanonMapPreselected) {
-            // gregor, clairmont and welladay in multiple nations
-            this.addToColors(ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR, this.extractCoordsByName(SystemAssignmentHelper.SOLARIAN_SYSTEMS));
-            this.addToColors(ExternalMapManagerComponent.MANTICORE_COLOR, this.extractCoordsByName(SystemAssignmentHelper.MANTICOREAN_SYSTEMS));
-            this.addToColors(ExternalMapManagerComponent.HAVEN_COLOR, this.extractCoordsByName(SystemAssignmentHelper.HAVENITE_SYSTEMS));
-            this.addToColors(ExternalMapManagerComponent.ANDERMAN_COLOR, this.extractCoordsByName(SystemAssignmentHelper.ANDERMANI_SYSTEMS));
-            this.addToColors(ExternalMapManagerComponent.SILESIA_COLOR, this.extractCoordsByName(SystemAssignmentHelper.SILESIA_SYSTEMS));
+            SystemAssignmentHelper.NATIONS_BY_COLOR.forEach((systems, color) => this.addToColors(color, this.extractCoordsByName(systems)));
         } else {
-            this.extractCoordsByName(SystemAssignmentHelper.SOLARIAN_SYSTEMS).forEach(c => this.remove(c));
-            this.extractCoordsByName(SystemAssignmentHelper.MANTICOREAN_SYSTEMS).forEach(c => this.remove(c));
-            this.extractCoordsByName(SystemAssignmentHelper.HAVENITE_SYSTEMS).forEach(c => this.remove(c));
-            this.extractCoordsByName(SystemAssignmentHelper.ANDERMANI_SYSTEMS).forEach(c => this.remove(c));
-            this.extractCoordsByName(SystemAssignmentHelper.SILESIA_SYSTEMS).forEach(c => this.remove(c));
+            SystemAssignmentHelper.NATIONS_BY_COLOR.forEach((systems, color) => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
         }
     }
 

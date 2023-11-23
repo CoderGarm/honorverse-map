@@ -156,16 +156,15 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private setUpCanonMap() {
-        this.setUpCanonColor(SystemAssignmentHelper.SOLARIAN_SYSTEMS, ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR);
-        this.setUpCanonColor(SystemAssignmentHelper.MANTICOREAN_SYSTEMS, ExternalMapManagerComponent.MANTICORE_COLOR);
-        this.setUpCanonColor(SystemAssignmentHelper.HAVENITE_SYSTEMS, ExternalMapManagerComponent.HAVEN_COLOR);
-        this.setUpCanonColor(SystemAssignmentHelper.ANDERMANI_SYSTEMS, ExternalMapManagerComponent.ANDERMAN_COLOR);
-        this.setUpCanonColor(SystemAssignmentHelper.SILESIA_SYSTEMS, ExternalMapManagerComponent.SILESIA_COLOR);
+        SystemAssignmentHelper.NATIONS_BY_COLOR.forEach((systems, color) => this.setUpCanonColor(systems, color));
     }
 
     private setUpCanonColor(systems: string[], color: string) {
         systems.forEach(name => {
             let coord = this.getBySystemName(name);
+            if (name.includes('Monica')) {
+                console.log(name, coord, color)
+            }
             if (!!coord) {
                 const id = ExternalMapComponent.getStarSystemCircleID(coord);
                 this.colorByCircle.set(id, color);
