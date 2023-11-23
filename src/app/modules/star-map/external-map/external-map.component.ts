@@ -162,9 +162,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private setUpCanonColor(systems: string[], color: string) {
         systems.forEach(name => {
             let coord = this.getBySystemName(name);
-            if (name.includes('Monica')) {
-                console.log(name, coord, color)
-            }
             if (!!coord) {
                 const id = ExternalMapComponent.getStarSystemCircleID(coord);
                 this.colorByCircle.set(id, color);
