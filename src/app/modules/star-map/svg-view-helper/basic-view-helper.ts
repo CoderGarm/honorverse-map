@@ -257,6 +257,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.setTextOptions(text);
         this.setTextById(celestialBodyID, text);
 
+        console.log(name)
         if (ExternalMapComponent.CAPITOL_NAMES.includes(name)) {
             this.canvas?.add(text);
         }

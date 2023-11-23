@@ -34,13 +34,13 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     static CAPITOL_NAMES: string[] = [
         'Gregor', 'Manticore', 'Haven', 'Sol', 'Erewhon', 'Spindle', 'Mesa', 'Basilisk',
-        "Trevor's Star", 'Hennesy', 'Sigma Draconis', 'Lynx B (Terminus)',
+        "Trevor's Star", 'Hennesy', 'Sigma Draconis', 'Lynx B (Terminus)', "Marsh",
         'Matapan', 'Terra Haute', 'Joshua', 'Sasebo', 'Asgard', 'Durandel',
         'Midgard', 'Prime', 'Ajay', 'Agueda', 'Stine', 'Clarence', 'Artesia', 'Dionigi',
         'Katharina', 'Franzeki', 'Bessie', 'Idaho', 'Zunker', 'J-156-18(L)', 'Calvin',
         'Mannerheim', 'Warner', 'Nolan', 'Katharina', 'Syou-tang', 'Olivia', 'Włocławek', 'Sarduchi',
         "Visigoth", "Mesa", "Epsilon Virgo", "Titania", "Mullins", "Yildun", "Templar", "Dickerson",
-        "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius"
+        "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius", "Silesia", "Breslau", "Sachsen"
     ];
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];
