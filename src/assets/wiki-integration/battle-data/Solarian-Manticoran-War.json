@@ -1,0 +1,508 @@
+[
+  {
+    "name": "Second Battle of Manticore",
+    "conflict": "Solarian-Manticoran War",
+    "date": "11 June 1922 PD",
+    "dateBlock": {
+      "day": 11,
+      "month": 5,
+      "year": 1922
+    },
+    "place": "Manticore System",
+    "result": "Grand Alliance victory",
+    "side": [
+      "Grand Fleet:\n* Royal Manticoran Navy\n* Republic of Haven Navy\n* Grayson Space Navy",
+      "Solarian League NavyEleventh Fleet (Solarian League)|Eleventh Fleet"
+    ],
+    "commander": [
+      "Honor Harrington|Fleet Admiral Harrington",
+      "Massimo Filareta|Fleet Admiral Filareta †"
+    ],
+    "force": [
+      "RMN\n* 40 Freighters disguised as SD and several hundred LAC\nGSN\n* 150 SD(P)\n* 800 LAC\nRHN\n* 250 SD(P)\n* CLAC_LAC",
+      "* 427 SD \n* 32 BC\n* 30 CL\n* 50 fast freighters \u0026 personnel transports\nTonnage 3,000,000,000+\n\n* 2,700,000 naval personnel\n* 421,000 marines and support personnel"
+    ],
+    "casual": [
+      "* 11 units damaged\n* several LAC lost\n* c.a. 2,000 KIA",
+      "* 296 SD destroyed\n* 139 SD surrendered\n* 3 BC destroyed\n* 29 BC surrendered\n* 23 CL surrendered\n* 28 DD surrendered\n* 1.2 million KIA\n* 1.4 million captured"
+    ]
+  },
+  {
+    "name": "Battle of Sol",
+    "conflict": "Solarian-Manticoran War",
+    "date": "January 1923 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 0,
+      "year": 1923
+    },
+    "place": "Sol System",
+    "result": "Alliance victory",
+    "side": [
+      "Grand Alliance Grand Fleet",
+      "Solarian League Navy"
+    ],
+    "commander": [
+      "Fleet Adm. Honor Harrington|Alexander-Harrington",
+      "Fleet Adm. Winston Kingsford|KingsfordAdm. Maridors Haeckle|Haeckle, CO NSGRear Adm. Bethany Ning-ju|Ning-Ju, CO, CruRon 572"
+    ],
+    "force": [
+      "Grand Fleet\n*600+ ships of all sizes\n*Many LACs Deployed from CLACs",
+      "CruRon 572:\n* 8 Mikasa class CA\nNSG:\n* 62 SD\n* 106 BC\n* 62 CC\n* 117 DD\n* 120,000 pods\nEarth:\n* 200+ SD\n* 400 BC\n* 1,000,000 pods"
+    ],
+    "casual": [
+      "*none",
+      "2DD and 1CA and crews destroyed\n*SDs scuttled\n*BCs scuttled\n*CA_CLs scuttled\n*DDs scuttled\n*missile pods scuttled"
+    ]
+  },
+  {
+    "name": "Battle of Spindle",
+    "image": "File:Talbott cluster.png|300px",
+    "conflict": "Solarian-Manticoran War",
+    "date": "beginning of February 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 1,
+      "year": 1922
+    },
+    "place": "Spindle System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy\nTenth Fleet (Manticore)|Tenth Fleet",
+      "Solarian League Navy\nTask Force 496"
+    ],
+    "commander": [
+      "Augustus Khumalo|Vice Adm. Augustus Khumalo",
+      "Sandra Crandall|Flt Adm. Sandra Crandall (†)Keeley O\u0027Cleary|Adm. Keeley O\u0027Cleary"
+    ],
+    "force": [
+      "* 1 SD\n* 14 BC\n* 12 CA\n* 5 DD\n* 4 CLAC with more than 400 LAC",
+      "* 71 SD\n* 24 BC\n* 12 CA\n* 23 CL\n* 18 DD"
+    ],
+    "casual": [
+      "none",
+      "*23 SD destroyed\n*remaining units surrendered\n*more than 400,000 prisoners taken"
+    ]
+  },
+  {
+    "name": "Second Battle of Manticore",
+    "conflict": "Solarian-Manticoran War",
+    "date": "11 June 1922 PD",
+    "dateBlock": {
+      "day": 11,
+      "month": 5,
+      "year": 1922
+    },
+    "place": "Manticore System",
+    "result": "Grand Alliance victory",
+    "side": [
+      "Grand Fleet:\n* Royal Manticoran Navy\n* Republic of Haven Navy\n* Grayson Space Navy",
+      "Solarian League NavyEleventh Fleet (Solarian League)|Eleventh Fleet"
+    ],
+    "commander": [
+      "Honor Harrington|Fleet Admiral Harrington",
+      "Massimo Filareta|Fleet Admiral Filareta †"
+    ],
+    "force": [
+      "RMN\n* 40 Freighters disguised as SD and several hundred LAC\nGSN\n* 150 SD(P)\n* 800 LAC\nRHN\n* 250 SD(P)\n* CLAC_LAC",
+      "* 427 SD \n* 32 BC\n* 30 CL\n* 50 fast freighters \u0026 personnel transports\nTonnage 3,000,000,000+\n\n* 2,700,000 naval personnel\n* 421,000 marines and support personnel"
+    ],
+    "casual": [
+      "* 11 units damaged\n* several LAC lost\n* c.a. 2,000 KIA",
+      "* 296 SD destroyed\n* 139 SD surrendered\n* 3 BC destroyed\n* 29 BC surrendered\n* 23 CL surrendered\n* 28 DD surrendered\n* 1.2 million KIA\n* 1.4 million captured"
+    ]
+  },
+  {
+    "name": "Second Battle of New Tuscany",
+    "image": "Image:Talbott cluster.png|300px",
+    "conflict": "Solarian-Manticoran War",
+    "date": "November 17, 1921 PD",
+    "dateBlock": {
+      "day": 17,
+      "month": 10,
+      "year": 1921
+    },
+    "place": "New Tuscany System",
+    "result": "Manticoran Victory",
+    "side": [
+      "Royal Manticoran NavyTenth Fleet (Manticore)|10th FLT",
+      "Solarian League NavyTask Group 3021|TG 3021"
+    ],
+    "commander": [
+      "Vice Adm. Michelle Henke|Gold Peak",
+      "Adm. Josef Byng (†)Rear Adm. Evelyn Sigbee"
+    ],
+    "force": [
+      "*6 BC\n* 8 CA\n*5 DD",
+      "* 17 BC\n* 5 DD"
+    ],
+    "casual": [
+      ":none",
+      "*1 BC destroyed\n* all remaining units surrended"
+    ]
+  },
+  {
+    "name": "Battle of Włocławek",
+    "conflict": "Solarian-Manticoran War",
+    "date": "September 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 8,
+      "year": 1922
+    },
+    "place": "Włocławek System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyTask Group 10.2.9",
+      "Solarian League NavyBattlecruiser Squadron 720|BatCruRon 720"
+    ],
+    "commander": [
+      "Cpt. Prescott Tremaine",
+      "Adm. Winslet Tamaguchi"
+    ],
+    "force": [
+      "*1 CA\n*2 CL\n*8 DD\n*1 FSV\n*8 LAC",
+      "*8 BC\n*8 DD"
+    ],
+    "casual": [
+      ":None",
+      "*1 BC destroyed\n*7 BC surrendered\n*8 DD surrendered"
+    ]
+  },
+  {
+    "name": "Battle of Saltash",
+    "image": "File:Talbott cluster.png|300px",
+    "conflict": "Solarian-Manticoran War",
+    "date": "April 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 3,
+      "year": 1922
+    },
+    "place": "Saltash System",
+    "result": "Manticoran victory",
+    "side": [
+      "File:RMN logo small.jpg|20px Royal Manticoran NavyDestroyer Squadron 301",
+      "Solarian League Navy Frontier FleetBattlecruiser Squadron 491"
+    ],
+    "commander": [
+      "Captain Jacob Zavala|Zavala",
+      "Vice Admiral Oxana Dubroskaya|Dubroskaya †"
+    ],
+    "force": [
+      "*5 DD",
+      "*4 BC\n*3 DD"
+    ],
+    "casual": [
+      "none",
+      "*4 BC destroyed\n* 3 DD abandoned\n* approx. 5,400 KIA"
+    ]
+  },
+  {
+    "name": "Battle of Bryant",
+    "conflict": "Solarian-Manticoran War",
+    "date": "1922 PD",
+    "dateBlock": {
+      "year": 1922
+    },
+    "place": "Bryant System",
+    "result": "Solarian victory",
+    "side": [
+      "Royal Manticoran Navya task group",
+      "Solarian League Navya task force"
+    ],
+    "commander": [
+      null,
+      "Vice Admiral Gomez"
+    ],
+    "force": [
+      "* 6 CC",
+      "* several dozen BC\n* screen"
+    ],
+    "casual": [
+      ":none",
+      ":none"
+    ]
+  },
+  {
+    "name": "Battle of Hypatia",
+    "conflict": "Solarian-Manticoran War",
+    "date": "August 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 7,
+      "year": 1922
+    },
+    "place": "Hypatia System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyTask Group 110.2",
+      "Solarian League NavyTask Force 1030"
+    ],
+    "commander": [
+      "Rear Adm. Jan Kotouč|KotoučCommander Megan Petersen|Petersen",
+      "Vice Adm. Hajdu Gyôzô|Gyôzô †Rear Adm. Martin Gogunov|GogunovRear Adm. Thomas Yountz|Yountz"
+    ],
+    "force": [
+      "* 1 BC\n* 3 CA\n* 1 DD",
+      "*98 BC\n*40 CC\n*32 DD\n*3 transports"
+    ],
+    "casual": [
+      "* 1 BC\n* 3 CA\n* 1888 KIA and MIA60 survivors rescued.",
+      "*88 BC\n*4 CC\n*3 DD\n*3 transports"
+    ]
+  },
+  {
+    "name": "Second Battle of Manticore",
+    "conflict": "Solarian-Manticoran War",
+    "date": "11 June 1922 PD",
+    "dateBlock": {
+      "day": 11,
+      "month": 5,
+      "year": 1922
+    },
+    "place": "Manticore System",
+    "result": "Grand Alliance victory",
+    "side": [
+      "Grand Fleet:\n* Royal Manticoran Navy\n* Republic of Haven Navy\n* Grayson Space Navy",
+      "Solarian League NavyEleventh Fleet (Solarian League)|Eleventh Fleet"
+    ],
+    "commander": [
+      "Honor Harrington|Fleet Admiral Harrington",
+      "Massimo Filareta|Fleet Admiral Filareta †"
+    ],
+    "force": [
+      "RMN\n* 40 Freighters disguised as SD and several hundred LAC\nGSN\n* 150 SD(P)\n* 800 LAC\nRHN\n* 250 SD(P)\n* CLAC_LAC",
+      "* 427 SD \n* 32 BC\n* 30 CL\n* 50 fast freighters \u0026 personnel transports\nTonnage 3,000,000,000+\n\n* 2,700,000 naval personnel\n* 421,000 marines and support personnel"
+    ],
+    "casual": [
+      "* 11 units damaged\n* several LAC lost\n* c.a. 2,000 KIA",
+      "* 296 SD destroyed\n* 139 SD surrendered\n* 3 BC destroyed\n* 29 BC surrendered\n* 23 CL surrendered\n* 28 DD surrendered\n* 1.2 million KIA\n* 1.4 million captured"
+    ]
+  },
+  {
+    "name": "Second Battle of New Tuscany",
+    "image": "Image:Talbott cluster.png|300px",
+    "conflict": "Solarian-Manticoran War",
+    "date": "November 17, 1921 PD",
+    "dateBlock": {
+      "day": 17,
+      "month": 10,
+      "year": 1921
+    },
+    "place": "New Tuscany System",
+    "result": "Manticoran Victory",
+    "side": [
+      "Royal Manticoran NavyTenth Fleet (Manticore)|10th FLT",
+      "Solarian League NavyTask Group 3021|TG 3021"
+    ],
+    "commander": [
+      "Vice Adm. Michelle Henke|Gold Peak",
+      "Adm. Josef Byng (†)Rear Adm. Evelyn Sigbee"
+    ],
+    "force": [
+      "*6 BC\n* 8 CA\n*5 DD",
+      "* 17 BC\n* 5 DD"
+    ],
+    "casual": [
+      ":none",
+      "*1 BC destroyed\n* all remaining units surrended"
+    ]
+  },
+  {
+    "name": "Battle of Bryant",
+    "conflict": "Solarian-Manticoran War",
+    "date": "1922 PD",
+    "dateBlock": {
+      "year": 1922
+    },
+    "place": "Bryant System",
+    "result": "Solarian victory",
+    "side": [
+      "Royal Manticoran Navya task group",
+      "Solarian League Navya task force"
+    ],
+    "commander": [
+      null,
+      "Vice Admiral Gomez"
+    ],
+    "force": [
+      "* 6 CC",
+      "* several dozen BC\n* screen"
+    ],
+    "casual": [
+      ":none",
+      ":none"
+    ]
+  },
+  {
+    "name": "Battle of Spindle",
+    "image": "File:Talbott cluster.png|300px",
+    "conflict": "Solarian-Manticoran War",
+    "date": "beginning of February 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 1,
+      "year": 1922
+    },
+    "place": "Spindle System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy\nTenth Fleet (Manticore)|Tenth Fleet",
+      "Solarian League Navy\nTask Force 496"
+    ],
+    "commander": [
+      "Augustus Khumalo|Vice Adm. Augustus Khumalo",
+      "Sandra Crandall|Flt Adm. Sandra Crandall (†)Keeley O\u0027Cleary|Adm. Keeley O\u0027Cleary"
+    ],
+    "force": [
+      "* 1 SD\n* 14 BC\n* 12 CA\n* 5 DD\n* 4 CLAC with more than 400 LAC",
+      "* 71 SD\n* 24 BC\n* 12 CA\n* 23 CL\n* 18 DD"
+    ],
+    "casual": [
+      "none",
+      "*23 SD destroyed\n*remaining units surrendered\n*more than 400,000 prisoners taken"
+    ]
+  },
+  {
+    "name": "Battle of Sol",
+    "conflict": "Solarian-Manticoran War",
+    "date": "January 1923 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 0,
+      "year": 1923
+    },
+    "place": "Sol System",
+    "result": "Alliance victory",
+    "side": [
+      "Grand Alliance Grand Fleet",
+      "Solarian League Navy"
+    ],
+    "commander": [
+      "Fleet Adm. Honor Harrington|Alexander-Harrington",
+      "Fleet Adm. Winston Kingsford|KingsfordAdm. Maridors Haeckle|Haeckle, CO NSGRear Adm. Bethany Ning-ju|Ning-Ju, CO, CruRon 572"
+    ],
+    "force": [
+      "Grand Fleet\n*600+ ships of all sizes\n*Many LACs Deployed from CLACs",
+      "CruRon 572:\n* 8 Mikasa class CA\nNSG:\n* 62 SD\n* 106 BC\n* 62 CC\n* 117 DD\n* 120,000 pods\nEarth:\n* 200+ SD\n* 400 BC\n* 1,000,000 pods"
+    ],
+    "casual": [
+      "*none",
+      "2DD and 1CA and crews destroyed\n*SDs scuttled\n*BCs scuttled\n*CA_CLs scuttled\n*DDs scuttled\n*missile pods scuttled"
+    ]
+  },
+  {
+    "name": "Battle of Saltash",
+    "image": "File:Talbott cluster.png|300px",
+    "conflict": "Solarian-Manticoran War",
+    "date": "April 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 3,
+      "year": 1922
+    },
+    "place": "Saltash System",
+    "result": "Manticoran victory",
+    "side": [
+      "File:RMN logo small.jpg|20px Royal Manticoran NavyDestroyer Squadron 301",
+      "Solarian League Navy Frontier FleetBattlecruiser Squadron 491"
+    ],
+    "commander": [
+      "Captain Jacob Zavala|Zavala",
+      "Vice Admiral Oxana Dubroskaya|Dubroskaya †"
+    ],
+    "force": [
+      "*5 DD",
+      "*4 BC\n*3 DD"
+    ],
+    "casual": [
+      "none",
+      "*4 BC destroyed\n* 3 DD abandoned\n* approx. 5,400 KIA"
+    ]
+  },
+  {
+    "name": "Battle of Hypatia",
+    "conflict": "Solarian-Manticoran War",
+    "date": "August 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 7,
+      "year": 1922
+    },
+    "place": "Hypatia System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyTask Group 110.2",
+      "Solarian League NavyTask Force 1030"
+    ],
+    "commander": [
+      "Rear Adm. Jan Kotouč|KotoučCommander Megan Petersen|Petersen",
+      "Vice Adm. Hajdu Gyôzô|Gyôzô †Rear Adm. Martin Gogunov|GogunovRear Adm. Thomas Yountz|Yountz"
+    ],
+    "force": [
+      "* 1 BC\n* 3 CA\n* 1 DD",
+      "*98 BC\n*40 CC\n*32 DD\n*3 transports"
+    ],
+    "casual": [
+      "* 1 BC\n* 3 CA\n* 1888 KIA and MIA60 survivors rescued.",
+      "*88 BC\n*4 CC\n*3 DD\n*3 transports"
+    ]
+  },
+  {
+    "name": "Battle of Włocławek",
+    "conflict": "Solarian-Manticoran War",
+    "date": "September 1922 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 8,
+      "year": 1922
+    },
+    "place": "Włocławek System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyTask Group 10.2.9",
+      "Solarian League NavyBattlecruiser Squadron 720|BatCruRon 720"
+    ],
+    "commander": [
+      "Cpt. Prescott Tremaine",
+      "Adm. Winslet Tamaguchi"
+    ],
+    "force": [
+      "*1 CA\n*2 CL\n*8 DD\n*1 FSV\n*8 LAC",
+      "*8 BC\n*8 DD"
+    ],
+    "casual": [
+      ":None",
+      "*1 BC destroyed\n*7 BC surrendered\n*8 DD surrendered"
+    ]
+  },
+  {
+    "name": "Second Battle of Manticore",
+    "conflict": "Solarian-Manticoran War",
+    "date": "11 June 1922 PD",
+    "dateBlock": {
+      "day": 11,
+      "month": 5,
+      "year": 1922
+    },
+    "place": "Manticore System",
+    "result": "Grand Alliance victory",
+    "side": [
+      "Grand Fleet:\n* Royal Manticoran Navy\n* Republic of Haven Navy\n* Grayson Space Navy",
+      "Solarian League NavyEleventh Fleet (Solarian League)|Eleventh Fleet"
+    ],
+    "commander": [
+      "Honor Harrington|Fleet Admiral Harrington",
+      "Massimo Filareta|Fleet Admiral Filareta †"
+    ],
+    "force": [
+      "RMN\n* 40 Freighters disguised as SD and several hundred LAC\nGSN\n* 150 SD(P)\n* 800 LAC\nRHN\n* 250 SD(P)\n* CLAC_LAC",
+      "* 427 SD \n* 32 BC\n* 30 CL\n* 50 fast freighters \u0026 personnel transports\nTonnage 3,000,000,000+\n\n* 2,700,000 naval personnel\n* 421,000 marines and support personnel"
+    ],
+    "casual": [
+      "* 11 units damaged\n* several LAC lost\n* c.a. 2,000 KIA",
+      "* 296 SD destroyed\n* 139 SD surrendered\n* 3 BC destroyed\n* 29 BC surrendered\n* 23 CL surrendered\n* 28 DD surrendered\n* 1.2 million KIA\n* 1.4 million captured"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Casimir Raid",
+    "conflict": "RMN anti-slavery operations",
+    "date": "1899 PD",
+    "dateBlock": {
+      "year": 1899
+    },
+    "place": "Casimir System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyAudubon Ballroom",
+      "Manpower Incorporated"
+    ],
+    "commander": [
+      "Captain Honor Harrington",
+      "Edytá Sokolowska †"
+    ],
+    "force": [
+      "HMS Hawkwing|HMS \u0027\u0027Hawkwing\u0027\u0027\n\u0027\u0027Reprisal\u0027\u0027",
+      "Casimir StationCMS Evita|CMS \u0027\u0027Evita\u0027\u0027"
+    ],
+    "casual": [
+      null,
+      "CMS \u0027\u0027Evita\u0027\u0027"
+    ]
+  }
+]

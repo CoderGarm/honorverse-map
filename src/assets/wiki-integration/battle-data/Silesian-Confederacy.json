@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Battle of Carson",
+    "conflict": "Silesian Confederacy|Silesian piracy",
+    "date": "11 August 1672 PD",
+    "dateBlock": {
+      "day": 11,
+      "month": 7,
+      "year": 1672
+    },
+    "place": "Carson System",
+    "result": "Escape of the Manticoran convoy",
+    "side": [
+      "Royal Manticoran Navy",
+      "Piracy|Pirates"
+    ],
+    "commander": [
+      "Ranks|Cdre Edward Saganami",
+      "unknown"
+    ],
+    "force": [
+      "1 BC",
+      "* 2 BC\n* 1 CA\n* 3 DD"
+    ],
+    "casual": [
+      "1 BC destroyed",
+      "destroyed:\n* 1 BC\n* 2 DD\ndamaged:\n* 1 CA\n* 1 DD"
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Battle of Tambourin",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "Second Havenite-Manticoran WarOperation Cutworm",
+    "date": "1920 PD",
+    "dateBlock": {
+      "year": 1920
+    },
+    "place": "Tambourin System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyTF of Eighth Fleet (Manticore)|Eighth Fleet",
+      "Republic of Haven NavyTambourin System Defense"
+    ],
+    "commander": [
+      "Vice Adm. Samuel Miklos",
+      "unknown"
+    ],
+    "force": [
+      "* 4 CLAC\n* 2 BC\n* DD",
+      "LAC"
+    ],
+    "casual": [
+      "none",
+      "unknownless than 4 CC, 3 DD and 590 LAC "
+    ]
+  },
+  {
+    "name": "Battle of Tambourin",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "Second Havenite-Manticoran WarOperation Cutworm",
+    "date": "1920 PD",
+    "dateBlock": {
+      "year": 1920
+    },
+    "place": "Tambourin System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran NavyTF of Eighth Fleet (Manticore)|Eighth Fleet",
+      "Republic of Haven NavyTambourin System Defense"
+    ],
+    "commander": [
+      "Vice Adm. Samuel Miklos",
+      "unknown"
+    ],
+    "force": [
+      "* 4 CLAC\n* 2 BC\n* DD",
+      "LAC"
+    ],
+    "casual": [
+      "none",
+      "unknownless than 4 CC, 3 DD and 590 LAC "
+    ]
+  }
+]

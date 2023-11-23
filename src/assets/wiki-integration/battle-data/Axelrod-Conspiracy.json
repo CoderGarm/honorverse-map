@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Battle of Manticore",
+    "image": "File:Battlesign RMN vs Volsung.png",
+    "conflict": "Axelrod Conspiracy",
+    "date": "1543 PD",
+    "dateBlock": {
+      "year": 1543
+    },
+    "place": "Manticore System",
+    "result": "Manticoran marginal victory",
+    "side": [
+      "Star Kingdom of Manticore",
+      "Volsung Mercenaries"
+    ],
+    "commander": [
+      "Adm. Carlton Locatelli - Commanding Officer, Royal Manticoran Navy System Command",
+      "Adm. Cutler Gensonne  - Senior Officer, Volsung Mercenaries"
+    ],
+    "force": [
+      "15 units:\n* 2 BC\n* 3 CC\n* 3 DD\n* 7 CT",
+      "16 units:\n* 3 BC\n* 6 CC\n* 7 DD"
+    ],
+    "casual": [
+      "Lost:\n* 1 CC\n* 2 DD\n* 2 CT",
+      "Lost:\n* 2 BC\n* 1 DD"
+    ]
+  }
+]

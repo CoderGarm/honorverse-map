@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Second Battle of Congo",
+    "conflict": "Operation Ferret",
+    "date": "October 1921 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 9,
+      "year": 1921
+    },
+    "place": "Congo System",
+    "result": "Solarian victory",
+    "side": [
+      "*Solarian League Navy - Maya Sector Detachment\n*Royal Torch Navy",
+      "People\u0027s Navy in Exile"
+    ],
+    "commander": [
+      "Luis Rozsak|Rear Adm. Rozsak",
+      "Adrian Luff|Commodore Luff (†)Santander Konidis|Commodore Konidis"
+    ],
+    "force": [
+      "*8 CL\n*3 AE\n*29 DD\n*8 FG",
+      "*14 BC\n*8 CA\n*8 CL\n*16 DD"
+    ],
+    "casual": [
+      "*4 CL\n*6 DD\n*2 AE",
+      "*14 BC\n*3 CA\n*2 CL\n* survived units surrendered"
+    ]
+  },
+  {
+    "name": "Second Battle of Congo",
+    "conflict": "Operation Ferret",
+    "date": "October 1921 PD",
+    "dateBlock": {
+      "day": 19,
+      "month": 9,
+      "year": 1921
+    },
+    "place": "Congo System",
+    "result": "Solarian victory",
+    "side": [
+      "*Solarian League Navy - Maya Sector Detachment\n*Royal Torch Navy",
+      "People\u0027s Navy in Exile"
+    ],
+    "commander": [
+      "Luis Rozsak|Rear Adm. Rozsak",
+      "Adrian Luff|Commodore Luff (†)Santander Konidis|Commodore Konidis"
+    ],
+    "force": [
+      "*8 CL\n*3 AE\n*29 DD\n*8 FG",
+      "*14 BC\n*8 CA\n*8 CL\n*16 DD"
+    ],
+    "casual": [
+      "*4 CL\n*6 DD\n*2 AE",
+      "*14 BC\n*3 CA\n*2 CL\n* survived units surrendered"
+    ]
+  }
+]

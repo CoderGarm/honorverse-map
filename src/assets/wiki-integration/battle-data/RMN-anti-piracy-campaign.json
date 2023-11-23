@@ -1,0 +1,30 @@
+[
+  {
+    "name": "First Battle of Marsh",
+    "conflict": "Manticoran anti-piracy action",
+    "date": "8 February 1910 PD",
+    "dateBlock": {
+      "day": 8,
+      "month": 1,
+      "year": 1910
+    },
+    "place": "Marsh System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "Chalice Cluster|Chalice privateer sqadron"
+    ],
+    "commander": [
+      "Capt. Honor Harrington",
+      "Rear Adm. Rayna Sherman"
+    ],
+    "force": [
+      "1 AMC",
+      "4 Heavy cruiser|CA"
+    ],
+    "casual": [
+      "none",
+      "4 CA"
+    ]
+  }
+]

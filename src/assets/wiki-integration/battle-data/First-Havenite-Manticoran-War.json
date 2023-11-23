@@ -1,0 +1,272 @@
+[
+  {
+    "name": "First Battle of Minette",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "First Haven-Manticore War",
+    "date": "1907 PD",
+    "dateBlock": {
+      "year": 1907
+    },
+    "place": "Minette System",
+    "result": "Havenite victory",
+    "side": [
+      "Royal Manticoran NavyTask Force Minette-01",
+      "Republic of Haven Navy|People\u0027s NavyTask Force 30"
+    ],
+    "commander": [
+      "Vice Adm. Ludwig Stanton",
+      "Commissioner Erasmus Fontein|FonteinVice Adm. Esther McQueen|McQueen"
+    ],
+    "force": [
+      "* 4 DN\n* CA\n* DD",
+      "* 16 SD\n* 7 BC\n* 39 lighter units"
+    ],
+    "casual": [
+      "* 4 CA destroyed\n* 2 DN heavily damaged",
+      "* 1 SD destroyed\n* 1 BC destroyed\n* 1 SD heavily damaged"
+    ]
+  },
+  {
+    "name": "Fourth Battle of Yeltsin\u0027s Star",
+    "conflict": "First Haven-Manticore War",
+    "date": "18 August 1907 PD",
+    "dateBlock": {
+      "day": 18,
+      "month": 7,
+      "year": 1907
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Grayson victory",
+    "side": [
+      "Grayson Space Navy,Home Fleet (Grayson)|Home Fleet",
+      "Republic of Haven Navy|People\u0027s Navy,Task Force 14 (PN)|Task Force 14"
+    ],
+    "commander": [
+      "Adm. Honor Harrington",
+      "* Commissioner Michael Preznikov|Preznikov (†)Vice Adm. Alexander Thurston|Thurston (†)\n* Commissioner Denis LePic|LePicRear Adm. Thomas Theisman|Theisman"
+    ],
+    "force": [
+      "* 6 SD\n* 19 BC\n* 10 CA\n* 40 CL\n* 19 DDat least partially sent out\n* ca. 100 missile pods towedThe first salvo of 1400 missiles.",
+      "* 24 BB\n* 6 BC\n* CL\nTG 14.1 only."
+    ],
+    "casual": [
+      "* 1 SD\n* 6 BC",
+      "* 23 BB\n* 2 BC"
+    ]
+  },
+  {
+    "name": "First Battle of Seabring",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "First Haven-Manticore War",
+    "date": "1911",
+    "dateBlock": {
+      "year": 1911
+    },
+    "place": "Seabring System",
+    "result": "Havenite victory",
+    "side": [
+      "Royal Manticoran Navytask force of the Sixth Fleet (Manticore)|6 FLT",
+      "People\u0027s NavySeabring System Defence"
+    ],
+    "commander": [
+      "unknown",
+      "Commissioner Denis LePic|LePicRear Admiral Thomas Theisman|Theisman"
+    ],
+    "force": [
+      "11 DN",
+      "* 10 BB\n* 11 BC"
+    ],
+    "casual": [
+      "* 1 DN destroyed\n* 6 DN heavily damaged",
+      "* 7 BB destroyed\n* 3 BB heavily damaged\n* 11 BC destroyed"
+    ]
+  },
+  {
+    "name": "Battle of Nightingale",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "First Haven-Manticore War",
+    "date": "c. 1906 PD",
+    "dateBlock": {
+      "year": 1906
+    },
+    "place": "Nightingale System",
+    "result": "Havenite victory",
+    "side": [
+      "Royal Manticoran Navy:task force of the Sixth Fleet (Manticore)|Sixth Fleet",
+      "the main fleetof the People\u0027s Navy"
+    ],
+    "commander": [
+      "Adm. Hamish Alexander|White Haven",
+      "unknown"
+    ],
+    "force": [
+      "* 8 SD\n* 16 DN",
+      "56 SD"
+    ],
+    "casual": [
+      "10 ships of the wallincluding 2 SD",
+      "7 SD"
+    ]
+  },
+  {
+    "name": "Second Battle of Minette",
+    "conflict": "First Haven-Manticore War",
+    "date": "1907 PD",
+    "dateBlock": {
+      "year": 1907
+    },
+    "place": "Minette System",
+    "result": "Manticoran Alliance victory",
+    "side": [
+      "Manticoran AllianceJoined task force",
+      "People\u0027s NavyTask Force 30|TF 30"
+    ],
+    "commander": [
+      "Adm. Wesley Matthews",
+      "Commissioner Erasmus Fontein|FonteinVice Adm. Esther McQueen|McQueen"
+    ],
+    "force": [
+      null,
+      "* 14 SD\n* 6 BC\n* 32 lighter units"
+    ],
+    "casual": [
+      null,
+      null
+    ]
+  },
+  {
+    "name": "First Battle of Minette",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "First Haven-Manticore War",
+    "date": "1907 PD",
+    "dateBlock": {
+      "year": 1907
+    },
+    "place": "Minette System",
+    "result": "Havenite victory",
+    "side": [
+      "Royal Manticoran NavyTask Force Minette-01",
+      "Republic of Haven Navy|People\u0027s NavyTask Force 30"
+    ],
+    "commander": [
+      "Vice Adm. Ludwig Stanton",
+      "Commissioner Erasmus Fontein|FonteinVice Adm. Esther McQueen|McQueen"
+    ],
+    "force": [
+      "* 4 DN\n* CA\n* DD",
+      "* 16 SD\n* 7 BC\n* 39 lighter units"
+    ],
+    "casual": [
+      "* 4 CA destroyed\n* 2 DN heavily damaged",
+      "* 1 SD destroyed\n* 1 BC destroyed\n* 1 SD heavily damaged"
+    ]
+  },
+  {
+    "name": "First Battle of Seabring",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "First Haven-Manticore War",
+    "date": "1911",
+    "dateBlock": {
+      "year": 1911
+    },
+    "place": "Seabring System",
+    "result": "Havenite victory",
+    "side": [
+      "Royal Manticoran Navytask force of the Sixth Fleet (Manticore)|6 FLT",
+      "People\u0027s NavySeabring System Defence"
+    ],
+    "commander": [
+      "unknown",
+      "Commissioner Denis LePic|LePicRear Admiral Thomas Theisman|Theisman"
+    ],
+    "force": [
+      "11 DN",
+      "* 10 BB\n* 11 BC"
+    ],
+    "casual": [
+      "* 1 DN destroyed\n* 6 DN heavily damaged",
+      "* 7 BB destroyed\n* 3 BB heavily damaged\n* 11 BC destroyed"
+    ]
+  },
+  {
+    "name": "Battle of Nightingale",
+    "image": "File:Battlesign RMN vs RHN PN.png",
+    "conflict": "First Haven-Manticore War",
+    "date": "c. 1906 PD",
+    "dateBlock": {
+      "year": 1906
+    },
+    "place": "Nightingale System",
+    "result": "Havenite victory",
+    "side": [
+      "Royal Manticoran Navy:task force of the Sixth Fleet (Manticore)|Sixth Fleet",
+      "the main fleetof the People\u0027s Navy"
+    ],
+    "commander": [
+      "Adm. Hamish Alexander|White Haven",
+      "unknown"
+    ],
+    "force": [
+      "* 8 SD\n* 16 DN",
+      "56 SD"
+    ],
+    "casual": [
+      "10 ships of the wallincluding 2 SD",
+      "7 SD"
+    ]
+  },
+  {
+    "name": "Second Battle of Minette",
+    "conflict": "First Haven-Manticore War",
+    "date": "1907 PD",
+    "dateBlock": {
+      "year": 1907
+    },
+    "place": "Minette System",
+    "result": "Manticoran Alliance victory",
+    "side": [
+      "Manticoran AllianceJoined task force",
+      "People\u0027s NavyTask Force 30|TF 30"
+    ],
+    "commander": [
+      "Adm. Wesley Matthews",
+      "Commissioner Erasmus Fontein|FonteinVice Adm. Esther McQueen|McQueen"
+    ],
+    "force": [
+      null,
+      "* 14 SD\n* 6 BC\n* 32 lighter units"
+    ],
+    "casual": [
+      null,
+      null
+    ]
+  },
+  {
+    "name": "Fourth Battle of Yeltsin\u0027s Star",
+    "conflict": "First Haven-Manticore War",
+    "date": "18 August 1907 PD",
+    "dateBlock": {
+      "day": 18,
+      "month": 7,
+      "year": 1907
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Grayson victory",
+    "side": [
+      "Grayson Space Navy,Home Fleet (Grayson)|Home Fleet",
+      "Republic of Haven Navy|People\u0027s Navy,Task Force 14 (PN)|Task Force 14"
+    ],
+    "commander": [
+      "Adm. Honor Harrington",
+      "* Commissioner Michael Preznikov|Preznikov (†)Vice Adm. Alexander Thurston|Thurston (†)\n* Commissioner Denis LePic|LePicRear Adm. Thomas Theisman|Theisman"
+    ],
+    "force": [
+      "* 6 SD\n* 19 BC\n* 10 CA\n* 40 CL\n* 19 DDat least partially sent out\n* ca. 100 missile pods towedThe first salvo of 1400 missiles.",
+      "* 24 BB\n* 6 BC\n* CL\nTG 14.1 only."
+    ],
+    "casual": [
+      "* 1 SD\n* 6 BC",
+      "* 23 BB\n* 2 BC"
+    ]
+  }
+]

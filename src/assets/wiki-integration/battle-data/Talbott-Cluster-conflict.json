@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Battle of Nuncio",
+    "image": "File:Talbott cluster.png|300px",
+    "conflict": "Talbott Cluster conflict",
+    "date": "August 25, 1920 PD",
+    "dateBlock": {
+      "day": 25,
+      "month": 7,
+      "year": 1920
+    },
+    "place": "Nuncio System",
+    "result": "Manticoran_Nuncian Victory",
+    "side": [
+      "Royal Manticoran Navy\nNuncio Space Force",
+      "Havenite People\u0027s First Liberation Squadron"
+    ],
+    "commander": [
+      "Aivars Terekhov|Cpt. Aivars Terekhov",
+      "Henri Clignet|Comm. Henri Clignet\nDaumier (Haven)|Cpt. Daumier"
+    ],
+    "force": [
+      "* 1 CA\n* 6 LAC\n* 2 pinnaces",
+      "* 1 CA\n* 1 DD\n* 1 freighter prize"
+    ],
+    "casual": [
+      ":none",
+      "*1 DD destroyed\n* 1 CA damaged and captured\n* prize captured"
+    ]
+  },
+  {
+    "name": "Battle of Monica",
+    "image": "Image:Talbott cluster.png|300px",
+    "conflict": "Talbott Cluster conflict",
+    "date": "16 February 1921 PD",
+    "dateBlock": {
+      "day": 16,
+      "month": 1,
+      "year": 1921
+    },
+    "place": "Monica System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy\n*Task Force Talbott, Southern Patrol",
+      "Monican Navy:\n* fixed defences\n* 1st Battlecruiser Division"
+    ],
+    "commander": [
+      "Captain (SG) Aivars Terekhov",
+      "Admiral Isidor Hegedusic (†) Commodore Janko Horster (†)"
+    ],
+    "force": [
+      "* 3 CA\n* 3 CL\n* 4 DD",
+      "* fixed defences\n* 3 BC"
+    ],
+    "casual": [
+      "* 1 CA\n* 2 CL\n* 3 DD",
+      "* 3 active BC\n* 35 inactive hypercapable ships\n* military part of the main space station"
+    ]
+  }
+]

@@ -1,0 +1,269 @@
+[
+  {
+    "name": "Battle of Endicott",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Endicott System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Hamish Alexander|Admiral White Haven",
+      "unknown"
+    ],
+    "force": [
+      "11 BC",
+      "* 1 DD\n* 2 LAC\n* AMC?"
+    ],
+    "casual": [
+      "none",
+      "complete"
+    ]
+  },
+  {
+    "name": "Battle of Blackbird",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Manticoran_Grayson victory",
+    "side": [
+      "Grayson-Manticoran Combined Fleet",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Wesley Matthews|Admiral Wesley Matthews",
+      "Ernst Franks|Adm. Ernst Franks"
+    ],
+    "force": [
+      "* 1 CA\n* 3 CL\n* 2 DD\n* LAC",
+      "* 1 CL\n* 3 DD\n* 13 LAC\n* fixed defences"
+    ],
+    "casual": [
+      "* 1 CL damaged, \nseveral LACs destroyed",
+      "All ships destroyed or captured,\nheavy casualties"
+    ]
+  },
+  {
+    "name": "Second Battle of Yeltsin\u0027s Star",
+    "image": "File:SITS 2nd Yeltsin.png|300px",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Honor Harrington|Capt. Honor HarringtonHamish Alexander|Adm. White Haven",
+      "Sword Matthew Simonds"
+    ],
+    "force": [
+      "* 1 CA\n* 1 DD\n* 4 BC\n* screen",
+      "1 BC"
+    ],
+    "casual": [
+      "1 DD",
+      "1 BC"
+    ]
+  },
+  {
+    "name": "First Battle of Yeltsin\u0027s Star",
+    "conflict": "Maccabeus Campaign",
+    "date": "25 April 1903 PD",
+    "dateBlock": {
+      "day": 25,
+      "month": 3,
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Masadan victory",
+    "side": [
+      "Grayson-Manticoran Combined Fleet\n\n* Grayson Space Navy\n* Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "* Bernard Yanakov|High Admiral Yanakov (†)\n* Raoul Courvosier|Admiral Courvosier (†)\n* Wesley Matthews|Commodore Matthews",
+      "Sword of the FaithfulMatthew Simonds"
+    ],
+    "force": [
+      "* 2 CL\n* 5 DD",
+      "* 1 BC\n* 4 CL\n* 7 DD"
+    ],
+    "casual": [
+      "* 1 CL\n* 4 DD",
+      "* 2 CL\n* 5 DD"
+    ]
+  },
+  {
+    "name": "Second Battle of Yeltsin\u0027s Star",
+    "image": "File:SITS 2nd Yeltsin.png|300px",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Honor Harrington|Capt. Honor HarringtonHamish Alexander|Adm. White Haven",
+      "Sword Matthew Simonds"
+    ],
+    "force": [
+      "* 1 CA\n* 1 DD\n* 4 BC\n* screen",
+      "1 BC"
+    ],
+    "casual": [
+      "1 DD",
+      "1 BC"
+    ]
+  },
+  {
+    "name": "Battle of Blackbird",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Manticoran_Grayson victory",
+    "side": [
+      "Grayson-Manticoran Combined Fleet",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Wesley Matthews|Admiral Wesley Matthews",
+      "Ernst Franks|Adm. Ernst Franks"
+    ],
+    "force": [
+      "* 1 CA\n* 3 CL\n* 2 DD\n* LAC",
+      "* 1 CL\n* 3 DD\n* 13 LAC\n* fixed defences"
+    ],
+    "casual": [
+      "* 1 CL damaged, \nseveral LACs destroyed",
+      "All ships destroyed or captured,\nheavy casualties"
+    ]
+  },
+  {
+    "name": "Battle of Endicott",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Endicott System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Hamish Alexander|Admiral White Haven",
+      "unknown"
+    ],
+    "force": [
+      "11 BC",
+      "* 1 DD\n* 2 LAC\n* AMC?"
+    ],
+    "casual": [
+      "none",
+      "complete"
+    ]
+  },
+  {
+    "name": "First Battle of Yeltsin\u0027s Star",
+    "conflict": "Maccabeus Campaign",
+    "date": "25 April 1903 PD",
+    "dateBlock": {
+      "day": 25,
+      "month": 3,
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Masadan victory",
+    "side": [
+      "Grayson-Manticoran Combined Fleet\n\n* Grayson Space Navy\n* Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "* Bernard Yanakov|High Admiral Yanakov (†)\n* Raoul Courvosier|Admiral Courvosier (†)\n* Wesley Matthews|Commodore Matthews",
+      "Sword of the FaithfulMatthew Simonds"
+    ],
+    "force": [
+      "* 2 CL\n* 5 DD",
+      "* 1 BC\n* 4 CL\n* 7 DD"
+    ],
+    "casual": [
+      "* 1 CL\n* 4 DD",
+      "* 2 CL\n* 5 DD"
+    ]
+  },
+  {
+    "name": "Second Battle of Yeltsin\u0027s Star",
+    "image": "File:SITS 2nd Yeltsin.png|300px",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Manticoran victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Honor Harrington|Capt. Honor HarringtonHamish Alexander|Adm. White Haven",
+      "Sword Matthew Simonds"
+    ],
+    "force": [
+      "* 1 CA\n* 1 DD\n* 4 BC\n* screen",
+      "1 BC"
+    ],
+    "casual": [
+      "1 DD",
+      "1 BC"
+    ]
+  },
+  {
+    "name": "Battle of Blackbird",
+    "conflict": "Maccabeus Campaign",
+    "date": "1903 PD",
+    "dateBlock": {
+      "year": 1903
+    },
+    "place": "Yeltsin\u0027s Star System",
+    "result": "Manticoran_Grayson victory",
+    "side": [
+      "Grayson-Manticoran Combined Fleet",
+      "Navy of Masada"
+    ],
+    "commander": [
+      "Wesley Matthews|Admiral Wesley Matthews",
+      "Ernst Franks|Adm. Ernst Franks"
+    ],
+    "force": [
+      "* 1 CA\n* 3 CL\n* 2 DD\n* LAC",
+      "* 1 CL\n* 3 DD\n* 13 LAC\n* fixed defences"
+    ],
+    "casual": [
+      "* 1 CL damaged, \nseveral LACs destroyed",
+      "All ships destroyed or captured,\nheavy casualties"
+    ]
+  }
+]

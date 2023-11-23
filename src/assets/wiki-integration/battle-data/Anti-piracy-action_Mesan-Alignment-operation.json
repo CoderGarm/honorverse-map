@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Battle of Tiberian",
+    "conflict": "Anti-piracy action_Mesan Alignment operation",
+    "date": "July_August 1918 PD",
+    "dateBlock": {
+      "year": 1918
+    },
+    "place": "Tiberian System",
+    "result": "Manticoran Victory",
+    "side": [
+      "Royal Manticoran Navy",
+      "\"Four Yahoos\" pirates (Manpower Incorporated_Mesan Alignment)"
+    ],
+    "commander": [
+      "Michael Oversteegen|Capt. Michael Oversteegen",
+      "Haicheng RingstorffIssued general orders  from a distance in normal space (hyperspace engagement solved without his supervision). Withdrew after the destruction of three of his warships. Samson LamarThe last remaining warship commander."
+    ],
+    "force": [
+      "1 CA",
+      "4 CA"
+    ],
+    "casual": [
+      "heavy damage,20% of the crew killed",
+      "4 CA"
+    ]
+  }
+]
