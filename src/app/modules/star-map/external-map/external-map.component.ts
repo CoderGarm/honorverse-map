@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {InterstellarViewHelper} from "../payload/interstellar-view-helper";
-import {Coords, Junction, LanguagePresence, PublicResourcesApiService, WikiEntry} from "../../../services/swagger";
+import {Coords, Junction, LanguagePresence, PublicResourcesApiService} from "../../../services/swagger";
 import {TranslateService} from "@ngx-translate/core";
 import {OrbitDefinition} from "../payload/orbit-definition";
 import {ActivatedRoute, ParamMap} from "@angular/router";
@@ -14,6 +14,7 @@ import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {map, startWith} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/wiki-display.component";
+import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
 
 @Component({
     selector: 'app-external-map',
@@ -72,10 +73,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     maxGranularity: boolean = false;
     private junctions: Junction[] = [];
-    private solarianSystems: WikiEntry[] = [];
-    private manticoreSystems: WikiEntry[] = [];
-    private andermanSystems: WikiEntry[] = [];
-    private havenSystems: WikiEntry[] = [];
+    private solarianSystems: string[] = SystemAssignmentHelper.SOLARIAN_SYSTEMS;
+    private manticoreSystems: string[] = SystemAssignmentHelper.MANTICOREAN_SYSTEMS;
+    private andermanSystems: string[] = SystemAssignmentHelper.ANDERMANI_SYSTEMS;
+    private havenSystems: string[] = SystemAssignmentHelper.HAVENITE_SYSTEMS;
     private highlightedCenterSystemName?: string;
     smallWidth: boolean = false;
 
@@ -115,7 +116,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.detectHighlight(map);
             this.detectCenter(map);
             this.detectRadialGroups(map);
-            this.fetchCanonMap();
             this.createUniverseMap();
         });
 
@@ -158,17 +158,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.isCanonMapPreselected = !highlight;
     }
 
-    private fetchCanonMap() {
-        let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.solarianSystems = systems);
-        this.subscriptions.push(sub);
-        sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.manticoreSystems = systems);
-        this.subscriptions.push(sub);
-        sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.havenSystems = systems);
-        this.subscriptions.push(sub);
-        sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.andermanSystems = systems);
-        this.subscriptions.push(sub);
-    }
-
     private setUpCanonMap() {
         this.setUpCanonColor(this.solarianSystems, ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR);
         this.setUpCanonColor(this.manticoreSystems, ExternalMapManagerComponent.MANTICORE_COLOR);
@@ -176,9 +165,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.setUpCanonColor(this.andermanSystems, ExternalMapManagerComponent.ANDERMAN_COLOR);
     }
 
-    private setUpCanonColor(systems: WikiEntry[], color: string) {
-        systems.forEach(e => {
-            let name = ExternalMapManagerComponent.getSystemNameFromEntry(e);
+    private setUpCanonColor(systems: string[], color: string) {
+        systems.forEach(name => {
             let coord = this.getBySystemName(name);
             if (!!coord) {
                 const id = ExternalMapComponent.getStarSystemCircleID(coord);

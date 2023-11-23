@@ -11,7 +11,6 @@ class DialogData {
 })
 export class WikiDisplayComponent {
 
-    /* fixme slocum haven und silesia */
     constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {
     }
 

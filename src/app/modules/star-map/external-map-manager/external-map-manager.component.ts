@@ -10,6 +10,7 @@ import {SubscriptionManager} from "../../../services/subscription.manager";
 import {environment} from "../../../../environments/environment";
 import {ExternalMapComponent} from "../external-map/external-map.component";
 import {BasicViewHelper} from "../svg-view-helper/basic-view-helper";
+import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
 
 
 export interface ColorGroup {
@@ -63,10 +64,10 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     filteredCenter: Observable<Coords[]>;
     filteredRadius: Observable<Coords[]>;
 
-    private solarianSystems: WikiEntry[] = [];
-    private manticoreSystems: WikiEntry[] = [];
-    private andermanSystems: WikiEntry[] = [];
-    private havenSystems: WikiEntry[] = [];
+    private solarianSystems: string[] = SystemAssignmentHelper.SOLARIAN_SYSTEMS;
+    private manticoreSystems: string[] = SystemAssignmentHelper.MANTICOREAN_SYSTEMS;
+    private andermanSystems: string[] = SystemAssignmentHelper.ANDERMANI_SYSTEMS;
+    private havenSystems: string[] = SystemAssignmentHelper.HAVENITE_SYSTEMS;
 
     @ViewChild('coordInput')
     coordInput?: ElementRef<HTMLInputElement>;
@@ -107,8 +108,6 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     ngAfterViewInit(): void {
-        this.fetchCanonMap();
-
         let sub = this.publicResourcesService.getAllSystemCoordinates().subscribe(resp => {
             this.allCoords = resp;
             this.centerCoord = resp.filter(sys => sys.name === 'Manticore')[0];
@@ -180,17 +179,6 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         });
     }
 
-    private fetchCanonMap() {
-        let sub = this.publicResourcesService.getSolarianSystems().subscribe(systems => this.solarianSystems = systems);
-        this.subscriptions.push(sub);
-        sub = this.publicResourcesService.getManticorianSystems().subscribe(systems => this.manticoreSystems = systems);
-        this.subscriptions.push(sub);
-        sub = this.publicResourcesService.getHaveniteSystems().subscribe(systems => this.havenSystems = systems);
-        this.subscriptions.push(sub);
-        sub = this.publicResourcesService.getAndermanSystems().subscribe(systems => this.andermanSystems = systems);
-        this.subscriptions.push(sub);
-    }
-
     defineMapPreselection() {
         if (this.isCanonMapPreselected) {
             // gregor, clairmont and welladay in multiple nations
@@ -206,10 +194,9 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         }
     }
 
-    private extractCoordsByName(toSearch: WikiEntry[]) {
+    private extractCoordsByName(toSearch: string[]) {
         let found: Coords[] = [];
-        toSearch.forEach(c => {
-            let name = ExternalMapManagerComponent.getSystemNameFromEntry(c);
+        toSearch.forEach(name => {
             let f: Coords[] = this.allCoords!.filter(known => ExternalMapManagerComponent.compareSystemNames(known.name, name));
             if (f.length > 0) {
                 found.push(f[0]);
