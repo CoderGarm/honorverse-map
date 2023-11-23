@@ -73,10 +73,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     maxGranularity: boolean = false;
     private junctions: Junction[] = [];
-    private solarianSystems: string[] = SystemAssignmentHelper.SOLARIAN_SYSTEMS;
-    private manticoreSystems: string[] = SystemAssignmentHelper.MANTICOREAN_SYSTEMS;
-    private andermanSystems: string[] = SystemAssignmentHelper.ANDERMANI_SYSTEMS;
-    private havenSystems: string[] = SystemAssignmentHelper.HAVENITE_SYSTEMS;
+
     private highlightedCenterSystemName?: string;
     smallWidth: boolean = false;
 
@@ -159,10 +156,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private setUpCanonMap() {
-        this.setUpCanonColor(this.solarianSystems, ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR);
-        this.setUpCanonColor(this.manticoreSystems, ExternalMapManagerComponent.MANTICORE_COLOR);
-        this.setUpCanonColor(this.havenSystems, ExternalMapManagerComponent.HAVEN_COLOR);
-        this.setUpCanonColor(this.andermanSystems, ExternalMapManagerComponent.ANDERMAN_COLOR);
+        this.setUpCanonColor(SystemAssignmentHelper.SOLARIAN_SYSTEMS, ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR);
+        this.setUpCanonColor(SystemAssignmentHelper.MANTICOREAN_SYSTEMS, ExternalMapManagerComponent.MANTICORE_COLOR);
+        this.setUpCanonColor(SystemAssignmentHelper.HAVENITE_SYSTEMS, ExternalMapManagerComponent.HAVEN_COLOR);
+        this.setUpCanonColor(SystemAssignmentHelper.ANDERMANI_SYSTEMS, ExternalMapManagerComponent.ANDERMAN_COLOR);
+        this.setUpCanonColor(SystemAssignmentHelper.SILESIA_SYSTEMS, ExternalMapManagerComponent.SILESIA_COLOR);
     }
 
     private setUpCanonColor(systems: string[], color: string) {

@@ -46,6 +46,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     public static readonly MANTICORE_COLOR = '#AE19AB';
     public static readonly HAVEN_COLOR = '#57ffc7';
     public static readonly ANDERMAN_COLOR = '#967B0B';
+    public static readonly SILESIA_COLOR = '#99ff33';
 
     static path: string = '';
 
@@ -63,11 +64,6 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     filtered: Observable<Coords[]>;
     filteredCenter: Observable<Coords[]>;
     filteredRadius: Observable<Coords[]>;
-
-    private solarianSystems: string[] = SystemAssignmentHelper.SOLARIAN_SYSTEMS;
-    private manticoreSystems: string[] = SystemAssignmentHelper.MANTICOREAN_SYSTEMS;
-    private andermanSystems: string[] = SystemAssignmentHelper.ANDERMANI_SYSTEMS;
-    private havenSystems: string[] = SystemAssignmentHelper.HAVENITE_SYSTEMS;
 
     @ViewChild('coordInput')
     coordInput?: ElementRef<HTMLInputElement>;
@@ -182,15 +178,17 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     defineMapPreselection() {
         if (this.isCanonMapPreselected) {
             // gregor, clairmont and welladay in multiple nations
-            this.addToColors(ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR, this.extractCoordsByName(this.solarianSystems));
-            this.addToColors(ExternalMapManagerComponent.MANTICORE_COLOR, this.extractCoordsByName(this.manticoreSystems));
-            this.addToColors(ExternalMapManagerComponent.HAVEN_COLOR, this.extractCoordsByName(this.havenSystems));
-            this.addToColors(ExternalMapManagerComponent.ANDERMAN_COLOR, this.extractCoordsByName(this.andermanSystems));
+            this.addToColors(ExternalMapManagerComponent.SOLARIAN_LEAGUE_COLOR, this.extractCoordsByName(SystemAssignmentHelper.SOLARIAN_SYSTEMS));
+            this.addToColors(ExternalMapManagerComponent.MANTICORE_COLOR, this.extractCoordsByName(SystemAssignmentHelper.MANTICOREAN_SYSTEMS));
+            this.addToColors(ExternalMapManagerComponent.HAVEN_COLOR, this.extractCoordsByName(SystemAssignmentHelper.HAVENITE_SYSTEMS));
+            this.addToColors(ExternalMapManagerComponent.ANDERMAN_COLOR, this.extractCoordsByName(SystemAssignmentHelper.ANDERMANI_SYSTEMS));
+            this.addToColors(ExternalMapManagerComponent.SILESIA_COLOR, this.extractCoordsByName(SystemAssignmentHelper.SILESIA_SYSTEMS));
         } else {
-            this.extractCoordsByName(this.solarianSystems).forEach(c => this.remove(c));
-            this.extractCoordsByName(this.manticoreSystems).forEach(c => this.remove(c));
-            this.extractCoordsByName(this.havenSystems).forEach(c => this.remove(c));
-            this.extractCoordsByName(this.andermanSystems).forEach(c => this.remove(c));
+            this.extractCoordsByName(SystemAssignmentHelper.SOLARIAN_SYSTEMS).forEach(c => this.remove(c));
+            this.extractCoordsByName(SystemAssignmentHelper.MANTICOREAN_SYSTEMS).forEach(c => this.remove(c));
+            this.extractCoordsByName(SystemAssignmentHelper.HAVENITE_SYSTEMS).forEach(c => this.remove(c));
+            this.extractCoordsByName(SystemAssignmentHelper.ANDERMANI_SYSTEMS).forEach(c => this.remove(c));
+            this.extractCoordsByName(SystemAssignmentHelper.SILESIA_SYSTEMS).forEach(c => this.remove(c));
         }
     }
 

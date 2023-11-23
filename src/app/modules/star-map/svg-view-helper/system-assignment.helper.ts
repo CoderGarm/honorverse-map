@@ -4,6 +4,7 @@ export class SystemAssignmentHelper {
     static readonly HAVENITE_SYSTEMS: string[] = [];
     static readonly MALIGN_SYSTEMS: string[] = [];
     static readonly ANDERMANI_SYSTEMS: string[] = [];
+    static readonly SILESIA_SYSTEMS: string[] = [];
 
 
     static readonly SOLARIAN_SYSTEMS: string[] = [];
@@ -17,7 +18,7 @@ export class SystemAssignmentHelper {
 
             /* fluff    */, "Marsh", "Zanzibar", "Alizon", "Klein Station", "Chelsea", "Yalta", "Poicters", "Casca"
             /* fluff    */, "Grendelsbane", "Minorca", "Minette", "Candor", "Talisman", "Rasalas", "Mendoza"
-            /* fluff    */, "Matapan", "Prairie", "Talbot"
+            /* fluff    */, "Matapan", "Prairie", "Talbot", "Erewhon"
         );
 
         SystemAssignmentHelper.HAVENITE_SYSTEMS.push(
@@ -28,7 +29,7 @@ export class SystemAssignmentHelper {
             /* original */ "La-Martine", "Des-Moines", "Solon", "Solway", "SXR-136-23", "Clarke", "Lovat", "Welladay",
             /* original */ "Seaford 9", "Lowell", "Mathias", "Sheldon", "Owens", "Tarragon", "Adler", "Gualt",
             /* original */ "Gaston", "Tambourin", "Squalus", "Thetis", "Helmsport", "Seljuk", "Laramie", "Haven",
-            /* original */ "Jouett", "Refuge", "Morell", "New Calcutta", "Malagasy", "Hera", "Maastricht",
+            /* original */ "Jouett", "Refuge", "Morell", "New Calcutta", "Malagasy", "Hera (Haven-Sector)", "Maastricht",
             /* original */ "Lannes", "MacGregor", "Maslow", "Treadway", "Samson"
 
             /* fluff    */, "Franconia", "Runchiman", "Nightingale", "Barnes", "Cerberus", "Slocum (Haven-Sector)"
@@ -38,7 +39,7 @@ export class SystemAssignmentHelper {
             /* fluff    */, "Bannerman", "Barnes", "Barnett", "Belel", "Botein", "Brikiub", "Buna", "Cascabel", "Cerberus"
             /* fluff    */, "Chantilly", "Corrigan", "Daniel", "Des Moines", "Dombay", "Echnaton", "Elf", "Fischer", "Fordyce"
             /* fluff    */, "Formosa", "Foximan", "Franconia", "Gar", "Gaston", "Guahayona", "Gualt", "Guniibuu", "Hallman"
-            /* fluff    */, "Hamal", "Haven", "Helmsport", "Hera", "Homam", "Hyacinth", "Iklil", "Ivanhoe", "Joubert", "Joust"
+            /* fluff    */, "Hamal", "Haven", "Helmsport", "Homam", "Hyacinth", "Iklil", "Ivanhoe", "Joubert", "Joust"
             /* fluff    */, "Leopard", "Lionrock", "Lovat", "Lowell", "Lucilinburhuc", "Luminara", "Lyrastra", "Maastricht"
             /* fluff    */, "Madras", "Markab", "Mathias", "Mendel", "Merope", "Mesarthim", "Michael", "Mylar", "Nebulae"
             /* fluff    */, "Nikawiy", "Owens", "Paragon", "Pollux", "Ran", "Revati", "Runciman", "Spectre", "Secour"
@@ -55,6 +56,12 @@ export class SystemAssignmentHelper {
             /* original */ "New Orkney", "Oceana", "Visigoth", "Galton", "Felix", "SGC-902-36-G", "Maxwell", "Darius",
             /* original */ "Line", "Matagorda", "Mannerheim"
         )
+
+        SystemAssignmentHelper.SILESIA_SYSTEMS.push(
+            /* original */  "Willis", "Hendrikson", "Jarmon", "Terrance", "Tumult", "Sarah", "Carlton", "Silesia", "Brinkman", "Hume", "Breslau", "Telmach", "Libau", "Gosset",
+            /* original */   "Lua Hiler", "Hillman", "Tyler's Star", "Zorester", "Lutrell", "Posnan", "Arendscheldt", "Signma", "Creswell", "Hera (Silesia-Sector)", "Saginaw", "Psyche", "Sachsen",
+            /* original */   "Trellis", "Slocum (Silesia-Sector)", "Sharon's Star", "Magyar"
+        );
 
         SystemAssignmentHelper.ANDERMANI_SYSTEMS.push(
             /* original */ "Nimbalkar", "Gregor", "Cantiz", "Durandel", "Angelique", "Tomlinson", "Sligo", "New Berlin",
