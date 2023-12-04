@@ -15,6 +15,7 @@ import {map, startWith} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/wiki-display.component";
 import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
+import {Era} from "../svg-view-helper/system-assignments/era";
 
 @Component({
     selector: 'app-external-map',
@@ -87,6 +88,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private deWikiSystems: string[] = [];
     private wikiSystemsPresence: LanguagePresence[] = [];
 
+    readonly YEARS: number[] = [
+        1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
+        1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
+    ];
+
     constructor(private route: ActivatedRoute,
                 private breakpointObserver: BreakpointObserver,
                 private publicResourcesService: PublicResourcesApiService,
@@ -156,7 +162,21 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private setUpCanonMap() {
-        SystemAssignmentHelper.NATIONS_BY_COLOR.forEach((systems, color) => this.setUpCanonColor(systems, color));
+        SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.setUpCanonColor(systems, color));
+    }
+
+
+    setYear(year: number) {
+        console.log(year)
+        this.colorByCircle.clear();
+        SystemAssignmentHelper.getByYear(year).forEach((systems, color) => this.setUpCanonColor(systems, color));
+        this.canvas!.children()
+            .filter(c => c.classes().includes(BasicViewHelperData.STAR_MARKER))
+            .forEach(c => this.canvas!.removeElement(c));
+
+        let orbitDefinitions: OrbitDefinition[] = OrbitDefinition.getOrbitDefinitionsForExternalStarMap(this.center!, this.coords, this.colorByCircle);
+        console.log(orbitDefinitions)
+        orbitDefinitions.forEach(orbitDefinition => this.drawCelestial(orbitDefinition));
     }
 
     private setUpCanonColor(systems: string[], color: string) {

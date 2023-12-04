@@ -1,4 +1,16 @@
+import {Era} from "./system-assignments/era";
+import {SystemAssignmentHelperEra1} from "./system-assignments/system-assignment-era1.helper";
+import {SystemAssignmentHelperEra2} from "./system-assignments/system-assignment-era2.helper";
+import {SystemAssignmentHelperEra3} from "./system-assignments/system-assignment-era3.helper";
+import {SystemAssignmentHelperEra4} from "./system-assignments/system-assignment-era4.helper";
+import {SystemAssignmentHelperEra5} from "./system-assignments/system-assignment-era5.helper";
+import {SystemAssignmentHelperEra6} from "./system-assignments/system-assignment-era6.helper";
+import {SystemAssignmentHelperEra7} from "./system-assignments/system-assignment-era7.helper";
+import {SystemAssignmentHelperEra8} from "./system-assignments/system-assignment-era8.helper";
+
 export class SystemAssignmentHelper {
+
+    static readonly ERA_CONNECTOR: Map<number, Era> = new Map<number, Era>();
 
     public static readonly SOLARIAN_LEAGUE_COLOR: string = '#B31616';
     public static readonly MANTICORE_COLOR: string = '#ff00ff';
@@ -13,131 +25,173 @@ export class SystemAssignmentHelper {
     public static readonly TORCH_COLOR: string = '#ff0066';
     public static readonly PHOENIX_COLOR: string = '#3366cc';
 
-    static readonly MANTICOREAN_SYSTEMS: string[] = [];
-    static readonly HAVENITE_SYSTEMS: string[] = [];
-    static readonly MALIGN_SYSTEMS: string[] = [];
-    static readonly ANDERMANI_SYSTEMS: string[] = [];
-    static readonly SILESIA_SYSTEMS: string[] = [];
-    static readonly MIDGARD_SYSTEMS: string[] = [];
-    static readonly MATAPAN_SYSTEMS: string[] = [];
-    static readonly ASGARD_SYSTEMS: string[] = [];
-    static readonly MONICA_SYSTEMS: string[] = [];
-    static readonly TORCH_SYSTEMS: string[] = [];
-    static readonly PHOENIX_SYSTEMS: string[] = [];
-
-    static readonly SOLARIAN_SYSTEMS: string[] = [];
-
-    static readonly NATIONS_BY_COLOR: Map<string, string[]> = new Map<string, string[]>();
+    static readonly MANTICOREAN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly HAVENITE_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly MALIGN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly ANDERMANI_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly SILESIA_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly MIDGARD_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly MATAPAN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly ASGARD_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly MONICA_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly TORCH_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly PHOENIX_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly SOLARIAN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
 
     static {
 
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.MANTICORE_COLOR, SystemAssignmentHelper.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.HAVEN_COLOR, SystemAssignmentHelper.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.MALIGN_COLOR, SystemAssignmentHelper.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.ANDERMAN_COLOR, SystemAssignmentHelper.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.SILESIA_COLOR, SystemAssignmentHelper.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR, SystemAssignmentHelper.SOLARIAN_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.MIDGARD_COLOR, SystemAssignmentHelper.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.MATAPAN_COLOR, SystemAssignmentHelper.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.ASGARD_COLOR, SystemAssignmentHelper.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.MONICA_COLOR, SystemAssignmentHelper.MONICA_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.TORCH_COLOR, SystemAssignmentHelper.TORCH_SYSTEMS);
-        SystemAssignmentHelper.NATIONS_BY_COLOR.set(SystemAssignmentHelper.PHOENIX_COLOR, SystemAssignmentHelper.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1899, Era.ERA1);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1900, Era.ERA1);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1901, Era.ERA1);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1902, Era.ERA1);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1903, Era.ERA2);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1904, Era.ERA2);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1905, Era.ERA3);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1906, Era.ERA4);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1907, Era.ERA5);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1908, Era.ERA6);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1909, Era.ERA7);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1910, Era.ERA8);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1911, Era.ERA9);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1912, Era.ERA9);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1913, Era.ERA10);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1914, Era.ERA11);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1915, Era.ERA12);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1916, Era.ERA12);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1917, Era.ERA13);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1918, Era.ERA13);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1919, Era.ERA14);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1920, Era.ERA14);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1921, Era.ERA15);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1922, Era.ERA16);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1923, Era.ERA17);
+        SystemAssignmentHelper.ERA_CONNECTOR.set(1924, Era.ERA18);
 
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.push("Midgard");
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.push("Matapan");
-        SystemAssignmentHelper.ASGARD_SYSTEMS.push("Asgard");
-        SystemAssignmentHelper.MONICA_SYSTEMS.push("Monica", "Taylor");
-        SystemAssignmentHelper.TORCH_SYSTEMS.push("Congo");
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.push("Terra Haute", "Hennesy");
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.SOLARIAN_SYSTEMS);
 
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.push(
-             "Yeltsin's Star", "Zuckerman", "Rembrandt", "Dresden", "Pequod", "Yorik", "Basilisk", "Scarlet",
-             "Spindle", "Tillerman", "Marian", "San Miguel", "Nuada", "Elric", "Endicott", "Celebrant",
-             "Nuncio", "Mainwaring", "Quentin", "Clearaway", "Redoubt", "Talbott", "Montana", "Quest",
-             "Hancock", "Trevor's Star", "Reevesport", "Split", "Doreas", "Manticore", "Lynx", "MQ-L-1792-46A",
-             "Lynx B (Terminus)",
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.SOLARIAN_SYSTEMS);
 
-            "Marsh", "Zanzibar", "Alizon", "Klein Station", "Chelsea", "Yalta", "Poicters", "Casca",
-            "Grendelsbane", "Minorca", "Minette", "Candor", "Talisman", "Rasalas", "Mendoza",
-            "Prairie", "Talbot", "Erewhon"
-        );
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.SOLARIAN_SYSTEMS);
 
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.push(
-             "Suarez", "Corrigan", "Danak", "Santander", "Joust", "Alto Verde", "Sun-Yat", "Michael",
-             "Shilo", "Fordyce", "Lorn", "Madras", "Pegasus", "Prague", "Mylar", "Montague",
-             "Chantilly", "Solan", "Augusta", "Jameston", "Rutgers", "Hallman", "Micah", "Clairmont",
-             "Paroa", "Seabring", "Tequila", "Secour", "Barnett", "Sullah", "Tahlman", "Karavani",
-             "La-Martine", "Des-Moines", "Solon", "Solway", "SXR-136-23", "Clarke", "Lovat", "Welladay",
-             "Seaford 9", "Lowell", "Mathias", "Sheldon", "Owens", "Tarragon", "Adler", "Gualt",
-             "Gaston", "Tambourin", "Squalus", "Thetis", "Helmsport", "Seljuk", "Laramie", "Haven",
-             "Jouett", "Refuge", "Morell", "New Calcutta", "Malagasy", "Hera (Haven-Sector)", "Maastricht",
-             "Lannes", "MacGregor", "Maslow", "Treadway", "Samson",
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.SOLARIAN_SYSTEMS);
 
-            "Franconia", "Runchiman", "Nightingale", "Barnes", "Cerberus", "Slocum (Haven-Sector)",
-            "Nanda", "Fischer", "Tarazed", "Buna", "Mimosa", "Alkes", "Achernar", "Adhara", "Aerion",
-            "Ivanhoe", "Chamonix", "Mendel", "Azelfafage", "Alkaid", "Aiolos", "Aldhanab", "Ali Shar",
-            "Alkaid", "Alkarab", "Alkes", "Allman", "Alpherg", "Astral Fields", "Augusta", "Azelfafage",
-            "Bannerman", "Barnes", "Barnett", "Belel", "Botein", "Brikiub", "Buna", "Cascabel", "Cerberus",
-            "Chantilly", "Corrigan", "Daniel", "Des Moines", "Dombay", "Echnaton", "Elf", "Fischer", "Fordyce",
-            "Formosa", "Foximan", "Franconia", "Gar", "Gaston", "Guahayona", "Gualt", "Guniibuu", "Hallman",
-            "Hamal", "Haven", "Helmsport", "Homam", "Hyacinth", "Iklil", "Ivanhoe", "Joubert", "Joust",
-            "Leopard", "Lionrock", "Lovat", "Lowell", "Lucilinburhuc", "Luminara", "Lyrastra", "Maastricht",
-            "Madras", "Markab", "Mathias", "Mendel", "Merope", "Mesarthim", "Michael", "Mylar", "Nebulae",
-            "Nikawiy", "Owens", "Paragon", "Pollux", "Ran", "Revati", "Runciman", "Spectre", "Secour",
-            "Seljuk", "Sham", "Slocum (Haven-Sector)", "Smoky", "Solan", "Suarez", "Sun-Yat", "Tacoma",
-            "Tambourin", "Tarazed", "Taygeta", "The Lip", "Thetis", "Tianyi", "Timir", "Vortexia",
-            "Welladay", "Zhang", "Chamonix", "Nova Astra", "Clarke", "Jameston", "Karavani", "Lannes", "Lern", "Laramie",
-            "La Martine", "Lorn", "New Calcutta", "Paroa", "Pegasus", "Yellow", "Shilo", "Squalus", "Tarragon", "Danak",
-            "Alto Verde", "Prague", "Rutgers", "Sheldon", "Sullah", "Jouett", "Morell", "Maslow", "Treadway", "Tahlman",
-            "Seabring", "Garnet Star", "Poe", "Malagasy", "Stocum", "Asad", "Flegetonte", "Montague", "Daggan", "MacGregor",
-            "Nanda", "Sarawak", "SXR-136-23", "Tequila", "Ueshiba", "J-156-18(L)"
-        );
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.SOLARIAN_SYSTEMS);
 
-        SystemAssignmentHelper.MALIGN_SYSTEMS.push(
-             "New Orkney", "Oceana", "Visigoth", "Galton", "Felix", "SGC-902-36-G", "Maxwell", "Darius",
-             "Line", "Matagorda", "Mannerheim"
-        )
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.SOLARIAN_SYSTEMS);
 
-        SystemAssignmentHelper.SILESIA_SYSTEMS.push(
-              "Willis", "Hendrikson", "Jarmon", "Terrance", "Tumult", "Sarah", "Carlton", "Silesia", "Brinkman", "Hume", "Breslau", "Telmach", "Libau", "Gosset",
-              "Lau Hiler", "Walther", "Hillman", "Tyler's Star", "Zoraster", "Lutrell", "Posnan", "Arendscheldt", "Sigma", "Creswell", "Hera (Silesia-Sector)",
-              "Saginaw", "Psyche", "Sachsen", "Trellis", "Slocum (Silesia-Sector)", "Sharon's Star", "Magyar",
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.SOLARIAN_SYSTEMS);
 
-            "Prism", "Casimir", "Schiller", "Trautma's Star", "Cresswell", "Hyatt", "Krieger's Star", "Melchor", "Hyperion", "Horus", "Crawford",
-            "Caldwell", "Harston", "Melbourne", "Allen", "Brennan", "Sandhill", "Adelaide"
-        );
-
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.push(
-             "Nimbalkar", "Gregor", "Cantiz", "Durandel", "Angelique", "Tomlinson", "Sligo", "New Berlin",
-             "Tomlinson", "Mischa's-Star", "Irrlicht", "Babel",
-
-            "Getout", "Phaedra", "Cimarron's Rose", "Kaewkosin", "Narumi", "Noquisi", "Farnham", "Sadachbia", "Umbraea"
-        );
-
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.push(
-             "Sigma Draconis", "Meyerdahl", "Farley's Crossing", "Kenichi", "Tau Ceti", "Tau-Delta", "Templar",
-             "Galen", "Joshua", "Sankar", "Stotterman", "Yildun", "Matagorda", "Mendelschon", "Heimdall",
-             "Tasmania", "Maxwell", "Dzung", "70 Virginis", "Lima", "Lucas", "Strathmore", "Hirochi",
-             "Epsilon Eridani", "Hypatia", "Trombone", "Sebastopol", "Mithra", "Cyclops", "Seacrest",
-             "Chattanooga", "Lucastra", "Eris", "Sol", "Stine", "Zale", "Howard", "Meyers",
-            "Isaac", "Sprague", "Maya", "Murray", "Poul", "Edwin", "Robert", "Randal", "Ajay", "Saltash",
-
-            "Aflaandacs", "Alcyone", "Alkaphrah", "Altair", "Angetenar", "Aniara", "Anomaly", "Antares", "Asellus Secundus", "Ax�lotl",
-            "Barnard's Star", "Belenos", "Black", "Canis Minoris", "Casulli", "Chamukuy", "Chen", "Cleopatra", "Cohagen", "Delilah's Navel",
-            "Delta Pavonis", "Dilmun", "Dogma", "Epsilon Eridani", "Epsilon Indi", "Groombridge", "Homebrew", "Hound's Eye", "Innes' Star", "Joshua",
-            "Kapteyn's Star", "Kaus Borealis", "Kruger", "Lacille", "Luyten's Star", "Matza", "Mazaalai", "Merak", "Mira", "Muliphein", "Nova Heights",
-            "Pipoltr", "Procyon", "Proxima Centauri", "Regulus", "Retrict", "Rho Apod", "Rosaliadecastro", "Sarin", "Sasebo", "Schedar", "Shenandoah",
-            "Sheratan", "Shiva", "Sirius", "Stardrifter", "Sterrennacht", "Sugano", "Tau Ceti", "Toebean", "Van Maanen's Star",
-            "Viorginis B", "Virginis A", "White", "Zavijava", "Zubenelgenubi", "Hilt 452", "Aquaria", "Westermann B", "Westermann A", "Cape Susette",
-            "HD 526389", "70 Virginis", "Chattanooga", "Cyclops", "Dzung", "Galen", "Heimdall", "Hirochi", "Kenichi", "Trombone", "Tasmania",
-            "Strathmore", "Stotterman", "Sebastopol", "Seacrest", "Mithra", "Eris", "Meyerdahl", "Mendelschon", "Lucastra", "Yildun", "Lucas", "Stine",
-            "Calpurnia", "Delvecchio", "Katharina", "Roulette", "Startman", "Titania", "Balthazar", "Bootstrap", "Boyle", "Broadhurst", "Cachalot", "BS-712-19-6",
-            "Nolan", "Cooper", "Danube", "Delta Draconis", "Eta Cassiopeiae", "Exapia", "Chalawan", "Hesier", "Istvan", "Kenniac", "Kismet", "Klondike", "Landfall",
-            "Lytton", "Baten Kaitos", "Madeleine", "Mfecane", "Clarence", "Asterope", "Preston", "Sandalwood", "Shingaine", "Siegfried", "Snyder", "Tau Delta",
-            "Theseus", "Traccora", "Van Mook", "Winepress", "Grafton", "Yarrow", "Yasotaro", "Ganesh", "Alsephina", "Dickerson", "Templar", "Ophiuchi", "Maize",
-            "Air", "Hope", "Mary", "Crux", "Mannerheim", "Felix", "Mirfak", "Mahsati", "Matagorda", "Maxwell", "Sarduchi", "Warner", "Visigoth", "Lynda", "Galton",
-            "Mobius", "McIntosh", "Kumang", "Włocławek", "Golem"
-        );
+        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MIDGARD_SYSTEMS);
+        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MATAPAN_SYSTEMS);
+        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.ASGARD_SYSTEMS);
+        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MONICA_SYSTEMS);
+        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.TORCH_SYSTEMS);
+        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.PHOENIX_SYSTEMS);
+        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MANTICOREAN_SYSTEMS);
+        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.HAVENITE_SYSTEMS);
+        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MALIGN_SYSTEMS);
+        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.SILESIA_SYSTEMS);
+        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.ANDERMANI_SYSTEMS);
+        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.SOLARIAN_SYSTEMS);
     }
+
+    static getByYear(year: number) {
+        let era = SystemAssignmentHelper.ERA_CONNECTOR.get(year)!;
+        return this.getByEra(era);
+    }
+
+    static getByEra(era: Era) {
+        let nations_by_color: Map<string, string[]> = new Map<string, string[]>();
+        nations_by_color.set(SystemAssignmentHelper.MANTICORE_COLOR, SystemAssignmentHelper.MANTICOREAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MANTICOREAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.HAVEN_COLOR, SystemAssignmentHelper.HAVENITE_SYSTEMS.has(era) ? SystemAssignmentHelper.HAVENITE_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MALIGN_COLOR, SystemAssignmentHelper.MALIGN_SYSTEMS.has(era) ? SystemAssignmentHelper.MALIGN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.ANDERMAN_COLOR, SystemAssignmentHelper.ANDERMANI_SYSTEMS.has(era) ? SystemAssignmentHelper.ANDERMANI_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.SILESIA_COLOR, SystemAssignmentHelper.SILESIA_SYSTEMS.has(era) ? SystemAssignmentHelper.SILESIA_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR, SystemAssignmentHelper.SOLARIAN_SYSTEMS.has(era) ? SystemAssignmentHelper.SOLARIAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MIDGARD_COLOR, SystemAssignmentHelper.MIDGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.MIDGARD_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MATAPAN_COLOR, SystemAssignmentHelper.MATAPAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MATAPAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.ASGARD_COLOR, SystemAssignmentHelper.ASGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.ASGARD_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MONICA_COLOR, SystemAssignmentHelper.MONICA_SYSTEMS.has(era) ? SystemAssignmentHelper.MONICA_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.TORCH_COLOR, SystemAssignmentHelper.TORCH_SYSTEMS.has(era) ? SystemAssignmentHelper.TORCH_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.PHOENIX_COLOR, SystemAssignmentHelper.PHOENIX_SYSTEMS.has(era) ? SystemAssignmentHelper.PHOENIX_SYSTEMS.get(era)! : []);
+        return nations_by_color;
+    }
+
 }

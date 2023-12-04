@@ -1,4 +1,11 @@
 <div id="external-map" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+
+    <mat-chip-listbox class="mat-mdc-chip-set-stacked">
+        <mat-chip-option *ngFor="let year of YEARS" class="years-chip no-checkmark" (click)="setYear(year)">
+            {{ year }}
+        </mat-chip-option>
+    </mat-chip-listbox>
+
     <form class="search-box">
         <mat-form-field class="center-field" appearance="outline">
             <mat-label>Search for system</mat-label>

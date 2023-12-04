@@ -25,7 +25,8 @@ export class OrbitDefinition {
         systems.forEach(system => {
             let id = ExternalMapComponent.getStarSystemCircleID(system);
             let isMain: boolean = system.name === center.name;
-            od.push(new OrbitDefinition(system, isMain, colors.get(id)!));
+            const color = colors.has(id) ? colors.get(id)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
+            od.push(new OrbitDefinition(system, isMain, color));
         });
         return od;
     }

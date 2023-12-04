@@ -11,6 +11,7 @@ import {environment} from "../../../../environments/environment";
 import {ExternalMapComponent} from "../external-map/external-map.component";
 import {BasicViewHelper} from "../svg-view-helper/basic-view-helper";
 import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
+import {Era} from "../svg-view-helper/system-assignments/era";
 
 
 export interface ColorGroup {
@@ -171,9 +172,9 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     defineMapPreselection() {
         if (this.isCanonMapPreselected) {
-            SystemAssignmentHelper.NATIONS_BY_COLOR.forEach((systems, color) => this.addToColors(color, this.extractCoordsByName(systems)));
+            SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.addToColors(color, this.extractCoordsByName(systems)));
         } else {
-            SystemAssignmentHelper.NATIONS_BY_COLOR.forEach((systems, color) => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
+            SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.extractCoordsByName(systems).forEach(c => this.remove(c)));
         }
     }
 
