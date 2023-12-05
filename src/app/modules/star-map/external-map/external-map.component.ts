@@ -77,6 +77,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private highlightedCenterSystemName?: string;
     smallWidth: boolean = false;
+    smallHeight: boolean = false;
 
     @ViewChild('centerInput')
     centerInput?: ElementRef<HTMLInputElement>;
@@ -88,10 +89,14 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private deWikiSystems: string[] = [];
     private wikiSystemsPresence: LanguagePresence[] = [];
 
+    yearSelectorOpen: boolean = true;
+
     readonly YEARS: number[] = [
         1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
         1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
     ];
+    // fixme dindt work currently
+    rebuildMap: boolean = false;
 
     constructor(private route: ActivatedRoute,
                 private breakpointObserver: BreakpointObserver,
@@ -111,6 +116,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
         this.breakpointObserver.observe('(max-width: 950px)').subscribe(result => {
             this.smallWidth = result.matches;
+        });
+
+        this.breakpointObserver.observe('(max-height: 1000px)').subscribe(result => {
+            this.smallHeight = result.matches;
         });
 
         // just make sure that the key exists
@@ -162,24 +171,23 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private setUpCanonMap() {
-        SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.setUpCanonColor(systems, color));
+        SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.setUpColorForSystems(systems, color));
     }
 
 
     setYear(year: number) {
-        console.log(year)
+        this.rebuildMap = true;
         this.colorByCircle.clear();
-        SystemAssignmentHelper.getByYear(year).forEach((systems, color) => this.setUpCanonColor(systems, color));
-        this.canvas!.children()
-            .filter(c => c.classes().includes(BasicViewHelperData.STAR_MARKER))
-            .forEach(c => this.canvas!.removeElement(c));
+        SystemAssignmentHelper.getByYear(year).forEach((systems, color) => this.setUpColorForSystems(systems, color));
 
+        this.clearData();
+        this.drawJunctions();
         let orbitDefinitions: OrbitDefinition[] = OrbitDefinition.getOrbitDefinitionsForExternalStarMap(this.center!, this.coords, this.colorByCircle);
-        console.log(orbitDefinitions)
         orbitDefinitions.forEach(orbitDefinition => this.drawCelestial(orbitDefinition));
+        this.rebuildMap = false;
     }
 
-    private setUpCanonColor(systems: string[], color: string) {
+    private setUpColorForSystems(systems: string[], color: string) {
         systems.forEach(name => {
             let coord = this.getBySystemName(name);
             if (!!coord) {

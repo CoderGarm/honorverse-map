@@ -1,10 +1,17 @@
-<div id="external-map" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+<div id="external-map" [class.waiting]="rebuildMap">
 
-    <mat-chip-listbox class="mat-mdc-chip-set-stacked">
-        <mat-chip-option *ngFor="let year of YEARS" class="years-chip no-checkmark" (click)="setYear(year)">
-            {{ year }}
-        </mat-chip-option>
-    </mat-chip-listbox>
+    <div id="year-selector" [ngClass]="smallHeight ? 'wide-stack' : 'high-stack'" [class.hidden]="!yearSelectorOpen">
+        <mat-chip-listbox class="mat-mdc-chip-set-stacked years-selection-chip-list">
+            <mat-chip-option *ngFor="let year of YEARS" class="years-chip no-checkmark" (click)="setYear(year)" [selected]="year == 1899">
+                {{ year }} PD
+            </mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+    <button id="year-toggle-btn" type="button" mat-icon-button [ngClass]="yearSelectorOpen ? (smallHeight ? 'wide-btn' : 'high-btn') : ''"
+            (click)="yearSelectorOpen = !yearSelectorOpen">
+        <mat-icon *ngIf="yearSelectorOpen">switch_right</mat-icon>
+        <mat-icon *ngIf="!yearSelectorOpen">switch_left</mat-icon>
+    </button>
 
     <form class="search-box">
         <mat-form-field class="center-field" appearance="outline">
