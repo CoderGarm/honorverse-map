@@ -7,7 +7,7 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {ColorGroup, ExternalMapManagerComponent, NamedThing, RadialGroup, SimpleCoord} from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval, Observable} from "rxjs";
-import {Array, Point} from "@svgdotjs/svg.js";
+import {Array, Path, Point} from "@svgdotjs/svg.js";
 import {BreakpointObserver} from "@angular/cdk/layout";
 import {FormControl} from "@angular/forms";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
@@ -16,6 +16,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/wiki-display.component";
 import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
 import {Era} from "../svg-view-helper/system-assignments/era";
+import {StarHelper} from "../svg-view-helper/star-helper";
 
 @Component({
     selector: 'app-external-map',
@@ -77,6 +78,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private highlightedCenterSystemName?: string;
     smallWidth: boolean = false;
+    smallHeight: boolean = false;
 
     @ViewChild('centerInput')
     centerInput?: ElementRef<HTMLInputElement>;
@@ -88,10 +90,14 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private deWikiSystems: string[] = [];
     private wikiSystemsPresence: LanguagePresence[] = [];
 
+    yearSelectorOpen: boolean = true;
+
     readonly YEARS: number[] = [
         1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
         1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
     ];
+    // fixme dindt work currently
+    rebuildMap: boolean = false;
 
     constructor(private route: ActivatedRoute,
                 private breakpointObserver: BreakpointObserver,
@@ -111,6 +117,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
         this.breakpointObserver.observe('(max-width: 950px)').subscribe(result => {
             this.smallWidth = result.matches;
+        });
+
+        this.breakpointObserver.observe('(max-height: 1000px)').subscribe(result => {
+            this.smallHeight = result.matches;
         });
 
         // just make sure that the key exists
@@ -162,24 +172,41 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private setUpCanonMap() {
-        SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.setUpCanonColor(systems, color));
+        SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.setUpColorForSystems(systems, color));
     }
 
 
     setYear(year: number) {
-        console.log(year)
+        this.rebuildMap = true;
+        const comparatorColorByCircle: Map<string, string> = new Map(this.colorByCircle);
         this.colorByCircle.clear();
-        SystemAssignmentHelper.getByYear(year).forEach((systems, color) => this.setUpCanonColor(systems, color));
+        SystemAssignmentHelper.getByYear(year).forEach((systems, color) => this.setUpColorForSystems(systems, color));
         this.canvas!.children()
-            .filter(c => c.classes().includes(BasicViewHelperData.STAR_MARKER))
-            .forEach(c => this.canvas!.removeElement(c));
+            .filter(c => c.classes().includes(ExternalMapComponent.STAR_MARKER))
+            .forEach(star => {
+                let id = star.id();
+                let x = Number.parseFloat(star.x() + '');
+                let y = Number.parseFloat(star.y() + '');
+                const oldColor = comparatorColorByCircle.has(id) ? comparatorColorByCircle.get(id)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
+                const color = this.colorByCircle.has(id) ? this.colorByCircle.get(id)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
 
-        let orbitDefinitions: OrbitDefinition[] = OrbitDefinition.getOrbitDefinitionsForExternalStarMap(this.center!, this.coords, this.colorByCircle);
-        console.log(orbitDefinitions)
-        orbitDefinitions.forEach(orbitDefinition => this.drawCelestial(orbitDefinition));
+                if (color != ExternalMapComponent.UN_FOCUSSED_COLOR) {
+                    (<Path>star).plot(StarHelper.starMarked().array());
+                } else {
+                    (<Path>star).plot(StarHelper.star().array());
+                }
+
+                star.x(x)
+                    .y(y)
+
+                if (color != oldColor) {
+                    star.fill(color);
+                }
+            });
+        this.rebuildMap = false;
     }
 
-    private setUpCanonColor(systems: string[], color: string) {
+    private setUpColorForSystems(systems: string[], color: string) {
         systems.forEach(name => {
             let coord = this.getBySystemName(name);
             if (!!coord) {

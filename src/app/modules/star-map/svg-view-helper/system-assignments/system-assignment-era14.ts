@@ -1,108 +1,116 @@
-export class SystemAssignmentHelperEra11 {
+import {MapContainer} from "./map-container";
 
-    static readonly MANTICOREAN_SYSTEMS: string[] = [];
-    static readonly HAVENITE_SYSTEMS: string[] = [];
-    static readonly MALIGN_SYSTEMS: string[] = [];
-    static readonly ANDERMANI_SYSTEMS: string[] = [];
-    static readonly SILESIA_SYSTEMS: string[] = [];
-    static readonly MIDGARD_SYSTEMS: string[] = [];
-    static readonly MATAPAN_SYSTEMS: string[] = [];
-    static readonly ASGARD_SYSTEMS: string[] = [];
-    static readonly MONICA_SYSTEMS: string[] = [];
-    static readonly TORCH_SYSTEMS: string[] = [];
-    static readonly PHOENIX_SYSTEMS: string[] = [];
-    static readonly SOLARIAN_SYSTEMS: string[] = [];
+/**
+ * 1919 /1920 PD
+ */
+export class SystemAssignmentEra14 extends MapContainer {
+    constructor() {
+        super();
 
-    static {
-
-        SystemAssignmentHelperEra11.MIDGARD_SYSTEMS.push(
+        this.MIDGARD_SYSTEMS.push(
             "Midgard", "Fafnir", "Mothalla", "Dalim", "Alba", "Moravod", "Malmok", "Fuchur", "Mahasim",
             "Fang", "Erainn", "Muzikant", "Shangri La", "Valian"
         );
 
-        SystemAssignmentHelperEra11.MATAPAN_SYSTEMS.push(
+        this.MATAPAN_SYSTEMS.push(
             "Rana", "Nekkar", "Giausar", "Enif", "Halo", "Monch", "Phex", "Castula", "Unukalhai", "Meissa",
             "Sadalbari"
         );
 
-        SystemAssignmentHelperEra11.ASGARD_SYSTEMS.push(
+        this.ASGARD_SYSTEMS.push(
             "Asgard", "Alrakis", "Asellus Australia", "Heze", "Aurara", "Gloas", "Theemin", "Klaus Media",
             "Inquill", "Deneb Algedi", "Dschubba", "Gomeisa", "Baekdu", "Poerava",
         );
 
-        SystemAssignmentHelperEra11.MONICA_SYSTEMS.push("Monica", "Taylor");
-        SystemAssignmentHelperEra11.TORCH_SYSTEMS.push();
-        SystemAssignmentHelperEra11.PHOENIX_SYSTEMS.push("Terra Haute", "Hennesy");
+        this.MONICA_SYSTEMS.push(
+            "Monica", "Taylor"
+        );
 
-        SystemAssignmentHelperEra11.MANTICOREAN_SYSTEMS.push(
+        this.TORCH_SYSTEMS.push(
+
+        );
+
+        this.PHOENIX_SYSTEMS.push(
+            "Terra Haute", "Hennesy"
+        );
+
+        this.MANTICOREAN_SYSTEMS.push(
             "Zuckerman", "Yorik", "Basilisk", "Endicott", "Yeltsin's Star",
             "Marian", "Nuada", "Matapan",
             "Quentin", "Clearaway", "Redoubt", "Quest",
             "Hancock", "Reevesport", "Doreas", "Manticore",
 
             "Zanzibar", "Alizon", "Klein Station", "Poicters", "Casca",
-            "Grendelsbane", "Minorca", "Minette", "Candor", "Talisman",
-            "Erewhon", "Idaho", "Marsh", "Suchien", "Yalta",
+            "Minorca", "Minette", "Candor", "Talisman",
+            "Idaho", "Marsh", "Suchien", "Yalta", "Trevor's Star",
 
-            "Chelsea", "Mendoza", "Clairmont", "Talbot", "Treadway", "Micah", "Danfeng", "Liberty", "Sallah", "Adler", "Vishnu", "Rasalas",
-            "Madras", "Corrigan", "Vortexia", "Sun-Yat", "Paragon", "Samson", "Runciman", "Franconia", "Lowell", "Thetis", "Nightingale",
-            "Welladay", "Hamal", "Seabring", "Asad", "Trevor's Star", "Barnett",
+            "Rembrandt", "Celebrant", "Dresden", "Lynx", "Mainwaring", "Marian", "Montana", "New Tuscany",
+            "Nuncio", "Pequod", "Prairie", "Redoubt",
+            "San Miguel", "Scarlet", "Spindle", "Split", "Talbott", "Tillerman", "Lynx B (Terminus)",
+
+            "Willis", "Hendrikson", "Jarmon", "Terrance", "Tumult", "Sarah", "Carlton", "Silesia",
+            "Hillman", "Lutrell", "Hera (Silesia-Sector)", "Harston", "Melbourne",
+            "Saginaw", "Sachsen", "Prism", "Casimir", "Trautman's Star", "Hyatt", "Krieger's Star",
+            "Melchor", "Hyperion", "Horus", "Crawford",
+            "Caldwell", "Allen", "Brennan", "Adelaide", "Carson", "Caroline"
         );
 
-        SystemAssignmentHelperEra11.HAVENITE_SYSTEMS.push(
+        this.HAVENITE_SYSTEMS.push(
             "Suarez", "Danak", "Santander", "Joust", "Alto Verde", "Michael",
             "Shilo", "Fordyce", "Lorn", "Pegasus", "Prague", "Montague",
             "Chantilly", "Solan", "Augusta", "Jameston", "Rutgers", "Hallman",
             "Paroa", "Secour", "Sullah", "Karavani",
-            "La-Martine", "Des-Moines", "Solon", "SXR-136-23", "Clarke", "Lovat",
+            "Des-Moines", "Solon", "Clarke", "Lovat",
             "Lowell", "Mathias", "Sheldon", "Tarragon", "Gualt",
             "Gaston", "Tambourin", "Squalus", "Helmsport", "Seljuk", "Laramie", "Haven",
             "Jouett", "Refuge", "Morell", "New Calcutta", "Malagasy", "Hera (Haven-Sector)",
-            "Lannes", "Maslow", "Elric", "Solway", "Hyacinth", "Owens", "MacGregor", "Foximan", "Mylar", "Nikawiy", "Owens", "Maastricht",
-            "Tahlman", "Tequila", "Mylar", "Slocum (Haven-Sector)",
+            "Lannes", "Maslow", "Elric", "Solway", "Hyacinth",
 
             "Barnes", "Cerberus",
             "Nanda", "Fischer", "Tarazed", "Buna", "Mimosa", "Alkes", "Achernar", "Adhara", "Aerion",
             "Ivanhoe", "Chamonix", "Mendel", "Azelfafage", "Alkaid", "Aiolos", "Aldhanab", "Ali Shar",
             "Alkaid", "Alkarab", "Alkes", "Allman", "Alpherg", "Astral Fields", "Augusta", "Azelfafage",
-            "Bannerman", "Barnes", "Barnett", "Belel", "Botein", "Brikiub", "Buna", "Cascabel", "Cerberus",
-            "Chantilly", "Corrigan", "Daniel", "Des Moines", "Dombay", "Echnaton", "Elf", "Fischer", "Fordyce",
+            "Bannerman", "Barnes", "Belel", "Botein", "Brikiub", "Buna", "Cascabel", "Cerberus",
+            "Daniel", "Des Moines", "Dombay", "Echnaton", "Elf", "Fischer", "Fordyce",
             "Formosa", "Gar", "Gaston", "Guahayona", "Gualt", "Guniibuu", "Hallman",
-            "Haven", "Helmsport", "Homam", "Iklil", "Ivanhoe", "Joubert", "Joust",
-            "Leopard", "Lionrock", "Lovat", "Lucilinburhuc", "Luminara", "Lyrastra", "Maastricht",
+            "Homam", "Iklil", "Ivanhoe", "Joubert", "Joust",
+            "Leopard", "Lionrock", "Lovat", "Lucilinburhuc", "Luminara", "Lyrastra",
             "Markab", "Mathias", "Mendel", "Merope", "Mesarthim", "Michael", "Nebulae",
-            "Paragon", "Pollux", "Ran", "Revati", "Spectre", "Secour",
-            "Seljuk", "Sham", "Slocum (Haven-Sector)", "Smoky", "Solan", "Tacoma",
+            "Pollux", "Ran", "Revati", "Spectre", "Secour",
+            "Seljuk", "Sham", "Slocum (Haven-Sector)", "Smoky", "Tacoma",
             "Tambourin", "Tarazed", "Taygeta", "The Lip", "Thetis", "Tianyi", "Timir",
             "Zhang", "Chamonix", "Nova Astra", "Clarke", "Jameston", "Karavani", "Lannes", "Lern", "Laramie",
-            "La Martine", "Lorn", "New Calcutta", "Paroa", "Pegasus", "Yellow", "Shilo", "Squalus", "Tarragon", "Danak",
-            "Alto Verde", "Rutgers", "Sheldon", "Sullah", "Jouett", "Morell", "Maslow",
-            "Garnet Star", "Poe", "Malagasy", "Stocum", "Flegetonte", "Montague", "Daggan", "MacGregor",
-            "Nanda", "Sarawak", "SXR-136-23", "Tequila", "Ueshiba", "J-156-18(L)"
+            "La Martine", "Lorn", "New Calcutta", "Paroa", "Pegasus", "Yellow", "Shilo", "Tarragon", "Danak",
+            "Alto Verde", "Rutgers", "Sheldon", "Sullah", "Jouett", "Maslow",
+            "Poe", "Malagasy", "Stocum", "Flegetonte", "Montague", "Daggan", "MacGregor",
+            "Nanda", "Sarawak", "Ueshiba", "J-156-18(L)", "Atakoraka", "Ebla", "Hadar", "Dorcas", "Ralko",
+
+            "Chelsea", "Mendoza", "Clairmont", "Talbot", "Treadway", "Micah", "Danfeng", "Liberty", "Sallah", "Adler", "Vishnu", "Rasalas",
+            "Madras", "Corrigan", "Vortexia", "Sun-Yat", "Paragon", "Samson", "Runciman", "Franconia", "Lowell", "Thetis", "Nightingale",
+            "Welladay", "Hamal", "Seabring", "Asad", "Barnett", "Owens", "MacGregor", "Foximan", "Mylar", "Nikawiy", "Owens", "Maastricht",
+            "Tahlman", "Tequila", "Mylar", "Slocum (Haven-Sector)", "Garnet Star", "SXR-136-23",
         );
 
-        SystemAssignmentHelperEra11.MALIGN_SYSTEMS.push(
+        this.MALIGN_SYSTEMS.push(
             "New Orkney", "Oceana", "Visigoth", "Galton", "Felix", "SGC-902-36-G", "Maxwell", "Darius",
-            "Line", "Matagorda", "Mannerheim", "Congo", "Mesa", "Thrace", "New Orkney",
+            "Line", "Matagorda", "Mannerheim", "Mesa", "Thrace", "New Orkney",
         );
 
-        SystemAssignmentHelperEra11.SILESIA_SYSTEMS.push(
-            "Willis", "Hendrikson", "Jarmon", "Terrance", "Tumult", "Sarah", "Carlton", "Silesia", "Brinkman", "Hume", "Breslau", "Telmach", "Libau", "Gosset",
-            "Lau Hiler", "Walther", "Hillman", "Tyler's Star", "Zoraster", "Lutrell", "Posnan", "Arendscheldt", "Sigma", "Creswell", "Hera (Silesia-Sector)",
-            "Saginaw", "Psyche", "Sachsen", "Trellis", "Slocum (Silesia-Sector)", "Sharon's Star", "Magyar",
-
-            "Prism", "Casimir", "Schiller", "Trautman's Star", "Cresswell", "Hyatt", "Krieger's Star", "Melchor", "Hyperion", "Horus", "Crawford",
-            "Caldwell", "Harston", "Melbourne", "Allen", "Brennan", "Sandhill", "Adelaide"
+        this.SILESIA_SYSTEMS.push(
         );
 
-        SystemAssignmentHelperEra11.ANDERMANI_SYSTEMS.push(
+        this.ANDERMANI_SYSTEMS.push(
             "Nimbalkar", "Gregor", "Cantiz", "Durandel", "Angelique", "Tomlinson", "Sligo", "New Berlin",
             "Tomlinson", "Mischa's-Star", "Irrlicht", "Babel",
 
-            "Getout", "Kaewkosin", "Solithra", "Acrux", "Electron", "Mpingo", "Tupi", "Alzirr", "Umbraea"
+            "Getout", "Kaewkosin", "Solithra", "Acrux", "Electron", "Mpingo", "Tupi", "Alzirr", "Umbraea",
+
+            "Sachsen", "Trellis", "Slocum (Silesia-Sector)", "Schiller", "Magyar", "Zoraster", "Walther", "Psyche", "Cresswell",
+            "Sharon's Star", "Posnan", "Libau", "Gosset", "Breslau", "Hume", "Sandhill", "Lau Hiler", "Telmach", "Arendscheldt",
+            "Sigma", "Brinkman", "Schiller", "Posnan", "Sigma", "Creswell", "Tyler's Star", "Cromwell", "Pandora"
         );
 
-        SystemAssignmentHelperEra11.SOLARIAN_SYSTEMS.push(
+        this.SOLARIAN_SYSTEMS.push(
             "Sigma Draconis", "Meyerdahl", "Farley's Crossing", "Kenichi", "Tau Ceti", "Tau-Delta", "Templar",
             "Galen", "Joshua", "Sankar", "Stotterman", "Yildun", "Matagorda", "Mendelschon", "Heimdall",
             "Tasmania", "Maxwell", "Dzung", "70 Virginis", "Lima", "Lucas", "Strathmore", "Hirochi",
@@ -117,7 +125,7 @@ export class SystemAssignmentHelperEra11 {
             "Pipoltr", "Procyon", "Proxima Centauri", "Regulus", "Retrict", "Rho Apod", "Rosaliadecastro", "Sarin", "Sasebo", "Schedar", "Shenandoah",
             "Sheratan", "Shiva", "Sirius", "Stardrifter", "Sterrennacht", "Sugano", "Tau Ceti", "Toebean", "Van Maanen's Star",
             "Viorginis B", "Virginis A", "White", "Zavijava", "Zubenelgenubi", "Hilt 452", "Aquaria", "Westermann B", "Westermann A", "Cape Susette",
-            "HD 526389", "70 Virginis", "Chattanooga", "Cyclops", "Dzung", "Galen", "Heimdall", "Hirochi", "Kenichi", "Trombone", "Tasmania",
+            "HD 526389", "Chattanooga", "Cyclops", "Dzung", "Galen", "Heimdall", "Hirochi", "Kenichi", "Trombone", "Tasmania",
             "Strathmore", "Stotterman", "Sebastopol", "Seacrest", "Mithra", "Eris", "Meyerdahl", "Mendelschon", "Lucastra", "Yildun", "Lucas", "Stine",
             "Calpurnia", "Delvecchio", "Katharina", "Roulette", "Startman", "Titania", "Balthazar", "Bootstrap", "Boyle", "Broadhurst", "Cachalot", "BS-712-19-6",
             "Nolan", "Cooper", "Danube", "Delta Draconis", "Eta Cassiopeiae", "Exapia", "Chalawan", "Hesier", "Istvan", "Kenniac", "Kismet", "Klondike", "Landfall",

@@ -182,14 +182,63 @@ app-outlined {
   z-index: 99;
 }
 
-.mat-mdc-chip-set-stacked {
-  width: 150px;
+$chip-width: 85px;
+
+#year-toggle-btn {
   position: absolute;
-  top: 25%;
+  top: 50%;
+  left: 15px;
+  z-index: 99;
+}
+
+.wide-btn {
+  left: calc($chip-width * 3 + 25px + 75px) !important;
+}
+
+.high-btn {
+  left: calc($chip-width + 15px + 75px) !important;
+}
+
+#year-selector {
+  position: absolute;
   left: 25px;
-  z-index: 999;
+  z-index: 98;
+
+  opacity: 0.5;
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 15px;
+  background: linear-gradient(-45deg, dimgray 20px, transparent 20px) no-repeat border-box, linear-gradient(-135deg, dimgray 20px, transparent 20px) no-repeat border-box;
+}
+
+mat-mdc-chip-set-stacked {
+  z-index: 99;
+}
+
+.wide-stack {
+  width: calc($chip-width * 3 + 25px);
+  top: 25%;
+}
+
+.high-stack {
+  width: calc($chip-width + 15px);
+  top: 10%;
 }
 
 .years-chip {
-  width: 60px !important;
+  font-size: small;
+  width: $chip-width !important;
+  background-color: $primary-color !important;
+}
+
+.mat-mdc-chip-selected {
+  background-color: $success !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.waiting {
+  cursor: wait;
 }

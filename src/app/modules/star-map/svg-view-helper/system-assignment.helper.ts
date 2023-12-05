@@ -1,12 +1,23 @@
 import {Era} from "./system-assignments/era";
-import {SystemAssignmentHelperEra1} from "./system-assignments/system-assignment-era1.helper";
-import {SystemAssignmentHelperEra2} from "./system-assignments/system-assignment-era2.helper";
-import {SystemAssignmentHelperEra3} from "./system-assignments/system-assignment-era3.helper";
-import {SystemAssignmentHelperEra4} from "./system-assignments/system-assignment-era4.helper";
-import {SystemAssignmentHelperEra5} from "./system-assignments/system-assignment-era5.helper";
-import {SystemAssignmentHelperEra6} from "./system-assignments/system-assignment-era6.helper";
-import {SystemAssignmentHelperEra7} from "./system-assignments/system-assignment-era7.helper";
-import {SystemAssignmentHelperEra8} from "./system-assignments/system-assignment-era8.helper";
+import {SystemAssignmentEra1} from "./system-assignments/system-assignment-era1";
+import {MapContainer} from "./system-assignments/map-container";
+import {SystemAssignmentEra2} from "./system-assignments/system-assignment-era2";
+import {SystemAssignmentEra3} from "./system-assignments/system-assignment-era3";
+import {SystemAssignmentEra4} from "./system-assignments/system-assignment-era4";
+import {SystemAssignmentEra5} from "./system-assignments/system-assignment-era5";
+import {SystemAssignmentEra6} from "./system-assignments/system-assignment-era6";
+import {SystemAssignmentEra7} from "./system-assignments/system-assignment-era7";
+import {SystemAssignmentEra8} from "./system-assignments/system-assignment-era8";
+import {SystemAssignmentEra9} from "./system-assignments/system-assignment-era9";
+import {SystemAssignmentEra10} from "./system-assignments/system-assignment-era10";
+import {SystemAssignmentEra11} from "./system-assignments/system-assignment-era11";
+import {SystemAssignmentEra12} from "./system-assignments/system-assignment-era12";
+import {SystemAssignmentEra13} from "./system-assignments/system-assignment-era13";
+import {SystemAssignmentEra14} from "./system-assignments/system-assignment-era14";
+import {SystemAssignmentEra15} from "./system-assignments/system-assignment-era15";
+import {SystemAssignmentEra16} from "./system-assignments/system-assignment-era16";
+import {SystemAssignmentEra17} from "./system-assignments/system-assignment-era17";
+import {SystemAssignmentEra18} from "./system-assignments/system-assignment-era18";
 
 export class SystemAssignmentHelper {
 
@@ -38,6 +49,8 @@ export class SystemAssignmentHelper {
     static readonly PHOENIX_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
     static readonly SOLARIAN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
 
+    private static readonly MAPS: Map<Era, MapContainer> = new Map<Era, MapContainer>();
+
     static {
 
         SystemAssignmentHelper.ERA_CONNECTOR.set(1899, Era.ERA1);
@@ -67,109 +80,39 @@ export class SystemAssignmentHelper {
         SystemAssignmentHelper.ERA_CONNECTOR.set(1923, Era.ERA17);
         SystemAssignmentHelper.ERA_CONNECTOR.set(1924, Era.ERA18);
 
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA1, SystemAssignmentHelperEra1.SOLARIAN_SYSTEMS);
+        SystemAssignmentHelper.MAPS.set(Era.ERA1, new SystemAssignmentEra1());
+        SystemAssignmentHelper.MAPS.set(Era.ERA2, new SystemAssignmentEra2());
+        SystemAssignmentHelper.MAPS.set(Era.ERA3, new SystemAssignmentEra3());
+        SystemAssignmentHelper.MAPS.set(Era.ERA4, new SystemAssignmentEra4());
+        SystemAssignmentHelper.MAPS.set(Era.ERA5, new SystemAssignmentEra5());
+        SystemAssignmentHelper.MAPS.set(Era.ERA6, new SystemAssignmentEra6());
+        SystemAssignmentHelper.MAPS.set(Era.ERA7, new SystemAssignmentEra7());
+        SystemAssignmentHelper.MAPS.set(Era.ERA8, new SystemAssignmentEra8());
+        SystemAssignmentHelper.MAPS.set(Era.ERA9, new SystemAssignmentEra9());
+        SystemAssignmentHelper.MAPS.set(Era.ERA10, new SystemAssignmentEra10());
+        SystemAssignmentHelper.MAPS.set(Era.ERA11, new SystemAssignmentEra11());
+        SystemAssignmentHelper.MAPS.set(Era.ERA12, new SystemAssignmentEra12());
+        SystemAssignmentHelper.MAPS.set(Era.ERA13, new SystemAssignmentEra13());
+        SystemAssignmentHelper.MAPS.set(Era.ERA14, new SystemAssignmentEra14());
+        SystemAssignmentHelper.MAPS.set(Era.ERA15, new SystemAssignmentEra15());
+        SystemAssignmentHelper.MAPS.set(Era.ERA16, new SystemAssignmentEra16());
+        SystemAssignmentHelper.MAPS.set(Era.ERA17, new SystemAssignmentEra17());
+        SystemAssignmentHelper.MAPS.set(Era.ERA18, new SystemAssignmentEra18());
 
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA2, SystemAssignmentHelperEra2.SOLARIAN_SYSTEMS);
-
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA3, SystemAssignmentHelperEra3.SOLARIAN_SYSTEMS);
-
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA4, SystemAssignmentHelperEra4.SOLARIAN_SYSTEMS);
-
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA5, SystemAssignmentHelperEra5.SOLARIAN_SYSTEMS);
-
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA6, SystemAssignmentHelperEra6.SOLARIAN_SYSTEMS);
-
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA7, SystemAssignmentHelperEra7.SOLARIAN_SYSTEMS);
-
-        SystemAssignmentHelper.MIDGARD_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MIDGARD_SYSTEMS);
-        SystemAssignmentHelper.MATAPAN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MATAPAN_SYSTEMS);
-        SystemAssignmentHelper.ASGARD_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.ASGARD_SYSTEMS);
-        SystemAssignmentHelper.MONICA_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MONICA_SYSTEMS);
-        SystemAssignmentHelper.TORCH_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.TORCH_SYSTEMS);
-        SystemAssignmentHelper.PHOENIX_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.PHOENIX_SYSTEMS);
-        SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MANTICOREAN_SYSTEMS);
-        SystemAssignmentHelper.HAVENITE_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.HAVENITE_SYSTEMS);
-        SystemAssignmentHelper.MALIGN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.MALIGN_SYSTEMS);
-        SystemAssignmentHelper.SILESIA_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.SILESIA_SYSTEMS);
-        SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.ANDERMANI_SYSTEMS);
-        SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(Era.ERA8, SystemAssignmentHelperEra8.SOLARIAN_SYSTEMS);
+        Object.values(Era).forEach(era => {
+            SystemAssignmentHelper.MIDGARD_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.MIDGARD_SYSTEMS);
+            SystemAssignmentHelper.MATAPAN_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.MATAPAN_SYSTEMS);
+            SystemAssignmentHelper.ASGARD_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.ASGARD_SYSTEMS);
+            SystemAssignmentHelper.MONICA_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.MONICA_SYSTEMS);
+            SystemAssignmentHelper.TORCH_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.TORCH_SYSTEMS);
+            SystemAssignmentHelper.PHOENIX_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.PHOENIX_SYSTEMS);
+            SystemAssignmentHelper.MANTICOREAN_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.MANTICOREAN_SYSTEMS);
+            SystemAssignmentHelper.HAVENITE_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.HAVENITE_SYSTEMS);
+            SystemAssignmentHelper.MALIGN_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.MALIGN_SYSTEMS);
+            SystemAssignmentHelper.SILESIA_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.SILESIA_SYSTEMS);
+            SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.ANDERMANI_SYSTEMS);
+            SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.SOLARIAN_SYSTEMS);
+        });
     }
 
     static getByYear(year: number) {
