@@ -100,11 +100,6 @@
     "y": -401
   },
   {
-    "name": "Albireo",
-    "x": -59,
-    "y": -2482
-  },
-  {
     "name": "Alchiba",
     "x": 28,
     "y": -1772
@@ -143,16 +138,6 @@
     "name": "Algol",
     "x": -699,
     "y": -892
-  },
-  {
-    "name": "Algorab",
-    "x": 19,
-    "y": -2610
-  },
-  {
-    "name": "Alhena",
-    "x": -6,
-    "y": -2494
   },
   {
     "name": "Ali Shar",
@@ -253,11 +238,6 @@
     "name": "Alsciaukat",
     "x": -683,
     "y": -1371
-  },
-  {
-    "name": "Alshain",
-    "x": 55,
-    "y": -2308
   },
   {
     "name": "Alshat",
@@ -438,11 +418,6 @@
     "name": "Atakoraka",
     "x": 220,
     "y": -2534
-  },
-  {
-    "name": "Athebyne",
-    "x": 171,
-    "y": -2308
   },
   {
     "name": "Atlas",
@@ -768,11 +743,6 @@
     "name": "Chroma",
     "x": -1467,
     "y": -3022
-  },
-  {
-    "name": "Cimarron's Rose",
-    "x": -667,
-    "y": -2561
   },
   {
     "name": "Citadelle",
@@ -1485,11 +1455,6 @@
     "y": -1180
   },
   {
-    "name": "Kang",
-    "x": 76,
-    "y": -2391
-  },
-  {
     "name": "Kapteyn's Star",
     "x": -431,
     "y": -318
@@ -1703,11 +1668,6 @@
     "name": "Luyten's Star",
     "x": -250,
     "y": -251
-  },
-  {
-    "name": "Lyra Dawn",
-    "x": 161,
-    "y": -2368
   },
   {
     "name": "Lyrastra",
@@ -2380,11 +2340,6 @@
     "y": -2390
   },
   {
-    "name": "Prairie",
-    "x": -1567,
-    "y": -1518
-  },
-  {
     "name": "Prima Hyadum",
     "x": 644,
     "y": -1950
@@ -2435,7 +2390,7 @@
     "y": -1493
   },
   {
-    "name": "Radiantia",
+    "name": "Irrlicht",
     "x": -986,
     "y": -2848
   },
@@ -2855,11 +2810,6 @@
     "y": -2200
   },
   {
-    "name": "Sot Ankeaux",
-    "x": 123,
-    "y": -2274
-  },
-  {
     "name": "Split",
     "x": -1510,
     "y": -634
@@ -2943,11 +2893,6 @@
     "name": "Taika",
     "x": 2007,
     "y": -546
-  },
-  {
-    "name": "Taiyangshou",
-    "x": 20,
-    "y": -2662
   },
   {
     "name": "Talbott",
@@ -3130,7 +3075,7 @@
     "y": -2972
   },
   {
-    "name": "Tredway",
+    "name": "Treadway",
     "x": 257,
     "y": -2326
   },
@@ -3433,11 +3378,6 @@
     "name": "Zibal",
     "x": -1804,
     "y": -1238
-  },
-  {
-    "name": "Zosma",
-    "x": -23,
-    "y": -2459
   },
   {
     "name": "Zreof",
@@ -4530,6 +4470,11 @@
     "y": -2692
   },
   {
+    "name": "Cimarron's Rose",
+    "x": -667,
+    "y": -2561
+  },
+  {
     "name": "Alto Verde",
     "x": 963,
     "y": -2626
@@ -4570,11 +4515,6 @@
     "y": -2750
   },
   {
-    "name": "Treadway",
-    "x": 264,
-    "y": -2630
-  },
-  {
     "name": "Tahlman",
     "x": 590,
     "y": -2660
@@ -4590,7 +4530,7 @@
     "y": -2689
   },
   {
-    "name": "Irrlicht",
+    "name": "Radiantia",
     "x": -606,
     "y": -2804
   },
