@@ -93,7 +93,7 @@ export class SystemAssignmentEra16 extends MapContainer {
 
         this.MALIGN_SYSTEMS.push(
             "New Orkney", "Oceana", "Visigoth", "Galton", "Felix", "SGC-902-36-G", "Maxwell", "Darius",
-            "Line", "Matagorda", "Mannerheim", "Thrace", "New Orkney",
+            "Line", "Matagorda", "Mannerheim", "Thrace", 
         );
 
         this.SILESIA_SYSTEMS.push(

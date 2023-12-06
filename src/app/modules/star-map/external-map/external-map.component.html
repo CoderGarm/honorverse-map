@@ -228,4 +228,22 @@
     <div id="universe">
         <!-- svg elements will be created programmatically -->
     </div>
+
+    <div class="legend-box" [ngClass]="smallHeight ? 'wide-legend' : 'high-legend'" (mouseout)="resetHighlighting()">
+        <span>Legend</span>
+        <ul>
+            <li id="legend-solarian" (mouseover)="highlightColor('#B31616')">Solarian League</li>
+            <li id="legend-manticore" (mouseover)="highlightColor('#ff00ff')">Manticore Empire</li>
+            <li id="legend-haven" (mouseover)="highlightColor('#57ffc7')">Haven Republic</li>
+            <li id="legend-malign" (mouseover)="highlightColor('#996633')">Renaissance Factor</li>
+            <li id="legend-anderman" (mouseover)="highlightColor('#ffcc00')">Andermani Empire</li>
+            <li id="legend-silesia" (mouseover)="highlightColor('#99ff33')">Silesia Confederacy</li>
+            <li id="legend-midgard" (mouseover)="highlightColor('#ff9900')">Midgard Federation</li>
+            <li id="legend-matapan" (mouseover)="highlightColor('#0000ff')">Matapan</li>
+            <li id="legend-asgard" (mouseover)="highlightColor('#009999')">Asgard Association</li>
+            <li id="legend-Monica" (mouseover)="highlightColor('#669999')">Republic of Monica</li>
+            <li id="legend-torch" (mouseover)="highlightColor('#ff0066')">Kingdom of Torch</li>
+            <li id="legend-famous" (mouseover)="highlightColor('#3366cc')">Famous system clusters</li>
+        </ul>
+    </div>
 </div>

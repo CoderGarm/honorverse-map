@@ -797,4 +797,22 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.centerFormControl.setValue(null);
         }
     }
+
+    highlightColor(colorCode: string) {
+        this.canvas!.children()
+            .filter(c => c.classes().includes(ExternalMapComponent.STAR_MARKER))
+            .forEach(star => {
+                if (star.fill().toLowerCase() === colorCode.toLowerCase()) {
+                    star.removeClass('legend-un-highlighted');
+                } else {
+                    star.addClass('legend-un-highlighted');
+                }
+            });
+    }
+
+    resetHighlighting() {
+        this.canvas!.children()
+            .filter(c => c.classes().includes(ExternalMapComponent.STAR_MARKER))
+            .forEach(star => star.removeClass('legend-un-highlighted'));
+    }
 }
