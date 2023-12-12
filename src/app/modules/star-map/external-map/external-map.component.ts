@@ -42,7 +42,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         'Katharina', 'Franzeki', 'Bessie', 'Idaho', 'Zunker', 'J-156-18(L)', 'Calvin',
         'Mannerheim', 'Warner', 'Nolan', 'Katharina', 'Syou-tang', 'Olivia', 'Włocławek', 'Sarduchi',
         "Visigoth", "Mesa", "Epsilon Virgo", "Titania", "Mullins", "Yildun", "Templar", "Dickerson",
-        "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius", "Silesia", "Breslau", "Sachsen"
+        "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius", "Silesia", "Breslau", "Sachsen",
+        "Roulette", "Limbo"
     ];
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];

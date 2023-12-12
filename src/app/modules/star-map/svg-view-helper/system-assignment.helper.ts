@@ -30,7 +30,7 @@ export class SystemAssignmentHelper {
     public static readonly ANDERMAN_COLOR: string = '#ffcc00';
     public static readonly SILESIA_COLOR: string = '#99ff33';
     public static readonly MIDGARD_COLOR: string = '#ff9900';
-    public static readonly MATAPAN_COLOR: string = '#0000ff';
+    public static readonly MATAPAN_COLOR: string = '#6666ff';
     public static readonly ASGARD_COLOR: string = '#009999';
     public static readonly MONICA_COLOR: string = '#669999';
     public static readonly TORCH_COLOR: string = '#ff0066';

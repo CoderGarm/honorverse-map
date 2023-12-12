@@ -1,5647 +1,5662 @@
 [
   {
     "name": "Absolutno",
-    "x": -654,
-    "y": -924
-  },
-  {
-    "name": "Acamar",
-    "x": -1300,
-    "y": -1848
-  },
-  {
-    "name": "Achernar",
-    "x": 1067,
-    "y": -2609
-  },
-  {
-    "name": "Achird",
-    "x": -1613,
-    "y": -1713
-  },
-  {
-    "name": "Acrab",
-    "x": -699,
-    "y": -1923
-  },
-  {
-    "name": "Acrux",
-    "x": -920,
-    "y": -2810
-  },
-  {
-    "name": "Adhara",
-    "x": 1268,
-    "y": -2680
-  },
-  {
-    "name": "Adhil",
-    "x": -550,
-    "y": -2257
-  },
-  {
-    "name": "Adler",
-    "x": 242,
-    "y": -2404
-  },
-  {
-    "name": "Aerion",
-    "x": 741,
-    "y": -2402
-  },
-  {
-    "name": "Aflaandacs",
-    "x": -48,
-    "y": -795
-  },
-  {
-    "name": "Ain",
-    "x": -1389,
-    "y": 40
-  },
-  {
-    "name": "Ainalrami",
-    "x": 1586,
-    "y": -343
-  },
-  {
-    "name": "Aiolos",
-    "x": 1209,
-    "y": -3204
-  },
-  {
-    "name": "Ajax",
-    "x": 555,
-    "y": -997
-  },
-  {
-    "name": "Ajif",
-    "x": 60,
-    "y": 325
-  },
-  {
-    "name": "Aladdin",
-    "x": -588,
-    "y": -1758
-  },
-  {
-    "name": "Aladfar",
-    "x": -78,
-    "y": -2628
-  },
-  {
-    "name": "Alasia",
-    "x": -1023,
-    "y": -1317
-  },
-  {
-    "name": "Alathfar",
-    "x": 1641,
-    "y": -401
-  },
-  {
-    "name": "Alchiba",
-    "x": 28,
-    "y": -1772
-  },
-  {
-    "name": "Alcyone",
-    "x": -5,
-    "y": -558
-  },
-  {
-    "name": "Aldhanab",
-    "x": 1106,
-    "y": -2686
-  },
-  {
-    "name": "Aldulfin",
-    "x": -876,
-    "y": -3038
-  },
-  {
-    "name": "Alexander",
-    "x": -631,
-    "y": -1419
-  },
-  {
-    "name": "Algenib",
-    "x": -74,
-    "y": -2084
-  },
-  {
-    "name": "Algieba",
-    "x": 1665,
-    "y": -998
-  },
-  {
-    "name": "Algol",
-    "x": -699,
-    "y": -892
-  },
-  {
-    "name": "Ali Shar",
-    "x": 486,
-    "y": -2423
-  },
-  {
-    "name": "Alioth",
-    "x": -1411,
-    "y": -2841
-  },
-  {
-    "name": "Alizon",
-    "x": -125,
-    "y": -2435
-  },
-  {
-    "name": "Aljanah",
-    "x": -631,
-    "y": -1883
-  },
-  {
-    "name": "Alkaid",
-    "x": 557,
-    "y": -3132
-  },
-  {
-    "name": "Alkaphrah",
-    "x": -255,
-    "y": 90
-  },
-  {
-    "name": "Alkarab",
-    "x": 1158,
-    "y": -3084
-  },
-  {
-    "name": "Alkes",
-    "x": 402,
-    "y": -2996
-  },
-  {
-    "name": "Allman",
-    "x": 407,
-    "y": -2340
-  },
-  {
-    "name": "Almaaz",
-    "x": -1087,
-    "y": -2613
-  },
-  {
-    "name": "Almach",
-    "x": 1457,
-    "y": -1292
-  },
-  {
-    "name": "Alnair",
-    "x": -1169,
-    "y": -1528
-  },
-  {
-    "name": "Alnilam",
-    "x": 24,
-    "y": -1866
-  },
-  {
-    "name": "Alniyat",
-    "x": 460,
-    "y": -1560
-  },
-  {
-    "name": "Alphard",
-    "x": -1988,
-    "y": -2651
-  },
-  {
-    "name": "Alpherg",
-    "x": 1192,
-    "y": -3187
-  },
-  {
-    "name": "Alrescha",
-    "x": 1483,
-    "y": -1164
-  },
-  {
-    "name": "Alruba",
-    "x": 1911,
-    "y": -737
-  },
-  {
-    "name": "Alsafi",
-    "x": -362,
-    "y": -1673
-  },
-  {
-    "name": "Alsciaukat",
-    "x": -683,
-    "y": -1371
-  },
-  {
-    "name": "Alshat",
-    "x": -949,
-    "y": -1454
-  },
-  {
-    "name": "Altair",
-    "x": -231,
-    "y": -492
-  },
-  {
-    "name": "Altara",
-    "x": -1354,
-    "y": -166
-  },
-  {
-    "name": "Altaria",
-    "x": -456,
-    "y": -1338
-  },
-  {
-    "name": "Alterf",
-    "x": -1483,
-    "y": -100
-  },
-  {
-    "name": "Aludra",
-    "x": -1219,
-    "y": -1429
-  },
-  {
-    "name": "Alula Borealis",
-    "x": -1030,
-    "y": -2772
-  },
-  {
-    "name": "Alya",
-    "x": 1713,
-    "y": -1720
-  },
-  {
-    "name": "Alzirr",
-    "x": -983,
-    "y": -2667
-  },
-  {
-    "name": "Amadioha",
-    "x": -1026,
-    "y": -3124
-  },
-  {
-    "name": "Amansinaya",
-    "x": -12,
-    "y": -2550
-  },
-  {
-    "name": "Anadolu",
-    "x": 1727,
-    "y": -1303
-  },
-  {
-    "name": "Ananuca",
-    "x": -1052,
-    "y": -1499
-  },
-  {
-    "name": "Ancha",
-    "x": 1807,
-    "y": -1321
-  },
-  {
-    "name": "Anderson",
-    "x": -607,
-    "y": -1100
-  },
-  {
-    "name": "Andromara",
-    "x": -1058,
-    "y": -2343
-  },
-  {
-    "name": "Angetenar",
-    "x": -296,
-    "y": -634
-  },
-  {
-    "name": "Aniara",
-    "x": 269,
-    "y": -301
-  },
-  {
-    "name": "Ankaa",
-    "x": -564,
-    "y": -1183
-  },
-  {
-    "name": "Anomaly",
-    "x": 53,
-    "y": 224
-  },
-  {
-    "name": "Antares",
-    "x": -361,
-    "y": -562
-  },
-  {
-    "name": "Aphid",
-    "x": -1,
-    "y": -2918
-  },
-  {
-    "name": "Arendscheldt",
-    "x": -507,
-    "y": -2926
-  },
-  {
-    "name": "Argo",
-    "x": 1375,
-    "y": -908
-  },
-  {
-    "name": "Arkab Posterior",
-    "x": 1245,
-    "y": -1386
-  },
-  {
-    "name": "Arkab Prior",
-    "x": 963,
-    "y": -764
-  },
-  {
-    "name": "Artemis",
-    "x": 979,
-    "y": -2110
-  },
-  {
-    "name": "Ascella",
-    "x": -1184,
-    "y": -1920
-  },
-  {
-    "name": "Asellus Australis",
-    "x": -1887,
-    "y": -1642
-  },
-  {
-    "name": "Asellus Primus",
-    "x": -1003,
-    "y": -698
-  },
-  {
-    "name": "Asellus Secundus",
-    "x": -371,
-    "y": 114
-  },
-  {
-    "name": "Asellus Tertius",
-    "x": 473,
-    "y": -2201
-  },
-  {
-    "name": "Asgard",
-    "x": -1844,
-    "y": -1601
-  },
-  {
-    "name": "Astral Fields",
-    "x": 1167,
-    "y": -2822
-  },
-  {
-    "name": "Astrylis",
-    "x": 1875,
-    "y": -541
-  },
-  {
-    "name": "Atakoraka",
-    "x": 220,
-    "y": -2534
-  },
-  {
-    "name": "Atlas",
-    "x": 901,
-    "y": -898
-  },
-  {
-    "name": "Atria",
-    "x": 122,
-    "y": -819
-  },
-  {
-    "name": "Atriax",
-    "x": -1285,
-    "y": -2436
-  },
-  {
-    "name": "Augusta",
-    "x": 886,
-    "y": -2889
-  },
-  {
-    "name": "Aura",
-    "x": 1294,
-    "y": -708
-  },
-  {
-    "name": "Aurara",
-    "x": -1795,
-    "y": -1694
-  },
-  {
-    "name": "Avior",
-    "x": -1335,
-    "y": -649
-  },
-  {
-    "name": "Ax�lotl",
-    "x": -415,
-    "y": 221
-  },
-  {
-    "name": "Ayeyarwady",
-    "x": -1611,
-    "y": -2423
-  },
-  {
-    "name": "Azelfafage",
-    "x": 769,
-    "y": -3079
-  },
-  {
-    "name": "Azha",
-    "x": -1494,
-    "y": 44
-  },
-  {
-    "name": "Azmidi",
-    "x": -65,
-    "y": -2555
-  },
-  {
-    "name": "Azrael",
-    "x": 1530,
-    "y": -1113
-  },
-  {
-    "name": "Babiiha",
-    "x": -1067,
-    "y": -1195
-  },
-  {
-    "name": "Baekdu",
-    "x": -1937,
-    "y": -1437
-  },
-  {
-    "name": "Bannerman",
-    "x": 1155,
-    "y": -2919
-  },
-  {
-    "name": "Barnard's Star",
-    "x": -338,
-    "y": -326
-  },
-  {
-    "name": "Barnes",
-    "x": 379,
-    "y": -2381
-  },
-  {
-    "name": "Barnett",
-    "x": 433,
-    "y": -2532
-  },
-  {
-    "name": "Basra",
-    "x": 254,
-    "y": -1669
-  },
-  {
-    "name": "Batsu",
-    "x": 1659,
-    "y": -669
-  },
-  {
-    "name": "Beid",
-    "x": 96,
-    "y": -875
-  },
-  {
-    "name": "Belel",
-    "x": 536,
-    "y": -3096
-  },
-  {
-    "name": "Belenos",
-    "x": 287,
-    "y": -51
-  },
-  {
-    "name": "Bellatrix",
-    "x": -2199,
-    "y": -1397
-  },
-  {
-    "name": "Berehynia",
-    "x": -208,
-    "y": -2676
-  },
-  {
-    "name": "Bibha",
-    "x": 261,
-    "y": -1491
-  },
-  {
-    "name": "Black",
-    "x": -548,
-    "y": -784
-  },
-  {
-    "name": "Blue",
-    "x": 497,
-    "y": -1655
-  },
-  {
-    "name": "Borman",
-    "x": -887,
-    "y": -632
-  },
-  {
-    "name": "Bosona",
-    "x": -29,
-    "y": -1686
-  },
-  {
-    "name": "Botein",
-    "x": 493,
-    "y": -2721
-  },
-  {
-    "name": "Breslau",
-    "x": -653,
-    "y": -3015
-  },
-  {
-    "name": "Brikiub",
-    "x": 286,
-    "y": -2951
-  },
-  {
-    "name": "Brinkman",
-    "x": -553,
-    "y": -3024
-  },
-  {
-    "name": "Bro",
-    "x": -1099,
-    "y": -2276
-  },
-  {
-    "name": "Buna",
-    "x": 1091,
-    "y": -2370
-  },
-  {
-    "name": "Caesar",
-    "x": -980,
-    "y": -1378
-  },
-  {
-    "name": "Candor",
-    "x": 50,
-    "y": -2292
-  },
-  {
-    "name": "Canis Minoris",
-    "x": -113,
-    "y": -191
-  },
-  {
-    "name": "Capella",
-    "x": 402,
-    "y": -1957
-  },
-  {
-    "name": "Caph",
-    "x": 452,
-    "y": -857
-  },
-  {
-    "name": "Carlton",
-    "x": -587,
-    "y": -3140
-  },
-  {
-    "name": "Carter",
-    "x": 261,
-    "y": -1752
-  },
-  {
-    "name": "Cascabel",
-    "x": 356,
-    "y": -2710
-  },
-  {
-    "name": "Casimir's Star",
-    "x": 1920,
-    "y": -528
-  },
-  {
-    "name": "Cassim",
-    "x": 1583,
-    "y": -155
-  },
-  {
-    "name": "Castor",
-    "x": 1974,
-    "y": -634
-  },
-  {
-    "name": "Castula",
-    "x": -1871,
-    "y": -2226
-  },
-  {
-    "name": "Casulli",
-    "x": -478,
-    "y": -423
-  },
-  {
-    "name": "Cavernia",
-    "x": 586,
-    "y": -849
-  },
-  {
-    "name": "Cebalrai",
-    "x": -1022,
-    "y": -742
-  },
-  {
-    "name": "Ceibo",
-    "x": 131,
-    "y": -3013
-  },
-  {
-    "name": "Celaeno",
-    "x": 55,
-    "y": -1012
-  },
-  {
-    "name": "Celestria",
-    "x": -1224,
-    "y": -1783
-  },
-  {
-    "name": "Cerberus",
-    "x": 633,
-    "y": -3104
-  },
-  {
-    "name": "Chamukuy",
-    "x": -608,
-    "y": -374
-  },
-  {
-    "name": "Chantilly",
-    "x": 619,
-    "y": -2984
-  },
-  {
-    "name": "Chara",
-    "x": -1316,
-    "y": -26
-  },
-  {
-    "name": "Chechia",
-    "x": 951,
-    "y": -2154
-  },
-  {
-    "name": "Chee",
-    "x": -949,
-    "y": -1627
-  },
-  {
-    "name": "Chelsea",
-    "x": 70,
-    "y": -2451
-  },
-  {
-    "name": "Chen",
-    "x": -176,
-    "y": -918
-  },
-  {
-    "name": "Chomanand",
-    "x": -2199,
-    "y": -1272
-  },
-  {
-    "name": "Chroma",
-    "x": -1467,
-    "y": -3022
-  },
-  {
-    "name": "Citadelle",
-    "x": 1636,
-    "y": -1519
-  },
-  {
-    "name": "Citala",
-    "x": 932,
-    "y": 48
-  },
-  {
-    "name": "Clairmont",
-    "x": 119,
-    "y": -2397
-  },
-  {
-    "name": "Clearaway",
-    "x": -55,
-    "y": -2302
-  },
-  {
-    "name": "Cleopatra",
-    "x": 177,
-    "y": 148
-  },
-  {
-    "name": "Cohagen",
-    "x": 136,
-    "y": 53
-  },
-  {
-    "name": "Concubine",
-    "x": 581,
-    "y": -628
-  },
-  {
-    "name": "Congo",
-    "x": 1135,
-    "y": -1930
-  },
-  {
-    "name": "Conrad's Star",
-    "x": -1253,
-    "y": 133
-  },
-  {
-    "name": "Cornerstone",
-    "x": 1657,
-    "y": -504
-  },
-  {
-    "name": "Corrigan",
-    "x": 289,
-    "y": -2450
-  },
-  {
-    "name": "Croft",
-    "x": 2083,
-    "y": -691
-  },
-  {
-    "name": "Cujam",
-    "x": -1044,
-    "y": -2680
-  },
-  {
-    "name": "Cursa",
-    "x": -519,
-    "y": -1764
-  },
-  {
-    "name": "Dabih",
-    "x": -241,
-    "y": -2963
-  },
-  {
-    "name": "Danfeng",
-    "x": 211,
-    "y": -2382
-  },
-  {
-    "name": "Daniel",
-    "x": 714,
-    "y": -2925
-  },
-  {
-    "name": "Degenhart",
-    "x": 512,
-    "y": -1718
-  },
-  {
-    "name": "Delilah's Navel",
-    "x": 30,
-    "y": -436
-  },
-  {
-    "name": "Delta Pavonis",
-    "x": -125,
-    "y": -554
-  },
-  {
-    "name": "Deneb Algedi",
-    "x": -1963,
-    "y": -1671
-  },
-  {
-    "name": "Denebola",
-    "x": -1692,
-    "y": -1620
-  },
-  {
-    "name": "Des Moines",
-    "x": 692,
-    "y": -2952
-  },
-  {
-    "name": "Diadem",
-    "x": -335,
-    "y": -1204
-  },
-  {
-    "name": "Dickinson",
-    "x": 153,
-    "y": -985
-  },
-  {
-    "name": "Dilmun",
-    "x": -528,
-    "y": -716
-  },
-  {
-    "name": "Dingolay",
-    "x": -1222,
-    "y": -88
-  },
-  {
-    "name": "Diphda",
-    "x": -685,
-    "y": -1814
-  },
-  {
-    "name": "Dockhorn",
-    "x": 1259,
-    "y": -888
-  },
-  {
-    "name": "Dogma",
-    "x": -370,
-    "y": 6
-  },
-  {
-    "name": "Dombay",
-    "x": 840,
-    "y": -2893
-  },
-  {
-    "name": "Doreas",
-    "x": 44,
-    "y": -2239
-  },
-  {
-    "name": "Dschubba",
-    "x": -2007,
-    "y": -1620
-  },
-  {
-    "name": "Durandel",
-    "x": -894,
-    "y": -2479
-  },
-  {
-    "name": "Dziban",
-    "x": -824,
-    "y": -1516
-  },
-  {
-    "name": "Echnaton",
-    "x": 183,
-    "y": -2781
-  },
-  {
-    "name": "Eckstein",
-    "x": 1276,
-    "y": -1433
-  },
-  {
-    "name": "Eclipse",
-    "x": -810,
-    "y": -2080
-  },
-  {
-    "name": "Ecliptara",
-    "x": 1034,
-    "y": -423
-  },
-  {
-    "name": "Edwin",
-    "x": 1006,
-    "y": -1422
-  },
-  {
-    "name": "Elder's Reach",
-    "x": 1828,
-    "y": -123
-  },
-  {
-    "name": "Electra",
-    "x": -1222,
-    "y": -1884
-  },
-  {
-    "name": "Electron",
-    "x": -864,
-    "y": -2880
-  },
-  {
-    "name": "Elf",
-    "x": 716,
-    "y": -2711
-  },
-  {
-    "name": "Elgafar",
-    "x": -1302,
-    "y": 171
-  },
-  {
-    "name": "Elnath",
-    "x": 1537,
-    "y": -966
-  },
-  {
-    "name": "Elric",
-    "x": 267,
-    "y": -2264
-  },
-  {
-    "name": "Eltanin",
-    "x": 2125,
-    "y": -774
-  },
-  {
-    "name": "Emiw",
-    "x": 1051,
-    "y": -1938
-  },
-  {
-    "name": "Endicott",
-    "x": 4,
-    "y": -2357
-  },
-  {
-    "name": "Enif",
-    "x": -1940,
-    "y": -2062
-  },
-  {
-    "name": "Ephraim",
-    "x": -1317,
-    "y": -2307
-  },
-  {
-    "name": "Epsilon Eridani",
-    "x": -500,
-    "y": -214
-  },
-  {
-    "name": "Epsilon Indi",
-    "x": -360,
-    "y": -379
-  },
-  {
-    "name": "Erebus",
-    "x": -584,
-    "y": -1630
-  },
-  {
-    "name": "Erewhon",
-    "x": 1233,
-    "y": -1849
-  },
-  {
-    "name": "Errai",
-    "x": -344,
-    "y": -2481
-  },
-  {
-    "name": "Estella de la Muerte",
-    "x": -244,
-    "y": -1934
-  },
-  {
-    "name": "Excalibur",
-    "x": 1432,
-    "y": -628
-  },
-  {
-    "name": "Fang",
-    "x": -1910,
-    "y": -2983
-  },
-  {
-    "name": "Felis",
-    "x": 1642,
-    "y": -958
-  },
-  {
-    "name": "Filetdor",
-    "x": -1513,
-    "y": 178
-  },
-  {
-    "name": "Fischer",
-    "x": 755,
-    "y": -2272
-  },
-  {
-    "name": "Fordyce",
-    "x": 894,
-    "y": -2822
-  },
-  {
-    "name": "Formosa",
-    "x": 925,
-    "y": -2729
-  },
-  {
-    "name": "Foshee",
-    "x": -1249,
-    "y": -839
-  },
-  {
-    "name": "Fountain",
-    "x": 718,
-    "y": -675
-  },
-  {
-    "name": "Foximan",
-    "x": 457,
-    "y": -2499
-  },
-  {
-    "name": "Franconia",
-    "x": 336,
-    "y": -2652
-  },
-  {
-    "name": "Franz",
-    "x": -316,
-    "y": -1590
-  },
-  {
-    "name": "Fulu",
-    "x": 1440,
-    "y": -1157
-  },
-  {
-    "name": "Funi",
-    "x": 860,
-    "y": -1408
-  },
-  {
-    "name": "Fuyue",
-    "x": 1905,
-    "y": -625
-  },
-  {
-    "name": "Gacrux",
-    "x": 1393,
-    "y": -1660
-  },
-  {
-    "name": "Gagarin's Cradle",
-    "x": -1006,
-    "y": -3412
-  },
-  {
-    "name": "Gar",
-    "x": 515,
-    "y": -2545
-  },
-  {
-    "name": "Gaston",
-    "x": 615,
-    "y": -2829
-  },
-  {
-    "name": "Geminga",
-    "x": -1105,
-    "y": -2687
-  },
-  {
-    "name": "Gemini",
-    "x": -122,
-    "y": -2732
-  },
-  {
-    "name": "Georgia",
-    "x": -1153,
-    "y": -2588
-  },
-  {
-    "name": "Getout",
-    "x": -844,
-    "y": -2428
-  },
-  {
-    "name": "Giausar",
-    "x": -1921,
-    "y": -2048
-  },
-  {
-    "name": "Gienah",
-    "x": 1400,
-    "y": -553
-  },
-  {
-    "name": "Gloas",
-    "x": -1728,
-    "y": -1605
-  },
-  {
-    "name": "Gomeisa",
-    "x": -2011,
-    "y": -1522
-  },
-  {
-    "name": "Gosset",
-    "x": -639,
-    "y": -2991
-  },
-  {
-    "name": "Graffias",
-    "x": 1309,
-    "y": -262
-  },
-  {
-    "name": "Gregor",
-    "x": -722,
-    "y": -2515
-  },
-  {
-    "name": "Grendelsbane",
-    "x": 93,
-    "y": -2191
-  },
-  {
-    "name": "Groombridge",
-    "x": -110,
-    "y": -350
-  },
-  {
-    "name": "Guahayona",
-    "x": 686,
-    "y": -2718
-  },
-  {
-    "name": "Gualt",
-    "x": 571,
-    "y": -2535
-  },
-  {
-    "name": "Gumala",
-    "x": 994,
-    "y": -1085
-  },
-  {
-    "name": "Guniibuu",
-    "x": 218,
-    "y": -3122
-  },
-  {
-    "name": "Hadar",
-    "x": 111,
-    "y": -2576
-  },
-  {
-    "name": "Hallman",
-    "x": 646,
-    "y": -2734
-  },
-  {
-    "name": "Halo",
-    "x": -1986,
-    "y": -2104
-  },
-  {
-    "name": "Hamal",
-    "x": 429,
-    "y": -2443
-  },
-  {
-    "name": "Hancock",
-    "x": -82,
-    "y": -2496
-  },
-  {
-    "name": "Hannah's Star",
-    "x": -139,
-    "y": -2683
-  },
-  {
-    "name": "Hanuman",
-    "x": 1175,
-    "y": -847
-  },
-  {
-    "name": "Harding",
-    "x": -441,
-    "y": -1121
-  },
-  {
-    "name": "Haven",
-    "x": 767,
-    "y": -2856
-  },
-  {
-    "name": "Heinlein's Reach",
-    "x": 854,
-    "y": -773
-  },
-  {
-    "name": "Heinrich's Stern",
-    "x": -640,
-    "y": -3083
-  },
-  {
-    "name": "Helionix",
-    "x": 1638,
-    "y": -572
-  },
-  {
-    "name": "Helmsport",
-    "x": 317,
-    "y": -2720
-  },
-  {
-    "name": "Hendrikson",
-    "x": -423,
-    "y": -3173
-  },
-  {
-    "name": "Hennesy",
-    "x": 2176,
-    "y": -798
-  },
-  {
-    "name": "Hera (Haven-Sector)",
-    "x": 632,
-    "y": -2886
-  },
-  {
-    "name": "Hera (Silesia-Sector)",
-    "x": -454,
-    "y": -2879
-  },
-  {
-    "name": "Heze",
-    "x": -1826,
-    "y": -1705
-  },
-  {
-    "name": "Hillman",
-    "x": -369,
-    "y": -2951
-  },
-  {
-    "name": "Hoggar",
-    "x": -779,
-    "y": -2044
-  },
-  {
-    "name": "Homam",
-    "x": 780,
-    "y": -2698
-  },
-  {
-    "name": "Homebrew",
-    "x": -656,
-    "y": -232
-  },
-  {
-    "name": "Horizon Crest",
-    "x": -712,
-    "y": -1980
-  },
-  {
-    "name": "Hound's Eye",
-    "x": -452,
-    "y": -854
-  },
-  {
-    "name": "Hubarius",
-    "x": -744,
-    "y": -1749
-  },
-  {
-    "name": "Hume",
-    "x": -611,
-    "y": -3020
-  },
-  {
-    "name": "Hussain",
-    "x": -942,
-    "y": -2387
-  },
-  {
-    "name": "Hyacinth",
-    "x": 322,
-    "y": -2670
-  },
-  {
-    "name": "Ibrahim",
-    "x": -1403,
-    "y": -2633
-  },
-  {
-    "name": "Iklil",
-    "x": 230,
-    "y": -2900
-  },
-  {
-    "name": "Imai",
-    "x": 371,
-    "y": -474
-  },
-  {
-    "name": "Imperatori",
-    "x": -374,
-    "y": -2700
-  },
-  {
-    "name": "Innes' Star",
-    "x": -75,
-    "y": -519
-  },
-  {
-    "name": "Inquill",
-    "x": -1879,
-    "y": -1510
-  },
-  {
-    "name": "Irena",
-    "x": 1368,
-    "y": -526
-  },
-  {
-    "name": "Isaac",
-    "x": 1467,
-    "y": -1657
-  },
-  {
-    "name": "Itonda",
-    "x": 761,
-    "y": -1107
-  },
-  {
-    "name": "Ivan",
-    "x": 2130,
-    "y": -344
-  },
-  {
-    "name": "Ivanhoe",
-    "x": 307,
-    "y": -2907
-  },
-  {
-    "name": "Jarmon",
-    "x": -437,
-    "y": -3163
-  },
-  {
-    "name": "Joshua",
-    "x": 179,
-    "y": 80
-  },
-  {
-    "name": "Joubert",
-    "x": 683,
-    "y": -2833
-  },
-  {
-    "name": "Joust",
-    "x": 582,
-    "y": -2787
-  },
-  {
-    "name": "Kaas",
-    "x": 1343,
-    "y": -1087
-  },
-  {
-    "name": "Kaewkosin",
-    "x": -679,
-    "y": -2616
-  },
-  {
-    "name": "Kaffaljidhma",
-    "x": -1367,
-    "y": -2028
-  },
-  {
-    "name": "Kalausi",
-    "x": 1085,
-    "y": -384
-  },
-  {
-    "name": "Kamuy",
-    "x": 1267,
-    "y": -1180
-  },
-  {
-    "name": "Kapteyn's Star",
-    "x": -431,
-    "y": -318
-  },
-  {
-    "name": "Karlovec",
-    "x": 1227,
-    "y": -258
-  },
-  {
-    "name": "Kaus Borealis",
-    "x": -346,
-    "y": -933
-  },
-  {
-    "name": "Kaus Media",
-    "x": -1794,
-    "y": -1506
-  },
-  {
-    "name": "Kay",
-    "x": 892,
-    "y": -1892
-  },
-  {
-    "name": "Keid",
-    "x": 434,
-    "y": -505
-  },
-  {
-    "name": "Kelvin",
-    "x": 1162,
-    "y": -1639
-  },
-  {
-    "name": "Khambalia",
-    "x": 503,
-    "y": -751
-  },
-  {
-    "name": "Klein Station",
-    "x": -3,
-    "y": -2426
-  },
-  {
-    "name": "Kochab",
-    "x": 1601,
-    "y": -1140
-  },
-  {
-    "name": "Koeia",
-    "x": -1309,
-    "y": -243
-  },
-  {
-    "name": "Koit",
-    "x": 356,
-    "y": -1156
-  },
-  {
-    "name": "Kokkeh",
-    "x": -1491,
-    "y": -1928
-  },
-  {
-    "name": "Kornephoros",
-    "x": 572,
-    "y": -727
-  },
-  {
-    "name": "Kraaft",
-    "x": -676,
-    "y": -1613
-  },
-  {
-    "name": "Kruger",
-    "x": -473,
-    "y": -367
-  },
-  {
-    "name": "Kuli",
-    "x": 755,
-    "y": -934
-  },
-  {
-    "name": "Kuma",
-    "x": -1022,
-    "y": -3190
-  },
-  {
-    "name": "La Superba",
-    "x": -647,
-    "y": -1729
-  },
-  {
-    "name": "Lacille",
-    "x": -317,
-    "y": -370
-  },
-  {
-    "name": "Lando's Star",
-    "x": -825,
-    "y": -893
-  },
-  {
-    "name": "Larawag",
-    "x": 307,
-    "y": 261
-  },
-  {
-    "name": "Laurent",
-    "x": 428,
-    "y": -1807
-  },
-  {
-    "name": "Lemuria",
-    "x": -1277,
-    "y": -1656
-  },
-  {
-    "name": "Leopard",
-    "x": 806,
-    "y": -2842
-  },
-  {
-    "name": "Lerna",
-    "x": 702,
-    "y": -797
-  },
-  {
-    "name": "Libau",
-    "x": -664,
-    "y": -2968
-  },
-  {
-    "name": "Liberty",
-    "x": 205,
-    "y": -2442
-  },
-  {
-    "name": "Liesma",
-    "x": -1280,
-    "y": -2472
-  },
-  {
-    "name": "Lilii Borea",
-    "x": -1112,
-    "y": -1829
-  },
-  {
-    "name": "Lima",
-    "x": 127,
-    "y": -937
-  },
-  {
-    "name": "Limbo",
-    "x": 655,
-    "y": -991
-  },
-  {
-    "name": "Lionrock",
-    "x": 342,
-    "y": -2414
-  },
-  {
-    "name": "Lovat",
-    "x": 661,
-    "y": -2772
-  },
-  {
-    "name": "Lowell",
-    "x": 390,
-    "y": -2658
-  },
-  {
-    "name": "Lowenherz",
-    "x": -1055,
-    "y": -2447
-  },
-  {
-    "name": "Lucilinburhuc",
-    "x": 1011,
-    "y": -2978
-  },
-  {
-    "name": "Luminae",
-    "x": -188,
-    "y": -2516
-  },
-  {
-    "name": "Luminara",
-    "x": 1199,
-    "y": -2533
-  },
-  {
-    "name": "Lunaria",
-    "x": 712,
-    "y": 178
-  },
-  {
-    "name": "Lusitania",
-    "x": 6,
-    "y": -1868
-  },
-  {
-    "name": "Lutrell",
-    "x": -421,
-    "y": -2921
-  },
-  {
-    "name": "Luyten's Star",
-    "x": -250,
-    "y": -251
-  },
-  {
-    "name": "Lyrastra",
-    "x": 1218,
-    "y": -2731
-  },
-  {
-    "name": "Lyron",
-    "x": 67,
-    "y": -3105
-  },
-  {
-    "name": "Maastricht",
-    "x": 520,
-    "y": -2672
-  },
-  {
-    "name": "Maasym",
-    "x": -1197,
-    "y": -2299
-  },
-  {
-    "name": "Macondo",
-    "x": -1049,
-    "y": -570
-  },
-  {
-    "name": "Madras",
-    "x": 279,
-    "y": -2530
-  },
-  {
-    "name": "Mago",
-    "x": 1107,
-    "y": -1844
-  },
-  {
-    "name": "Magyar",
-    "x": -562,
-    "y": -2878
-  },
-  {
-    "name": "Mahasim",
-    "x": -1627,
-    "y": -2751
-  },
-  {
-    "name": "Manticore",
-    "x": -105,
-    "y": -2313
-  },
-  {
-    "name": "Markab",
-    "x": 750,
-    "y": -2789
-  },
-  {
-    "name": "Muzikant",
-    "x": -1597,
-    "y": -2614
-  },
-  {
-    "name": "Marsh",
-    "x": -685,
-    "y": -2890
-  },
-  {
-    "name": "Marsic",
-    "x": 1066,
-    "y": -2267
-  },
-  {
-    "name": "Martina",
-    "x": -1235,
-    "y": -2674
-  },
-  {
-    "name": "Maru",
-    "x": 535,
-    "y": -1955
-  },
-  {
-    "name": "Matapan",
-    "x": -1901,
-    "y": -2113
-  },
-  {
-    "name": "Mathias",
-    "x": 357,
-    "y": -2400
-  },
-  {
-    "name": "Matza",
-    "x": -291,
-    "y": -843
-  },
-  {
-    "name": "Maya",
-    "x": 1097,
-    "y": -1616
-  },
-  {
-    "name": "Mazaalai",
-    "x": -90,
-    "y": -828
-  },
-  {
-    "name": "Mebsuta",
-    "x": 900,
-    "y": -660
-  },
-  {
-    "name": "Megrez",
-    "x": -356,
-    "y": -2601
-  },
-  {
-    "name": "Meissa",
-    "x": -1951,
-    "y": -2229
-  },
-  {
-    "name": "Mekbuda",
-    "x": 856,
-    "y": -1495
-  },
-  {
-    "name": "Meleph",
-    "x": 1437,
-    "y": -1016
-  },
-  {
-    "name": "Mendel",
-    "x": 766,
-    "y": -3026
-  },
-  {
-    "name": "Mendoza",
-    "x": 11,
-    "y": -2477
-  },
-  {
-    "name": "Menkalinan",
-    "x": -336,
-    "y": -1773
-  },
-  {
-    "name": "Menkar",
-    "x": -1957,
-    "y": -2460
-  },
-  {
-    "name": "Menkent",
-    "x": 615,
-    "y": -307
-  },
-  {
-    "name": "Menkib",
-    "x": -874,
-    "y": -898
-  },
-  {
-    "name": "Merak",
-    "x": 87,
-    "y": 51
-  },
-  {
-    "name": "Meridiana",
-    "x": -1472,
-    "y": -1128
-  },
-  {
-    "name": "Meroa",
-    "x": 1066,
-    "y": -1073
-  },
-  {
-    "name": "Merope",
-    "x": 1044,
-    "y": -3264
-  },
-  {
-    "name": "Mesarthim",
-    "x": 904,
-    "y": -3139
-  },
-  {
-    "name": "Micah",
-    "x": 251,
-    "y": -2372
-  },
-  {
-    "name": "Baccara",
-    "x": -1432,
-    "y": -2713
-  },
-  {
-    "name": "Michael",
-    "x": 664,
-    "y": -2679
-  },
-  {
-    "name": "Midgard",
-    "x": -1755,
-    "y": -2809
-  },
-  {
-    "name": "Mimosa",
-    "x": 1189,
-    "y": -2333
-  },
-  {
-    "name": "Minchir",
-    "x": -262,
-    "y": -2858
-  },
-  {
-    "name": "Minette",
-    "x": 87,
-    "y": -2270
-  },
-  {
-    "name": "Minorca",
-    "x": -246,
-    "y": -2467
-  },
-  {
-    "name": "Mira",
-    "x": -402,
-    "y": 58
-  },
-  {
-    "name": "Misam",
-    "x": -1093,
-    "y": -2294
-  },
-  {
-    "name": "Mizar",
-    "x": 758,
-    "y": -685
-  },
-  {
-    "name": "Monch",
-    "x": -1967,
-    "y": -2125
-  },
-  {
-    "name": "Montana",
-    "x": -1955,
-    "y": -382
-  },
-  {
-    "name": "Montuno",
-    "x": -1257,
-    "y": -1603
-  },
-  {
-    "name": "Morava",
-    "x": -697,
-    "y": -1723
-  },
-  {
-    "name": "Moriah",
-    "x": 1557,
-    "y": -255
-  },
-  {
-    "name": "Mouhoun",
-    "x": 1955,
-    "y": -805
-  },
-  {
-    "name": "Mpingo",
-    "x": -884,
-    "y": -2925
-  },
-  {
-    "name": "Muliphein",
-    "x": -329,
-    "y": 10
-  },
-  {
-    "name": "Muphrid",
-    "x": -883,
-    "y": -1380
-  },
-  {
-    "name": "Mura",
-    "x": -1463,
-    "y": 12
-  },
-  {
-    "name": "Murray",
-    "x": 1512,
-    "y": -1346
-  },
-  {
-    "name": "Muscida",
-    "x": 492,
-    "y": -348
-  },
-  {
-    "name": "Musica",
-    "x": 1057,
-    "y": -326
-  },
-  {
-    "name": "Muspelheim",
-    "x": -799,
-    "y": -2921
-  },
-  {
-    "name": "Mylar",
-    "x": 412,
-    "y": -2493
-  },
-  {
-    "name": "Mystery",
-    "x": -1300,
-    "y": -9
-  },
-  {
-    "name": "Nahn",
-    "x": 1782,
-    "y": -318
-  },
-  {
-    "name": "Naledi",
-    "x": -1140,
-    "y": -767
-  },
-  {
-    "name": "Naos",
-    "x": -1189,
-    "y": -1045
-  },
-  {
-    "name": "Narumi",
-    "x": -705,
-    "y": -2825
-  },
-  {
-    "name": "Nashira",
-    "x": -1383,
-    "y": -2259
-  },
-  {
-    "name": "Nasti",
-    "x": 219,
+    "x": -661,
     "y": -931
   },
   {
-    "name": "Natasha",
-    "x": 2190,
-    "y": -838
+    "name": "Acamar",
+    "x": -1307,
+    "y": -1855
   },
   {
-    "name": "Navi",
-    "x": 1338,
-    "y": -621
+    "name": "Achernar",
+    "x": 1060,
+    "y": -2616
   },
   {
-    "name": "Nebula",
-    "x": 2091,
-    "y": -744
-  },
-  {
-    "name": "Nebula Glade",
-    "x": 12,
-    "y": -2258
-  },
-  {
-    "name": "Nebulae",
-    "x": 963,
-    "y": -3021
-  },
-  {
-    "name": "Nebulon",
-    "x": 2296,
-    "y": -585
-  },
-  {
-    "name": "Nekkar",
-    "x": -1831,
-    "y": -2048
-  },
-  {
-    "name": "Nembus",
-    "x": -1162,
-    "y": -1699
-  },
-  {
-    "name": "Neo",
-    "x": -1622,
-    "y": -1398
-  },
-  {
-    "name": "Nero",
-    "x": -1000,
-    "y": -2278
-  },
-  {
-    "name": "Nervia",
-    "x": 1114,
-    "y": -170
-  },
-  {
-    "name": "New Berlin",
-    "x": -856,
-    "y": -2690
-  },
-  {
-    "name": "Nihal",
-    "x": 790,
-    "y": -1410
-  },
-  {
-    "name": "Nikawiy",
-    "x": 382,
-    "y": -2499
-  },
-  {
-    "name": "Noquisi",
-    "x": -656,
-    "y": -2762
-  },
-  {
-    "name": "Nostromo",
-    "x": 1747,
-    "y": -1079
-  },
-  {
-    "name": "Nothere",
-    "x": 1148,
-    "y": -405
-  },
-  {
-    "name": "Nova Heights",
-    "x": -279,
-    "y": -775
-  },
-  {
-    "name": "Novaris",
-    "x": 1645,
-    "y": -325
-  },
-  {
-    "name": "Nuada",
-    "x": -55,
-    "y": -2706
-  },
-  {
-    "name": "Nunki",
-    "x": -618,
-    "y": -1347
-  },
-  {
-    "name": "Nusakan",
-    "x": -1372,
-    "y": -1835
-  },
-  {
-    "name": "Nushagak",
-    "x": -1072,
-    "y": -1240
-  },
-  {
-    "name": "Nyamien",
-    "x": 1724,
-    "y": -57
-  },
-  {
-    "name": "Ofaubsils",
-    "x": 745,
+    "name": "Achird",
+    "x": -1620,
     "y": -1720
   },
   {
-    "name": "Ogma",
-    "x": -1536,
-    "y": -2409
+    "name": "Acrab",
+    "x": -706,
+    "y": -1930
   },
   {
-    "name": "Okab",
-    "x": -421,
-    "y": -1626
+    "name": "Acrux",
+    "x": -927,
+    "y": -2817
   },
   {
-    "name": "Okada",
+    "name": "Adhara",
+    "x": 1261,
+    "y": -2687
+  },
+  {
+    "name": "Adhil",
+    "x": -557,
+    "y": -2264
+  },
+  {
+    "name": "Adler",
     "x": 235,
-    "y": -1231
-  },
-  {
-    "name": "Orange",
-    "x": -451,
-    "y": -1769
-  },
-  {
-    "name": "Orion's Legacy",
-    "x": 1406,
-    "y": -1525
-  },
-  {
-    "name": "Otherplace",
-    "x": 699,
-    "y": -746
-  },
-  {
-    "name": "Outlands",
-    "x": -54,
-    "y": -2805
-  },
-  {
-    "name": "Owens",
-    "x": 405,
-    "y": -2531
-  },
-  {
-    "name": "Paikauhale",
-    "x": 600,
-    "y": 63
-  },
-  {
-    "name": "Pandora",
-    "x": -474,
-    "y": -2865
-  },
-  {
-    "name": "Pandur",
-    "x": 1436,
-    "y": -237
-  },
-  {
-    "name": "Paols",
-    "x": -171,
-    "y": -1935
-  },
-  {
-    "name": "Paradox",
-    "x": 866,
-    "y": -557
-  },
-  {
-    "name": "Paragon",
-    "x": 302,
-    "y": -2574
-  },
-  {
-    "name": "Peacock",
-    "x": -666,
-    "y": -1513
-  },
-  {
-    "name": "Phact",
-    "x": 1186,
-    "y": -299
-  },
-  {
-    "name": "Phaedra",
-    "x": -751,
-    "y": -2450
-  },
-  {
-    "name": "Phecda",
-    "x": 130,
-    "y": -852
-  },
-  {
-    "name": "Phex",
-    "x": -1990,
-    "y": -2182
-  },
-  {
-    "name": "Phoenix",
-    "x": 2174,
-    "y": -558
-  },
-  {
-    "name": "Piautos",
-    "x": -73,
-    "y": -2749
-  },
-  {
-    "name": "Pincoya",
-    "x": -161,
-    "y": -967
-  },
-  {
-    "name": "Pipirima",
-    "x": -1266,
-    "y": -2786
-  },
-  {
-    "name": "Pipoltr",
-    "x": 118,
-    "y": -23
-  },
-  {
-    "name": "Pleione",
-    "x": -2109,
-    "y": -1307
-  },
-  {
-    "name": "Poerava",
-    "x": -1800,
-    "y": -1429
-  },
-  {
-    "name": "Poicters",
-    "x": 38,
-    "y": -2526
-  },
-  {
-    "name": "Polarian",
-    "x": 1237,
-    "y": -468
-  },
-  {
-    "name": "Polaris",
-    "x": 1477,
-    "y": -294
-  },
-  {
-    "name": "St Quentin",
-    "x": -611,
-    "y": -2421
-  },
-  {
-    "name": "Polaris Australis",
-    "x": 1188,
-    "y": -1127
-  },
-  {
-    "name": "Polis",
-    "x": 613,
-    "y": -802
-  },
-  {
-    "name": "Pollux",
-    "x": 608,
-    "y": -2587
-  },
-  {
-    "name": "Poole",
-    "x": 1312,
-    "y": -337
-  },
-  {
-    "name": "Porrima",
-    "x": -997,
-    "y": -895
-  },
-  {
-    "name": "Portillo",
-    "x": -1749,
-    "y": -1379
-  },
-  {
-    "name": "Posnan",
-    "x": -534,
-    "y": -2919
-  },
-  {
-    "name": "Poul",
-    "x": 904,
-    "y": -1561
-  },
-  {
-    "name": "Praecipua",
-    "x": -1677,
-    "y": -2390
-  },
-  {
-    "name": "Prima Hyadum",
-    "x": 644,
-    "y": -1950
-  },
-  {
-    "name": "Procyon",
-    "x": -271,
-    "y": -155
-  },
-  {
-    "name": "Propus",
-    "x": 88,
-    "y": -1670
-  },
-  {
-    "name": "Proxima Centauri",
-    "x": -321,
-    "y": -278
-  },
-  {
-    "name": "Psyche",
-    "x": -487,
-    "y": -2823
-  },
-  {
-    "name": "Pulsara",
-    "x": -643,
-    "y": -944
-  },
-  {
-    "name": "Quentin",
-    "x": 17,
-    "y": -2205
-  },
-  {
-    "name": "Quest",
-    "x": 143,
-    "y": -2363
-  },
-  {
-    "name": "Stopover",
-    "x": 1235,
-    "y": -523
-  },
-  {
-    "name": "Quixara",
-    "x": -244,
-    "y": -1493
-  },
-  {
-    "name": "Irrlicht",
-    "x": -986,
-    "y": -2848
-  },
-  {
-    "name": "Ramen",
-    "x": -62,
-    "y": -2220
-  },
-  {
-    "name": "Ran",
-    "x": 1011,
-    "y": -3161
-  },
-  {
-    "name": "Rana",
-    "x": -1853,
-    "y": -2128
-  },
-  {
-    "name": "Rasalas",
-    "x": 148,
-    "y": -2503
-  },
-  {
-    "name": "Rasalgethi",
-    "x": 208,
-    "y": -752
-  },
-  {
-    "name": "Rasalhague",
-    "x": 675,
-    "y": -960
-  },
-  {
-    "name": "Rasmussen",
-    "x": -1196,
-    "y": -1444
-  },
-  {
-    "name": "Rastaban",
-    "x": -732,
-    "y": -975
-  },
-  {
-    "name": "Red",
-    "x": -1488,
-    "y": -2483
-  },
-  {
-    "name": "Reevesport",
-    "x": -256,
-    "y": -2613
-  },
-  {
-    "name": "Regor",
-    "x": 930,
-    "y": -385
-  },
-  {
-    "name": "Regulus",
-    "x": -285,
-    "y": 59
-  },
-  {
-    "name": "Relic",
-    "x": -1434,
-    "y": -848
-  },
-  {
-    "name": "Retrict",
-    "x": 32,
-    "y": -131
-  },
-  {
-    "name": "Revati",
-    "x": 859,
-    "y": -2397
-  },
-  {
-    "name": "Rho Apod",
-    "x": 51,
-    "y": -296
-  },
-  {
-    "name": "Ripley",
-    "x": -1749,
-    "y": -1983
-  },
-  {
-    "name": "Robert",
-    "x": 1188,
-    "y": -1374
-  },
-  {
-    "name": "Rosaliadecastro",
-    "x": -908,
-    "y": -201
-  },
-  {
-    "name": "Rosario's Dawn",
-    "x": -752,
-    "y": -2114
-  },
-  {
-    "name": "Rotanev",
-    "x": 1368,
-    "y": -313
-  },
-  {
-    "name": "Rukbat",
-    "x": 1872,
-    "y": -1418
-  },
-  {
-    "name": "Runciman",
-    "x": 424,
-    "y": -2609
-  },
-  {
-    "name": "Sabik",
-    "x": 799,
-    "y": -1900
-  },
-  {
-    "name": "Sachsen",
-    "x": -624,
-    "y": -2899
-  },
-  {
-    "name": "Sadachbia",
-    "x": -603,
-    "y": -2694
-  },
-  {
-    "name": "Sadalbari",
-    "x": -1970,
-    "y": -2248
-  },
-  {
-    "name": "Sadalmelik",
-    "x": -1274,
-    "y": -2400
-  },
-  {
-    "name": "Saginaw",
-    "x": -423,
-    "y": -2852
-  },
-  {
-    "name": "Saiph",
-    "x": 1530,
-    "y": -365
-  },
-  {
-    "name": "Sallah",
-    "x": 200,
-    "y": -2486
-  },
-  {
-    "name": "Saltash",
-    "x": -1626,
-    "y": 42
-  },
-  {
-    "name": "Samarkanda",
-    "x": -620,
-    "y": -1970
-  },
-  {
-    "name": "Samaya",
-    "x": 858,
-    "y": -1678
-  },
-  {
-    "name": "Samson",
-    "x": 371,
-    "y": -2570
-  },
-  {
-    "name": "Spectre",
-    "x": 606,
-    "y": -2742
-  },
-  {
-    "name": "San Sebastian",
-    "x": 415,
-    "y": -753
-  },
-  {
-    "name": "Santander",
-    "x": 6,
-    "y": -2561
-  },
-  {
-    "name": "Saphyr",
-    "x": 169,
-    "y": -1559
-  },
-  {
-    "name": "Sarah",
-    "x": -535,
-    "y": -3148
-  },
-  {
-    "name": "Sarin",
-    "x": -411,
-    "y": -689
-  },
-  {
-    "name": "Sasebo",
-    "x": -867,
-    "y": -207
-  },
-  {
-    "name": "Sceptrum",
-    "x": 1565,
-    "y": -466
-  },
-  {
-    "name": "Scheat",
-    "x": 30,
-    "y": 290
-  },
-  {
-    "name": "Schedar",
-    "x": -571,
-    "y": 178
-  },
-  {
-    "name": "Schiller",
-    "x": -583,
-    "y": -2889
-  },
-  {
-    "name": "Seaford 9",
-    "x": -53,
-    "y": -2518
-  },
-  {
-    "name": "Secour",
-    "x": 402,
-    "y": -2752
-  },
-  {
-    "name": "Secunda Hyadum",
-    "x": 954,
-    "y": -1885
-  },
-  {
-    "name": "Segin",
-    "x": 556,
-    "y": 166
-  },
-  {
-    "name": "Seginus",
-    "x": -23,
-    "y": -967
-  },
-  {
-    "name": "Seljuk",
-    "x": 242,
-    "y": -2578
-  },
-  {
-    "name": "Seraphix",
-    "x": -776,
-    "y": -1360
-  },
-  {
-    "name": "Serenara",
-    "x": 1073,
-    "y": -1353
-  },
-  {
-    "name": "Serenis",
-    "x": -912,
-    "y": -1353
-  },
-  {
-    "name": "Sham",
-    "x": 446,
-    "y": -3120
-  },
-  {
-    "name": "Shama",
-    "x": 1009,
-    "y": -680
-  },
-  {
-    "name": "Shangri La",
-    "x": -1508,
-    "y": -2732
-  },
-  {
-    "name": "Sharon's Star",
-    "x": -533,
-    "y": -2898
-  },
-  {
-    "name": "Sheherazade",
-    "x": -855,
-    "y": -1141
-  },
-  {
-    "name": "Sheliak",
-    "x": 863,
-    "y": -391
-  },
-  {
-    "name": "Shenandoah",
-    "x": 2,
-    "y": -762
-  },
-  {
-    "name": "Sheratan",
-    "x": 277,
-    "y": -541
-  },
-  {
-    "name": "Sherkhan",
-    "x": 539,
-    "y": -1116
-  },
-  {
-    "name": "Shiva",
-    "x": -566,
-    "y": -95
-  },
-  {
-    "name": "Sigma",
-    "x": -477,
-    "y": -2909
-  },
-  {
-    "name": "Sigma Draconis",
-    "x": -309,
-    "y": -453
-  },
-  {
-    "name": "Sika",
-    "x": -1838,
-    "y": -2435
-  },
-  {
-    "name": "Silesia",
-    "x": -498,
-    "y": -2991
-  },
-  {
-    "name": "Sindbad",
-    "x": 1323,
-    "y": -3336
-  },
-  {
-    "name": "Sirius",
-    "x": -304,
-    "y": -110
-  },
-  {
-    "name": "Skat",
-    "x": -1455,
-    "y": -1816
-  },
-  {
-    "name": "Slaivrac",
-    "x": -1176,
-    "y": -1297
-  },
-  {
-    "name": "Slocum (Haven-Sector)",
-    "x": 835,
-    "y": -2740
-  },
-  {
-    "name": "Slocum (Silesia-Sector)",
-    "x": -581,
-    "y": -2849
-  },
-  {
-    "name": "Smoky",
-    "x": 1110,
-    "y": -3137
-  },
-  {
-    "name": "Sol",
-    "x": -297,
-    "y": -297
-  },
-  {
-    "name": "Solan",
-    "x": 527,
-    "y": -2569
-  },
-  {
-    "name": "Metropol",
-    "x": 454,
-    "y": -404
-  },
-  {
-    "name": "Solaris Vale",
-    "x": -181,
-    "y": -3150
-  },
-  {
-    "name": "Solithra",
-    "x": -950,
-    "y": -2750
-  },
-  {
-    "name": "Solon",
-    "x": 876,
-    "y": -2947
-  },
-  {
-    "name": "Solway",
-    "x": 275,
-    "y": -2200
-  },
-  {
-    "name": "Split",
-    "x": -1510,
-    "y": -634
-  },
-  {
-    "name": "Sprague",
-    "x": 989,
-    "y": -1714
-  },
-  {
-    "name": "Stardrifter",
-    "x": 30,
-    "y": -786
-  },
-  {
-    "name": "Stardust",
-    "x": -13,
-    "y": -2998
-  },
-  {
-    "name": "Sternenheim",
-    "x": -1611,
-    "y": -1631
-  },
-  {
-    "name": "Sterrennacht",
-    "x": -385,
-    "y": 136
-  },
-  {
-    "name": "Stribor",
-    "x": 1363,
-    "y": -1229
-  },
-  {
-    "name": "Sualocin",
-    "x": 467,
-    "y": -578
-  },
-  {
-    "name": "Suarez",
-    "x": 838,
-    "y": -2590
-  },
-  {
-    "name": "Suchien",
-    "x": -48,
-    "y": -2604
-  },
-  {
-    "name": "Sugano",
-    "x": -673,
-    "y": -541
-  },
-  {
-    "name": "Suhail",
-    "x": 506,
-    "y": -247
-  },
-  {
-    "name": "Sun-Yat",
-    "x": 333,
-    "y": -2611
-  },
-  {
-    "name": "Syrma",
-    "x": -772,
-    "y": -1564
-  },
-  {
-    "name": "Tabit",
-    "x": 2070,
-    "y": -278
-  },
-  {
-    "name": "Tacoma",
-    "x": 1334,
-    "y": -2611
-  },
-  {
-    "name": "Taika",
-    "x": 2007,
-    "y": -546
-  },
-  {
-    "name": "Talbott",
-    "x": -2144,
-    "y": -489
-  },
-  {
-    "name": "Talisman",
-    "x": -73,
-    "y": -2390
-  },
-  {
-    "name": "Talitha",
-    "x": -302,
-    "y": -1886
-  },
-  {
-    "name": "Talmu",
-    "x": -1657,
-    "y": -1489
-  },
-  {
-    "name": "Tambourin",
-    "x": 717,
-    "y": -2806
-  },
-  {
-    "name": "Tangra",
-    "x": 1159,
-    "y": -487
-  },
-  {
-    "name": "Tania Australis",
-    "x": -1056,
-    "y": -403
-  },
-  {
-    "name": "Tapecue",
-    "x": 2027,
-    "y": -419
-  },
-  {
-    "name": "Tarazed",
-    "x": 885,
-    "y": -2312
-  },
-  {
-    "name": "Tau Ceti",
-    "x": -462,
-    "y": -242
-  },
-  {
-    "name": "Taurinia",
-    "x": 715,
-    "y": -6
-  },
-  {
-    "name": "Taygeta",
-    "x": 1009,
-    "y": -2832
-  },
-  {
-    "name": "Tejat",
-    "x": -517,
-    "y": -2781
-  },
-  {
-    "name": "Telemach",
-    "x": 131,
-    "y": -2331
-  },
-  {
-    "name": "Telmach",
-    "x": -581,
-    "y": -2979
-  },
-  {
-    "name": "Terebellum",
-    "x": 1202,
-    "y": -676
-  },
-  {
-    "name": "Terra Haute",
-    "x": 2201,
-    "y": -710
-  },
-  {
-    "name": "Terrance",
-    "x": -360,
-    "y": -3111
-  },
-  {
-    "name": "Tevel",
-    "x": 717,
-    "y": -1490
-  },
-  {
-    "name": "Thabit",
-    "x": 1438,
-    "y": -2060
-  },
-  {
-    "name": "The Lip",
-    "x": 1142,
-    "y": -2583
-  },
-  {
-    "name": "Theemin",
-    "x": -1714,
-    "y": -1534
-  },
-  {
-    "name": "Theron",
-    "x": 479,
-    "y": -1291
-  },
-  {
-    "name": "Thetis",
-    "x": 493,
-    "y": -2611
-  },
-  {
-    "name": "Tianguan",
-    "x": 1265,
-    "y": -340
-  },
-  {
-    "name": "Tianyi",
-    "x": 560,
-    "y": -2487
-  },
-  {
-    "name": "Tiberian",
-    "x": 660,
-    "y": -1810
-  },
-  {
-    "name": "Tichy",
-    "x": 1061,
-    "y": -726
-  },
-  {
-    "name": "Tillerman",
-    "x": -2242,
-    "y": -434
-  },
-  {
-    "name": "Timir",
-    "x": 803,
-    "y": -2923
-  },
-  {
-    "name": "Titawin",
-    "x": 706,
-    "y": -437
-  },
-  {
-    "name": "Toebean",
-    "x": -231,
-    "y": -883
-  },
-  {
-    "name": "Tojil",
-    "x": 474,
-    "y": -875
-  },
-  {
-    "name": "Toliman",
-    "x": -1270,
-    "y": -1990
-  },
-  {
-    "name": "Torus",
-    "x": 787,
-    "y": -2114
-  },
-  {
-    "name": "Treasure's Chest",
-    "x": -1253,
-    "y": -2972
-  },
-  {
-    "name": "Treadway",
-    "x": 257,
-    "y": -2326
-  },
-  {
-    "name": "Trellis",
-    "x": -605,
-    "y": -2870
-  },
-  {
-    "name": "Trevor's Star",
-    "x": 571,
-    "y": -2621
-  },
-  {
-    "name": "Trivia",
-    "x": -1398,
-    "y": -1993
-  },
-  {
-    "name": "Tuiren",
-    "x": 657,
-    "y": -680
-  },
-  {
-    "name": "Tumult",
-    "x": -455,
-    "y": -3105
-  },
-  {
-    "name": "Tundra",
-    "x": -1447,
-    "y": 139
-  },
-  {
-    "name": "Tundra",
-    "x": -1530,
-    "y": -2132
-  },
-  {
-    "name": "Tupa",
-    "x": 2082,
-    "y": -571
-  },
-  {
-    "name": "Tupi",
-    "x": -1001,
-    "y": -2563
-  },
-  {
-    "name": "Tureis",
-    "x": -234,
-    "y": -1739
-  },
-  {
-    "name": "Uhura",
-    "x": -1087,
-    "y": -1111
-  },
-  {
-    "name": "Ukdah",
-    "x": -831,
-    "y": -1254
-  },
-  {
-    "name": "Umbraea",
-    "x": -599,
-    "y": -2612
-  },
-  {
-    "name": "Unukalhai",
-    "x": -1916,
-    "y": -2220
-  },
-  {
-    "name": "Unurgunite",
-    "x": -1290,
-    "y": -742
-  },
-  {
-    "name": "Uruk",
-    "x": 1677,
-    "y": -1184
-  },
-  {
-    "name": "Usul",
-    "x": 753,
-    "y": -1990
-  },
-  {
-    "name": "Van Allen",
-    "x": -1919,
-    "y": -2568
-  },
-  {
-    "name": "Van Laagen",
-    "x": 179,
-    "y": -2067
-  },
-  {
-    "name": "Van Maanen's Star",
-    "x": -415,
-    "y": -356
-  },
-  {
-    "name": "Vegastra",
-    "x": 1714,
-    "y": -732
-  },
-  {
-    "name": "Veritate",
-    "x": 1465,
-    "y": -336
-  },
-  {
-    "name": "Victoria",
-    "x": -1654,
-    "y": -275
-  },
-  {
-    "name": "Viorginis B",
-    "x": -197,
-    "y": -372
-  },
-  {
-    "name": "Virgil",
-    "x": -1273,
-    "y": -2886
-  },
-  {
-    "name": "Virginis A",
-    "x": -218,
-    "y": -339
-  },
-  {
-    "name": "Virtue",
-    "x": -450,
-    "y": -2169
-  },
-  {
-    "name": "Vishnu",
-    "x": 86,
-    "y": -2529
-  },
-  {
-    "name": "Visminiar",
-    "x": 527,
-    "y": -471
-  },
-  {
-    "name": "Vodka",
-    "x": -1696,
-    "y": -1423
-  },
-  {
-    "name": "Vortexara",
-    "x": -976,
-    "y": -2189
-  },
-  {
-    "name": "Vortexia",
-    "x": 333,
-    "y": -2448
-  },
-  {
-    "name": "Wasat",
-    "x": -1991,
-    "y": -2670
-  },
-  {
-    "name": "Wattle",
-    "x": 865,
-    "y": -518
-  },
-  {
-    "name": "Wazn",
-    "x": -355,
-    "y": -1893
-  },
-  {
-    "name": "Weaver",
-    "x": -517,
-    "y": -1263
-  },
-  {
-    "name": "Welladay",
-    "x": 455,
-    "y": -2437
-  },
-  {
-    "name": "White",
-    "x": -617,
-    "y": 196
-  },
-  {
-    "name": "Willis",
-    "x": -439,
-    "y": -3181
-  },
-  {
-    "name": "Wouri",
-    "x": 978,
-    "y": -1241
-  },
-  {
-    "name": "Wurren",
-    "x": 527,
-    "y": -577
-  },
-  {
-    "name": "Xamidimura",
-    "x": 1538,
-    "y": -650
-  },
-  {
-    "name": "Xuange",
-    "x": -310,
-    "y": -1959
-  },
-  {
-    "name": "Xylovaria",
-    "x": 761,
-    "y": 128
-  },
-  {
-    "name": "Yalta",
-    "x": -16,
-    "y": -2673
-  },
-  {
-    "name": "Yeb",
-    "x": 9,
-    "y": -1492
-  },
-  {
-    "name": "Yed Prior",
-    "x": 557,
-    "y": -662
-  },
-  {
-    "name": "Yeltsin's Star",
-    "x": -3,
-    "y": -2339
-  },
-  {
-    "name": "Yooni",
-    "x": 1464,
-    "y": -1058
-  },
-  {
-    "name": "Yorik",
-    "x": -130,
-    "y": -2477
-  },
-  {
-    "name": "Yule",
-    "x": 1296,
-    "y": -1580
-  },
-  {
-    "name": "Zahira's Star",
-    "x": 1938,
-    "y": -788
-  },
-  {
-    "name": "Zaniah",
-    "x": -1389,
-    "y": -1364
-  },
-  {
-    "name": "Zanzibar",
-    "x": -78,
-    "y": -2446
-  },
-  {
-    "name": "Zaurak",
-    "x": -830,
-    "y": -1489
-  },
-  {
-    "name": "Zavijava",
-    "x": -423,
-    "y": 204
-  },
-  {
-    "name": "Zembra",
-    "x": -1423,
-    "y": -650
-  },
-  {
-    "name": "Zhang",
-    "x": 900,
-    "y": -3196
-  },
-  {
-    "name": "Zhijian",
-    "x": -884,
-    "y": -2198
-  },
-  {
-    "name": "Zibal",
-    "x": -1804,
-    "y": -1238
-  },
-  {
-    "name": "Zreof",
-    "x": 1715,
-    "y": -412
-  },
-  {
-    "name": "Zubenelgenubi",
-    "x": -236,
-    "y": -767
-  },
-  {
-    "name": "Zubenelhakrabi",
-    "x": 872,
-    "y": -981
-  },
-  {
-    "name": "Zubeneschamali",
-    "x": 914,
-    "y": -577
-  },
-  {
-    "name": "Zuckerman",
-    "x": -18,
-    "y": -2270
-  },
-  {
-    "name": "Chamonix",
-    "x": 686,
-    "y": -3012
-  },
-  {
-    "name": "Nova Astra",
-    "x": 917,
-    "y": -2775
-  },
-  {
-    "name": "H 715+ 891",
-    "x": 601,
-    "y": -3395
-  },
-  {
-    "name": "GSC 23658-48227",
-    "x": 754,
-    "y": -3224
-  },
-  {
-    "name": "HIC 3297",
-    "x": 649,
-    "y": -3216
-  },
-  {
-    "name": "HIC 22185",
-    "x": 1392,
-    "y": -3125
-  },
-  {
-    "name": "Hilt 366",
-    "x": 1243,
-    "y": -2987
-  },
-  {
-    "name": "GSC 72461-36522",
-    "x": 1307,
-    "y": -2987
-  },
-  {
-    "name": "Hilt 193",
-    "x": 1257,
-    "y": -2960
-  },
-  {
-    "name": "GSC 24131-29442",
-    "x": 1330,
-    "y": -2893
-  },
-  {
-    "name": "HIC 82924",
-    "x": 1269,
-    "y": -2841
-  },
-  {
-    "name": "Hilt 417",
-    "x": 1464,
-    "y": -2662
-  },
-  {
-    "name": "Hilt 756",
-    "x": 1556,
-    "y": -2012
-  },
-  {
-    "name": "HIC 16499",
-    "x": 1545,
-    "y": -1849
-  },
-  {
-    "name": "GSC 12122-63157",
-    "x": 1476,
-    "y": -2272
-  },
-  {
-    "name": "Amy's Sun",
-    "x": 1298,
-    "y": -1935
-  },
-  {
-    "name": "HIC 58514",
-    "x": 1871,
-    "y": -1719
-  },
-  {
-    "name": "Hilt 944",
-    "x": 1934,
-    "y": -1305
-  },
-  {
-    "name": "HD 895745",
-    "x": 2010,
-    "y": -1385
-  },
-  {
-    "name": "Fafnir",
-    "x": -1696,
-    "y": -2830
-  },
-  {
-    "name": "Mothallah",
-    "x": -1786,
-    "y": -2853
-  },
-  {
-    "name": "Malmok",
-    "x": -1838,
-    "y": -2694
-  },
-  {
-    "name": "Fuchur",
-    "x": -1693,
-    "y": -2664
-  },
-  {
-    "name": "Hilt 636",
-    "x": 2406,
-    "y": -622
-  },
-  {
-    "name": "Hilt 832",
-    "x": 2288,
-    "y": -453
-  },
-  {
-    "name": "H 599+ 486",
-    "x": 1952,
-    "y": 8
-  },
-  {
-    "name": "Hilt 983",
-    "x": 1324,
-    "y": 8
-  },
-  {
-    "name": "H 9691+ 375",
-    "x": 1088,
-    "y": 153
-  },
-  {
-    "name": "Hilt 848",
-    "x": 955,
-    "y": 187
-  },
-  {
-    "name": "H 566+ 357",
-    "x": 578,
-    "y": 411
-  },
-  {
-    "name": "Spica",
-    "x": 613,
-    "y": 13
-  },
-  {
-    "name": "Hilt 545",
-    "x": 168,
-    "y": 375
-  },
-  {
-    "name": "Comondor",
-    "x": 133,
-    "y": 255
-  },
-  {
-    "name": "Hilt 173",
-    "x": -64,
-    "y": 375
-  },
-  {
-    "name": "Hilt 452",
-    "x": -421,
-    "y": 326
-  },
-  {
-    "name": "Aquaria",
-    "x": -660,
-    "y": -147
-  },
-  {
-    "name": "Westermann B",
-    "x": -547,
-    "y": 68
-  },
-  {
-    "name": "Westermann A",
-    "x": -545,
-    "y": 52
-  },
-  {
-    "name": "HIC 74871",
-    "x": -1217,
-    "y": 267
-  },
-  {
-    "name": "GSC 43649-38127",
-    "x": -1230,
-    "y": 278
-  },
-  {
-    "name": "H 625+ 211",
-    "x": -1077,
-    "y": 294
-  },
-  {
-    "name": "H 1171+ 149",
-    "x": -793,
-    "y": 356
-  },
-  {
-    "name": "HIC 55431",
-    "x": -608,
-    "y": 300
-  },
-  {
-    "name": "HD 1273",
-    "x": -686,
-    "y": 307
-  },
-  {
-    "name": "Hilt 477",
-    "x": -1591,
-    "y": 261
-  },
-  {
-    "name": "H 4433+ 245",
-    "x": -1787,
-    "y": 107
-  },
-  {
-    "name": "GSC 41417-92873",
-    "x": -403,
-    "y": -3388
-  },
-  {
-    "name": "H 9569+ 598",
-    "x": 163,
-    "y": -3325
-  },
-  {
-    "name": "GSC 57157-67892",
-    "x": 483,
-    "y": -3285
-  },
-  {
-    "name": "HD 2499",
-    "x": -215,
-    "y": -3349
-  },
-  {
-    "name": "HD 13913",
-    "x": -1452,
-    "y": -3241
-  },
-  {
-    "name": "HIC 17558",
-    "x": -1289,
-    "y": -3123
-  },
-  {
-    "name": "GSC 26214-49721",
-    "x": -1374,
-    "y": -3166
-  },
-  {
-    "name": "HD 82919",
-    "x": -1534,
-    "y": -3213
-  },
-  {
-    "name": "HIC 78477",
-    "x": -1601,
-    "y": -3158
-  },
-  {
-    "name": "HD 42495",
-    "x": -1747,
-    "y": -3122
-  },
-  {
-    "name": "GSC 48577-26927",
-    "x": -1786,
-    "y": -3154
-  },
-  {
-    "name": "HD 4688",
-    "x": -1898,
-    "y": -3090
-  },
-  {
-    "name": "H 942+ 665",
-    "x": -1985,
-    "y": -3127
-  },
-  {
-    "name": "HIC 1292",
-    "x": -1979,
-    "y": -2925
-  },
-  {
-    "name": "HD 51683",
-    "x": -2252,
-    "y": -2867
-  },
-  {
-    "name": "HIC 3583",
-    "x": -2228,
-    "y": -2402
-  },
-  {
-    "name": "Hilt 923",
-    "x": -2132,
-    "y": -2196
-  },
-  {
-    "name": "H 521+ 163",
-    "x": -2126,
-    "y": -1981
-  },
-  {
-    "name": "HD 4472",
-    "x": -2024,
-    "y": -2024
-  },
-  {
-    "name": "Hilt 699",
-    "x": -2083,
-    "y": -1792
-  },
-  {
-    "name": "Feck",
-    "x": -1646,
-    "y": -1959
-  },
-  {
-    "name": "Carbide",
-    "x": -1103,
-    "y": -2009
-  },
-  {
-    "name": "HD 67415",
-    "x": -2219,
-    "y": -1636
-  },
-  {
-    "name": "HD 559638",
-    "x": -2345,
-    "y": -1482
-  },
-  {
-    "name": "Hilt 937",
-    "x": -2511,
-    "y": -499
-  },
-  {
-    "name": "GSC 86997-67232",
-    "x": -2712,
-    "y": -462
-  },
-  {
-    "name": "HIC 66934",
-    "x": -2784,
-    "y": -286
-  },
-  {
-    "name": "H 7862+ 958",
-    "x": -2649,
-    "y": -52
-  },
-  {
-    "name": "H 744+ 652",
-    "x": -2623,
-    "y": 205
-  },
-  {
-    "name": "Hilt 613",
-    "x": -2324,
-    "y": 147
-  },
-  {
-    "name": "GSC 45326-33521",
-    "x": -2067,
-    "y": -255
-  },
-  {
-    "name": "HIC 6418",
-    "x": -2338,
-    "y": -330
-  },
-  {
-    "name": "Hilt 985",
-    "x": -2046,
-    "y": 165
-  },
-  {
-    "name": "Hilt 852",
-    "x": -1721,
-    "y": 135
-  },
-  {
-    "name": "GSC 86453-19131",
-    "x": -1359,
-    "y": 268
-  },
-  {
-    "name": "Hilt 554",
-    "x": -2273,
-    "y": -2549
-  },
-  {
-    "name": "HIC 3627",
-    "x": -2158,
-    "y": -2651
-  },
-  {
-    "name": "HIC 5685",
-    "x": -1077,
-    "y": -3305
-  },
-  {
-    "name": "Hilt 132",
-    "x": -897,
-    "y": -3289
-  },
-  {
-    "name": "HD 9465",
-    "x": -390,
-    "y": -3273
-  },
-  {
-    "name": "HD 262171",
-    "x": -780,
-    "y": -3208
-  },
-  {
-    "name": "HIC 4693",
-    "x": -600,
-    "y": -3341
-  },
-  {
-    "name": "H 2694+ 223",
-    "x": 269,
-    "y": -3261
-  },
-  {
-    "name": "Hilt 174",
-    "x": 1254,
-    "y": -3415
-  },
-  {
-    "name": "GSC 19825-84648",
-    "x": 946,
-    "y": -3348
-  },
-  {
-    "name": "HIC 54414",
-    "x": 1000,
-    "y": -3399
-  },
-  {
-    "name": "HIC 47766",
-    "x": 1413,
-    "y": -3329
-  },
-  {
-    "name": "H 844+ 759",
-    "x": 1348,
-    "y": -3224
-  },
-  {
-    "name": "HIC 38365",
-    "x": 1347,
-    "y": -2782
-  },
-  {
-    "name": "H 5442+ 954",
-    "x": 1144,
-    "y": -2460
-  },
-  {
-    "name": "HIC 12773",
-    "x": 1418,
-    "y": -2542
-  },
-  {
-    "name": "HIC 24595",
-    "x": 1226,
-    "y": -2189
-  },
-  {
-    "name": "Hilt 495",
-    "x": 1309,
-    "y": -2209
-  },
-  {
-    "name": "H 7137+ 357",
-    "x": 1320,
-    "y": -2119
-  },
-  {
-    "name": "HIC 86625",
-    "x": 1450,
-    "y": -1925
-  },
-  {
-    "name": "GSC 57956-92191",
-    "x": 1161,
-    "y": -2051
-  },
-  {
-    "name": "Hilt 812",
-    "x": 2115,
-    "y": -1011
-  },
-  {
-    "name": "HD 3422",
-    "x": 2016,
-    "y": -1092
-  },
-  {
-    "name": "HIC 8958",
-    "x": 2249,
-    "y": -894
-  },
-  {
-    "name": "Hilt 316",
-    "x": 1547,
-    "y": -827
-  },
-  {
-    "name": "Hilt 697",
-    "x": 1857,
-    "y": -919
-  },
-  {
-    "name": "HIC 57869",
-    "x": 2246,
-    "y": -287
-  },
-  {
-    "name": "HIC 1698",
-    "x": 1978,
-    "y": -153
-  },
-  {
-    "name": "HD 44394",
-    "x": 1550,
-    "y": -56
-  },
-  {
-    "name": "GSC 26377-16126",
-    "x": 1247,
-    "y": -68
-  },
-  {
-    "name": "H 769+ 981",
-    "x": 1800,
-    "y": -101
-  },
-  {
-    "name": "Cape Susette",
-    "x": 264,
-    "y": -213
-  },
-  {
-    "name": "Compton",
-    "x": 1010,
-    "y": -233
-  },
-  {
-    "name": "HD 526389",
-    "x": -188,
-    "y": 241
-  },
-  {
-    "name": "HIC 5592",
-    "x": 467,
-    "y": 65
-  },
-  {
-    "name": "HD 38666",
-    "x": 421,
-    "y": 174
-  },
-  {
-    "name": "HD 9656",
-    "x": -1793,
-    "y": -490
-  },
-  {
-    "name": "Hilt 182",
-    "x": -1827,
-    "y": -381
-  },
-  {
-    "name": "HD 5392",
-    "x": -1669,
-    "y": -393
-  },
-  {
-    "name": "HD 187172",
-    "x": -1691,
-    "y": -108
-  },
-  {
-    "name": "H 3475+ 856",
-    "x": -2737,
-    "y": 75
-  },
-  {
-    "name": "Selkirk",
-    "x": -2416,
-    "y": -1140
-  },
-  {
-    "name": "Tyrel",
-    "x": -2674,
-    "y": -1103
-  },
-  {
-    "name": "Osmani",
-    "x": -2733,
-    "y": -1276
-  },
-  {
-    "name": "Corovic",
-    "x": -2536,
-    "y": -1367
-  },
-  {
-    "name": "HIC 96678",
-    "x": -2322,
-    "y": -966
-  },
-  {
-    "name": "HD 3578",
-    "x": -2477,
-    "y": -1011
-  },
-  {
-    "name": "Nuncio",
-    "x": -1544,
-    "y": -799
-  },
-  {
-    "name": "Mainwaring",
-    "x": -1604,
-    "y": -729
-  },
-  {
-    "name": "Spindle",
-    "x": -1722,
-    "y": -637
-  },
-  {
-    "name": "Dresden",
-    "x": -1987,
-    "y": -591
-  },
-  {
-    "name": "Redoubt",
-    "x": -1991,
-    "y": -726
-  },
-  {
-    "name": "San Miguel",
-    "x": -1852,
-    "y": -721
-  },
-  {
-    "name": "Rembrandt",
-    "x": -1769,
-    "y": -768
-  },
-  {
-    "name": "Prairie",
-    "x": -1854,
-    "y": -807
-  },
-  {
-    "name": "Celebrant",
-    "x": -1775,
-    "y": -950
-  },
-  {
-    "name": "Pequod",
-    "x": -2071,
-    "y": -940
-  },
-  {
-    "name": "New Tuscany",
-    "x": -2119,
-    "y": -802
-  },
-  {
-    "name": "Marian",
-    "x": -2157,
-    "y": -634
-  },
-  {
-    "name": "Scarlet",
-    "x": -2245,
-    "y": -680
-  },
-  {
-    "name": "HD 252828",
-    "x": -2424,
-    "y": -728
-  },
-  {
-    "name": "Hilt 396",
-    "x": -2326,
-    "y": -798
-  },
-  {
-    "name": "Monica",
-    "x": -2352,
-    "y": -212
-  },
-  {
-    "name": "Taylor",
-    "x": -2402,
-    "y": -169
-  },
-  {
-    "name": "Zale",
-    "x": -2580,
-    "y": -260
-  },
-  {
-    "name": "GSC 53456-34422",
-    "x": -2541,
-    "y": -432
-  },
-  {
-    "name": "Alhambra",
-    "x": -2129,
-    "y": 7
-  },
-  {
-    "name": "Meyers",
-    "x": -2504,
-    "y": -9
-  },
-  {
-    "name": "70 Virginis",
-    "x": -69,
-    "y": -680
-  },
-  {
-    "name": "Chattanooga",
-    "x": 99,
-    "y": -794
-  },
-  {
-    "name": "Cyclops",
-    "x": -372,
-    "y": -470
-  },
-  {
-    "name": "Dzung",
-    "x": 74,
-    "y": -492
-  },
-  {
-    "name": "Farley's Crossing",
-    "x": -1119,
-    "y": -679
-  },
-  {
-    "name": "Galen",
-    "x": 26,
-    "y": -385
-  },
-  {
-    "name": "Heimdall",
-    "x": -278,
-    "y": -415
-  },
-  {
-    "name": "Hirochi",
-    "x": -422,
-    "y": -217
-  },
-  {
-    "name": "Hypatia",
-    "x": -290,
-    "y": -198
-  },
-  {
-    "name": "Kenichi",
-    "x": -161,
-    "y": -502
-  },
-  {
-    "name": "Trombone",
-    "x": -428,
-    "y": -607
-  },
-  {
-    "name": "Tasmania",
-    "x": -421,
-    "y": -122
-  },
-  {
-    "name": "Strathmore",
-    "x": -206,
-    "y": -623
-  },
-  {
-    "name": "Stotterman",
-    "x": -590,
-    "y": -303
-  },
-  {
-    "name": "Sebastopol",
-    "x": -224,
-    "y": -118
-  },
-  {
-    "name": "Seacrest",
-    "x": -710,
-    "y": -418
-  },
-  {
-    "name": "Mithra",
-    "x": -547,
-    "y": -465
-  },
-  {
-    "name": "Eris",
-    "x": -413,
-    "y": -534
-  },
-  {
-    "name": "Meyerdahl",
-    "x": -117,
-    "y": -137
-  },
-  {
-    "name": "Mendelschon",
-    "x": -766,
-    "y": -177
-  },
-  {
-    "name": "Lucastra",
-    "x": -125,
-    "y": -276
-  },
-  {
-    "name": "Arcalos",
-    "x": -691,
-    "y": -2377
-  },
-  {
-    "name": "Wurstzipfel",
-    "x": -1068,
-    "y": -2867
-  },
-  {
-    "name": "Bleak",
-    "x": -673,
-    "y": -1851
-  },
-  {
-    "name": "Tomlinson",
-    "x": -784,
-    "y": -2809
-  },
-  {
-    "name": "Angelique",
-    "x": -712,
-    "y": -2692
-  },
-  {
-    "name": "Babel",
-    "x": -846,
-    "y": -2609
-  },
-  {
-    "name": "Cantiz",
-    "x": -899,
-    "y": -2612
-  },
-  {
-    "name": "Sligo",
-    "x": -795,
-    "y": -2538
-  },
-  {
-    "name": "Mischa's Star",
-    "x": -826,
-    "y": -2506
-  },
-  {
-    "name": "Jabbah",
-    "x": -485,
-    "y": -2692
-  },
-  {
-    "name": "Clarke",
-    "x": 1021,
-    "y": -2748
-  },
-  {
-    "name": "Jameston",
-    "x": 888,
-    "y": -2553
-  },
-  {
-    "name": "Karavani",
-    "x": 1223,
-    "y": -2668
-  },
-  {
-    "name": "Lannes",
-    "x": 545,
-    "y": -2990
-  },
-  {
-    "name": "Lern",
-    "x": 572,
-    "y": -2913
-  },
-  {
-    "name": "Laramie",
-    "x": 431,
-    "y": -2892
-  },
-  {
-    "name": "La Martine",
-    "x": 527,
-    "y": -2852
-  },
-  {
-    "name": "Lorn",
-    "x": 617,
-    "y": -2536
-  },
-  {
-    "name": "New Calcutta",
-    "x": 442,
-    "y": -2809
-  },
-  {
-    "name": "Paroa",
-    "x": 816,
-    "y": -2463
-  },
-  {
-    "name": "Pegasus",
-    "x": 523,
-    "y": -2955
-  },
-  {
-    "name": "Yellow",
-    "x": 351,
-    "y": -3027
-  },
-  {
-    "name": "Shilo",
-    "x": 872,
-    "y": -3049
-  },
-  {
-    "name": "Squalus",
-    "x": 330,
-    "y": -2813
-  },
-  {
-    "name": "Tarragon",
-    "x": 1030,
-    "y": -2911
-  },
-  {
-    "name": "Beemim",
-    "x": -224,
-    "y": -3039
-  },
-  {
-    "name": "Jug",
-    "x": -373,
-    "y": -3058
-  },
-  {
-    "name": "Hilt 368",
-    "x": -2802,
-    "y": -990
-  },
-  {
-    "name": "H 4222+ 498",
-    "x": -2895,
-    "y": -1443
-  },
-  {
-    "name": "GSC 95488-45443",
-    "x": -2687,
-    "y": -1608
-  },
-  {
-    "name": "Hilt 598",
-    "x": -1910,
-    "y": -1175
-  },
-  {
-    "name": "Nimbalkar",
-    "x": -921,
-    "y": -2705
-  },
-  {
-    "name": "Sandhill",
-    "x": -625,
-    "y": -3047
-  },
-  {
-    "name": "Tyler's Star",
-    "x": -533,
-    "y": -2958
-  },
-  {
-    "name": "Melchor",
-    "x": -369,
-    "y": -2866
-  },
-  {
-    "name": "Prism",
-    "x": -365,
-    "y": -2832
-  },
-  {
-    "name": "Bad Call",
-    "x": -479,
-    "y": -3080
-  },
-  {
-    "name": "Quatre Bras",
-    "x": -338,
-    "y": -2999
-  },
-  {
-    "name": "Walther",
-    "x": -598,
-    "y": -2937
-  },
-  {
-    "name": "Zoraster",
-    "x": -567,
-    "y": -2920
-  },
-  {
-    "name": "Tegmine",
-    "x": -120,
-    "y": -3199
-  },
-  {
-    "name": "Casca",
-    "x": 41,
-    "y": -2344
-  },
-  {
-    "name": "Danak",
-    "x": 882,
-    "y": -2692
-  },
-  {
-    "name": "Cimarron's Rose",
-    "x": -667,
-    "y": -2561
-  },
-  {
-    "name": "Alto Verde",
-    "x": 963,
-    "y": -2626
-  },
-  {
-    "name": "Prague",
-    "x": 483,
-    "y": -2752
-  },
-  {
-    "name": "Rutgers",
-    "x": 450,
-    "y": -2705
-  },
-  {
-    "name": "Sheldon",
-    "x": 243,
-    "y": -2672
-  },
-  {
-    "name": "Sullah",
-    "x": 556,
-    "y": -2373
-  },
-  {
-    "name": "Jouett",
-    "x": 804,
-    "y": -2797
-  },
-  {
-    "name": "Morell",
-    "x": 796,
-    "y": -2547
-  },
-  {
-    "name": "Maslow",
-    "x": 230,
-    "y": -2750
-  },
-  {
-    "name": "Tahlman",
-    "x": 590,
-    "y": -2660
-  },
-  {
-    "name": "Seabring",
-    "x": 610,
-    "y": -2639
-  },
-  {
-    "name": "Garnet Star",
-    "x": 600,
-    "y": -2689
-  },
-  {
-    "name": "Radiantia",
-    "x": -606,
-    "y": -2804
-  },
-  {
-    "name": "Poe",
-    "x": 689,
-    "y": -2479
-  },
-  {
-    "name": "Malagasy",
-    "x": 719,
-    "y": -2607
-  },
-  {
-    "name": "Basilisk",
-    "x": -137,
-    "y": -3077
-  },
-  {
-    "name": "Paws",
-    "x": 308,
-    "y": -2097
-  },
-  {
-    "name": "Severin",
-    "x": 407,
-    "y": -2168
-  },
-  {
-    "name": "Yildun",
-    "x": -58,
-    "y": -391
-  },
-  {
-    "name": "Sankar",
-    "x": -2,
-    "y": -1131
-  },
-  {
-    "name": "Lich",
-    "x": -570,
-    "y": -1264
-  },
-  {
-    "name": "Chason",
-    "x": -1486,
-    "y": -169
-  },
-  {
-    "name": "Thuban",
-    "x": -290,
-    "y": -2391
-  },
-  {
-    "name": "Salm",
-    "x": -182,
-    "y": -2176
-  },
-  {
-    "name": "Phenomenon",
-    "x": -292,
-    "y": -2224
-  },
-  {
-    "name": "Barber's Sun",
-    "x": -996,
-    "y": -1870
-  },
-  {
-    "name": "Stocum",
-    "x": 508,
-    "y": -2481
-  },
-  {
-    "name": "Lucas",
-    "x": -560,
-    "y": -592
-  },
-  {
-    "name": "Asad",
-    "x": 551,
-    "y": -2598
-  },
-  {
-    "name": "Flegetonte",
-    "x": 477,
-    "y": -2302
-  },
-  {
-    "name": "Valian",
-    "x": -1551,
-    "y": -2858
-  },
-  {
-    "name": "Dalim",
-    "x": -1856,
-    "y": -2793
-  },
-  {
-    "name": "Moravod",
-    "x": -1884,
-    "y": -2920
-  },
-  {
-    "name": "Alba",
-    "x": -1765,
-    "y": -2923
-  },
-  {
-    "name": "Eschar",
-    "x": -1549,
-    "y": -3011
-  },
-  {
-    "name": "Rawindra",
-    "x": -1518,
-    "y": -2977
-  },
-  {
-    "name": "Kanthaipan",
-    "x": -1468,
-    "y": -2931
-  },
-  {
-    "name": "Erainn",
-    "x": -1745,
-    "y": -3059
-  },
-  {
-    "name": "Archer's Star",
-    "x": -1299,
-    "y": -2347
-  },
-  {
-    "name": "Alrakis",
-    "x": -1852,
-    "y": -1576
-  },
-  {
-    "name": "Stine",
-    "x": 111,
-    "y": -243
-  },
-  {
-    "name": "Seraphim",
-    "x": 355,
-    "y": -650
-  },
-  {
-    "name": "Addison",
-    "x": 734,
-    "y": -476
-  },
-  {
-    "name": "Akron",
-    "x": 467,
-    "y": -669
-  },
-  {
-    "name": "Jubilee",
-    "x": 406,
-    "y": -577
-  },
-  {
-    "name": "Kumang",
-    "x": -1789,
-    "y": -209
-  },
-  {
-    "name": "Calpurnia",
-    "x": -849,
-    "y": -78
-  },
-  {
-    "name": "Loomis",
-    "x": -648,
-    "y": -1304
-  },
-  {
-    "name": "Delvecchio",
-    "x": -141,
-    "y": -31
-  },
-  {
-    "name": "Mobius",
-    "x": -2151,
-    "y": -139
-  },
-  {
-    "name": "Hainuwele",
-    "x": -585,
-    "y": -1164
-  },
-  {
-    "name": "Olivia",
-    "x": -1048,
-    "y": -1903
-  },
-  {
-    "name": "Syou-tang",
-    "x": -1308,
-    "y": -102
-  },
-  {
-    "name": "Pulsar Vista",
-    "x": -54,
-    "y": -1395
-  },
-  {
-    "name": "Nosaxa",
-    "x": 97,
-    "y": -1173
-  },
-  {
-    "name": "HIC 53199",
-    "x": -1941,
-    "y": -164
-  },
-  {
-    "name": "Swallow",
-    "x": -1846,
-    "y": 4
-  },
-  {
-    "name": "Dionigi",
-    "x": -551,
-    "y": -1892
-  },
-  {
-    "name": "Katharina",
-    "x": 170,
-    "y": -652
-  },
-  {
-    "name": "Franzeki",
-    "x": -1264,
-    "y": -1787
-  },
-  {
-    "name": "Vrud",
-    "x": -806,
-    "y": -803
-  },
-  {
-    "name": "Bessie",
-    "x": -812,
-    "y": -834
-  },
-  {
-    "name": "Idaho",
-    "x": -325,
-    "y": -2119
-  },
-  {
-    "name": "Roulette",
-    "x": -391,
-    "y": -396
-  },
-  {
-    "name": "Startman",
-    "x": -287,
-    "y": -4
-  },
-  {
-    "name": "Titania",
-    "x": -122,
-    "y": 17
-  },
-  {
-    "name": "Alcor",
-    "x": -1202,
-    "y": -350
-  },
-  {
-    "name": "Lynx",
-    "x": -1485,
-    "y": -474
-  },
-  {
-    "name": "Sadr",
-    "x": -1259,
-    "y": -133
-  },
-  {
-    "name": "Any Port",
-    "x": -1250,
-    "y": -212
-  },
-  {
-    "name": "Reiko",
-    "x": -142,
-    "y": -2565
-  },
-  {
-    "name": "Lynx B (Terminus)",
-    "x": -1465,
-    "y": -441
-  },
-  {
-    "name": "Adelaide",
-    "x": -334,
-    "y": -3073
-  },
-  {
-    "name": "Al-Bakiya",
-    "x": -1211,
-    "y": -2244
-  },
-  {
-    "name": "Allen",
-    "x": -501,
-    "y": -3031
-  },
-  {
-    "name": "Randal",
-    "x": 883,
-    "y": -1337
-  },
-  {
-    "name": "Astophel",
-    "x": -54,
-    "y": -1269
-  },
-  {
-    "name": " Balcescu",
-    "x": 583,
-    "y": -1595
-  },
-  {
-    "name": "Balthazar",
-    "x": 218,
-    "y": -339
-  },
-  {
-    "name": "Barca",
-    "x": 249,
-    "y": -1587
-  },
-  {
-    "name": "Bootstrap",
-    "x": -525,
-    "y": -266
-  },
-  {
-    "name": "Boyle",
-    "x": -45,
-    "y": -262
-  },
-  {
-    "name": "Brennan",
-    "x": -533,
-    "y": -3066
-  },
-  {
-    "name": "Broadhurst",
-    "x": -616,
-    "y": -27
-  },
-  {
-    "name": "Montague",
-    "x": 992,
-    "y": -2536
-  },
-  {
-    "name": "Bryant",
-    "x": 503,
-    "y": -1877
-  },
-  {
-    "name": "Cachalot",
-    "x": -27,
-    "y": -599
-  },
-  {
-    "name": "BS-712-19-6",
-    "x": -246,
-    "y": -517
-  },
-  {
-    "name": "Caldwell",
-    "x": -346,
-    "y": -2912
-  },
-  {
-    "name": "Caroline",
-    "x": -391,
-    "y": -3128
-  },
-  {
-    "name": "Carson",
-    "x": -417,
-    "y": -3049
-  },
-  {
-    "name": "Ajay",
-    "x": -893,
-    "y": -1190
-  },
-  {
-    "name": "Nolan",
-    "x": -836,
-    "y": -609
-  },
-  {
-    "name": "Casimir",
-    "x": -445,
-    "y": -2839
-  },
-  {
-    "name": "Cimbri",
-    "x": 808,
-    "y": -1651
-  },
-  {
-    "name": "Cooper",
-    "x": -176,
-    "y": -242
-  },
-  {
-    "name": "Cossack",
-    "x": 1093,
-    "y": -1482
-  },
-  {
-    "name": "Crawford",
-    "x": -373,
-    "y": -2901
-  },
-  {
-    "name": "Cresswell",
-    "x": -513,
-    "y": -2868
-  },
-  {
-    "name": "Cromwell",
-    "x": -548,
-    "y": -2942
-  },
-  {
-    "name": "Custis",
-    "x": -1072,
-    "y": -523
-  },
-  {
-    "name": "Daggan",
-    "x": 184,
-    "y": -2679
-  },
-  {
-    "name": "Danube",
-    "x": -364,
-    "y": -166
-  },
-  {
-    "name": "Delta Draconis",
-    "x": -97,
-    "y": -750
-  },
-  {
-    "name": "Mascot",
-    "x": -937,
-    "y": -1900
-  },
-  {
-    "name": "Dorcas",
-    "x": 106,
-    "y": -2613
-  },
-  {
-    "name": "Eta Cassiopeiae",
-    "x": -209,
-    "y": -311
-  },
-  {
-    "name": "Exapia",
-    "x": -342,
-    "y": -237
-  },
-  {
-    "name": "Farnham",
-    "x": -612,
-    "y": -2755
-  },
-  {
-    "name": "Franconia",
-    "x": 371,
-    "y": -2232
-  },
-  {
-    "name": "Genovese",
-    "x": -360,
-    "y": -1197
-  },
-  {
-    "name": "Chalawan",
-    "x": -288,
-    "y": -705
-  },
-  {
-    "name": "Golem",
-    "x": -148,
-    "y": -1170
-  },
-  {
-    "name": "Hakim",
-    "x": 284,
-    "y": -1616
-  },
-  {
-    "name": "Harston",
-    "x": -377,
-    "y": -2979
-  },
-  {
-    "name": "Hesier",
-    "x": -58,
-    "y": -340
-  },
-  {
-    "name": "Horus",
-    "x": -416,
-    "y": -2890
-  },
-  {
-    "name": "Howard",
-    "x": -2219,
-    "y": -177
-  },
-  {
-    "name": "Hyatt",
-    "x": -411,
-    "y": -2830
-  },
-  {
-    "name": "Hyperion",
-    "x": -386,
-    "y": -2879
-  },
-  {
-    "name": "Ingeborg",
-    "x": 2164,
-    "y": -685
-  },
-  {
-    "name": " Istvan",
-    "x": -246,
-    "y": -86
-  },
-  {
-    "name": "Johanson",
-    "x": 836,
-    "y": -1060
-  },
-  {
-    "name": "Alt",
-    "x": 989,
-    "y": -1364
-  },
-  {
-    "name": "Josephine",
-    "x": 35,
-    "y": -1339
-  },
-  {
-    "name": "Calvin",
-    "x": -637,
-    "y": -966
-  },
-  {
-    "name": "Kenniac",
-    "x": -375,
-    "y": -329
-  },
-  {
-    "name": "Kismet",
-    "x": -221,
-    "y": -445
-  },
-  {
-    "name": "Klondike",
-    "x": 127,
-    "y": -607
-  },
-  {
-    "name": "Kondratii",
-    "x": 764,
-    "y": -1186
-  },
-  {
-    "name": "Krieger's Star",
-    "x": -421,
-    "y": -2808
-  },
-  {
-    "name": "Landfall",
-    "x": -217,
-    "y": -176
-  },
-  {
-    "name": "Lytton",
-    "x": -826,
-    "y": -279
-  },
-  {
-    "name": "Baten Kaitos",
-    "x": -880,
-    "y": -380
-  },
-  {
-    "name": "MacGregor",
-    "x": 461,
-    "y": -2533
-  },
-  {
-    "name": "Madeleine",
-    "x": 59,
-    "y": -218
-  },
-  {
-    "name": "Mainwaring",
-    "x": -1601,
-    "y": -995
-  },
-  {
-    "name": "Lau Hiler",
-    "x": -604,
-    "y": -2970
-  },
-  {
-    "name": "Reputation",
-    "x": -715,
-    "y": -3058
-  },
-  {
-    "name": "McIntosh",
-    "x": -2455,
-    "y": 135
-  },
-  {
-    "name": "Megan",
-    "x": -156,
-    "y": -2291
-  },
-  {
-    "name": "Melbourne",
-    "x": -410,
-    "y": -2942
-  },
-  {
-    "name": "Mfecane",
-    "x": 8,
-    "y": -214
-  },
-  {
-    "name": "Mullins",
-    "x": 1823,
-    "y": -35
-  },
-  {
-    "name": "Clarence",
-    "x": 90,
-    "y": -412
-  },
-  {
-    "name": "Nanda",
-    "x": 722,
-    "y": -2315
-  },
-  {
-    "name": "New Hamburg",
-    "x": -457,
-    "y": -2396
-  },
-  {
-    "name": "Sondermann's Star",
-    "x": -106,
-    "y": -1032
-  },
-  {
-    "name": "Nightingale",
-    "x": 308,
-    "y": -2314
-  },
-  {
-    "name": "Oceana",
-    "x": -385,
-    "y": -1339
-  },
-  {
-    "name": "Pelzer",
-    "x": -1088,
-    "y": -2511
-  },
-  {
-    "name": "Asterope",
-    "x": -90,
-    "y": -856
-  },
-  {
-    "name": "Preston",
-    "x": 21,
-    "y": -624
-  },
-  {
-    "name": "Ralko",
-    "x": 126,
-    "y": -2776
-  },
-  {
-    "name": "Ramon",
-    "x": 175,
-    "y": -2226
-  },
-  {
-    "name": "Ranier",
-    "x": 2162,
-    "y": -503
-  },
-  {
-    "name": "Conestoga",
-    "x": -378,
-    "y": -986
-  },
-  {
-    "name": "Sandalwood",
-    "x": -18,
-    "y": 24
-  },
-  {
-    "name": "Sarawak",
-    "x": 897,
-    "y": -2506
-  },
-  {
-    "name": "Sarretti",
-    "x": -1330,
-    "y": -1346
-  },
-  {
-    "name": "SCY-146-H",
-    "x": -929,
-    "y": 54
-  },
-  {
-    "name": "Shadwell",
-    "x": 860,
-    "y": -1962
-  },
-  {
-    "name": "Shanghai",
-    "x": -886,
-    "y": 126
-  },
-  {
-    "name": "Shingaine",
-    "x": -497,
-    "y": -301
-  },
-  {
-    "name": "Siegfried",
-    "x": 95,
-    "y": -142
-  },
-  {
-    "name": "Snyder",
-    "x": -516,
-    "y": -407
-  },
-  {
-    "name": "SXR-136-23",
-    "x": 535,
-    "y": -2660
-  },
-  {
-    "name": "Ebla",
-    "x": 196,
-    "y": -2571
-  },
-  {
-    "name": "Talbot",
-    "x": 72,
-    "y": -2477
-  },
-  {
-    "name": "Tau Delta",
-    "x": -456,
-    "y": -279
-  },
-  {
-    "name": "Tequila",
-    "x": 628,
-    "y": -2713
-  },
-  {
-    "name": "Theseus",
-    "x": -454,
-    "y": -163
-  },
-  {
-    "name": "Traccora",
-    "x": -704,
-    "y": 17
-  },
-  {
-    "name": "Trautman's Star",
-    "x": -426,
-    "y": -2993
-  },
-  {
-    "name": "Lighthouse",
-    "x": -599,
-    "y": -1487
-  },
-  {
-    "name": "Trebuchet",
-    "x": -298,
-    "y": -1569
-  },
-  {
-    "name": "Ueshiba",
-    "x": 584,
     "y": -2411
   },
   {
-    "name": "Van Mook",
-    "x": -835,
-    "y": -527
+    "name": "Aerion",
+    "x": 734,
+    "y": -2409
   },
   {
-    "name": "Arcturus",
-    "x": -899,
-    "y": -706
+    "name": "Aflaandacs",
+    "x": -55,
+    "y": -802
   },
   {
-    "name": "Waterfall",
-    "x": -964,
-    "y": -798
+    "name": "Ain",
+    "x": -1396,
+    "y": 33
   },
   {
-    "name": "Epsilon Virgo",
-    "x": 870,
-    "y": 144
+    "name": "Ainalrami",
+    "x": 1579,
+    "y": -350
   },
   {
-    "name": "Prime",
-    "x": 417,
-    "y": -1023
+    "name": "Aiolos",
+    "x": 1202,
+    "y": -3211
   },
   {
-    "name": "Wincote",
-    "x": 242,
-    "y": -865
+    "name": "Ajax",
+    "x": 548,
+    "y": -1004
   },
   {
-    "name": "Winepress",
-    "x": -399,
-    "y": -292
+    "name": "Ajif",
+    "x": 53,
+    "y": 318
   },
   {
-    "name": "Wonder",
-    "x": -1821,
-    "y": -124
+    "name": "Aladdin",
+    "x": -595,
+    "y": -1765
   },
   {
-    "name": "Grafton",
-    "x": -744,
-    "y": -643
+    "name": "Aladfar",
+    "x": -85,
+    "y": -2635
   },
   {
-    "name": "Yarrow",
-    "x": -722,
-    "y": -693
+    "name": "Alasia",
+    "x": -1030,
+    "y": -1324
   },
   {
-    "name": "Yasotaro",
-    "x": -592,
-    "y": -819
+    "name": "Alathfar",
+    "x": 1634,
+    "y": -408
   },
   {
-    "name": "Ganesh",
-    "x": -514,
-    "y": -896
+    "name": "Alchiba",
+    "x": 21,
+    "y": -1779
   },
   {
-    "name": "Dillard",
-    "x": -503,
-    "y": -942
+    "name": "Alcyone",
+    "x": -12,
+    "y": -565
   },
   {
-    "name": "KCR-125-06-A",
-    "x": -571,
+    "name": "Aldhanab",
+    "x": 1099,
+    "y": -2693
+  },
+  {
+    "name": "Aldulfin",
+    "x": -883,
+    "y": -3045
+  },
+  {
+    "name": "Alexander",
+    "x": -638,
+    "y": -1426
+  },
+  {
+    "name": "Algenib",
+    "x": -81,
+    "y": -2091
+  },
+  {
+    "name": "Algieba",
+    "x": 1658,
     "y": -1005
   },
   {
-    "name": "KCR-125-06-C",
-    "x": -592,
-    "y": -1011
+    "name": "Algol",
+    "x": -706,
+    "y": -899
   },
   {
-    "name": "Refuge",
-    "x": -585,
-    "y": -1002
+    "name": "Ali Shar",
+    "x": 479,
+    "y": -2430
   },
   {
-    "name": "KCR-125-06-B",
-    "x": -563,
-    "y": -1018
+    "name": "Alioth",
+    "x": -1418,
+    "y": -2848
   },
   {
-    "name": "Alsephina",
-    "x": 93,
-    "y": -685
+    "name": "Alizon",
+    "x": -132,
+    "y": -2442
   },
   {
-    "name": "Nebulai",
-    "x": 476,
-    "y": -1445
+    "name": "Aljanah",
+    "x": -638,
+    "y": -1890
   },
   {
-    "name": "Agueda",
-    "x": 478,
-    "y": -969
+    "name": "Alkaid",
+    "x": 550,
+    "y": -3139
   },
   {
-    "name": "Marfik",
-    "x": 580,
-    "y": -904
+    "name": "Alkaphrah",
+    "x": -262,
+    "y": 83
   },
   {
-    "name": "Zunker",
-    "x": -417,
-    "y": -1253
+    "name": "Alkarab",
+    "x": 1151,
+    "y": -3091
   },
   {
-    "name": " J-156-18(L)",
-    "x": 681,
-    "y": -2896
+    "name": "Alkes",
+    "x": 395,
+    "y": -3003
   },
   {
-    "name": "Dickerson",
-    "x": -219,
-    "y": -28
+    "name": "Allman",
+    "x": 400,
+    "y": -2347
   },
   {
-    "name": "Templar",
-    "x": -217,
-    "y": -273
+    "name": "Almaaz",
+    "x": -1094,
+    "y": -2620
   },
   {
-    "name": "Ophiuchi",
-    "x": -120,
-    "y": -430
+    "name": "Almach",
+    "x": 1450,
+    "y": -1299
   },
   {
-    "name": "Maize",
-    "x": -61,
-    "y": -109
+    "name": "Alnair",
+    "x": -1176,
+    "y": -1535
   },
   {
-    "name": "Tislit",
-    "x": 840,
-    "y": 143
+    "name": "Alnilam",
+    "x": 17,
+    "y": -1873
   },
   {
-    "name": "Xihe",
-    "x": 862,
-    "y": 193
+    "name": "Alniyat",
+    "x": 453,
+    "y": -1567
   },
   {
-    "name": "Air",
-    "x": -120,
-    "y": 225
+    "name": "Alphard",
+    "x": -1995,
+    "y": -2658
   },
   {
-    "name": "Hope",
-    "x": -76,
-    "y": 256
+    "name": "Alpherg",
+    "x": 1185,
+    "y": -3194
   },
   {
-    "name": "Mary",
-    "x": -149,
-    "y": 297
+    "name": "Alrescha",
+    "x": 1476,
+    "y": -1171
   },
   {
-    "name": "Crux",
-    "x": -113,
-    "y": 176
+    "name": "Alruba",
+    "x": 1904,
+    "y": -744
   },
   {
-    "name": "Mannerheim",
-    "x": -649,
-    "y": 37
+    "name": "Alsafi",
+    "x": -369,
+    "y": -1680
   },
   {
-    "name": "Mesa",
-    "x": -1078,
-    "y": 56
+    "name": "Alsciaukat",
+    "x": -690,
+    "y": -1378
   },
   {
-    "name": "Carol's Star",
-    "x": -1136,
-    "y": 69
+    "name": "Alshat",
+    "x": -956,
+    "y": -1461
   },
   {
-    "name": "Even Star",
-    "x": -1192,
-    "y": 34
+    "name": "Altair",
+    "x": -238,
+    "y": -499
   },
   {
-    "name": "GSC 24546-14161",
-    "x": -1141,
-    "y": 190
-  },
-  {
-    "name": "Kremlin",
-    "x": -1076,
-    "y": 174
-  },
-  {
-    "name": "Darius",
-    "x": -793,
-    "y": 245
-  },
-  {
-    "name": "Felix",
-    "x": -675,
-    "y": 60
-  },
-  {
-    "name": "Mirfak",
-    "x": -309,
-    "y": 150
-  },
-  {
-    "name": "Mahsati",
-    "x": -20,
-    "y": 181
-  },
-  {
-    "name": "Matagorda",
-    "x": 236,
-    "y": -76
-  },
-  {
-    "name": "Maxwell",
-    "x": 162,
-    "y": -118
-  },
-  {
-    "name": "Heritage",
-    "x": 475,
+    "name": "Altara",
+    "x": -1361,
     "y": -173
   },
   {
-    "name": "Intan",
-    "x": 1499,
-    "y": -191
+    "name": "Altaria",
+    "x": -463,
+    "y": -1345
   },
   {
-    "name": "Artesia",
-    "x": 1376,
-    "y": -206
+    "name": "Alterf",
+    "x": -1490,
+    "y": -107
   },
   {
-    "name": "Libertas",
-    "x": 1327,
-    "y": -193
+    "name": "Aludra",
+    "x": -1226,
+    "y": -1436
   },
   {
-    "name": "Włocławek",
-    "x": -799,
-    "y": -447
+    "name": "Alula Borealis",
+    "x": -1037,
+    "y": -2779
   },
   {
-    "name": "Sarduchi",
-    "x": -162,
-    "y": -797
+    "name": "Alya",
+    "x": 1706,
+    "y": -1727
   },
   {
-    "name": "Warner",
-    "x": -323,
-    "y": -881
+    "name": "Alzirr",
+    "x": -990,
+    "y": -2674
   },
   {
-    "name": "Visigoth",
-    "x": -430,
+    "name": "Amadioha",
+    "x": -1033,
+    "y": -3131
+  },
+  {
+    "name": "Amansinaya",
+    "x": -19,
+    "y": -2557
+  },
+  {
+    "name": "Anadolu",
+    "x": 1720,
+    "y": -1310
+  },
+  {
+    "name": "Ananuca",
+    "x": -1059,
+    "y": -1506
+  },
+  {
+    "name": "Ancha",
+    "x": 1800,
+    "y": -1328
+  },
+  {
+    "name": "Anderson",
+    "x": -614,
+    "y": -1107
+  },
+  {
+    "name": "Andromara",
+    "x": -1065,
+    "y": -2350
+  },
+  {
+    "name": "Hypatia",
+    "x": -303,
+    "y": -641
+  },
+  {
+    "name": "Aniara",
+    "x": 262,
+    "y": -308
+  },
+  {
+    "name": "Ankaa",
+    "x": -571,
+    "y": -1190
+  },
+  {
+    "name": "Anomaly",
+    "x": 46,
+    "y": 217
+  },
+  {
+    "name": "Antares",
+    "x": -368,
+    "y": -569
+  },
+  {
+    "name": "Aphid",
+    "x": -8,
+    "y": -2925
+  },
+  {
+    "name": "Arendscheldt",
+    "x": -514,
+    "y": -2933
+  },
+  {
+    "name": "Argo",
+    "x": 1368,
+    "y": -915
+  },
+  {
+    "name": "Arkab Posterior",
+    "x": 1238,
+    "y": -1393
+  },
+  {
+    "name": "Arkab Prior",
+    "x": 956,
+    "y": -771
+  },
+  {
+    "name": "Artemis",
+    "x": 972,
+    "y": -2117
+  },
+  {
+    "name": "Ascella",
+    "x": -1191,
+    "y": -1927
+  },
+  {
+    "name": "Asellus Australis",
+    "x": -1894,
+    "y": -1649
+  },
+  {
+    "name": "Asellus Primus",
+    "x": -1010,
+    "y": -705
+  },
+  {
+    "name": "Asellus Secundus",
+    "x": -378,
+    "y": 107
+  },
+  {
+    "name": "Asellus Tertius",
+    "x": 466,
+    "y": -2208
+  },
+  {
+    "name": "Asgard",
+    "x": -1851,
+    "y": -1608
+  },
+  {
+    "name": "Astral Fields",
+    "x": 1160,
+    "y": -2829
+  },
+  {
+    "name": "Astrylis",
+    "x": 1868,
+    "y": -548
+  },
+  {
+    "name": "Atakoraka",
+    "x": 213,
+    "y": -2541
+  },
+  {
+    "name": "Atlas",
+    "x": 894,
+    "y": -905
+  },
+  {
+    "name": "Atria",
+    "x": 115,
+    "y": -826
+  },
+  {
+    "name": "Atriax",
+    "x": -1292,
+    "y": -2443
+  },
+  {
+    "name": "Augusta",
+    "x": 879,
+    "y": -2896
+  },
+  {
+    "name": "Aura",
+    "x": 1287,
+    "y": -715
+  },
+  {
+    "name": "Aurara",
+    "x": -1802,
+    "y": -1701
+  },
+  {
+    "name": "Avior",
+    "x": -1342,
+    "y": -656
+  },
+  {
+    "name": "Ax�lotl",
+    "x": -422,
+    "y": 214
+  },
+  {
+    "name": "Ayeyarwady",
+    "x": -1618,
+    "y": -2430
+  },
+  {
+    "name": "Azelfafage",
+    "x": 762,
+    "y": -3086
+  },
+  {
+    "name": "Azha",
+    "x": -1501,
+    "y": 37
+  },
+  {
+    "name": "Azmidi",
+    "x": -72,
+    "y": -2562
+  },
+  {
+    "name": "Azrael",
+    "x": 1523,
+    "y": -1120
+  },
+  {
+    "name": "Babiiha",
+    "x": -1074,
+    "y": -1202
+  },
+  {
+    "name": "Baekdu",
+    "x": -1944,
+    "y": -1444
+  },
+  {
+    "name": "Bannerman",
+    "x": 1148,
+    "y": -2926
+  },
+  {
+    "name": "Barnard's Star",
+    "x": -345,
+    "y": -333
+  },
+  {
+    "name": "Barnes",
+    "x": 372,
+    "y": -2388
+  },
+  {
+    "name": "Barnett",
+    "x": 426,
+    "y": -2539
+  },
+  {
+    "name": "Basra",
+    "x": 247,
+    "y": -1676
+  },
+  {
+    "name": "Batsu",
+    "x": 1652,
+    "y": -676
+  },
+  {
+    "name": "Beid",
+    "x": 89,
+    "y": -882
+  },
+  {
+    "name": "Belel",
+    "x": 529,
+    "y": -3103
+  },
+  {
+    "name": "Belenos",
+    "x": 280,
+    "y": -58
+  },
+  {
+    "name": "Bellatrix",
+    "x": -2206,
+    "y": -1404
+  },
+  {
+    "name": "Berehynia",
+    "x": -215,
+    "y": -2683
+  },
+  {
+    "name": "Bibha",
+    "x": 254,
+    "y": -1498
+  },
+  {
+    "name": "Black",
+    "x": -555,
+    "y": -791
+  },
+  {
+    "name": "Blue",
+    "x": 490,
+    "y": -1662
+  },
+  {
+    "name": "Borman",
+    "x": -894,
+    "y": -639
+  },
+  {
+    "name": "Bosona",
+    "x": -36,
+    "y": -1693
+  },
+  {
+    "name": "Botein",
+    "x": 486,
+    "y": -2728
+  },
+  {
+    "name": "Breslau",
+    "x": -660,
+    "y": -3022
+  },
+  {
+    "name": "Brikiub",
+    "x": 279,
+    "y": -2958
+  },
+  {
+    "name": "Brinkman",
+    "x": -560,
+    "y": -3031
+  },
+  {
+    "name": "Bro",
+    "x": -1106,
+    "y": -2283
+  },
+  {
+    "name": "Buna",
+    "x": 1084,
+    "y": -2377
+  },
+  {
+    "name": "Caesar",
+    "x": -987,
+    "y": -1385
+  },
+  {
+    "name": "Candor",
+    "x": 43,
+    "y": -2299
+  },
+  {
+    "name": "Canis Minoris",
+    "x": -120,
+    "y": -198
+  },
+  {
+    "name": "Capella",
+    "x": 395,
+    "y": -1964
+  },
+  {
+    "name": "Caph",
+    "x": 445,
+    "y": -864
+  },
+  {
+    "name": "Carlton",
+    "x": -594,
+    "y": -3147
+  },
+  {
+    "name": "Carter",
+    "x": 254,
+    "y": -1759
+  },
+  {
+    "name": "Cascabel",
+    "x": 349,
+    "y": -2717
+  },
+  {
+    "name": "Casimir's Star",
+    "x": 1913,
+    "y": -535
+  },
+  {
+    "name": "Cassim",
+    "x": 1576,
+    "y": -162
+  },
+  {
+    "name": "Castor",
+    "x": 1967,
+    "y": -641
+  },
+  {
+    "name": "Castula",
+    "x": -1878,
+    "y": -2233
+  },
+  {
+    "name": "Casulli",
+    "x": -485,
+    "y": -430
+  },
+  {
+    "name": "Cavernia",
+    "x": 579,
+    "y": -856
+  },
+  {
+    "name": "Cebalrai",
+    "x": -1029,
     "y": -749
   },
   {
+    "name": "Ceibo",
+    "x": 124,
+    "y": -3020
+  },
+  {
+    "name": "Celaeno",
+    "x": 48,
+    "y": -1019
+  },
+  {
+    "name": "Celestria",
+    "x": -1231,
+    "y": -1790
+  },
+  {
+    "name": "Cerberus",
+    "x": 626,
+    "y": -3111
+  },
+  {
+    "name": "Chamukuy",
+    "x": -615,
+    "y": -381
+  },
+  {
+    "name": "Chantilly",
+    "x": 612,
+    "y": -2991
+  },
+  {
+    "name": "Chara",
+    "x": -1323,
+    "y": -33
+  },
+  {
+    "name": "Chechia",
+    "x": 944,
+    "y": -2161
+  },
+  {
+    "name": "Chee",
+    "x": -956,
+    "y": -1634
+  },
+  {
+    "name": "Chelsea",
+    "x": 63,
+    "y": -2458
+  },
+  {
+    "name": "Chen",
+    "x": -183,
+    "y": -925
+  },
+  {
+    "name": "Chomanand",
+    "x": -2206,
+    "y": -1279
+  },
+  {
+    "name": "Chroma",
+    "x": -1474,
+    "y": -3029
+  },
+  {
+    "name": "Citadelle",
+    "x": 1629,
+    "y": -1526
+  },
+  {
+    "name": "Citala",
+    "x": 925,
+    "y": 41
+  },
+  {
+    "name": "Clairmont",
+    "x": 112,
+    "y": -2404
+  },
+  {
+    "name": "Clearaway",
+    "x": -62,
+    "y": -2309
+  },
+  {
+    "name": "Cleopatra",
+    "x": 170,
+    "y": 141
+  },
+  {
+    "name": "Cohagen",
+    "x": 129,
+    "y": 46
+  },
+  {
+    "name": "Concubine",
+    "x": 574,
+    "y": -635
+  },
+  {
+    "name": "Congo",
+    "x": 1128,
+    "y": -1937
+  },
+  {
+    "name": "Conrad's Star",
+    "x": -1260,
+    "y": 126
+  },
+  {
+    "name": "Cornerstone",
+    "x": 1650,
+    "y": -511
+  },
+  {
+    "name": "Corrigan",
+    "x": 282,
+    "y": -2457
+  },
+  {
+    "name": "Croft",
+    "x": 2076,
+    "y": -698
+  },
+  {
+    "name": "Cujam",
+    "x": -1051,
+    "y": -2687
+  },
+  {
+    "name": "Cursa",
+    "x": -526,
+    "y": -1771
+  },
+  {
+    "name": "Dabih",
+    "x": -248,
+    "y": -2970
+  },
+  {
+    "name": "Danfeng",
+    "x": 204,
+    "y": -2389
+  },
+  {
+    "name": "Daniel",
+    "x": 707,
+    "y": -2932
+  },
+  {
+    "name": "Degenhart",
+    "x": 505,
+    "y": -1725
+  },
+  {
+    "name": "Delilah's Navel",
+    "x": 23,
+    "y": -443
+  },
+  {
+    "name": "Delta Pavonis",
+    "x": -132,
+    "y": -561
+  },
+  {
+    "name": "Deneb Algedi",
+    "x": -1970,
+    "y": -1678
+  },
+  {
+    "name": "Denebola",
+    "x": -1699,
+    "y": -1627
+  },
+  {
+    "name": "Des Moines",
+    "x": 685,
+    "y": -2959
+  },
+  {
+    "name": "Diadem",
+    "x": -342,
+    "y": -1211
+  },
+  {
+    "name": "Dickinson",
+    "x": 146,
+    "y": -992
+  },
+  {
+    "name": "Dilmun",
+    "x": -535,
+    "y": -723
+  },
+  {
+    "name": "Dingolay",
+    "x": -1229,
+    "y": -95
+  },
+  {
+    "name": "Diphda",
+    "x": -692,
+    "y": -1821
+  },
+  {
+    "name": "Dockhorn",
+    "x": 1252,
+    "y": -895
+  },
+  {
+    "name": "Dogma",
+    "x": -377,
+    "y": 0
+  },
+  {
+    "name": "Dombay",
+    "x": 833,
+    "y": -2900
+  },
+  {
+    "name": "Doreas",
+    "x": 37,
+    "y": -2246
+  },
+  {
+    "name": "Dschubba",
+    "x": -2014,
+    "y": -1627
+  },
+  {
+    "name": "Durandel",
+    "x": -901,
+    "y": -2486
+  },
+  {
+    "name": "Dziban",
+    "x": -831,
+    "y": -1523
+  },
+  {
+    "name": "Echnaton",
+    "x": 176,
+    "y": -2788
+  },
+  {
+    "name": "Eckstein",
+    "x": 1269,
+    "y": -1440
+  },
+  {
+    "name": "Eclipse",
+    "x": -817,
+    "y": -2087
+  },
+  {
+    "name": "Ecliptara",
+    "x": 1027,
+    "y": -430
+  },
+  {
+    "name": "Edwin",
+    "x": 999,
+    "y": -1429
+  },
+  {
+    "name": "Elder's Reach",
+    "x": 1821,
+    "y": -130
+  },
+  {
+    "name": "Electra",
+    "x": -1229,
+    "y": -1891
+  },
+  {
+    "name": "Electron",
+    "x": -871,
+    "y": -2887
+  },
+  {
+    "name": "Elf",
+    "x": 709,
+    "y": -2718
+  },
+  {
+    "name": "Elgafar",
+    "x": -1309,
+    "y": 164
+  },
+  {
+    "name": "Elnath",
+    "x": 1530,
+    "y": -973
+  },
+  {
+    "name": "Elric",
+    "x": 260,
+    "y": -2271
+  },
+  {
+    "name": "Eltanin",
+    "x": 2118,
+    "y": -781
+  },
+  {
+    "name": "Emiw",
+    "x": 1044,
+    "y": -1945
+  },
+  {
+    "name": "Endicott",
+    "x": -3,
+    "y": -2364
+  },
+  {
+    "name": "Enif",
+    "x": -1947,
+    "y": -2069
+  },
+  {
+    "name": "Ephraim",
+    "x": -1324,
+    "y": -2314
+  },
+  {
+    "name": "Epsilon Eridani",
+    "x": -507,
+    "y": -221
+  },
+  {
+    "name": "Epsilon Indi",
+    "x": -367,
+    "y": -386
+  },
+  {
+    "name": "Erebus",
+    "x": -591,
+    "y": -1637
+  },
+  {
+    "name": "Erewhon",
+    "x": 1226,
+    "y": -1856
+  },
+  {
+    "name": "Errai",
+    "x": -351,
+    "y": -2488
+  },
+  {
+    "name": "Estella de la Muerte",
+    "x": -251,
+    "y": -1941
+  },
+  {
+    "name": "Excalibur",
+    "x": 1425,
+    "y": -635
+  },
+  {
+    "name": "Fang",
+    "x": -1917,
+    "y": -2990
+  },
+  {
+    "name": "Felis",
+    "x": 1635,
+    "y": -965
+  },
+  {
+    "name": "Filetdor",
+    "x": -1520,
+    "y": 171
+  },
+  {
+    "name": "Fischer",
+    "x": 748,
+    "y": -2279
+  },
+  {
+    "name": "Fordyce",
+    "x": 887,
+    "y": -2829
+  },
+  {
+    "name": "Formosa",
+    "x": 918,
+    "y": -2736
+  },
+  {
+    "name": "Foshee",
+    "x": -1256,
+    "y": -846
+  },
+  {
+    "name": "Fountain",
+    "x": 711,
+    "y": -682
+  },
+  {
+    "name": "Foximan",
+    "x": 450,
+    "y": -2506
+  },
+  {
+    "name": "Franconia",
+    "x": 329,
+    "y": -2659
+  },
+  {
+    "name": "Franz",
+    "x": -323,
+    "y": -1597
+  },
+  {
+    "name": "Fulu",
+    "x": 1433,
+    "y": -1164
+  },
+  {
+    "name": "Funi",
+    "x": 853,
+    "y": -1415
+  },
+  {
+    "name": "Fuyue",
+    "x": 1898,
+    "y": -632
+  },
+  {
+    "name": "Gacrux",
+    "x": 1386,
+    "y": -1667
+  },
+  {
+    "name": "Gagarin's Cradle",
+    "x": -1013,
+    "y": -3419
+  },
+  {
+    "name": "Gar",
+    "x": 508,
+    "y": -2552
+  },
+  {
+    "name": "Gaston",
+    "x": 608,
+    "y": -2836
+  },
+  {
+    "name": "Geminga",
+    "x": -1112,
+    "y": -2694
+  },
+  {
+    "name": "Gemini",
+    "x": -129,
+    "y": -2739
+  },
+  {
+    "name": "Georgia",
+    "x": -1160,
+    "y": -2595
+  },
+  {
+    "name": "Getout",
+    "x": -851,
+    "y": -2435
+  },
+  {
+    "name": "Giausar",
+    "x": -1928,
+    "y": -2055
+  },
+  {
+    "name": "Gienah",
+    "x": 1393,
+    "y": -560
+  },
+  {
+    "name": "Gloas",
+    "x": -1735,
+    "y": -1612
+  },
+  {
+    "name": "Gomeisa",
+    "x": -2018,
+    "y": -1529
+  },
+  {
+    "name": "Gosset",
+    "x": -646,
+    "y": -2998
+  },
+  {
+    "name": "Graffias",
+    "x": 1302,
+    "y": -269
+  },
+  {
+    "name": "Gregor",
+    "x": -729,
+    "y": -2522
+  },
+  {
+    "name": "Grendelsbane",
+    "x": 86,
+    "y": -2198
+  },
+  {
+    "name": "Groombridge",
+    "x": -117,
+    "y": -357
+  },
+  {
+    "name": "Guahayona",
+    "x": 679,
+    "y": -2725
+  },
+  {
+    "name": "Gualt",
+    "x": 564,
+    "y": -2542
+  },
+  {
+    "name": "Gumala",
+    "x": 987,
+    "y": -1092
+  },
+  {
+    "name": "Guniibuu",
+    "x": 211,
+    "y": -3129
+  },
+  {
+    "name": "Hadar",
+    "x": 104,
+    "y": -2583
+  },
+  {
+    "name": "Hallman",
+    "x": 639,
+    "y": -2741
+  },
+  {
+    "name": "Halo",
+    "x": -1993,
+    "y": -2111
+  },
+  {
+    "name": "Hamal",
+    "x": 422,
+    "y": -2450
+  },
+  {
+    "name": "Hancock",
+    "x": -89,
+    "y": -2503
+  },
+  {
+    "name": "Hannah's Star",
+    "x": -146,
+    "y": -2690
+  },
+  {
+    "name": "Hanuman",
+    "x": 1168,
+    "y": -854
+  },
+  {
+    "name": "Harding",
+    "x": -448,
+    "y": -1128
+  },
+  {
+    "name": "Haven",
+    "x": 760,
+    "y": -2863
+  },
+  {
+    "name": "Heinlein's Reach",
+    "x": 847,
+    "y": -780
+  },
+  {
+    "name": "Heinrich's Stern",
+    "x": -647,
+    "y": -3090
+  },
+  {
+    "name": "Helionix",
+    "x": 1631,
+    "y": -579
+  },
+  {
+    "name": "Helmsport",
+    "x": 310,
+    "y": -2727
+  },
+  {
+    "name": "Hendrikson",
+    "x": -430,
+    "y": -3180
+  },
+  {
+    "name": "Hennesy",
+    "x": 2169,
+    "y": -805
+  },
+  {
+    "name": "Hera (Haven-Sector)",
+    "x": 625,
+    "y": -2893
+  },
+  {
+    "name": "Hera (Silesia-Sector)",
+    "x": -461,
+    "y": -2886
+  },
+  {
+    "name": "Heze",
+    "x": -1833,
+    "y": -1712
+  },
+  {
+    "name": "Hillman",
+    "x": -376,
+    "y": -2958
+  },
+  {
+    "name": "Hoggar",
+    "x": -786,
+    "y": -2051
+  },
+  {
+    "name": "Homam",
+    "x": 773,
+    "y": -2705
+  },
+  {
+    "name": "Homebrew",
+    "x": -663,
+    "y": -239
+  },
+  {
+    "name": "Horizon Crest",
+    "x": -719,
+    "y": -1987
+  },
+  {
+    "name": "Hound's Eye",
+    "x": -459,
+    "y": -861
+  },
+  {
+    "name": "Hubarius",
+    "x": -751,
+    "y": -1756
+  },
+  {
+    "name": "Hume",
+    "x": -618,
+    "y": -3027
+  },
+  {
+    "name": "Hussain",
+    "x": -949,
+    "y": -2394
+  },
+  {
+    "name": "Hyacinth",
+    "x": 315,
+    "y": -2677
+  },
+  {
+    "name": "Ibrahim",
+    "x": -1410,
+    "y": -2640
+  },
+  {
+    "name": "Iklil",
+    "x": 223,
+    "y": -2907
+  },
+  {
+    "name": "Imai",
+    "x": 364,
+    "y": -481
+  },
+  {
+    "name": "Imperatori",
+    "x": -381,
+    "y": -2707
+  },
+  {
+    "name": "Innes' Star",
+    "x": -82,
+    "y": -526
+  },
+  {
+    "name": "Inquill",
+    "x": -1886,
+    "y": -1517
+  },
+  {
+    "name": "Irena",
+    "x": 1361,
+    "y": -533
+  },
+  {
+    "name": "Isaac",
+    "x": 1460,
+    "y": -1664
+  },
+  {
+    "name": "Itonda",
+    "x": 754,
+    "y": -1114
+  },
+  {
+    "name": "Ivan",
+    "x": 2123,
+    "y": -351
+  },
+  {
+    "name": "Ivanhoe",
+    "x": 300,
+    "y": -2914
+  },
+  {
+    "name": "Jarmon",
+    "x": -444,
+    "y": -3170
+  },
+  {
+    "name": "Joshua",
+    "x": 172,
+    "y": 73
+  },
+  {
+    "name": "Joubert",
+    "x": 676,
+    "y": -2840
+  },
+  {
+    "name": "Joust",
+    "x": 575,
+    "y": -2794
+  },
+  {
+    "name": "Kaas",
+    "x": 1336,
+    "y": -1094
+  },
+  {
+    "name": "Kaewkosin",
+    "x": -686,
+    "y": -2623
+  },
+  {
+    "name": "Kaffaljidhma",
+    "x": -1374,
+    "y": -2035
+  },
+  {
+    "name": "Kalausi",
+    "x": 1078,
+    "y": -391
+  },
+  {
+    "name": "Kamuy",
+    "x": 1260,
+    "y": -1187
+  },
+  {
+    "name": "Kapteyn's Star",
+    "x": -438,
+    "y": -325
+  },
+  {
+    "name": "Karlovec",
+    "x": 1220,
+    "y": -265
+  },
+  {
+    "name": "Kaus Borealis",
+    "x": -353,
+    "y": -940
+  },
+  {
+    "name": "Kaus Media",
+    "x": -1801,
+    "y": -1513
+  },
+  {
+    "name": "Kay",
+    "x": 885,
+    "y": -1899
+  },
+  {
+    "name": "Keid",
+    "x": 427,
+    "y": -512
+  },
+  {
+    "name": "Kelvin",
+    "x": 1155,
+    "y": -1646
+  },
+  {
+    "name": "Khambalia",
+    "x": 496,
+    "y": -758
+  },
+  {
+    "name": "Klein Station",
+    "x": -10,
+    "y": -2433
+  },
+  {
+    "name": "Kochab",
+    "x": 1594,
+    "y": -1147
+  },
+  {
+    "name": "Koeia",
+    "x": -1316,
+    "y": -250
+  },
+  {
+    "name": "Koit",
+    "x": 349,
+    "y": -1163
+  },
+  {
+    "name": "Kokkeh",
+    "x": -1498,
+    "y": -1935
+  },
+  {
+    "name": "Kornephoros",
+    "x": 565,
+    "y": -734
+  },
+  {
+    "name": "Kraaft",
+    "x": -683,
+    "y": -1620
+  },
+  {
+    "name": "Kruger",
+    "x": -480,
+    "y": -374
+  },
+  {
+    "name": "Kuli",
+    "x": 748,
+    "y": -941
+  },
+  {
+    "name": "Kuma",
+    "x": -1029,
+    "y": -3197
+  },
+  {
+    "name": "La Superba",
+    "x": -654,
+    "y": -1736
+  },
+  {
+    "name": "Lacille",
+    "x": -324,
+    "y": -377
+  },
+  {
+    "name": "Lando's Star",
+    "x": -832,
+    "y": -900
+  },
+  {
+    "name": "Larawag",
+    "x": 300,
+    "y": 254
+  },
+  {
+    "name": "Laurent",
+    "x": 421,
+    "y": -1814
+  },
+  {
+    "name": "Lemuria",
+    "x": -1284,
+    "y": -1663
+  },
+  {
+    "name": "Leopard",
+    "x": 799,
+    "y": -2849
+  },
+  {
+    "name": "Lerna",
+    "x": 695,
+    "y": -804
+  },
+  {
+    "name": "Libau",
+    "x": -671,
+    "y": -2975
+  },
+  {
+    "name": "Liberty",
+    "x": 198,
+    "y": -2449
+  },
+  {
+    "name": "Liesma",
+    "x": -1287,
+    "y": -2479
+  },
+  {
+    "name": "Lilii Borea",
+    "x": -1119,
+    "y": -1836
+  },
+  {
+    "name": "Lima",
+    "x": 120,
+    "y": -944
+  },
+  {
+    "name": "Limbo",
+    "x": 648,
+    "y": -998
+  },
+  {
+    "name": "Lionrock",
+    "x": 335,
+    "y": -2421
+  },
+  {
+    "name": "Lovat",
+    "x": 654,
+    "y": -2779
+  },
+  {
+    "name": "Lowell",
+    "x": 383,
+    "y": -2665
+  },
+  {
+    "name": "Lowenherz",
+    "x": -1062,
+    "y": -2454
+  },
+  {
+    "name": "Lucilinburhuc",
+    "x": 1004,
+    "y": -2985
+  },
+  {
+    "name": "Luminae",
+    "x": -195,
+    "y": -2523
+  },
+  {
+    "name": "Luminara",
+    "x": 1192,
+    "y": -2540
+  },
+  {
+    "name": "Lunaria",
+    "x": 705,
+    "y": 171
+  },
+  {
+    "name": "Lusitania",
+    "x": -1,
+    "y": -1875
+  },
+  {
+    "name": "Lutrell",
+    "x": -428,
+    "y": -2928
+  },
+  {
+    "name": "Luyten's Star",
+    "x": -257,
+    "y": -258
+  },
+  {
+    "name": "Lyrastra",
+    "x": 1211,
+    "y": -2738
+  },
+  {
+    "name": "Lyron",
+    "x": 60,
+    "y": -3112
+  },
+  {
+    "name": "Maastricht",
+    "x": 513,
+    "y": -2679
+  },
+  {
+    "name": "Maasym",
+    "x": -1204,
+    "y": -2306
+  },
+  {
+    "name": "Macondo",
+    "x": -1056,
+    "y": -577
+  },
+  {
+    "name": "Madras",
+    "x": 272,
+    "y": -2537
+  },
+  {
+    "name": "Mago",
+    "x": 1100,
+    "y": -1851
+  },
+  {
+    "name": "Magyar",
+    "x": -569,
+    "y": -2885
+  },
+  {
+    "name": "Mahasim",
+    "x": -1634,
+    "y": -2758
+  },
+  {
+    "name": "Manticore",
+    "x": -112,
+    "y": -2320
+  },
+  {
+    "name": "Markab",
+    "x": 743,
+    "y": -2796
+  },
+  {
+    "name": "Muzikant",
+    "x": -1604,
+    "y": -2621
+  },
+  {
+    "name": "Marsh",
+    "x": -692,
+    "y": -2897
+  },
+  {
+    "name": "Marsic",
+    "x": 1059,
+    "y": -2274
+  },
+  {
+    "name": "Martina",
+    "x": -1242,
+    "y": -2681
+  },
+  {
+    "name": "Maru",
+    "x": 528,
+    "y": -1962
+  },
+  {
+    "name": "Matapan",
+    "x": -1908,
+    "y": -2120
+  },
+  {
+    "name": "Mathias",
+    "x": 350,
+    "y": -2407
+  },
+  {
+    "name": "Matza",
+    "x": -298,
+    "y": -850
+  },
+  {
+    "name": "Maya",
+    "x": 1090,
+    "y": -1623
+  },
+  {
+    "name": "Mazaalai",
+    "x": -97,
+    "y": -835
+  },
+  {
+    "name": "Mebsuta",
+    "x": 893,
+    "y": -667
+  },
+  {
+    "name": "Megrez",
+    "x": -363,
+    "y": -2608
+  },
+  {
+    "name": "Meissa",
+    "x": -1958,
+    "y": -2236
+  },
+  {
+    "name": "Mekbuda",
+    "x": 849,
+    "y": -1502
+  },
+  {
+    "name": "Meleph",
+    "x": 1430,
+    "y": -1023
+  },
+  {
+    "name": "Mendel",
+    "x": 759,
+    "y": -3033
+  },
+  {
+    "name": "Mendoza",
+    "x": 4,
+    "y": -2484
+  },
+  {
+    "name": "Menkalinan",
+    "x": -343,
+    "y": -1780
+  },
+  {
+    "name": "Menkar",
+    "x": -1964,
+    "y": -2467
+  },
+  {
+    "name": "Menkent",
+    "x": 608,
+    "y": -314
+  },
+  {
+    "name": "Menkib",
+    "x": -881,
+    "y": -905
+  },
+  {
+    "name": "Merak",
+    "x": 80,
+    "y": 44
+  },
+  {
+    "name": "Meridiana",
+    "x": -1479,
+    "y": -1135
+  },
+  {
+    "name": "Meroa",
+    "x": 1059,
+    "y": -1080
+  },
+  {
+    "name": "Merope",
+    "x": 1037,
+    "y": -3271
+  },
+  {
+    "name": "Mesarthim",
+    "x": 897,
+    "y": -3146
+  },
+  {
+    "name": "Micah",
+    "x": 244,
+    "y": -2379
+  },
+  {
+    "name": "Baccara",
+    "x": -1439,
+    "y": -2720
+  },
+  {
+    "name": "Michael",
+    "x": 657,
+    "y": -2686
+  },
+  {
+    "name": "Midgard",
+    "x": -1762,
+    "y": -2816
+  },
+  {
+    "name": "Mimosa",
+    "x": 1182,
+    "y": -2340
+  },
+  {
+    "name": "Minchir",
+    "x": -269,
+    "y": -2865
+  },
+  {
+    "name": "Minette",
+    "x": 80,
+    "y": -2277
+  },
+  {
+    "name": "Minorca",
+    "x": -253,
+    "y": -2474
+  },
+  {
+    "name": "Mira",
+    "x": -409,
+    "y": 51
+  },
+  {
+    "name": "Misam",
+    "x": -1100,
+    "y": -2301
+  },
+  {
+    "name": "Mizar",
+    "x": 751,
+    "y": -692
+  },
+  {
+    "name": "Monch",
+    "x": -1974,
+    "y": -2132
+  },
+  {
+    "name": "Montana",
+    "x": -1962,
+    "y": -389
+  },
+  {
+    "name": "Montuno",
+    "x": -1264,
+    "y": -1610
+  },
+  {
+    "name": "Morava",
+    "x": -704,
+    "y": -1730
+  },
+  {
+    "name": "Moriah",
+    "x": 1550,
+    "y": -262
+  },
+  {
+    "name": "Mouhoun",
+    "x": 1948,
+    "y": -812
+  },
+  {
+    "name": "Mpingo",
+    "x": -891,
+    "y": -2932
+  },
+  {
+    "name": "Muliphein",
+    "x": -336,
+    "y": 3
+  },
+  {
+    "name": "Muphrid",
+    "x": -890,
+    "y": -1387
+  },
+  {
+    "name": "Mura",
+    "x": -1470,
+    "y": 5
+  },
+  {
+    "name": "Murray",
+    "x": 1505,
+    "y": -1353
+  },
+  {
+    "name": "Muscida",
+    "x": 485,
+    "y": -355
+  },
+  {
+    "name": "Musica",
+    "x": 1050,
+    "y": -333
+  },
+  {
+    "name": "Muspelheim",
+    "x": -806,
+    "y": -2928
+  },
+  {
+    "name": "Mylar",
+    "x": 405,
+    "y": -2500
+  },
+  {
+    "name": "Mystery",
+    "x": -1307,
+    "y": -16
+  },
+  {
+    "name": "Nahn",
+    "x": 1775,
+    "y": -325
+  },
+  {
+    "name": "Naledi",
+    "x": -1147,
+    "y": -774
+  },
+  {
+    "name": "Naos",
+    "x": -1196,
+    "y": -1052
+  },
+  {
+    "name": "Narumi",
+    "x": -712,
+    "y": -2832
+  },
+  {
+    "name": "Nashira",
+    "x": -1390,
+    "y": -2266
+  },
+  {
+    "name": "Nasti",
+    "x": 212,
+    "y": -938
+  },
+  {
+    "name": "Natasha",
+    "x": 2183,
+    "y": -845
+  },
+  {
+    "name": "Navi",
+    "x": 1331,
+    "y": -628
+  },
+  {
+    "name": "Nebula",
+    "x": 2084,
+    "y": -751
+  },
+  {
+    "name": "Nebula Glade",
+    "x": 5,
+    "y": -2265
+  },
+  {
+    "name": "Nebulae",
+    "x": 956,
+    "y": -3028
+  },
+  {
+    "name": "Nebulon",
+    "x": 2289,
+    "y": -592
+  },
+  {
+    "name": "Nekkar",
+    "x": -1838,
+    "y": -2055
+  },
+  {
+    "name": "Nembus",
+    "x": -1169,
+    "y": -1706
+  },
+  {
+    "name": "Neo",
+    "x": -1629,
+    "y": -1405
+  },
+  {
+    "name": "Nero",
+    "x": -1007,
+    "y": -2285
+  },
+  {
+    "name": "Nervia",
+    "x": 1107,
+    "y": -177
+  },
+  {
+    "name": "New Berlin",
+    "x": -863,
+    "y": -2697
+  },
+  {
+    "name": "Nihal",
+    "x": 783,
+    "y": -1417
+  },
+  {
+    "name": "Nikawiy",
+    "x": 375,
+    "y": -2506
+  },
+  {
+    "name": "Noquisi",
+    "x": -663,
+    "y": -2769
+  },
+  {
+    "name": "Nostromo",
+    "x": 1740,
+    "y": -1086
+  },
+  {
+    "name": "Nothere",
+    "x": 1141,
+    "y": -412
+  },
+  {
+    "name": "Nova Heights",
+    "x": -286,
+    "y": -782
+  },
+  {
+    "name": "Novaris",
+    "x": 1638,
+    "y": -332
+  },
+  {
+    "name": "Nuada",
+    "x": -62,
+    "y": -2713
+  },
+  {
+    "name": "Nunki",
+    "x": -625,
+    "y": -1354
+  },
+  {
+    "name": "Nusakan",
+    "x": -1379,
+    "y": -1842
+  },
+  {
+    "name": "Nushagak",
+    "x": -1079,
+    "y": -1247
+  },
+  {
+    "name": "Nyamien",
+    "x": 1717,
+    "y": -64
+  },
+  {
+    "name": "Ofaubsils",
+    "x": 738,
+    "y": -1727
+  },
+  {
+    "name": "Ogma",
+    "x": -1543,
+    "y": -2416
+  },
+  {
+    "name": "Okab",
+    "x": -428,
+    "y": -1633
+  },
+  {
+    "name": "Okada",
+    "x": 228,
+    "y": -1238
+  },
+  {
+    "name": "Orange",
+    "x": -458,
+    "y": -1776
+  },
+  {
+    "name": "Orion's Legacy",
+    "x": 1399,
+    "y": -1532
+  },
+  {
+    "name": "Otherplace",
+    "x": 692,
+    "y": -753
+  },
+  {
+    "name": "Outlands",
+    "x": -61,
+    "y": -2812
+  },
+  {
+    "name": "Owens",
+    "x": 398,
+    "y": -2538
+  },
+  {
+    "name": "Paikauhale",
+    "x": 593,
+    "y": 56
+  },
+  {
+    "name": "Pandora",
+    "x": -481,
+    "y": -2872
+  },
+  {
+    "name": "Pandur",
+    "x": 1429,
+    "y": -244
+  },
+  {
+    "name": "Paols",
+    "x": -178,
+    "y": -1942
+  },
+  {
+    "name": "Paradox",
+    "x": 859,
+    "y": -564
+  },
+  {
+    "name": "Paragon",
+    "x": 295,
+    "y": -2581
+  },
+  {
+    "name": "Peacock",
+    "x": -673,
+    "y": -1520
+  },
+  {
+    "name": "Phact",
+    "x": 1179,
+    "y": -306
+  },
+  {
+    "name": "Phaedra",
+    "x": -758,
+    "y": -2457
+  },
+  {
+    "name": "Phecda",
+    "x": 123,
+    "y": -859
+  },
+  {
+    "name": "Phex",
+    "x": -1997,
+    "y": -2189
+  },
+  {
+    "name": "Phoenix",
+    "x": 2167,
+    "y": -565
+  },
+  {
+    "name": "Piautos",
+    "x": -80,
+    "y": -2756
+  },
+  {
+    "name": "Pincoya",
+    "x": -168,
+    "y": -974
+  },
+  {
+    "name": "Pipirima",
+    "x": -1273,
+    "y": -2793
+  },
+  {
+    "name": "Pipoltr",
+    "x": 111,
+    "y": -30
+  },
+  {
+    "name": "Pleione",
+    "x": -2116,
+    "y": -1314
+  },
+  {
+    "name": "Poerava",
+    "x": -1807,
+    "y": -1436
+  },
+  {
+    "name": "Poicters",
+    "x": 31,
+    "y": -2533
+  },
+  {
+    "name": "Polarian",
+    "x": 1230,
+    "y": -475
+  },
+  {
+    "name": "Polaris",
+    "x": 1470,
+    "y": -301
+  },
+  {
+    "name": "St Quentin",
+    "x": -618,
+    "y": -2428
+  },
+  {
+    "name": "Polaris Australis",
+    "x": 1181,
+    "y": -1134
+  },
+  {
+    "name": "Polis",
+    "x": 606,
+    "y": -809
+  },
+  {
+    "name": "Pollux",
+    "x": 601,
+    "y": -2594
+  },
+  {
+    "name": "Poole",
+    "x": 1305,
+    "y": -344
+  },
+  {
+    "name": "Porrima",
+    "x": -1004,
+    "y": -902
+  },
+  {
+    "name": "Portillo",
+    "x": -1756,
+    "y": -1386
+  },
+  {
+    "name": "Posnan",
+    "x": -541,
+    "y": -2926
+  },
+  {
+    "name": "Poul",
+    "x": 897,
+    "y": -1568
+  },
+  {
+    "name": "Praecipua",
+    "x": -1684,
+    "y": -2397
+  },
+  {
+    "name": "Prima Hyadum",
+    "x": 637,
+    "y": -1957
+  },
+  {
+    "name": "Procyon",
+    "x": -278,
+    "y": -162
+  },
+  {
+    "name": "Propus",
+    "x": 81,
+    "y": -1677
+  },
+  {
+    "name": "Proxima Centauri",
+    "x": -328,
+    "y": -285
+  },
+  {
+    "name": "Psyche",
+    "x": -494,
+    "y": -2830
+  },
+  {
+    "name": "Pulsara",
+    "x": -650,
+    "y": -951
+  },
+  {
+    "name": "Quentin",
+    "x": 10,
+    "y": -2212
+  },
+  {
+    "name": "Quest",
+    "x": 136,
+    "y": -2370
+  },
+  {
+    "name": "Stopover",
+    "x": 1228,
+    "y": -530
+  },
+  {
+    "name": "Quixara",
+    "x": -251,
+    "y": -1500
+  },
+  {
+    "name": "Irrlicht",
+    "x": -993,
+    "y": -2855
+  },
+  {
+    "name": "Ramen",
+    "x": -69,
+    "y": -2227
+  },
+  {
+    "name": "Ran",
+    "x": 1004,
+    "y": -3168
+  },
+  {
+    "name": "Rana",
+    "x": -1860,
+    "y": -2135
+  },
+  {
+    "name": "Rasalas",
+    "x": 141,
+    "y": -2510
+  },
+  {
+    "name": "Rasalgethi",
+    "x": 201,
+    "y": -759
+  },
+  {
+    "name": "Rasalhague",
+    "x": 668,
+    "y": -967
+  },
+  {
+    "name": "Rasmussen",
+    "x": -1203,
+    "y": -1451
+  },
+  {
+    "name": "Rastaban",
+    "x": -739,
+    "y": -982
+  },
+  {
+    "name": "Red",
+    "x": -1495,
+    "y": -2490
+  },
+  {
+    "name": "Reevesport",
+    "x": -263,
+    "y": -2620
+  },
+  {
+    "name": "Regor",
+    "x": 923,
+    "y": -392
+  },
+  {
+    "name": "Regulus",
+    "x": -292,
+    "y": 52
+  },
+  {
+    "name": "Relic",
+    "x": -1441,
+    "y": -855
+  },
+  {
+    "name": "Retrict",
+    "x": 25,
+    "y": -138
+  },
+  {
+    "name": "Revati",
+    "x": 852,
+    "y": -2404
+  },
+  {
+    "name": "Rho Apod",
+    "x": 44,
+    "y": -303
+  },
+  {
+    "name": "Ripley",
+    "x": -1756,
+    "y": -1990
+  },
+  {
+    "name": "Robert",
+    "x": 1181,
+    "y": -1381
+  },
+  {
+    "name": "Rosaliadecastro",
+    "x": -915,
+    "y": -208
+  },
+  {
+    "name": "Rosario's Dawn",
+    "x": -759,
+    "y": -2121
+  },
+  {
+    "name": "Rotanev",
+    "x": 1361,
+    "y": -320
+  },
+  {
+    "name": "Rukbat",
+    "x": 1865,
+    "y": -1425
+  },
+  {
+    "name": "Runciman",
+    "x": 417,
+    "y": -2616
+  },
+  {
+    "name": "Sabik",
+    "x": 792,
+    "y": -1907
+  },
+  {
+    "name": "Sachsen",
+    "x": -631,
+    "y": -2906
+  },
+  {
+    "name": "Sadachbia",
+    "x": -610,
+    "y": -2701
+  },
+  {
+    "name": "Sadalbari",
+    "x": -1977,
+    "y": -2255
+  },
+  {
+    "name": "Sadalmelik",
+    "x": -1281,
+    "y": -2407
+  },
+  {
+    "name": "Saginaw",
+    "x": -430,
+    "y": -2859
+  },
+  {
+    "name": "Saiph",
+    "x": 1523,
+    "y": -372
+  },
+  {
+    "name": "Sallah",
+    "x": 193,
+    "y": -2493
+  },
+  {
+    "name": "Saltash",
+    "x": -1633,
+    "y": 35
+  },
+  {
+    "name": "Samarkanda",
+    "x": -627,
+    "y": -1977
+  },
+  {
+    "name": "Samaya",
+    "x": 851,
+    "y": -1685
+  },
+  {
+    "name": "Samson",
+    "x": 364,
+    "y": -2577
+  },
+  {
+    "name": "Spectre",
+    "x": 599,
+    "y": -2749
+  },
+  {
+    "name": "San Sebastian",
+    "x": 408,
+    "y": -760
+  },
+  {
+    "name": "Santander",
+    "x": 0,
+    "y": -2568
+  },
+  {
+    "name": "Saphyr",
+    "x": 162,
+    "y": -1566
+  },
+  {
+    "name": "Sarah",
+    "x": -542,
+    "y": -3155
+  },
+  {
+    "name": "Visigoth",
+    "x": -418,
+    "y": -696
+  },
+  {
+    "name": "Sasebo",
+    "x": -874,
+    "y": -214
+  },
+  {
+    "name": "Sceptrum",
+    "x": 1558,
+    "y": -473
+  },
+  {
+    "name": "Scheat",
+    "x": 23,
+    "y": 283
+  },
+  {
+    "name": "Schedar",
+    "x": -578,
+    "y": 171
+  },
+  {
+    "name": "Schiller",
+    "x": -590,
+    "y": -2896
+  },
+  {
+    "name": "Seaford 9",
+    "x": -60,
+    "y": -2525
+  },
+  {
+    "name": "Secour",
+    "x": 395,
+    "y": -2759
+  },
+  {
+    "name": "Secunda Hyadum",
+    "x": 947,
+    "y": -1892
+  },
+  {
+    "name": "Segin",
+    "x": 549,
+    "y": 159
+  },
+  {
+    "name": "Seginus",
+    "x": -30,
+    "y": -974
+  },
+  {
+    "name": "Seljuk",
+    "x": 235,
+    "y": -2585
+  },
+  {
+    "name": "Seraphix",
+    "x": -783,
+    "y": -1367
+  },
+  {
+    "name": "Serenara",
+    "x": 1066,
+    "y": -1360
+  },
+  {
+    "name": "Serenis",
+    "x": -919,
+    "y": -1360
+  },
+  {
+    "name": "Sham",
+    "x": 439,
+    "y": -3127
+  },
+  {
+    "name": "Shama",
+    "x": 1002,
+    "y": -687
+  },
+  {
+    "name": "Shangri La",
+    "x": -1515,
+    "y": -2739
+  },
+  {
+    "name": "Sharon's Star",
+    "x": -540,
+    "y": -2905
+  },
+  {
+    "name": "Sheherazade",
+    "x": -862,
+    "y": -1148
+  },
+  {
+    "name": "Sheliak",
+    "x": 856,
+    "y": -398
+  },
+  {
+    "name": "Shenandoah",
+    "x": -5,
+    "y": -769
+  },
+  {
+    "name": "Sheratan",
+    "x": 270,
+    "y": -548
+  },
+  {
+    "name": "Sherkhan",
+    "x": 532,
+    "y": -1123
+  },
+  {
+    "name": "Shiva",
+    "x": -573,
+    "y": -102
+  },
+  {
+    "name": "Sigma",
+    "x": -484,
+    "y": -2916
+  },
+  {
+    "name": "Sigma Draconis",
+    "x": -316,
+    "y": -460
+  },
+  {
+    "name": "Sika",
+    "x": -1845,
+    "y": -2442
+  },
+  {
+    "name": "Silesia",
+    "x": -505,
+    "y": -2998
+  },
+  {
+    "name": "Sindbad",
+    "x": 1316,
+    "y": -3343
+  },
+  {
+    "name": "Sirius",
+    "x": -311,
+    "y": -117
+  },
+  {
+    "name": "Skat",
+    "x": -1462,
+    "y": -1823
+  },
+  {
+    "name": "Slaivrac",
+    "x": -1183,
+    "y": -1304
+  },
+  {
+    "name": "Slocum (Haven-Sector)",
+    "x": 828,
+    "y": -2747
+  },
+  {
+    "name": "Slocum (Silesia-Sector)",
+    "x": -588,
+    "y": -2856
+  },
+  {
+    "name": "Smoky",
+    "x": 1103,
+    "y": -3144
+  },
+  {
+    "name": "Sol",
+    "x": -304,
+    "y": -304
+  },
+  {
+    "name": "Solan",
+    "x": 520,
+    "y": -2576
+  },
+  {
+    "name": "Metropol",
+    "x": 447,
+    "y": -411
+  },
+  {
+    "name": "Solaris Vale",
+    "x": -188,
+    "y": -3157
+  },
+  {
+    "name": "Solithra",
+    "x": -957,
+    "y": -2757
+  },
+  {
+    "name": "Solon",
+    "x": 869,
+    "y": -2954
+  },
+  {
+    "name": "Solway",
+    "x": 268,
+    "y": -2207
+  },
+  {
+    "name": "Split",
+    "x": -1517,
+    "y": -641
+  },
+  {
+    "name": "Sprague",
+    "x": 982,
+    "y": -1721
+  },
+  {
+    "name": "Stardrifter",
+    "x": 23,
+    "y": -793
+  },
+  {
+    "name": "Stardust",
+    "x": -20,
+    "y": -3005
+  },
+  {
+    "name": "Sternenheim",
+    "x": -1618,
+    "y": -1638
+  },
+  {
+    "name": "Sterrennacht",
+    "x": -392,
+    "y": 129
+  },
+  {
+    "name": "Stribor",
+    "x": 1356,
+    "y": -1236
+  },
+  {
+    "name": "Sualocin",
+    "x": 460,
+    "y": -585
+  },
+  {
+    "name": "Suarez",
+    "x": 831,
+    "y": -2597
+  },
+  {
+    "name": "Suchien",
+    "x": -55,
+    "y": -2611
+  },
+  {
+    "name": "Sugano",
+    "x": -680,
+    "y": -548
+  },
+  {
+    "name": "Suhail",
+    "x": 499,
+    "y": -254
+  },
+  {
+    "name": "Sun-Yat",
+    "x": 326,
+    "y": -2618
+  },
+  {
+    "name": "Syrma",
+    "x": -779,
+    "y": -1571
+  },
+  {
+    "name": "Tabit",
+    "x": 2063,
+    "y": -285
+  },
+  {
+    "name": "Tacoma",
+    "x": 1327,
+    "y": -2618
+  },
+  {
+    "name": "Taika",
+    "x": 2000,
+    "y": -553
+  },
+  {
+    "name": "Talbott",
+    "x": -2151,
+    "y": -496
+  },
+  {
+    "name": "Talisman",
+    "x": -80,
+    "y": -2397
+  },
+  {
+    "name": "Talitha",
+    "x": -309,
+    "y": -1893
+  },
+  {
+    "name": "Talmu",
+    "x": -1664,
+    "y": -1496
+  },
+  {
+    "name": "Tambourin",
+    "x": 710,
+    "y": -2813
+  },
+  {
+    "name": "Tangra",
+    "x": 1152,
+    "y": -494
+  },
+  {
+    "name": "Tania Australis",
+    "x": -1063,
+    "y": -410
+  },
+  {
+    "name": "Tapecue",
+    "x": 2020,
+    "y": -426
+  },
+  {
+    "name": "Tarazed",
+    "x": 878,
+    "y": -2319
+  },
+  {
+    "name": "Tau Ceti",
+    "x": -469,
+    "y": -249
+  },
+  {
+    "name": "Taurinia",
+    "x": 708,
+    "y": -13
+  },
+  {
+    "name": "Taygeta",
+    "x": 1002,
+    "y": -2839
+  },
+  {
+    "name": "Tejat",
+    "x": -524,
+    "y": -2788
+  },
+  {
+    "name": "Telemach",
+    "x": 124,
+    "y": -2338
+  },
+  {
+    "name": "Telmach",
+    "x": -588,
+    "y": -2986
+  },
+  {
+    "name": "Terebellum",
+    "x": 1195,
+    "y": -683
+  },
+  {
+    "name": "Terra Haute",
+    "x": 2194,
+    "y": -717
+  },
+  {
+    "name": "Terrance",
+    "x": -367,
+    "y": -3118
+  },
+  {
+    "name": "Tevel",
+    "x": 710,
+    "y": -1497
+  },
+  {
+    "name": "Thabit",
+    "x": 1431,
+    "y": -2067
+  },
+  {
+    "name": "The Lip",
+    "x": 1135,
+    "y": -2590
+  },
+  {
+    "name": "Theemin",
+    "x": -1721,
+    "y": -1541
+  },
+  {
+    "name": "Theron",
+    "x": 472,
+    "y": -1298
+  },
+  {
+    "name": "Thetis",
+    "x": 486,
+    "y": -2618
+  },
+  {
+    "name": "Tianguan",
+    "x": 1258,
+    "y": -347
+  },
+  {
+    "name": "Tianyi",
+    "x": 553,
+    "y": -2494
+  },
+  {
+    "name": "Tiberian",
+    "x": 653,
+    "y": -1817
+  },
+  {
+    "name": "Tichy",
+    "x": 1054,
+    "y": -733
+  },
+  {
+    "name": "Tillerman",
+    "x": -2249,
+    "y": -441
+  },
+  {
+    "name": "Timir",
+    "x": 796,
+    "y": -2930
+  },
+  {
+    "name": "Titawin",
+    "x": 699,
+    "y": -444
+  },
+  {
+    "name": "Toebean",
+    "x": -238,
+    "y": -890
+  },
+  {
+    "name": "Tojil",
+    "x": 467,
+    "y": -882
+  },
+  {
+    "name": "Toliman",
+    "x": -1277,
+    "y": -1997
+  },
+  {
+    "name": "Torus",
+    "x": 780,
+    "y": -2121
+  },
+  {
+    "name": "Treasure's Chest",
+    "x": -1260,
+    "y": -2979
+  },
+  {
+    "name": "Treadway",
+    "x": 250,
+    "y": -2333
+  },
+  {
+    "name": "Trellis",
+    "x": -612,
+    "y": -2877
+  },
+  {
+    "name": "Trevor's Star",
+    "x": 564,
+    "y": -2628
+  },
+  {
+    "name": "Trivia",
+    "x": -1405,
+    "y": -2000
+  },
+  {
+    "name": "Tuiren",
+    "x": 650,
+    "y": -687
+  },
+  {
+    "name": "Tumult",
+    "x": -462,
+    "y": -3112
+  },
+  {
+    "name": "Tundra",
+    "x": -1454,
+    "y": 132
+  },
+  {
+    "name": "Tundra",
+    "x": -1537,
+    "y": -2139
+  },
+  {
+    "name": "Tupa",
+    "x": 2075,
+    "y": -578
+  },
+  {
+    "name": "Tupi",
+    "x": -1008,
+    "y": -2570
+  },
+  {
+    "name": "Tureis",
+    "x": -241,
+    "y": -1746
+  },
+  {
+    "name": "Uhura",
+    "x": -1094,
+    "y": -1118
+  },
+  {
+    "name": "Ukdah",
+    "x": -838,
+    "y": -1261
+  },
+  {
+    "name": "Umbraea",
+    "x": -606,
+    "y": -2619
+  },
+  {
+    "name": "Unukalhai",
+    "x": -1923,
+    "y": -2227
+  },
+  {
+    "name": "Unurgunite",
+    "x": -1297,
+    "y": -749
+  },
+  {
+    "name": "Uruk",
+    "x": 1670,
+    "y": -1191
+  },
+  {
+    "name": "Usul",
+    "x": 746,
+    "y": -1997
+  },
+  {
+    "name": "Van Allen",
+    "x": -1926,
+    "y": -2575
+  },
+  {
+    "name": "Van Laagen",
+    "x": 172,
+    "y": -2074
+  },
+  {
+    "name": "Van Maanen's Star",
+    "x": -422,
+    "y": -363
+  },
+  {
+    "name": "Vegastra",
+    "x": 1707,
+    "y": -739
+  },
+  {
+    "name": "Veritate",
+    "x": 1458,
+    "y": -343
+  },
+  {
+    "name": "Victoria",
+    "x": -1661,
+    "y": -282
+  },
+  {
+    "name": "Viorginis B",
+    "x": -204,
+    "y": -379
+  },
+  {
+    "name": "Virgil",
+    "x": -1280,
+    "y": -2893
+  },
+  {
+    "name": "Virginis A",
+    "x": -225,
+    "y": -346
+  },
+  {
+    "name": "Virtue",
+    "x": -457,
+    "y": -2176
+  },
+  {
+    "name": "Vishnu",
+    "x": 79,
+    "y": -2536
+  },
+  {
+    "name": "Visminiar",
+    "x": 520,
+    "y": -478
+  },
+  {
+    "name": "Vodka",
+    "x": -1703,
+    "y": -1430
+  },
+  {
+    "name": "Vortexara",
+    "x": -983,
+    "y": -2196
+  },
+  {
+    "name": "Vortexia",
+    "x": 326,
+    "y": -2455
+  },
+  {
+    "name": "Wasat",
+    "x": -1998,
+    "y": -2677
+  },
+  {
+    "name": "Wattle",
+    "x": 858,
+    "y": -525
+  },
+  {
+    "name": "Wazn",
+    "x": -362,
+    "y": -1900
+  },
+  {
+    "name": "Weaver",
+    "x": -524,
+    "y": -1270
+  },
+  {
+    "name": "Welladay",
+    "x": 448,
+    "y": -2444
+  },
+  {
+    "name": "White",
+    "x": -624,
+    "y": 189
+  },
+  {
+    "name": "Willis",
+    "x": -446,
+    "y": -3188
+  },
+  {
+    "name": "Wouri",
+    "x": 971,
+    "y": -1248
+  },
+  {
+    "name": "Wurren",
+    "x": 520,
+    "y": -584
+  },
+  {
+    "name": "Xamidimura",
+    "x": 1531,
+    "y": -657
+  },
+  {
+    "name": "Xuange",
+    "x": -317,
+    "y": -1966
+  },
+  {
+    "name": "Xylovaria",
+    "x": 754,
+    "y": 121
+  },
+  {
+    "name": "Yalta",
+    "x": -23,
+    "y": -2680
+  },
+  {
+    "name": "Yeb",
+    "x": 2,
+    "y": -1499
+  },
+  {
+    "name": "Yed Prior",
+    "x": 550,
+    "y": -669
+  },
+  {
+    "name": "Yeltsin's Star",
+    "x": -10,
+    "y": -2346
+  },
+  {
+    "name": "Yooni",
+    "x": 1457,
+    "y": -1065
+  },
+  {
+    "name": "Yorik",
+    "x": -137,
+    "y": -2484
+  },
+  {
+    "name": "Yule",
+    "x": 1289,
+    "y": -1587
+  },
+  {
+    "name": "Zahira's Star",
+    "x": 1931,
+    "y": -795
+  },
+  {
+    "name": "Zaniah",
+    "x": -1396,
+    "y": -1371
+  },
+  {
+    "name": "Zanzibar",
+    "x": -85,
+    "y": -2453
+  },
+  {
+    "name": "Zaurak",
+    "x": -837,
+    "y": -1496
+  },
+  {
+    "name": "Zavijava",
+    "x": -430,
+    "y": 197
+  },
+  {
+    "name": "Zembra",
+    "x": -1430,
+    "y": -657
+  },
+  {
+    "name": "Zhang",
+    "x": 893,
+    "y": -3203
+  },
+  {
+    "name": "Zhijian",
+    "x": -891,
+    "y": -2205
+  },
+  {
+    "name": "Zibal",
+    "x": -1811,
+    "y": -1245
+  },
+  {
+    "name": "Zreof",
+    "x": 1708,
+    "y": -419
+  },
+  {
+    "name": "Zubenelgenubi",
+    "x": -243,
+    "y": -774
+  },
+  {
+    "name": "Zubenelhakrabi",
+    "x": 865,
+    "y": -988
+  },
+  {
+    "name": "Zubeneschamali",
+    "x": 907,
+    "y": -584
+  },
+  {
+    "name": "Zuckerman",
+    "x": -25,
+    "y": -2277
+  },
+  {
+    "name": "Chamonix",
+    "x": 679,
+    "y": -3019
+  },
+  {
+    "name": "Nova Astra",
+    "x": 910,
+    "y": -2782
+  },
+  {
+    "name": "H 715+ 891",
+    "x": 594,
+    "y": -3402
+  },
+  {
+    "name": "GSC 23658-48227",
+    "x": 747,
+    "y": -3231
+  },
+  {
+    "name": "HIC 3297",
+    "x": 642,
+    "y": -3223
+  },
+  {
+    "name": "HIC 22185",
+    "x": 1385,
+    "y": -3132
+  },
+  {
+    "name": "Hilt 366",
+    "x": 1236,
+    "y": -2994
+  },
+  {
+    "name": "GSC 72461-36522",
+    "x": 1300,
+    "y": -2994
+  },
+  {
+    "name": "Hilt 193",
+    "x": 1250,
+    "y": -2967
+  },
+  {
+    "name": "GSC 24131-29442",
+    "x": 1323,
+    "y": -2900
+  },
+  {
+    "name": "HIC 82924",
+    "x": 1262,
+    "y": -2848
+  },
+  {
+    "name": "Hilt 417",
+    "x": 1457,
+    "y": -2669
+  },
+  {
+    "name": "Hilt 756",
+    "x": 1549,
+    "y": -2019
+  },
+  {
+    "name": "HIC 16499",
+    "x": 1538,
+    "y": -1856
+  },
+  {
+    "name": "GSC 12122-63157",
+    "x": 1469,
+    "y": -2279
+  },
+  {
+    "name": "Amy's Sun",
+    "x": 1291,
+    "y": -1942
+  },
+  {
+    "name": "HIC 58514",
+    "x": 1864,
+    "y": -1726
+  },
+  {
+    "name": "Hilt 944",
+    "x": 1927,
+    "y": -1312
+  },
+  {
+    "name": "HD 895745",
+    "x": 2003,
+    "y": -1392
+  },
+  {
+    "name": "Fafnir",
+    "x": -1703,
+    "y": -2837
+  },
+  {
+    "name": "Mothallah",
+    "x": -1793,
+    "y": -2860
+  },
+  {
+    "name": "Malmok",
+    "x": -1845,
+    "y": -2701
+  },
+  {
+    "name": "Fuchur",
+    "x": -1700,
+    "y": -2671
+  },
+  {
+    "name": "Hilt 636",
+    "x": 2399,
+    "y": -629
+  },
+  {
+    "name": "Hilt 832",
+    "x": 2281,
+    "y": -460
+  },
+  {
+    "name": "H 599+ 486",
+    "x": 1945,
+    "y": 1
+  },
+  {
+    "name": "Hilt 983",
+    "x": 1317,
+    "y": 1
+  },
+  {
+    "name": "H 9691+ 375",
+    "x": 1081,
+    "y": 146
+  },
+  {
+    "name": "Hilt 848",
+    "x": 948,
+    "y": 180
+  },
+  {
+    "name": "H 566+ 357",
+    "x": 571,
+    "y": 404
+  },
+  {
+    "name": "Spica",
+    "x": 606,
+    "y": 6
+  },
+  {
+    "name": "Hilt 545",
+    "x": 161,
+    "y": 368
+  },
+  {
+    "name": "Comondor",
+    "x": 126,
+    "y": 248
+  },
+  {
+    "name": "Hilt 173",
+    "x": -71,
+    "y": 368
+  },
+  {
+    "name": "Hilt 452",
+    "x": -428,
+    "y": 319
+  },
+  {
+    "name": "Aquaria",
+    "x": -667,
+    "y": -154
+  },
+  {
+    "name": "Westermann B",
+    "x": -554,
+    "y": 61
+  },
+  {
+    "name": "Westermann A",
+    "x": -552,
+    "y": 45
+  },
+  {
+    "name": "HIC 74871",
+    "x": -1224,
+    "y": 260
+  },
+  {
+    "name": "GSC 43649-38127",
+    "x": -1237,
+    "y": 271
+  },
+  {
+    "name": "H 625+ 211",
+    "x": -1084,
+    "y": 287
+  },
+  {
+    "name": "H 1171+ 149",
+    "x": -800,
+    "y": 349
+  },
+  {
+    "name": "HIC 55431",
+    "x": -615,
+    "y": 293
+  },
+  {
+    "name": "HD 1273",
+    "x": -693,
+    "y": 300
+  },
+  {
+    "name": "Hilt 477",
+    "x": -1598,
+    "y": 254
+  },
+  {
+    "name": "H 4433+ 245",
+    "x": -1794,
+    "y": 100
+  },
+  {
+    "name": "GSC 41417-92873",
+    "x": -410,
+    "y": -3395
+  },
+  {
+    "name": "H 9569+ 598",
+    "x": 156,
+    "y": -3332
+  },
+  {
+    "name": "GSC 57157-67892",
+    "x": 476,
+    "y": -3292
+  },
+  {
+    "name": "HD 2499",
+    "x": -222,
+    "y": -3356
+  },
+  {
+    "name": "HD 13913",
+    "x": -1459,
+    "y": -3248
+  },
+  {
+    "name": "HIC 17558",
+    "x": -1296,
+    "y": -3130
+  },
+  {
+    "name": "GSC 26214-49721",
+    "x": -1381,
+    "y": -3173
+  },
+  {
+    "name": "HD 82919",
+    "x": -1541,
+    "y": -3220
+  },
+  {
+    "name": "HIC 78477",
+    "x": -1608,
+    "y": -3165
+  },
+  {
+    "name": "HD 42495",
+    "x": -1754,
+    "y": -3129
+  },
+  {
+    "name": "GSC 48577-26927",
+    "x": -1793,
+    "y": -3161
+  },
+  {
+    "name": "HD 4688",
+    "x": -1905,
+    "y": -3097
+  },
+  {
+    "name": "H 942+ 665",
+    "x": -1992,
+    "y": -3134
+  },
+  {
+    "name": "HIC 1292",
+    "x": -1986,
+    "y": -2932
+  },
+  {
+    "name": "HD 51683",
+    "x": -2259,
+    "y": -2874
+  },
+  {
+    "name": "HIC 3583",
+    "x": -2235,
+    "y": -2409
+  },
+  {
+    "name": "Hilt 923",
+    "x": -2139,
+    "y": -2203
+  },
+  {
+    "name": "H 521+ 163",
+    "x": -2133,
+    "y": -1988
+  },
+  {
+    "name": "HD 4472",
+    "x": -2031,
+    "y": -2031
+  },
+  {
+    "name": "Hilt 699",
+    "x": -2090,
+    "y": -1799
+  },
+  {
+    "name": "Feck",
+    "x": -1653,
+    "y": -1966
+  },
+  {
+    "name": "Carbide",
+    "x": -1110,
+    "y": -2016
+  },
+  {
+    "name": "HD 67415",
+    "x": -2226,
+    "y": -1643
+  },
+  {
+    "name": "HD 559638",
+    "x": -2352,
+    "y": -1489
+  },
+  {
+    "name": "Hilt 937",
+    "x": -2518,
+    "y": -506
+  },
+  {
+    "name": "GSC 86997-67232",
+    "x": -2719,
+    "y": -469
+  },
+  {
+    "name": "HIC 66934",
+    "x": -2791,
+    "y": -293
+  },
+  {
+    "name": "H 7862+ 958",
+    "x": -2656,
+    "y": -59
+  },
+  {
+    "name": "H 744+ 652",
+    "x": -2630,
+    "y": 198
+  },
+  {
+    "name": "Hilt 613",
+    "x": -2331,
+    "y": 140
+  },
+  {
+    "name": "GSC 45326-33521",
+    "x": -2074,
+    "y": -262
+  },
+  {
+    "name": "HIC 6418",
+    "x": -2345,
+    "y": -337
+  },
+  {
+    "name": "Hilt 985",
+    "x": -2053,
+    "y": 158
+  },
+  {
+    "name": "Hilt 852",
+    "x": -1728,
+    "y": 128
+  },
+  {
+    "name": "GSC 86453-19131",
+    "x": -1366,
+    "y": 261
+  },
+  {
+    "name": "Hilt 554",
+    "x": -2280,
+    "y": -2556
+  },
+  {
+    "name": "HIC 3627",
+    "x": -2165,
+    "y": -2658
+  },
+  {
+    "name": "HIC 5685",
+    "x": -1084,
+    "y": -3312
+  },
+  {
+    "name": "Hilt 132",
+    "x": -904,
+    "y": -3296
+  },
+  {
+    "name": "HD 9465",
+    "x": -397,
+    "y": -3280
+  },
+  {
+    "name": "HD 262171",
+    "x": -787,
+    "y": -3215
+  },
+  {
+    "name": "HIC 4693",
+    "x": -607,
+    "y": -3348
+  },
+  {
+    "name": "H 2694+ 223",
+    "x": 262,
+    "y": -3268
+  },
+  {
+    "name": "Hilt 174",
+    "x": 1247,
+    "y": -3422
+  },
+  {
+    "name": "GSC 19825-84648",
+    "x": 939,
+    "y": -3355
+  },
+  {
+    "name": "HIC 54414",
+    "x": 993,
+    "y": -3406
+  },
+  {
+    "name": "HIC 47766",
+    "x": 1406,
+    "y": -3336
+  },
+  {
+    "name": "H 844+ 759",
+    "x": 1341,
+    "y": -3231
+  },
+  {
+    "name": "HIC 38365",
+    "x": 1340,
+    "y": -2789
+  },
+  {
+    "name": "H 5442+ 954",
+    "x": 1137,
+    "y": -2467
+  },
+  {
+    "name": "HIC 12773",
+    "x": 1411,
+    "y": -2549
+  },
+  {
+    "name": "HIC 24595",
+    "x": 1219,
+    "y": -2196
+  },
+  {
+    "name": "Hilt 495",
+    "x": 1302,
+    "y": -2216
+  },
+  {
+    "name": "H 7137+ 357",
+    "x": 1313,
+    "y": -2126
+  },
+  {
+    "name": "HIC 86625",
+    "x": 1443,
+    "y": -1932
+  },
+  {
+    "name": "GSC 57956-92191",
+    "x": 1154,
+    "y": -2058
+  },
+  {
+    "name": "Hilt 812",
+    "x": 2108,
+    "y": -1018
+  },
+  {
+    "name": "HD 3422",
+    "x": 2009,
+    "y": -1099
+  },
+  {
+    "name": "HIC 8958",
+    "x": 2242,
+    "y": -901
+  },
+  {
+    "name": "Hilt 316",
+    "x": 1540,
+    "y": -834
+  },
+  {
+    "name": "Hilt 697",
+    "x": 1850,
+    "y": -926
+  },
+  {
+    "name": "HIC 57869",
+    "x": 2239,
+    "y": -294
+  },
+  {
+    "name": "HIC 1698",
+    "x": 1971,
+    "y": -160
+  },
+  {
+    "name": "HD 44394",
+    "x": 1543,
+    "y": -63
+  },
+  {
+    "name": "GSC 26377-16126",
+    "x": 1240,
+    "y": -75
+  },
+  {
+    "name": "H 769+ 981",
+    "x": 1793,
+    "y": -108
+  },
+  {
+    "name": "Cape Susette",
+    "x": 257,
+    "y": -220
+  },
+  {
+    "name": "Compton",
+    "x": 1003,
+    "y": -240
+  },
+  {
+    "name": "HD 526389",
+    "x": -195,
+    "y": 234
+  },
+  {
+    "name": "HIC 5592",
+    "x": 460,
+    "y": 58
+  },
+  {
+    "name": "HD 38666",
+    "x": 414,
+    "y": 167
+  },
+  {
+    "name": "HD 9656",
+    "x": -1800,
+    "y": -497
+  },
+  {
+    "name": "Hilt 182",
+    "x": -1834,
+    "y": -388
+  },
+  {
+    "name": "HD 5392",
+    "x": -1676,
+    "y": -400
+  },
+  {
+    "name": "HD 187172",
+    "x": -1698,
+    "y": -115
+  },
+  {
+    "name": "H 3475+ 856",
+    "x": -2744,
+    "y": 68
+  },
+  {
+    "name": "Selkirk",
+    "x": -2423,
+    "y": -1147
+  },
+  {
+    "name": "Tyrel",
+    "x": -2681,
+    "y": -1110
+  },
+  {
+    "name": "Osmani",
+    "x": -2740,
+    "y": -1283
+  },
+  {
+    "name": "Corovic",
+    "x": -2543,
+    "y": -1374
+  },
+  {
+    "name": "HIC 96678",
+    "x": -2329,
+    "y": -973
+  },
+  {
+    "name": "HD 3578",
+    "x": -2484,
+    "y": -1018
+  },
+  {
+    "name": "Nuncio",
+    "x": -1551,
+    "y": -806
+  },
+  {
+    "name": "Mainwaring",
+    "x": -1611,
+    "y": -736
+  },
+  {
+    "name": "Spindle",
+    "x": -1729,
+    "y": -644
+  },
+  {
+    "name": "Dresden",
+    "x": -1994,
+    "y": -598
+  },
+  {
+    "name": "Redoubt",
+    "x": -1998,
+    "y": -733
+  },
+  {
+    "name": "San Miguel",
+    "x": -1859,
+    "y": -728
+  },
+  {
+    "name": "Rembrandt",
+    "x": -1776,
+    "y": -775
+  },
+  {
+    "name": "Prairie",
+    "x": -1861,
+    "y": -814
+  },
+  {
+    "name": "Celebrant",
+    "x": -1782,
+    "y": -957
+  },
+  {
+    "name": "Pequod",
+    "x": -2078,
+    "y": -947
+  },
+  {
+    "name": "New Tuscany",
+    "x": -2126,
+    "y": -809
+  },
+  {
+    "name": "Marian",
+    "x": -2164,
+    "y": -641
+  },
+  {
+    "name": "Scarlet",
+    "x": -2252,
+    "y": -687
+  },
+  {
+    "name": "HD 252828",
+    "x": -2431,
+    "y": -735
+  },
+  {
+    "name": "Hilt 396",
+    "x": -2333,
+    "y": -805
+  },
+  {
+    "name": "Monica",
+    "x": -2359,
+    "y": -219
+  },
+  {
+    "name": "Taylor",
+    "x": -2409,
+    "y": -176
+  },
+  {
+    "name": "Zale",
+    "x": -2587,
+    "y": -267
+  },
+  {
+    "name": "GSC 53456-34422",
+    "x": -2548,
+    "y": -439
+  },
+  {
+    "name": "Alhambra",
+    "x": -2136,
+    "y": 0
+  },
+  {
+    "name": "Meyers",
+    "x": -2511,
+    "y": -16
+  },
+  {
+    "name": "70 Virginis",
+    "x": -76,
+    "y": -687
+  },
+  {
+    "name": "Chattanooga",
+    "x": 92,
+    "y": -801
+  },
+  {
+    "name": "Cyclops",
+    "x": -379,
+    "y": -477
+  },
+  {
+    "name": "Dzung",
+    "x": 67,
+    "y": -499
+  },
+  {
+    "name": "Farley's Crossing",
+    "x": -1126,
+    "y": -686
+  },
+  {
+    "name": "Galen",
+    "x": 19,
+    "y": -392
+  },
+  {
+    "name": "Heimdall",
+    "x": -285,
+    "y": -422
+  },
+  {
+    "name": "Hirochi",
+    "x": -429,
+    "y": -224
+  },
+  {
+    "name": "Angetenar",
+    "x": -297,
+    "y": -205
+  },
+  {
+    "name": "Kenichi",
+    "x": -168,
+    "y": -509
+  },
+  {
+    "name": "Trombone",
+    "x": -435,
+    "y": -614
+  },
+  {
+    "name": "Tasmania",
+    "x": -428,
+    "y": -129
+  },
+  {
+    "name": "Strathmore",
+    "x": -213,
+    "y": -630
+  },
+  {
+    "name": "Stotterman",
+    "x": -597,
+    "y": -310
+  },
+  {
+    "name": "Sebastopol",
+    "x": -231,
+    "y": -125
+  },
+  {
+    "name": "Seacrest",
+    "x": -717,
+    "y": -425
+  },
+  {
+    "name": "Mithra",
+    "x": -554,
+    "y": -472
+  },
+  {
+    "name": "Eris",
+    "x": -420,
+    "y": -541
+  },
+  {
+    "name": "Meyerdahl",
+    "x": -124,
+    "y": -144
+  },
+  {
+    "name": "Mendelschon",
+    "x": -773,
+    "y": -184
+  },
+  {
+    "name": "Lucastra",
+    "x": -132,
+    "y": -283
+  },
+  {
+    "name": "Arcalos",
+    "x": -698,
+    "y": -2384
+  },
+  {
+    "name": "Wurstzipfel",
+    "x": -1075,
+    "y": -2874
+  },
+  {
+    "name": "Bleak",
+    "x": -680,
+    "y": -1858
+  },
+  {
+    "name": "Tomlinson",
+    "x": -791,
+    "y": -2816
+  },
+  {
+    "name": "Angelique",
+    "x": -719,
+    "y": -2699
+  },
+  {
+    "name": "Babel",
+    "x": -853,
+    "y": -2616
+  },
+  {
+    "name": "Cantiz",
+    "x": -906,
+    "y": -2619
+  },
+  {
+    "name": "Sligo",
+    "x": -802,
+    "y": -2545
+  },
+  {
+    "name": "Mischa's Star",
+    "x": -833,
+    "y": -2513
+  },
+  {
+    "name": "Jabbah",
+    "x": -492,
+    "y": -2699
+  },
+  {
+    "name": "Clarke",
+    "x": 1014,
+    "y": -2755
+  },
+  {
+    "name": "Jameston",
+    "x": 881,
+    "y": -2560
+  },
+  {
+    "name": "Karavani",
+    "x": 1216,
+    "y": -2675
+  },
+  {
+    "name": "Lannes",
+    "x": 538,
+    "y": -2997
+  },
+  {
+    "name": "Lern",
+    "x": 565,
+    "y": -2920
+  },
+  {
+    "name": "Laramie",
+    "x": 424,
+    "y": -2899
+  },
+  {
+    "name": "La Martine",
+    "x": 520,
+    "y": -2859
+  },
+  {
+    "name": "Lorn",
+    "x": 610,
+    "y": -2543
+  },
+  {
+    "name": "New Calcutta",
+    "x": 435,
+    "y": -2816
+  },
+  {
+    "name": "Paroa",
+    "x": 809,
+    "y": -2470
+  },
+  {
+    "name": "Pegasus",
+    "x": 516,
+    "y": -2962
+  },
+  {
+    "name": "Yellow",
+    "x": 344,
+    "y": -3034
+  },
+  {
+    "name": "Squalus",
+    "x": 323,
+    "y": -2820
+  },
+  {
+    "name": "Tarragon",
+    "x": 1023,
+    "y": -2918
+  },
+  {
+    "name": "Beemim",
+    "x": -231,
+    "y": -3046
+  },
+  {
+    "name": "Jug",
+    "x": -380,
+    "y": -3065
+  },
+  {
+    "name": "Hilt 368",
+    "x": -2809,
+    "y": -997
+  },
+  {
+    "name": "H 4222+ 498",
+    "x": -2902,
+    "y": -1450
+  },
+  {
+    "name": "GSC 95488-45443",
+    "x": -2694,
+    "y": -1615
+  },
+  {
+    "name": "Hilt 598",
+    "x": -1917,
+    "y": -1182
+  },
+  {
+    "name": "Nimbalkar",
+    "x": -928,
+    "y": -2712
+  },
+  {
+    "name": "Sandhill",
+    "x": -632,
+    "y": -3054
+  },
+  {
+    "name": "Tyler's Star",
+    "x": -540,
+    "y": -2965
+  },
+  {
+    "name": "Melchor",
+    "x": -376,
+    "y": -2873
+  },
+  {
+    "name": "Prism",
+    "x": -372,
+    "y": -2839
+  },
+  {
+    "name": "Bad Call",
+    "x": -486,
+    "y": -3087
+  },
+  {
+    "name": "Quatre Bras",
+    "x": -345,
+    "y": -3006
+  },
+  {
+    "name": "Walther",
+    "x": -605,
+    "y": -2944
+  },
+  {
+    "name": "Zoraster",
+    "x": -574,
+    "y": -2927
+  },
+  {
+    "name": "Tegmine",
+    "x": -127,
+    "y": -3206
+  },
+  {
+    "name": "Casca",
+    "x": 34,
+    "y": -2351
+  },
+  {
+    "name": "Danak",
+    "x": 875,
+    "y": -2699
+  },
+  {
+    "name": "Cimarron's Rose",
+    "x": -674,
+    "y": -2568
+  },
+  {
+    "name": "Alto Verde",
+    "x": 956,
+    "y": -2633
+  },
+  {
+    "name": "Prague",
+    "x": 476,
+    "y": -2759
+  },
+  {
+    "name": "Rutgers",
+    "x": 443,
+    "y": -2712
+  },
+  {
+    "name": "Sheldon",
+    "x": 236,
+    "y": -2679
+  },
+  {
+    "name": "Sullah",
+    "x": 549,
+    "y": -2380
+  },
+  {
+    "name": "Jouett",
+    "x": 797,
+    "y": -2804
+  },
+  {
+    "name": "Morell",
+    "x": 789,
+    "y": -2554
+  },
+  {
+    "name": "Maslow",
+    "x": 223,
+    "y": -2757
+  },
+  {
+    "name": "Tahlman",
+    "x": 583,
+    "y": -2667
+  },
+  {
+    "name": "Seabring",
+    "x": 603,
+    "y": -2646
+  },
+  {
+    "name": "Garnet Star",
+    "x": 593,
+    "y": -2696
+  },
+  {
+    "name": "Radiantia",
+    "x": -613,
+    "y": -2811
+  },
+  {
+    "name": "Poe",
+    "x": 682,
+    "y": -2486
+  },
+  {
+    "name": "Malagasy",
+    "x": 712,
+    "y": -2614
+  },
+  {
+    "name": "Basilisk",
+    "x": -144,
+    "y": -3084
+  },
+  {
+    "name": "Paws",
+    "x": 301,
+    "y": -2104
+  },
+  {
+    "name": "Severin",
+    "x": 400,
+    "y": -2175
+  },
+  {
+    "name": "Yildun",
+    "x": -65,
+    "y": -398
+  },
+  {
+    "name": "Sankar",
+    "x": -9,
+    "y": -1138
+  },
+  {
+    "name": "Lich",
+    "x": -577,
+    "y": -1271
+  },
+  {
+    "name": "Chason",
+    "x": -1493,
+    "y": -176
+  },
+  {
+    "name": "Thuban",
+    "x": -297,
+    "y": -2398
+  },
+  {
+    "name": "Salm",
+    "x": -189,
+    "y": -2183
+  },
+  {
+    "name": "Phenomenon",
+    "x": -299,
+    "y": -2231
+  },
+  {
+    "name": "Barber's Sun",
+    "x": -1003,
+    "y": -1877
+  },
+  {
+    "name": "Stocum",
+    "x": 501,
+    "y": -2488
+  },
+  {
+    "name": "Lucas",
+    "x": -567,
+    "y": -599
+  },
+  {
+    "name": "Asad",
+    "x": 544,
+    "y": -2605
+  },
+  {
+    "name": "Flegetonte",
+    "x": 470,
+    "y": -2309
+  },
+  {
+    "name": "Valian",
+    "x": -1558,
+    "y": -2865
+  },
+  {
+    "name": "Dalim",
+    "x": -1863,
+    "y": -2800
+  },
+  {
+    "name": "Moravod",
+    "x": -1891,
+    "y": -2927
+  },
+  {
+    "name": "Alba",
+    "x": -1772,
+    "y": -2930
+  },
+  {
+    "name": "Eschar",
+    "x": -1556,
+    "y": -3018
+  },
+  {
+    "name": "Rawindra",
+    "x": -1525,
+    "y": -2984
+  },
+  {
+    "name": "Kanthaipan",
+    "x": -1475,
+    "y": -2938
+  },
+  {
+    "name": "Erainn",
+    "x": -1752,
+    "y": -3066
+  },
+  {
+    "name": "Archer's Star",
+    "x": -1306,
+    "y": -2354
+  },
+  {
+    "name": "Alrakis",
+    "x": -1859,
+    "y": -1583
+  },
+  {
+    "name": "Stine",
+    "x": 104,
+    "y": -250
+  },
+  {
+    "name": "Seraphim",
+    "x": 348,
+    "y": -657
+  },
+  {
+    "name": "Addison",
+    "x": 727,
+    "y": -483
+  },
+  {
+    "name": "Akron",
+    "x": 460,
+    "y": -676
+  },
+  {
+    "name": "Jubilee",
+    "x": 399,
+    "y": -584
+  },
+  {
+    "name": "Kumang",
+    "x": -1796,
+    "y": -216
+  },
+  {
+    "name": "Calpurnia",
+    "x": -856,
+    "y": -85
+  },
+  {
+    "name": "Loomis",
+    "x": -655,
+    "y": -1311
+  },
+  {
+    "name": "Delvecchio",
+    "x": -148,
+    "y": -38
+  },
+  {
+    "name": "Mobius",
+    "x": -2158,
+    "y": -146
+  },
+  {
+    "name": "Hainuwele",
+    "x": -592,
+    "y": -1171
+  },
+  {
+    "name": "Olivia",
+    "x": -1055,
+    "y": -1910
+  },
+  {
+    "name": "Syou-tang",
+    "x": -1315,
+    "y": -109
+  },
+  {
+    "name": "Pulsar Vista",
+    "x": -61,
+    "y": -1402
+  },
+  {
+    "name": "Nosaxa",
+    "x": 90,
+    "y": -1180
+  },
+  {
+    "name": "HIC 53199",
+    "x": -1948,
+    "y": -171
+  },
+  {
+    "name": "Swallow",
+    "x": -1853,
+    "y": -3
+  },
+  {
+    "name": "Dionigi",
+    "x": -558,
+    "y": -1899
+  },
+  {
+    "name": "Katharina",
+    "x": 163,
+    "y": -659
+  },
+  {
+    "name": "Franzeki",
+    "x": -1271,
+    "y": -1794
+  },
+  {
+    "name": "Vrud",
+    "x": -813,
+    "y": -810
+  },
+  {
+    "name": "Bessie",
+    "x": -819,
+    "y": -841
+  },
+  {
+    "name": "Idaho",
+    "x": -332,
+    "y": -2126
+  },
+  {
+    "name": "Roulette",
+    "x": -398,
+    "y": -403
+  },
+  {
+    "name": "Startman",
+    "x": -294,
+    "y": -11
+  },
+  {
+    "name": "Titania",
+    "x": -129,
+    "y": 10
+  },
+  {
+    "name": "Alcor",
+    "x": -1209,
+    "y": -357
+  },
+  {
+    "name": "Lynx",
+    "x": -1492,
+    "y": -481
+  },
+  {
+    "name": "Sadr",
+    "x": -1266,
+    "y": -140
+  },
+  {
+    "name": "Any Port",
+    "x": -1257,
+    "y": -219
+  },
+  {
+    "name": "Reiko",
+    "x": -149,
+    "y": -2572
+  },
+  {
+    "name": "Lynx B (Terminus)",
+    "x": -1472,
+    "y": -448
+  },
+  {
+    "name": "Adelaide",
+    "x": -341,
+    "y": -3080
+  },
+  {
+    "name": "Al-Bakiya",
+    "x": -1218,
+    "y": -2251
+  },
+  {
+    "name": "Allen",
+    "x": -508,
+    "y": -3038
+  },
+  {
+    "name": "Randal",
+    "x": 876,
+    "y": -1344
+  },
+  {
+    "name": "Astophel",
+    "x": -61,
+    "y": -1276
+  },
+  {
+    "name": " Balcescu",
+    "x": 576,
+    "y": -1602
+  },
+  {
+    "name": "Balthazar",
+    "x": 211,
+    "y": -346
+  },
+  {
+    "name": "Barca",
+    "x": 242,
+    "y": -1594
+  },
+  {
+    "name": "Bootstrap",
+    "x": -532,
+    "y": -273
+  },
+  {
+    "name": "Boyle",
+    "x": -52,
+    "y": -269
+  },
+  {
+    "name": "Brennan",
+    "x": -540,
+    "y": -3073
+  },
+  {
+    "name": "Broadhurst",
+    "x": -623,
+    "y": -34
+  },
+  {
+    "name": "Montague",
+    "x": 985,
+    "y": -2543
+  },
+  {
+    "name": "Bryant",
+    "x": 496,
+    "y": -1884
+  },
+  {
+    "name": "Cachalot",
+    "x": -34,
+    "y": -606
+  },
+  {
+    "name": "BS-712-19-6",
+    "x": -253,
+    "y": -524
+  },
+  {
+    "name": "Caldwell",
+    "x": -353,
+    "y": -2919
+  },
+  {
+    "name": "Caroline",
+    "x": -398,
+    "y": -3135
+  },
+  {
+    "name": "Carson",
+    "x": -424,
+    "y": -3056
+  },
+  {
+    "name": "Ajay",
+    "x": -900,
+    "y": -1197
+  },
+  {
+    "name": "Nolan",
+    "x": -843,
+    "y": -616
+  },
+  {
+    "name": "Casimir",
+    "x": -452,
+    "y": -2846
+  },
+  {
+    "name": "Cimbri",
+    "x": 801,
+    "y": -1658
+  },
+  {
+    "name": "Cooper",
+    "x": -183,
+    "y": -249
+  },
+  {
+    "name": "Cossack",
+    "x": 1086,
+    "y": -1489
+  },
+  {
+    "name": "Crawford",
+    "x": -380,
+    "y": -2908
+  },
+  {
+    "name": "Cresswell",
+    "x": -520,
+    "y": -2875
+  },
+  {
+    "name": "Cromwell",
+    "x": -555,
+    "y": -2949
+  },
+  {
+    "name": "Custis",
+    "x": -1079,
+    "y": -530
+  },
+  {
+    "name": "Daggan",
+    "x": 177,
+    "y": -2686
+  },
+  {
+    "name": "Danube",
+    "x": -371,
+    "y": -173
+  },
+  {
+    "name": "Delta Draconis",
+    "x": -104,
+    "y": -757
+  },
+  {
+    "name": "Mascot",
+    "x": -944,
+    "y": -1907
+  },
+  {
+    "name": "Dorcas",
+    "x": 99,
+    "y": -2620
+  },
+  {
+    "name": "Eta Cassiopeiae",
+    "x": -216,
+    "y": -318
+  },
+  {
+    "name": "Exapia",
+    "x": -349,
+    "y": -244
+  },
+  {
+    "name": "Farnham",
+    "x": -619,
+    "y": -2762
+  },
+  {
+    "name": "Franconia",
+    "x": 364,
+    "y": -2239
+  },
+  {
+    "name": "Genovese",
+    "x": -367,
+    "y": -1204
+  },
+  {
+    "name": "Chalawan",
+    "x": -295,
+    "y": -712
+  },
+  {
+    "name": "Golem",
+    "x": -155,
+    "y": -1177
+  },
+  {
+    "name": "Hakim",
+    "x": 277,
+    "y": -1623
+  },
+  {
+    "name": "Harston",
+    "x": -384,
+    "y": -2986
+  },
+  {
+    "name": "Hesier",
+    "x": -65,
+    "y": -347
+  },
+  {
+    "name": "Horus",
+    "x": -423,
+    "y": -2897
+  },
+  {
+    "name": "Howard",
+    "x": -2226,
+    "y": -184
+  },
+  {
+    "name": "Hyatt",
+    "x": -418,
+    "y": -2837
+  },
+  {
+    "name": "Hyperion",
+    "x": -393,
+    "y": -2886
+  },
+  {
+    "name": "Ingeborg",
+    "x": 2157,
+    "y": -692
+  },
+  {
+    "name": " Istvan",
+    "x": -253,
+    "y": -93
+  },
+  {
+    "name": "Johanson",
+    "x": 829,
+    "y": -1067
+  },
+  {
+    "name": "Alt",
+    "x": 982,
+    "y": -1371
+  },
+  {
+    "name": "Josephine",
+    "x": 28,
+    "y": -1346
+  },
+  {
+    "name": "Calvin",
+    "x": -644,
+    "y": -973
+  },
+  {
+    "name": "Kenniac",
+    "x": -382,
+    "y": -336
+  },
+  {
+    "name": "Kismet",
+    "x": -228,
+    "y": -452
+  },
+  {
+    "name": "Klondike",
+    "x": 120,
+    "y": -614
+  },
+  {
+    "name": "Kondratii",
+    "x": 757,
+    "y": -1193
+  },
+  {
+    "name": "Krieger's Star",
+    "x": -428,
+    "y": -2815
+  },
+  {
+    "name": "Landfall",
+    "x": -224,
+    "y": -183
+  },
+  {
+    "name": "Lytton",
+    "x": -833,
+    "y": -286
+  },
+  {
+    "name": "Baten Kaitos",
+    "x": -887,
+    "y": -387
+  },
+  {
+    "name": "MacGregor",
+    "x": 454,
+    "y": -2540
+  },
+  {
+    "name": "Madeleine",
+    "x": 52,
+    "y": -225
+  },
+  {
+    "name": "Mainwaring",
+    "x": -1608,
+    "y": -1002
+  },
+  {
+    "name": "Lau Hiler",
+    "x": -611,
+    "y": -2977
+  },
+  {
+    "name": "Reputation",
+    "x": -722,
+    "y": -3065
+  },
+  {
+    "name": "McIntosh",
+    "x": -2462,
+    "y": 128
+  },
+  {
+    "name": "Megan",
+    "x": -163,
+    "y": -2298
+  },
+  {
+    "name": "Melbourne",
+    "x": -417,
+    "y": -2949
+  },
+  {
+    "name": "Mfecane",
+    "x": 1,
+    "y": -221
+  },
+  {
+    "name": "Mullins",
+    "x": 1816,
+    "y": -42
+  },
+  {
+    "name": "Clarence",
+    "x": 83,
+    "y": -419
+  },
+  {
+    "name": "Nanda",
+    "x": 715,
+    "y": -2322
+  },
+  {
+    "name": "New Hamburg",
+    "x": -464,
+    "y": -2403
+  },
+  {
+    "name": "Sondermann's Star",
+    "x": -113,
+    "y": -1039
+  },
+  {
+    "name": "Nightingale",
+    "x": 301,
+    "y": -2321
+  },
+  {
+    "name": "Oceana",
+    "x": -392,
+    "y": -1346
+  },
+  {
+    "name": "Pelzer",
+    "x": -1095,
+    "y": -2518
+  },
+  {
+    "name": "Asterope",
+    "x": -97,
+    "y": -863
+  },
+  {
+    "name": "Preston",
+    "x": 14,
+    "y": -631
+  },
+  {
+    "name": "Ralko",
+    "x": 119,
+    "y": -2783
+  },
+  {
+    "name": "Ramon",
+    "x": 168,
+    "y": -2233
+  },
+  {
+    "name": "Ranier",
+    "x": 2155,
+    "y": -510
+  },
+  {
+    "name": "Conestoga",
+    "x": -385,
+    "y": -993
+  },
+  {
+    "name": "Sandalwood",
+    "x": -25,
+    "y": 17
+  },
+  {
+    "name": "Sarawak",
+    "x": 890,
+    "y": -2513
+  },
+  {
+    "name": "Sarretti",
+    "x": -1337,
+    "y": -1353
+  },
+  {
+    "name": "SCY-146-H",
+    "x": -936,
+    "y": 47
+  },
+  {
+    "name": "Shadwell",
+    "x": 853,
+    "y": -1969
+  },
+  {
+    "name": "Shanghai",
+    "x": -893,
+    "y": 119
+  },
+  {
+    "name": "Shingaine",
+    "x": -504,
+    "y": -308
+  },
+  {
+    "name": "Siegfried",
+    "x": 88,
+    "y": -149
+  },
+  {
+    "name": "Snyder",
+    "x": -523,
+    "y": -414
+  },
+  {
+    "name": "SXR-136-23",
+    "x": 528,
+    "y": -2667
+  },
+  {
+    "name": "Ebla",
+    "x": 189,
+    "y": -2578
+  },
+  {
+    "name": "Talbot",
+    "x": 65,
+    "y": -2484
+  },
+  {
+    "name": "Tau Delta",
+    "x": -463,
+    "y": -286
+  },
+  {
+    "name": "Tequila",
+    "x": 621,
+    "y": -2720
+  },
+  {
+    "name": "Theseus",
+    "x": -461,
+    "y": -170
+  },
+  {
+    "name": "Traccora",
+    "x": -711,
+    "y": 10
+  },
+  {
+    "name": "Trautman's Star",
+    "x": -433,
+    "y": -3000
+  },
+  {
+    "name": "Lighthouse",
+    "x": -606,
+    "y": -1494
+  },
+  {
+    "name": "Trebuchet",
+    "x": -305,
+    "y": -1576
+  },
+  {
+    "name": "Ueshiba",
+    "x": 577,
+    "y": -2418
+  },
+  {
+    "name": "Van Mook",
+    "x": -842,
+    "y": -534
+  },
+  {
+    "name": "Arcturus",
+    "x": -906,
+    "y": -713
+  },
+  {
+    "name": "Waterfall",
+    "x": -971,
+    "y": -805
+  },
+  {
+    "name": "Epsilon Virgo",
+    "x": 863,
+    "y": 137
+  },
+  {
+    "name": "Prime",
+    "x": 410,
+    "y": -1030
+  },
+  {
+    "name": "Wincote",
+    "x": 235,
+    "y": -872
+  },
+  {
+    "name": "Winepress",
+    "x": -406,
+    "y": -299
+  },
+  {
+    "name": "Wonder",
+    "x": -1828,
+    "y": -131
+  },
+  {
+    "name": "Grafton",
+    "x": -751,
+    "y": -650
+  },
+  {
+    "name": "Yarrow",
+    "x": -729,
+    "y": -700
+  },
+  {
+    "name": "Yasotaro",
+    "x": -599,
+    "y": -826
+  },
+  {
+    "name": "Ganesh",
+    "x": -521,
+    "y": -903
+  },
+  {
+    "name": "Dillard",
+    "x": -510,
+    "y": -949
+  },
+  {
+    "name": "KCR-125-06-A",
+    "x": -578,
+    "y": -1012
+  },
+  {
+    "name": "KCR-125-06-C",
+    "x": -599,
+    "y": -1018
+  },
+  {
+    "name": "Refuge",
+    "x": -592,
+    "y": -1009
+  },
+  {
+    "name": "KCR-125-06-B",
+    "x": -570,
+    "y": -1025
+  },
+  {
+    "name": "Alsephina",
+    "x": 86,
+    "y": -692
+  },
+  {
+    "name": "Nebulai",
+    "x": 469,
+    "y": -1452
+  },
+  {
+    "name": "Agueda",
+    "x": 471,
+    "y": -976
+  },
+  {
+    "name": "Marfik",
+    "x": 573,
+    "y": -911
+  },
+  {
+    "name": "Zunker",
+    "x": -424,
+    "y": -1260
+  },
+  {
+    "name": " J-156-18(L)",
+    "x": 674,
+    "y": -2903
+  },
+  {
+    "name": "Dickerson",
+    "x": -226,
+    "y": -35
+  },
+  {
+    "name": "Templar",
+    "x": -224,
+    "y": -280
+  },
+  {
+    "name": "Ophiuchi",
+    "x": -127,
+    "y": -437
+  },
+  {
+    "name": "Maize",
+    "x": -68,
+    "y": -116
+  },
+  {
+    "name": "Tislit",
+    "x": 833,
+    "y": 136
+  },
+  {
+    "name": "Xihe",
+    "x": 855,
+    "y": 186
+  },
+  {
+    "name": "Air",
+    "x": -127,
+    "y": 218
+  },
+  {
+    "name": "Hope",
+    "x": -83,
+    "y": 249
+  },
+  {
+    "name": "Mary",
+    "x": -156,
+    "y": 290
+  },
+  {
+    "name": "Crux",
+    "x": -120,
+    "y": 169
+  },
+  {
+    "name": "Mannerheim",
+    "x": -656,
+    "y": 30
+  },
+  {
+    "name": "Mesa",
+    "x": -1085,
+    "y": 49
+  },
+  {
+    "name": "Carol's Star",
+    "x": -1143,
+    "y": 62
+  },
+  {
+    "name": "Even Star",
+    "x": -1199,
+    "y": 27
+  },
+  {
+    "name": "GSC 24546-14161",
+    "x": -1148,
+    "y": 183
+  },
+  {
+    "name": "Kremlin",
+    "x": -1083,
+    "y": 167
+  },
+  {
+    "name": "Darius",
+    "x": -800,
+    "y": 238
+  },
+  {
+    "name": "Felix",
+    "x": -682,
+    "y": 53
+  },
+  {
+    "name": "Mirfak",
+    "x": -316,
+    "y": 143
+  },
+  {
+    "name": "Mahsati",
+    "x": -27,
+    "y": 174
+  },
+  {
+    "name": "Matagorda",
+    "x": 229,
+    "y": -83
+  },
+  {
+    "name": "Maxwell",
+    "x": 155,
+    "y": -125
+  },
+  {
+    "name": "Heritage",
+    "x": 468,
+    "y": -180
+  },
+  {
+    "name": "Intan",
+    "x": 1492,
+    "y": -198
+  },
+  {
+    "name": "Artesia",
+    "x": 1369,
+    "y": -213
+  },
+  {
+    "name": "Libertas",
+    "x": 1320,
+    "y": -200
+  },
+  {
+    "name": "Włocławek",
+    "x": -806,
+    "y": -454
+  },
+  {
+    "name": "Sarduchi",
+    "x": -169,
+    "y": -804
+  },
+  {
+    "name": "Warner",
+    "x": -330,
+    "y": -888
+  },
+  {
+    "name": "Sarin",
+    "x": -437,
+    "y": -756
+  },
+  {
     "name": "GSC 39791-43246",
-    "x": -427,
-    "y": 374
+    "x": -434,
+    "y": 367
   },
   {
     "name": "Lynda",
-    "x": -515,
-    "y": 177
+    "x": -522,
+    "y": 170
   },
   {
     "name": "Galton",
-    "x": -453,
-    "y": 345
+    "x": -460,
+    "y": 338
   },
   {
     "name": "GSC 27151-64238",
-    "x": -158,
-    "y": 422
+    "x": -165,
+    "y": 415
   },
   {
     "name": "SGC-902-36-G",
-    "x": 505,
-    "y": 449
+    "x": 498,
+    "y": 442
+  },
+  {
+    "name": "Fortrose",
+    "x": 960,
+    "y": -3098
+  },
+  {
+    "name": "Elvana",
+    "x": 959,
+    "y": -3126
+  },
+  {
+    "name": "Tirana",
+    "x": 993,
+    "y": -3127
+  },
+  {
+    "name": "Shilo",
+    "x": 852,
+    "y": -3042
   }
 ]

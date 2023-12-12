@@ -14,7 +14,7 @@ export class SystemAssignmentEra1 extends MapContainer {
         );
 
         this.MATAPAN_SYSTEMS.push(
-            "Rana", "Nekkar", "Giausar", "Enif", "Halo", "Monch", "Phex", "Castula", "Unukalhai", "Meissa", "Axï¿½lotl",
+            "Rana", "Nekkar", "Giausar", "Enif", "Halo", "Monch", "Phex", "Castula", "Unukalhai", "Meissa", "Axolotl",
             "Sadalbari"
         );
 
@@ -52,25 +52,25 @@ export class SystemAssignmentEra1 extends MapContainer {
             "Chantilly", "Solan", "Augusta", "Jameston", "Rutgers", "Hallman", "Micah", "Clairmont",
             "Paroa", "Seabring", "Tequila", "Secour", "Barnett", "Sullah", "Tahlman", "Karavani",
             "La-Martine", "Des-Moines", "Solon", "Solway", "SXR-136-23", "Clarke", "Lovat", "Welladay",
-            "Seaford 9", "Lowell", "Mathias", "Sheldon", "Owens", "Tarragon", "Adler", "Gualt",
+            "Seaford 9", "Lowell", "Mathias", "Sheldon", "Owens", "Adler", "Gualt",
             "Gaston", "Tambourin", "Squalus", "Thetis", "Helmsport", "Seljuk", "Laramie", "Haven",
             "Jouett", "Refuge", "Morell", "New Calcutta", "Malagasy", "Hera (Haven-Sector)", "Maastricht",
             "Lannes", "MacGregor", "Maslow", "Treadway", "Samson", "Chelsea", "Mendoza", "Trevor's Star", "Talbot",
 
             "Franconia", "Runciman", "Nightingale", "Barnes", "Cerberus", "Slocum (Haven-Sector)",
             "Nanda", "Fischer", "Tarazed", "Buna", "Mimosa", "Alkes", "Achernar", "Adhara", "Aerion",
-            "Ivanhoe", "Chamonix", "Mendel", "Azelfafage", "Alkaid", "Aiolos", "Aldhanab", "Ali Shar",
-            "Alkaid", "Alkarab", "Alkes", "Allman", "Alpherg", "Astral Fields", "Augusta", "Azelfafage",
-            "Bannerman", "Barnes", "Belel", "Botein", "Brikiub", "Buna", "Cascabel", "Cerberus",
+            "Ivanhoe", "Chamonix", "Mendel", "Azelfafage", "Alkaid", "Aldhanab", "Ali Shar",
+            "Alkaid", "Alkes", "Allman", "Augusta", "Azelfafage",
+            "Barnes", "Belel", "Botein", "Brikiub", "Buna", "Cascabel", "Cerberus",
             "Chantilly", "Corrigan", "Daniel", "Des Moines", "Dombay", "Echnaton", "Elf", "Fischer",
             "Formosa", "Foximan", "Gar", "Gaston", "Guahayona", "Gualt", "Guniibuu", "Hallman",
             "Hamal", "Homam", "Hyacinth", "Iklil", "Ivanhoe", "Joubert", "Joust",
-            "Leopard", "Lionrock", "Lowell", "Lucilinburhuc", "Luminara", "Lyrastra",
-            "Madras", "Markab", "Mathias", "Mendel", "Merope", "Mesarthim", "Michael", "Mylar", "Nebulae",
-            "Nikawiy", "Paragon", "Pollux", "Ran", "Revati", "Spectre", "Secour",
-            "Seljuk", "Sham", "Slocum (Haven-Sector)", "Smoky", "Solan", "Sun-Yat", "Tacoma",
+            "Leopard", "Lionrock", "Lowell", "Luminara", "Lyrastra",
+            "Madras", "Markab", "Mathias", "Mendel", "Michael", "Mylar",
+            "Nikawiy", "Paragon", "Pollux", "Revati", "Spectre", "Secour",
+            "Seljuk", "Sham", "Slocum (Haven-Sector)", "Solan", "Sun-Yat", "Tacoma",
             "Tambourin", "Tarazed", "Taygeta", "The Lip", "Thetis", "Tianyi", "Timir", "Vortexia",
-            "Welladay", "Zhang", "Chamonix", "Nova Astra", "Clarke", "Jameston", "Karavani", "Lannes", "Lern", "Laramie",
+            "Welladay", "Chamonix", "Nova Astra", "Clarke", "Jameston", "Karavani", "Lannes", "Lern", "Laramie",
             "La Martine", "Lorn", "New Calcutta", "Paroa", "Pegasus", "Yellow", "Shilo", "Squalus", "Danak",
             "Alto Verde", "Rutgers", "Sheldon", "Sullah", "Jouett", "Morell", "Maslow", "Tahlman",
             "Seabring", "Garnet Star", "Poe", "Malagasy", "Stocum", "Asad", "Flegetonte", "Montague", "Daggan", "MacGregor",
@@ -106,7 +106,7 @@ export class SystemAssignmentEra1 extends MapContainer {
             "Chattanooga", "Lucastra", "Eris", "Sol", "Stine", "Zale", "Howard", "Meyers",
             "Isaac", "Sprague", "Maya", "Murray", "Poul", "Edwin", "Robert", "Randal", "Prime", "Saltash",
 
-            "Aflaandacs", "Alcyone", "Alkaphrah", "Altair", "Angetenar", "Aniara", "Anomaly", "Antares", "Asellus Secundus", "Axï¿½lotl",
+            "Aflaandacs", "Alcyone", "Alkaphrah", "Altair", "Angetenar", "Aniara", "Anomaly", "Antares", "Asellus Secundus", "Axolotl",
             "Barnard's Star", "Belenos", "Black", "Canis Minoris", "Casulli", "Chamukuy", "Chen", "Cleopatra", "Cohagen", "Delilah's Navel",
             "Delta Pavonis", "Dilmun", "Dogma", "Epsilon Eridani", "Epsilon Indi", "Groombridge", "Homebrew", "Hound's Eye", "Innes' Star", "Joshua",
             "Kapteyn's Star", "Kaus Borealis", "Kruger", "Lacille", "Luyten's Star", "Matza", "Mazaalai", "Merak", "Mira", "Muliphein", "Nova Heights",
