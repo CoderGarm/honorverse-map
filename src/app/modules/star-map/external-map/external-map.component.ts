@@ -709,7 +709,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     download() {
-        const result: Coords[] = [];
+        let result: Coords[] = [];
         let stars = this.canvas!.children()
             .filter(c => c.classes().filter(css => css === BasicViewHelperData.STAR_MARKER).length > 0);
         stars.forEach(celestial => {
@@ -720,6 +720,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 y: Math.ceil(<number>celestial.y())
             });
         });
+        result = result.sort((a, b) => a.name.localeCompare(b.name));
         let stringify = JSON.stringify(result);
 
         let element = document.createElement('a');
