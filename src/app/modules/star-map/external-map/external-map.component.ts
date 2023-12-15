@@ -485,7 +485,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                     .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
                     .addClass(BasicViewHelperData.WORMHOLE_MARKER)
                     .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
-                    .stroke({width: 1, color: 'irrelevant'});
+                    .stroke({width: 2, color: 'irrelevant'});
             });
         });
     }
