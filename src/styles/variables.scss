@@ -1,34 +1,18 @@
-$black: #000;
-$white: #fff;
-$success: #5e8c6a;
-$warning-color: #872727;
-$metal-glance: #B0B0B0;
+$dark-success-color: #5e8c6a;
+$dark-warning-color: #872727;
 
-/* Text colors */
-$body-text-color: rgba(255, 255, 255, 1);
-$accent-text-color: rgba(255, 255, 255, 1);
-$secondary-text-color: rgba(255, 255, 255, 0.7);
-$disabled-text-color: rgba(255, 255, 255, 0.5);
+$dark-secondary-text-color: rgba(255, 255, 255, 0.7);
 
-/* Primary colors */
-// old purple $primary-color: #7b1fa2;
-$primary-color: #375a7f;
-$primary-text-color: #b794f6;
+$dark-primary-color: #375a7f;
 
-/* Error colors */
 $error-color: #de2839;
 $error-text-color: $error-color;
 
-/* Background colors */
-$purple-green-background-color: #383838;
-$new-background-color: #3E444C;
-
-$purple-green-secondary-background-color: #3b3b3b;
 $new-secondary-background-color: #2E3338;
 
-$background-color: $purple-green-background-color;
-$secondary-background-color: $purple-green-secondary-background-color;
-// todo define useful color set
+$dark-background-color: #383838;
+$dark-secondary-background-color: #3b3b3b;
+$dark-map-background-color: #000;
 
 $tertiary-background-color: hsla(214, 90%, 52%, 0.1);
 $disabled-color: rgba(255, 255, 255, 0.3);
@@ -38,7 +22,7 @@ $divider-color: rgba(255, 255, 255, 0.12);
 
 $page-width: 90%;
 
-$bfh-palette: (
+$dark-palette: (
         50 : #e7ebf0,
         100 : #c3ced9,
         200 : #9badbf,
@@ -71,3 +55,71 @@ $bfh-palette: (
         )
 );
 
+
+$dark-solarian-color: #B31616;
+$dark-manticore-color: #ff00ff;
+$dark-haven-color: #57ffc7;
+$dark-malign-color: #996633;
+$dark-anderman-color: #ffcc00;
+$dark-silesia-color: #99ff33;
+$dark-midgard-color: #ff9900;
+$dark-matapan-color: #6666ff;
+$dark-asgard-color: #009999;
+$dark-monica-color: #669999;
+$dark-torch-color: #ff0066;
+$dark-famous-color: #3366cc;
+$dark-unfocussed-color: #FFF;
+
+$light-background-color: #f9f7f1;
+$light-secondary-background-color: #abb3ba;
+$light-secondary-text-color: #25242F;
+$light-primary-color: #ff6f6f;
+$light-map-background-color: #fffef0;
+
+$light-palette: (
+        50 : #f3e7e7,
+        100 : #e0c2c2,
+        200 : #cc9999,
+        300 : #b87070,
+        400 : #a85252,
+        500 : #993333,
+        600 : #912e2e,
+        700 : #862727,
+        800 : #7c2020,
+        900 : #6b1414,
+        A100 : #ffa2a2,
+        A200 : #ff6f6f,
+        A400 : #ff3c3c,
+        A700 : #ff2323,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #ffffff,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #ffffff,
+                A700 : #ffffff,
+        )
+);
+
+
+$light-solarian-color: #6b1414;
+$light-manticore-color: #660066;
+$light-haven-color: #006644;
+$light-malign-color: #4d3319;
+$light-anderman-color: #665200;
+$light-silesia-color: #336600;
+$light-midgard-color: #ff9900;
+$light-matapan-color: #6666ff;
+$light-asgard-color: #009999;
+$light-monica-color: #669999;
+$light-torch-color: #ff0066;
+$light-famous-color: #3366cc;
+$light-unfocussed-color: #000;

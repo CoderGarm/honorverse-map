@@ -5,15 +5,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 3px $background-color;
+  box-shadow: inset 0 0 3px var(--background-color);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $secondary-background-color;
+  background: var(--secondary-background-color);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $background-color;
+  background: var(--background-color);
 }

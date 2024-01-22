@@ -15,7 +15,7 @@ import {Era} from "../svg-view-helper/system-assignments/era";
 
 
 export interface ColorGroup {
-    color: string;
+    colorMarker: string;
     simpleCoords: SimpleCoord[];
     coords: Coords[];
 }
@@ -74,7 +74,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     iFrameTxt: string = '';
     readonly frontendPath: string;
 
-    color: string = '#5e8c6a';
+    color: string = '#5e8c6a'; // fixme where used?
 
     colorGroups: ColorGroup[] = [];
     isCanonMapPreselected: boolean = false;
@@ -122,13 +122,13 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         const map: Map<string, Coords[]> = new Map<string, Coords[]>();
         this.colorGroups.forEach(cg => {
             if (cg.coords.length > 0) {
-                map.set(cg.color, cg.coords);
+                map.set(cg.colorMarker, cg.coords);
             }
         });
         const result: ColorGroup[] = [];
-        map.forEach((coords, color) => {
+        map.forEach((coords, colorMarker) => {
             result.push({
-                color: color,
+                colorMarker: colorMarker,
                 coords: coords,
                 simpleCoords: coords.map(c => <SimpleCoord>{
                     x: c.x,
@@ -140,10 +140,10 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
     addToColorGroup() {
-        const toAdd = this.coords.filter(c => this.getColor(c) === '');
+        const toAdd = this.coords.filter(c => this.getColorMarker(c) === '');
         if (toAdd.length > 0) {
             this.colorGroups.push({
-                color: this.color,
+                colorMarker: this.color,
                 simpleCoords: toAdd.map(c => <SimpleCoord>{
                     x: c.x,
                     y: c.y
@@ -217,11 +217,11 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
     }
 
 
-    addToColors(color: string, coords: Coords[]) {
+    addToColors(colorMarker: string, coords: Coords[]) {
         if (coords.length > 0) {
             this.coords.push(...coords);
             this.colorGroups.push({
-                color: color,
+                colorMarker: colorMarker,
                 simpleCoords: coords.map(c => <SimpleCoord>{
                     x: c.x,
                     y: c.y
@@ -349,17 +349,17 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
         return this.allCoords!.filter(c => c.name.toLowerCase().includes(filterValue));
     }
 
-    getColor(coord: Coords) {
-        let color = '';
+    getColorMarker(coord: Coords) {
+        let colorMarker = '';
         for (let i = 0; i < this.colorGroups.length; i++) {
             const cg = this.colorGroups[i];
             const isPresent = cg.simpleCoords.filter(c => ExternalMapManagerComponent.matches(c, coord)).length > 0;
             if (isPresent) {
-                color = cg.color;
+                colorMarker = cg.colorMarker;
                 break;
             }
         }
-        return color;
+        return colorMarker;
     }
 
     drop(event: CdkDragDrop<Coords[]>) {

@@ -9,6 +9,7 @@ import {BasicViewHelperData} from "./modules/star-map/svg-view-helper/basic-view
 import {BasicViewHelper} from "./modules/star-map/svg-view-helper/basic-view-helper";
 import {SubscriptionManager} from "./services/subscription.manager";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ColorSchemeService} from "./services/color-scheme.service";
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -40,7 +41,10 @@ export let AppInjector: Injector;
         StarMapModule,
         BrowserAnimationsModule
     ],
-    providers: [],
+    providers: [
+        ColorSchemeService,
+    ],
+    exports: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

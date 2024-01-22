@@ -6,21 +6,178 @@
 @include mat.core();
 
 
-$bfh-primary: mat.define-palette(variables.$bfh-palette);
-$bfh-accent: mat.define-palette(variables.$bfh-palette, A200, A100, A400);
+$dark-primary: mat.define-palette(variables.$dark-palette);
+$dark-accent: mat.define-palette(variables.$dark-palette, A200, A100, A400);
 
-$bfh-warn: mat.define-palette(mat.$red-palette);
+$dark-warn: mat.define-palette(mat.$red-palette);
 
-$bfh-theme: mat.define-dark-theme((
+$theme-dark: mat.define-dark-theme((
         color: (
-                primary: $bfh-primary,
-                accent: $bfh-accent,
-                warn: $bfh-warn,
+                primary: $dark-primary,
+                accent: $dark-accent,
+                warn: $dark-warn,
         ),
         density: -3
 ));
 
-$bfh-theme: palette-helper.modify-background($bfh-theme, variables.$background-color);
-$bfh-theme: palette-helper.modify-text-color($bfh-theme, variables.$secondary-text-color);
+$theme-dark: palette-helper.modify-background($theme-dark, variables.$dark-background-color);
+$theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secondary-text-color);
 
-@include mat.all-component-themes($bfh-theme);
+.color-scheme-dark {
+  @include mat.all-component-themes($theme-dark);
+
+  --primary-color: #{variables.$dark-primary-color};
+  --background-color: #{variables.$dark-background-color};
+  --secondary-background-color: #{variables.$dark-secondary-background-color};
+  --secondary-text-color: #{variables.$dark-secondary-text-color};
+  --success-color: #{variables.$dark-success-color};
+  --warning-color: #{variables.$dark-warning-color};
+  --error-color: #{variables.$error-color};
+  --error-text-color: #{variables.$error-text-color};
+  --map-background-color: #{variables.$dark-map-background-color};
+
+  --solarian-color: #{variables.$dark-solarian-color};
+  --manticore-color: #{variables.$dark-manticore-color};
+  --haven-color: #{variables.$dark-haven-color};
+  --malign-color: #{variables.$dark-malign-color};
+  --anderman-color: #{variables.$dark-anderman-color};
+  --silesia-color: #{variables.$dark-silesia-color};
+  --midgard-color: #{variables.$dark-midgard-color};
+  --matapan-color: #{variables.$dark-matapan-color};
+  --asgard-color: #{variables.$dark-asgard-color};
+  --monica-color: #{variables.$dark-monica-color};
+  --torch-color: #{variables.$dark-torch-color};
+  --famous-color: #{variables.$dark-famous-color};
+  --unfocussed-color: #{variables.$dark-unfocussed-color};
+
+  .svg-text {
+    fill: #FFF;
+  }
+
+  #ctto {
+    color: hsla(85, 100%, 30%, 0.54);
+
+    & a {
+      color: hsla(85, 100%, 30%, 0.54);
+    }
+  }
+
+  .mat-mdc-icon-button {
+    --mdc-icon-button-icon-color: #{variables.$dark-secondary-text-color};
+  }
+
+  .mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #{variables.$dark-background-color};
+    --mdc-snackbar-supporting-text-color: #{variables.$dark-secondary-text-color};
+
+    &.error-snackbar {
+    }
+
+    &.notification-snackbar {
+    }
+  }
+}
+
+
+$light-primary: mat.define-palette(variables.$light-palette);
+$light-accent: mat.define-palette(variables.$light-palette, A200, A100, A400);
+$light-warn: mat.define-palette(mat.$red-palette);
+
+$theme-light: mat.define-light-theme((
+        color: (
+                primary: $light-primary,
+                accent: $light-accent,
+                warn: $light-warn,
+        ),
+        density: -3
+));
+
+$theme-light: palette-helper.modify-background($theme-light, variables.$light-background-color);
+$theme-light: palette-helper.modify-text-color($theme-light, variables.$light-secondary-text-color);
+
+
+.color-scheme-light {
+  @include mat.all-component-themes($theme-light);
+
+  --primary-color: #{variables.$light-primary-color};
+  --background-color: #{variables.$light-background-color};
+  --secondary-background-color: #{variables.$light-secondary-background-color};
+  --secondary-text-color: #{variables.$light-secondary-text-color};
+  --success-color: #{variables.$dark-success-color};
+  --warning-color: #{variables.$dark-warning-color};
+  --error-color: #{variables.$error-color};
+  --error-text-color: #{variables.$error-text-color};
+  --map-background-color: #{variables.$light-map-background-color};
+
+  --solarian-color: #{variables.$light-solarian-color};
+  --manticore-color: #{variables.$light-manticore-color};
+  --haven-color: #{variables.$light-haven-color};
+  --malign-color: #{variables.$light-malign-color};
+  --anderman-color: #{variables.$light-anderman-color};
+  --silesia-color: #{variables.$light-silesia-color};
+  --midgard-color: #{variables.$light-midgard-color};
+  --matapan-color: #{variables.$light-matapan-color};
+  --asgard-color: #{variables.$light-asgard-color};
+  --monica-color: #{variables.$light-monica-color};
+  --torch-color: #{variables.$light-torch-color};
+  --famous-color: #{variables.$light-famous-color};
+  --unfocussed-color: #{variables.$light-unfocussed-color};
+
+  #external-map {
+    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+  }
+
+  #ctto {
+    color: hsla(0, 100%, 30%, 0.3);
+
+    & a {
+      color: hsla(0, 100%, 30%, 0.3);
+    }
+  }
+
+  .mdc-text-field--outlined, .mdc-text-field--filled {
+    --mdc-filled-text-field-container-color: #{variables.$light-secondary-background-color};
+  }
+
+  .mdc-text-field--outlined.mdc-text-field--disabled .mdc-text-field__input {
+    --mdc-outlined-text-field-disabled-input-text-color: #{variables.$light-secondary-text-color};
+  }
+
+  .mat-mdc-dialog-container .mdc-dialog__title {
+    --mdc-dialog-subhead-color: #{variables.$light-secondary-background-color};
+  }
+
+  .mat-mdc-dialog-container .mdc-dialog__surface {
+    --mdc-dialog-container-color: #{variables.$light-secondary-background-color};
+  }
+
+  .mat-mdc-menu-panel {
+    --mat-menu-container-color: #{variables.$light-secondary-background-color};
+  }
+
+  .mat-button-toggle-appearance-standard.mat-button-toggle-disabled {
+    //--mat-standard-button-toggle-disabled-state-text-color: #{variables.$light-secondary-text-color};
+    --mat-standard-button-toggle-disabled-state-background-color: #{variables.$light-secondary-background-color};
+  }
+
+  .mat-button-toggle-appearance-standard {
+    --mat-standard-button-toggle-text-color: #{variables.$light-secondary-text-color};
+    --mat-standard-button-toggle-background-color: #{variables.$light-background-color};
+  }
+
+  .mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #{variables.$light-background-color};
+    --mdc-snackbar-supporting-text-color: #{variables.$light-secondary-text-color};
+  }
+
+  .mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #{variables.$light-background-color};
+    --mdc-snackbar-supporting-text-color: #{variables.$light-secondary-text-color};
+
+    &.error-snackbar {
+    }
+
+    &.notification-snackbar {
+    }
+  }
+}

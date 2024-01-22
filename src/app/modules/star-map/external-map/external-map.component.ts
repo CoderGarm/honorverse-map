@@ -28,7 +28,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     static path: string = 'external-star-map';
 
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
-    public static readonly UN_FOCUSSED_COLOR: string = '#FFF';
 
     readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/XYZ';
     readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/XYZ';
@@ -36,7 +35,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     static CAPITOL_NAMES: string[] = [
         'Gregor', 'Manticore', 'Haven', 'Sol', 'Erewhon', 'Spindle', 'Mesa', 'Basilisk',
-        "Trevor's Star", 'Hennesy', 'Sigma Draconis', 'Lynx B (Terminus)', "Marsh",
+        "Yeltsin's Star", "Trevor's Star", 'Hennesy', 'Sigma Draconis', 'Lynx B (Terminus)', "Marsh",
         'Matapan', 'Terra Haute', 'Joshua', 'Sasebo', 'Asgard', 'Durandel',
         'Midgard', 'Prime', 'Ajay', 'Agueda', 'Stine', 'Clarence', 'Artesia', 'Dionigi',
         'Katharina', 'Franzeki', 'Bessie', 'Idaho', 'Zunker', 'J-156-18(L)', 'Calvin',
@@ -47,7 +46,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     ];
     private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
     highlight?: ColorGroup[];
-    colorByCircle: Map<string, string> = new Map<string, string>();
+    colorMarkerByCircle: Map<string, string> = new Map<string, string>();
     highlightedCenter?: SimpleCoord;
 
     coords: Coords[] = [];
@@ -97,8 +96,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
         1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
     ];
-    // fixme dindt work currently
-    rebuildMap: boolean = false;
+
+    rebuildMap: boolean = false; // fixme works pretty slow - improve please
 
     constructor(private route: ActivatedRoute,
                 private breakpointObserver: BreakpointObserver,
@@ -143,7 +142,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         const radialGroups = map.get(ExternalMapComponent.queryParam[2]);
         if (!!radialGroups) {
             this.radialGroups = JSON.parse(radialGroups);
-            this.radialGroups.forEach(rg => this.colorByCircle.set(ExternalMapComponent.getStarSystemCircleID(rg.coord), ExternalMapComponent.RADIAL_HIGHLIGHTING_COLOR));
+            this.radialGroups.forEach(rg => this.colorMarkerByCircle.set(ExternalMapComponent.getStarSystemCircleID(rg.coord), ExternalMapComponent.RADIAL_HIGHLIGHTING_COLOR));
         }
     }
 
@@ -165,7 +164,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             this.highlight!.forEach(cg => {
                 cg.simpleCoords.forEach(coord => {
                     const id = ExternalMapComponent.getStarSystemCircleID(coord);
-                    this.colorByCircle.set(id, cg.color);
+                    this.colorMarkerByCircle.set(id, cg.colorMarker);
                 });
             });
         }
@@ -179,8 +178,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     setYear(year: number) {
         this.rebuildMap = true;
-        const comparatorColorByCircle: Map<string, string> = new Map(this.colorByCircle);
-        this.colorByCircle.clear();
+        const comparatorColorByCircle: Map<string, string> = new Map(this.colorMarkerByCircle);
+        this.colorMarkerByCircle.clear();
         SystemAssignmentHelper.getByYear(year).forEach((systems, color) => this.setUpColorForSystems(systems, color));
         this.canvas!.children()
             .filter(c => c.classes().includes(ExternalMapComponent.STAR_MARKER))
@@ -188,10 +187,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 let id = star.id();
                 let x = Number.parseFloat(star.x() + '');
                 let y = Number.parseFloat(star.y() + '');
-                const oldColor = comparatorColorByCircle.has(id) ? comparatorColorByCircle.get(id)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
-                const color = this.colorByCircle.has(id) ? this.colorByCircle.get(id)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
+                const oldColor = comparatorColorByCircle.has(id) ? comparatorColorByCircle.get(id)! : SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER;
+                const colorMarker = this.colorMarkerByCircle.has(id) ? this.colorMarkerByCircle.get(id)! : SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER;
 
-                if (color != ExternalMapComponent.UN_FOCUSSED_COLOR) {
+                if (colorMarker != SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER) {
                     (<Path>star).plot(StarHelper.starMarked().array());
                 } else {
                     (<Path>star).plot(StarHelper.star().array());
@@ -200,8 +199,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 star.x(x)
                     .y(y)
 
-                if (color != oldColor) {
-                    star.fill(color);
+                if (colorMarker != oldColor) {
+                    star.addClass(colorMarker);
                 }
             });
         this.rebuildMap = false;
@@ -212,7 +211,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             let coord = this.getBySystemName(name);
             if (!!coord) {
                 const id = ExternalMapComponent.getStarSystemCircleID(coord);
-                this.colorByCircle.set(id, color);
+                this.colorMarkerByCircle.set(id, color);
             }
         });
     }
@@ -436,8 +435,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             const colors: Map<string, string> = new Map<string, string>();
             this.coords.forEach(coord => {
                 let id = ExternalMapComponent.getStarSystemCircleID(coord);
-                const color = this.colorByCircle.has(id) ? this.colorByCircle.get(id) : ExternalMapComponent.UN_FOCUSSED_COLOR;
-                colors.set(id, color!);
+                const colorMarker = this.colorMarkerByCircle.has(id) ? this.colorMarkerByCircle.get(id) : SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER;
+                colors.set(id, colorMarker!);
             });
 
             if (this.radialGroups.length > 0) {
@@ -580,15 +579,15 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 break;
         }
 
-        let selectedColor = this.colorByCircle.has(celestialBodyID) ? this.colorByCircle.get(celestialBodyID)! : ExternalMapComponent.UN_FOCUSSED_COLOR;
+        let selectedColorMarker = this.colorMarkerByCircle.has(celestialBodyID) ? this.colorMarkerByCircle.get(celestialBodyID)! : SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER;
         let orbitDefinition: OrbitDefinition = {
             celestial: this.selectedStarSystem,
-            color: selectedColor,
+            colorMarker: selectedColorMarker,
             isMain: false
         };
         this.drawJunctions();
         let circle = this.drawCelestial(orbitDefinition);
-        this.colorByCircle.set(circle.id(), selectedColor);
+        this.colorMarkerByCircle.set(circle.id(), selectedColorMarker);
         this.drawCyclingCircle(this.selectedStarSystem.x, this.selectedStarSystem.y, circle.id(), false);
     }
 
@@ -800,11 +799,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         }
     }
 
-    highlightColor(colorCode: string) {
+    highlightColor(colorMarker: string) {
         this.canvas!.children()
             .filter(c => c.classes().includes(ExternalMapComponent.STAR_MARKER))
             .forEach(star => {
-                if (star.fill().toLowerCase() === colorCode.toLowerCase()) {
+                if (star.hasClass(colorMarker.toLowerCase())) {
                     star.removeClass('legend-un-highlighted');
                 } else {
                     star.addClass('legend-un-highlighted');
@@ -817,4 +816,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             .filter(c => c.classes().includes(ExternalMapComponent.STAR_MARKER))
             .forEach(star => star.removeClass('legend-un-highlighted'));
     }
+
+    protected readonly SystemAssignmentHelper = SystemAssignmentHelper;
 }

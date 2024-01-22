@@ -7,6 +7,7 @@ import {Coords} from "../../../services/swagger";
 import {ExternalMapComponent} from "../external-map/external-map.component";
 import {StarHelper} from "./star-helper";
 import {SimpleCoord} from "../external-map-manager/external-map-manager.component";
+import {SystemAssignmentHelper} from "./system-assignment.helper";
 
 interface ElementToParent {
     parent: Dom;
@@ -223,14 +224,14 @@ export class BasicViewHelper extends BasicViewHelperData {
         const y = orbit.y;
 
         let circle = StarHelper.star()
-        if (orbitDefinition.color != ExternalMapComponent.UN_FOCUSSED_COLOR) {
+        if (orbitDefinition.colorMarker != SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER) {
             circle = StarHelper.starMarked();
         }
 
         circle
             .x(x - 7)
             .y(y - 7)
-            .fill(orbitDefinition.color)
+            .addClass(orbitDefinition.colorMarker)
             .addClass('name<>' + orbitDefinition.celestial.name.replaceAll(' ', '<|>'))
             .id(celestialBodyID);
         this.canvas!.add(circle)

@@ -25,7 +25,7 @@
             <mat-icon matSuffix (click)="selectedCenter(undefined); $event.stopPropagation();">clear</mat-icon>
             <mat-autocomplete #auto1="matAutocomplete" (optionSelected)="selectedCenter($event)">
                 <mat-option *ngFor="let coord of filteredCenter | async" [value]="coord">
-                    {{coord.name}}
+                    {{ coord.name }}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
@@ -47,6 +47,9 @@
     <span id="ctto">Map proudly presented by NovaBallard and <a target="_blank" href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
 
     <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red': lockedToBackground }">
+
+        <app-toggle-view-mode></app-toggle-view-mode>
+
         <mat-form-field appearance="outline" style="width: 180px;" *ngIf="!smallWidth">
             <mat-label>System</mat-label>
             <input matInput disabled value="{{ hoveredSystem.name }}">
@@ -232,18 +235,18 @@
     <div class="legend-box" [ngClass]="smallHeight ? 'wide-legend' : 'high-legend'" (mouseout)="resetHighlighting()">
         <span>Legend</span>
         <ul>
-            <li id="legend-solarian" (mouseover)="highlightColor('#B31616')">Solarian League</li>
-            <li id="legend-manticore" (mouseover)="highlightColor('#ff00ff')">Manticore Empire</li>
-            <li id="legend-haven" (mouseover)="highlightColor('#57ffc7')">Haven Republic</li>
-            <li id="legend-malign" (mouseover)="highlightColor('#996633')">Renaissance Factor</li>
-            <li id="legend-anderman" (mouseover)="highlightColor('#ffcc00')">Andermani Empire</li>
-            <li id="legend-silesia" (mouseover)="highlightColor('#99ff33')">Silesia Confederacy</li>
-            <li id="legend-midgard" (mouseover)="highlightColor('#ff9900')">Midgard Federation</li>
-            <li id="legend-matapan" (mouseover)="highlightColor('#6666ff')">Matapan</li>
-            <li id="legend-asgard" (mouseover)="highlightColor('#009999')">Asgard Association</li>
-            <li id="legend-Monica" (mouseover)="highlightColor('#669999')">Republic of Monica</li>
-            <li id="legend-torch" (mouseover)="highlightColor('#ff0066')">Kingdom of Torch</li>
-            <li id="legend-famous" (mouseover)="highlightColor('#3366cc')">Phoenix clusters</li>
+            <li class="solarian" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)">Solarian League</li>
+            <li class="manticore" (mouseover)="highlightColor(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)">Manticore Empire</li>
+            <li class="haven" (mouseover)="highlightColor(SystemAssignmentHelper.HAVEN_COLOR_MARKER)">Haven Republic</li>
+            <li class="malign" (mouseover)="highlightColor(SystemAssignmentHelper.MALIGN_COLOR_MARKER)">Renaissance Factor</li>
+            <li class="anderman" (mouseover)="highlightColor(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER)">Andermani Empire</li>
+            <li class="silesia" (mouseover)="highlightColor(SystemAssignmentHelper.SILESIA_COLOR_MARKER)">Silesia Confederacy</li>
+            <li class="midgard" (mouseover)="highlightColor(SystemAssignmentHelper.MIDGARD_COLOR_MARKER)">Midgard Federation</li>
+            <li class="matapan" (mouseover)="highlightColor(SystemAssignmentHelper.MATAPAN_COLOR_MARKER)">Matapan</li>
+            <li class="asgard" (mouseover)="highlightColor(SystemAssignmentHelper.ASGARD_COLOR_MARKER)">Asgard Association</li>
+            <li class="monica" (mouseover)="highlightColor(SystemAssignmentHelper.MONICA_COLOR_MARKER)">Republic of Monica</li>
+            <li class="torch" (mouseover)="highlightColor(SystemAssignmentHelper.TORCH_COLOR_MARKER)">Kingdom of Torch</li>
+            <li class="famous" (mouseover)="highlightColor(SystemAssignmentHelper.PHOENIX_COLOR_MARKER)">Phoenix clusters</li>
         </ul>
     </div>
 </div>

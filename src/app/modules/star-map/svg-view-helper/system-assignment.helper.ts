@@ -23,18 +23,19 @@ export class SystemAssignmentHelper {
 
     static readonly ERA_CONNECTOR: Map<number, Era> = new Map<number, Era>();
 
-    public static readonly SOLARIAN_LEAGUE_COLOR: string = '#B31616';
-    public static readonly MANTICORE_COLOR: string = '#ff00ff';
-    public static readonly HAVEN_COLOR: string = '#57ffc7';
-    public static readonly MALIGN_COLOR: string = '#996633';
-    public static readonly ANDERMAN_COLOR: string = '#ffcc00';
-    public static readonly SILESIA_COLOR: string = '#99ff33';
-    public static readonly MIDGARD_COLOR: string = '#ff9900';
-    public static readonly MATAPAN_COLOR: string = '#6666ff';
-    public static readonly ASGARD_COLOR: string = '#009999';
-    public static readonly MONICA_COLOR: string = '#669999';
-    public static readonly TORCH_COLOR: string = '#ff0066';
-    public static readonly PHOENIX_COLOR: string = '#3366cc';
+    public static readonly SOLARIAN_LEAGUE_COLOR_MARKER: string = 'solarian';
+    public static readonly MANTICORE_COLOR_MARKER: string = 'manticore';
+    public static readonly HAVEN_COLOR_MARKER: string = 'haven';
+    public static readonly MALIGN_COLOR_MARKER: string = 'malign';
+    public static readonly ANDERMAN_COLOR_MARKER: string = 'anderman';
+    public static readonly SILESIA_COLOR_MARKER: string = 'silesia';
+    public static readonly MIDGARD_COLOR_MARKER: string = 'midgard';
+    public static readonly MATAPAN_COLOR_MARKER: string = 'matapan';
+    public static readonly ASGARD_COLOR_MARKER: string = 'asgard';
+    public static readonly MONICA_COLOR_MARKER: string = 'monica';
+    public static readonly TORCH_COLOR_MARKER: string = 'torch';
+    public static readonly PHOENIX_COLOR_MARKER: string = 'famous';
+    public static readonly UNFOCUSSED_COLOR_MARKER: string = 'unfocussed';
 
     static readonly MANTICOREAN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
     static readonly HAVENITE_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
@@ -122,18 +123,18 @@ export class SystemAssignmentHelper {
 
     static getByEra(era: Era) {
         let nations_by_color: Map<string, string[]> = new Map<string, string[]>();
-        nations_by_color.set(SystemAssignmentHelper.MANTICORE_COLOR, SystemAssignmentHelper.MANTICOREAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MANTICOREAN_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.HAVEN_COLOR, SystemAssignmentHelper.HAVENITE_SYSTEMS.has(era) ? SystemAssignmentHelper.HAVENITE_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.MALIGN_COLOR, SystemAssignmentHelper.MALIGN_SYSTEMS.has(era) ? SystemAssignmentHelper.MALIGN_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.ANDERMAN_COLOR, SystemAssignmentHelper.ANDERMANI_SYSTEMS.has(era) ? SystemAssignmentHelper.ANDERMANI_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.SILESIA_COLOR, SystemAssignmentHelper.SILESIA_SYSTEMS.has(era) ? SystemAssignmentHelper.SILESIA_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR, SystemAssignmentHelper.SOLARIAN_SYSTEMS.has(era) ? SystemAssignmentHelper.SOLARIAN_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.MIDGARD_COLOR, SystemAssignmentHelper.MIDGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.MIDGARD_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.MATAPAN_COLOR, SystemAssignmentHelper.MATAPAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MATAPAN_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.ASGARD_COLOR, SystemAssignmentHelper.ASGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.ASGARD_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.MONICA_COLOR, SystemAssignmentHelper.MONICA_SYSTEMS.has(era) ? SystemAssignmentHelper.MONICA_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.TORCH_COLOR, SystemAssignmentHelper.TORCH_SYSTEMS.has(era) ? SystemAssignmentHelper.TORCH_SYSTEMS.get(era)! : []);
-        nations_by_color.set(SystemAssignmentHelper.PHOENIX_COLOR, SystemAssignmentHelper.PHOENIX_SYSTEMS.has(era) ? SystemAssignmentHelper.PHOENIX_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MANTICORE_COLOR_MARKER, SystemAssignmentHelper.MANTICOREAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MANTICOREAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.HAVEN_COLOR_MARKER, SystemAssignmentHelper.HAVENITE_SYSTEMS.has(era) ? SystemAssignmentHelper.HAVENITE_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MALIGN_COLOR_MARKER, SystemAssignmentHelper.MALIGN_SYSTEMS.has(era) ? SystemAssignmentHelper.MALIGN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER, SystemAssignmentHelper.ANDERMANI_SYSTEMS.has(era) ? SystemAssignmentHelper.ANDERMANI_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.SILESIA_COLOR_MARKER, SystemAssignmentHelper.SILESIA_SYSTEMS.has(era) ? SystemAssignmentHelper.SILESIA_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER, SystemAssignmentHelper.SOLARIAN_SYSTEMS.has(era) ? SystemAssignmentHelper.SOLARIAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MIDGARD_COLOR_MARKER, SystemAssignmentHelper.MIDGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.MIDGARD_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MATAPAN_COLOR_MARKER, SystemAssignmentHelper.MATAPAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MATAPAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.ASGARD_COLOR_MARKER, SystemAssignmentHelper.ASGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.ASGARD_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.MONICA_COLOR_MARKER, SystemAssignmentHelper.MONICA_SYSTEMS.has(era) ? SystemAssignmentHelper.MONICA_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.TORCH_COLOR_MARKER, SystemAssignmentHelper.TORCH_SYSTEMS.has(era) ? SystemAssignmentHelper.TORCH_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.PHOENIX_COLOR_MARKER, SystemAssignmentHelper.PHOENIX_SYSTEMS.has(era) ? SystemAssignmentHelper.PHOENIX_SYSTEMS.get(era)! : []);
         return nations_by_color;
     }
 

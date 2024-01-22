@@ -22,6 +22,7 @@ import {OverlayModule} from "@angular/cdk/overlay";
 import {SafePipe} from "../../services/pipes/safe.pipe";
 import {FileUploadComponent} from "./components/file-upload/file-upload.component";
 import {WikiDisplayComponent} from "./components/wiki-display/wiki-display.component";
+import {ToggleViewModeComponent} from "./components/toggle-view-mode/toggle-view-mode.component";
 
 @NgModule({
     declarations: [
@@ -36,6 +37,7 @@ import {WikiDisplayComponent} from "./components/wiki-display/wiki-display.compo
         NumericSliderCounterComponent,
         FileUploadComponent,
         WikiDisplayComponent,
+        ToggleViewModeComponent,
     ],
     imports: [
         CommonModule,
@@ -77,6 +79,7 @@ import {WikiDisplayComponent} from "./components/wiki-display/wiki-display.compo
         ColorPickerModule,
         FileUploadComponent,
         WikiDisplayComponent,
+        ToggleViewModeComponent,
     ]
 })
 export class SharedModuleModule {

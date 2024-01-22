@@ -60,23 +60,11 @@ div .mat-subheader {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: $background-color;
+  background-color: var(--background-color);
 }
 
 .clickable {
   cursor: pointer;
-}
-
-.mat-mdc-snack-bar-container {
-  //--mat-mdc-snack-bar-button-color: #ffffff;
-  --mdc-snackbar-container-color: #{$background-color};
-  --mdc-snackbar-supporting-text-color: #{$secondary-text-color};
-
-  &.error-snackbar {
-  }
-
-  &.notification-snackbar {
-  }
 }
 
 .no-scrolling {
@@ -103,43 +91,6 @@ body {
 
 .mat-expansion-panel-header:not([aria-disabled=true]) {
   height: 64px;
-}
-
-.sidenav-expansion-panel {
-
-  max-width: 250px;
-
-  & .mat-content {
-    color: white;
-  }
-
-  & .mat-expansion-panel {
-    width: auto;
-  }
-
-  & .mat-expansion-panel-header {
-    padding: 0 16px 0 16px;
-  }
-
-  & .mat-expansion-panel-header:not([aria-disabled=true]) {
-    height: 48px;
-  }
-}
-
-.side-nav-open-change-area {
-  position: sticky;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  float: left;
-}
-
-.side-nav-open-change-area-fixed {
-  position: sticky;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  float: left;
 }
 
 .short-field {
@@ -258,26 +209,16 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
 }
 
 .mat-step-header .mat-step-icon {
-  background-color: $primary-color;
+  background-color: var(--primary-color);
 }
 
-app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-content > app-outlined > .mat-mdc-text-field-wrapper {
-  margin: 0;
-}
-
-.planetary-tab-group #mat-tab-content-1-2 .mat-mdc-tab-body-content,
-.planetary-tab-group #mat-tab-content-1-1 .mat-mdc-tab-body-content {
-  // to create scrollbar inside planetary tabs construction and shipyard for .app-resource-display
-  position: relative;
-}
-
-.streamline-background {
-  background-color: $background-color;
+.streamline-background, .mat-mdc-table, .mat-mdc-paginator, .mat-stepper-vertical, .mat-stepper-horizontal, .mat-expansion-panel, .mat-drawer {
+  background-color: var(--secondary-background-color) !important;
 }
 
 
 .info-div {
-  background-color: #2E3338;
+  background-color: var(--background-color); // fixme find better color combinations
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -350,11 +291,6 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
   stroke-width: 1;
 }
 
-.svg-text {
-  fill: #FFF;
-}
-
-
 .circle-cycle {
   animation: cycling-circle 5s infinite;
   stroke-linecap: square;
@@ -391,4 +327,69 @@ app-available-researches > div.bottom-spacer.content-area > mat-card > mat-card-
 
 .legend-un-highlighted {
   opacity: 0.3 !important;
+}
+
+.solarian {
+  color: var(--solarian-color);
+  fill: var(--solarian-color);
+}
+
+.manticore {
+  color: var(--manticore-color);
+  fill: var(--manticore-color);
+}
+
+.haven {
+  color: var(--haven-color);
+  fill: var(--haven-color);
+}
+
+.malign {
+  color: var(--malign-color);
+  fill: var(--malign-color);
+}
+
+.anderman {
+  color: var(--anderman-color);
+  fill: var(--anderman-color);
+}
+
+.silesia {
+  color: var(--silesia-color);
+  fill: var(--silesia-color);
+}
+
+.midgard {
+  color: var(--midgard-color);
+  fill: var(--midgard-color);
+}
+
+.matapan {
+  color: var(--matapan-color);
+  fill: var(--matapan-color);
+}
+
+.asgard {
+  color: var(--asgard-color);
+  fill: var(--asgard-color);
+}
+
+.monica {
+  color: var(--monica-color);
+  fill: var(--monica-color);
+}
+
+.torch {
+  color: var(--torch-color);
+  fill: var(--torch-color);
+}
+
+.famous {
+  color: var(--famous-color);
+  fill: var(--famous-color);
+}
+
+.unfocussed {
+  color: var(--unfocussed-color);
+  fill: var(--unfocussed-color);
 }

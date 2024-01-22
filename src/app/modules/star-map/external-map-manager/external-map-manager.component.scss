@@ -1,7 +1,7 @@
 @import "src/styles/variables";
 
 .content-pane {
-  background-color: $background-color;
+  background-color: var(--background-color);
   padding: 50px;
   height: 100%;
   min-height: 100vh;
@@ -37,10 +37,6 @@ mat-expansion-panel {
 .input-element {
   margin-top: 25px;
   width: 100%;
-}
-
-.mat-icon {
-  color: white;
 }
 
 // drag and drop list
@@ -125,4 +121,59 @@ mat-expansion-panel {
   & mat-form-field {
     margin-left: 15px;
   }
+}
+
+app-toggle-view-mode {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+
+.solarian {
+  background-color: var(--solarian-color) !important;
+}
+
+.manticore {
+  background-color: var(--manticore-color) !important;
+}
+
+.haven {
+  background-color: var(--haven-color) !important;
+}
+
+.malign {
+  background-color: var(--malign-color) !important;
+}
+
+.anderman {
+  background-color: var(--anderman-color) !important;
+}
+
+.silesia {
+  background-color: var(--silesia-color) !important;
+}
+
+.midgard {
+  background-color: var(--midgard-color) !important;
+}
+
+.matapan {
+  background-color: var(--matapan-color) !important;
+}
+
+.asgard {
+  background-color: var(--asgard-color) !important;
+}
+
+.monica {
+  background-color: var(--monica-color) !important;
+}
+
+.torch {
+  background-color: var(--torch-color) !important;
+}
+
+.famous {
+  background-color: var(--famous-color) !important;
 }

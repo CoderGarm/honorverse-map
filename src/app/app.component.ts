@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
+import {ColorSchemeService} from "./services/color-scheme.service";
 
 @Component({
     selector: 'app-root',
@@ -8,10 +9,9 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
 
-    // not needed
-    isNoScroll: boolean = false;
-
-    constructor(private router: Router) {
+    constructor(private colorSchemeService: ColorSchemeService,
+                private router: Router) {
+        this.colorSchemeService.load();
 
         this.router.events.subscribe(event => {
             if ('snapshot' in event && !!event.snapshot.routeConfig && !!event.snapshot.routeConfig.path) {
