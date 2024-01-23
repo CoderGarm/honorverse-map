@@ -1,4 +1,4 @@
-import {ArrayXY, Box, Circle, CurveCommand, Dom, Element, G, LineCommand, Path, PathArrayAlias, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
+import {ArrayXY, Box, Circle, CurveCommand, Dom, Element, G, LineCommand, Path, PathArrayAlias, Rect, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
 import {Component, HostListener} from "@angular/core";
 import {BasicViewHelperData} from "./basic-view-helper-data";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -20,6 +20,8 @@ interface ElementToParent {
 export class BasicViewHelper extends BasicViewHelperData {
 
     protected canvas?: Svg;
+    protected minimap?: Svg;
+    private minimapRect?: Rect;
 
     public static readonly PAN_ZOOM_STANDARD_OPTIONS = {
         zoomFactor: 0.1, // zooming per wheel tick
@@ -48,12 +50,6 @@ export class BasicViewHelper extends BasicViewHelperData {
     protected static readonly STAR_RADIUS_IN_SYSTEM = 15;
 
     protected static readonly INVISIBLE_CLASS = "invisible";
-
-    /**
-     * If the map is used as external this prefix will be added to all necessary css selectors.
-     * Is an ugly idea, but it works until a full rework and separating the external map from the internal one.
-     */
-    private externalMapPrefix: string = '';
 
     protected aspectRatio: number = 1;
 
@@ -87,12 +83,18 @@ export class BasicViewHelper extends BasicViewHelperData {
         }
     }
 
-    createCanvas(id: string, parentCssId: string, externalMapPrefix: string = ''): Svg {
+    createMiniMap() {
+        this.minimap = SVG().id('universe-minimap-canvas').addTo('#universe-minimap').panZoom(BasicViewHelper.PAN_ZOOM_STANDARD_OPTIONS);
+        this.minimapRect = this.minimap.id('minimap-indicator').rect(0, 0).fill('transparent').stroke({width: 5, color: 'black'});
+    }
+
+    createCanvas(id: string, parentCssId: string): Svg {
         if (!this.canvas) {
-            this.externalMapPrefix = externalMapPrefix;
             this.canvas = SVG().id(id).addTo(parentCssId).panZoom(BasicViewHelper.PAN_ZOOM_STANDARD_OPTIONS);
             this.canvas
                 .on('zoom', this.zoomModification)
+                .on('zoom', this.panZoomMinimap)
+                .on('panning', this.panZoomMinimap)
                 .mouseover(this.mouseoverForText)
                 .mouseout(this.mouseoutForText);
         }
@@ -105,6 +107,27 @@ export class BasicViewHelper extends BasicViewHelperData {
         // must be zoomed after all others
         this.zoomCyclingCircles();
         this.zoomTexts();
+    }
+
+    panZoomMinimap = () => {
+        this.resizeMinimapRect();
+        this.centerMinimapRect();
+    }
+
+    private centerMinimapRect() {
+        let box = this.canvas!.viewbox();
+        const x = box.cx;
+        const y = box.cy;
+        this.minimapRect!.cx(x).cy(y);
+    }
+
+    private resizeMinimapRect() {
+        let box = this.canvas!.viewbox();
+        if (Math.abs(box.width) > 3500) {
+            this.minimapRect!.width(1250).height(1250);
+        } else {
+            this.minimapRect!.width(box.width).height(box.height);
+        }
     }
 
     private zoomTexts() {
@@ -191,6 +214,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     private resizeCelestial(c: Element) {
+        // fixme zoom marker or remove
         let baseRadius = BasicViewHelper.PLANET_RADIUS;
         const isStar = c.classes().filter(c => c == BasicViewHelperData.STAR_MARKER).length != 0;
         if (isStar) {
@@ -220,9 +244,26 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         this.setOrbitById(orbitID, orbit);
 
+        let circle = this.createStarSystemPath(orbitDefinition);
+
+        this.setCelestialCircleById(celestialBodyID, circle);
+        this.setCelestialOrbitById(celestialBodyID, orbit);
+        this.setCelestialObjectById(orbitID, orbitDefinition.celestial);
+        this.setCelestialObjectById(celestialBodyID, orbitDefinition.celestial);
+        this.createTextForCelestial(celestialBodyID, orbitDefinition.celestial.name, circle);
+
+        let circleMinimap = this.createStarSystemPath(orbitDefinition);
+        this.minimap!.add(circleMinimap);
+
+        return circle;
+    }
+
+    private createStarSystemPath(orbitDefinition: OrbitDefinition): Path {
+        const orbit: Coords = orbitDefinition.celestial;
+        let celestialBodyID = this.getCelestialBodyID(orbit);
+
         const x = orbit.x;
         const y = orbit.y;
-
         let circle = StarHelper.star()
         if (orbitDefinition.colorMarker != SystemAssignmentHelper.UNFOCUSSED_COLOR_MARKER) {
             circle = StarHelper.starMarked();
@@ -234,16 +275,10 @@ export class BasicViewHelper extends BasicViewHelperData {
             .addClass(orbitDefinition.colorMarker)
             .addClass('name<>' + orbitDefinition.celestial.name.replaceAll(' ', '<|>'))
             .id(celestialBodyID);
-        this.canvas!.add(circle)
+        this.canvas!.add(circle);
 
         circle.addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER);
         circle.addClass(BasicViewHelperData.STAR_MARKER);
-
-        this.setCelestialCircleById(celestialBodyID, circle);
-        this.setCelestialOrbitById(celestialBodyID, orbit);
-        this.setCelestialObjectById(orbitID, orbitDefinition.celestial);
-        this.setCelestialObjectById(celestialBodyID, orbitDefinition.celestial);
-        this.createTextForCelestial(celestialBodyID, orbitDefinition.celestial.name, circle);
         return circle;
     }
 
@@ -508,7 +543,6 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     protected getWidestExpanse(): { x: number, y: number } {
-        let coords = this.orbits!.sort((a, b) => a.x - b.x);
 
         let smallestX = this.orbits!.reduce((a, b) => a.x >= b.x ? b : a).x;
         let biggestX = this.orbits!.reduce((a, b) => a.x >= b.x ? a : b).x;
@@ -524,7 +558,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     public setViewBox(orbit: Coords) {
 
         let {x, y} = this.getWidestExpanse();
-        let radius = BasicViewHelper.calculateDistance(x, y) / 3; /* todo factor must be parametrized */
+        let radius = BasicViewHelper.calculateDistance(x, y) / 3;
         let width = radius;
         let height = radius;
         let startX = -width;
@@ -539,6 +573,11 @@ export class BasicViewHelper extends BasicViewHelperData {
 
         let viewBoxDef: string = (startX + xOffset) + " " + (startY + yOffset) + " " + width * 2 + " " + height * 2;
         this.canvas!.viewbox(viewBoxDef);
+    }
+
+    public setViewBoxForMinimap() {
+        let viewBoxDef: string = '-2200 -3050 3500 3500';
+        this.minimap!.viewbox(viewBoxDef);
     }
 
 

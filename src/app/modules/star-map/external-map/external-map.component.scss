@@ -7,7 +7,7 @@ app-toggle-view-mode {
   left: 5px;
 }
 
-#external-map {
+#external-map, #universe-minimap {
   background-color: var(--map-background-color);
   overflow: hidden;
   // some noise to look like paper
@@ -58,7 +58,7 @@ app-outlined {
 }
 
 .map-nav {
-  background-color: #2E3338;
+  background-color: var(--background-color);
   z-index: 999;
   border-radius: 20px;
   width: 550px;
@@ -171,11 +171,34 @@ app-outlined {
   z-index: 999;
 }
 
-#wiki-toggle {
+#minimap-container {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  top: 25px;
+  right: 25px;
+  width: 400px;
+  max-width: 25%;
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#wiki-toggle {
   z-index: 99;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 25px;
+}
+
+#universe-minimap {
+  z-index: 99;
+  width: 60%;
+  aspect-ratio: 1.3 / 1;
+  opacity: 0.9;
+  border: solid 1px white;
+  border-radius: 5px;
 }
 
 $chip-width: 85px;
@@ -264,4 +287,3 @@ mat-mdc-chip-set-stacked {
   bottom: 15px;
   right: 15px;
 }
-

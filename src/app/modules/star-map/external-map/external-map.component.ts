@@ -7,7 +7,7 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 import {ColorGroup, ExternalMapManagerComponent, NamedThing, RadialGroup, SimpleCoord} from "../external-map-manager/external-map-manager.component";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval, Observable} from "rxjs";
-import {Array, Path, Point} from "@svgdotjs/svg.js";
+import {Array, Path, Point, Svg} from "@svgdotjs/svg.js";
 import {BreakpointObserver} from "@angular/cdk/layout";
 import {FormControl} from "@angular/forms";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
@@ -17,6 +17,7 @@ import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/
 import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
 import {Era} from "../svg-view-helper/system-assignments/era";
 import {StarHelper} from "../svg-view-helper/star-helper";
+import {ColorSchemeService} from "../../../services/color-scheme.service";
 
 @Component({
     selector: 'app-external-map',
@@ -44,7 +45,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius", "Silesia", "Breslau", "Sachsen",
         "Roulette", "Limbo"
     ];
-    private static queryParam: string[] = ['highlight', 'center', 'radialGroup'];
+    private static queryParam: string[] = ['highlight', 'center', 'radialGroup', 'cinematicMode'];
     highlight?: ColorGroup[];
     colorMarkerByCircle: Map<string, string> = new Map<string, string>();
     highlightedCenter?: SimpleCoord;
@@ -80,6 +81,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     smallWidth: boolean = false;
     smallHeight: boolean = false;
 
+    cinematicMode: boolean = false;
+
     @ViewChild('centerInput')
     centerInput?: ElementRef<HTMLInputElement>;
 
@@ -100,6 +103,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     rebuildMap: boolean = false; // fixme works pretty slow - improve please
 
     constructor(private route: ActivatedRoute,
+                private colorSchemeService: ColorSchemeService,
                 private breakpointObserver: BreakpointObserver,
                 private publicResourcesService: PublicResourcesApiService,
                 public dialog: MatDialog,
@@ -126,6 +130,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         // just make sure that the key exists
         this.translate.get('star-map.universe-map.loading-spinner-message');
         this.route.queryParamMap.subscribe(map => {
+            this.detectCinematicMode(map);
             this.detectHighlight(map);
             this.detectCenter(map);
             this.detectRadialGroups(map);
@@ -136,6 +141,13 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             startWith(null),
             map((c: string | null) => (c ? this._filter(c) : this.coords.slice()))
         );
+    }
+
+    private setUpCinematicMode() {
+        if (this.cinematicMode) {
+            this.colorSchemeService._setColorScheme('light');
+            this.colorSchemeService.load();
+        }
     }
 
     private detectRadialGroups(map: ParamMap) {
@@ -169,6 +181,12 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             });
         }
         this.isCanonMapPreselected = !highlight;
+    }
+
+    private detectCinematicMode(map: ParamMap) {
+        const cinematicMode = map.get(ExternalMapComponent.queryParam[3]);
+        this.cinematicMode = !!cinematicMode && JSON.parse(cinematicMode);
+        this.setUpCinematicMode();
     }
 
     private setUpCanonMap() {
@@ -221,7 +239,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         const length = document.getElementById('universe')!.childNodes.length;
         if (length == 0) {
             // called twice but never cleared why
-            const canvas = this.createCanvas("universe-canvas", '#universe', 'ext-');
+            const canvas = this.createCanvas("universe-canvas", '#universe');
             canvas
                 .mouseover(this.mouseoverForCelestial)
                 .mouseout(this.mouseoutForCelestial)
@@ -230,6 +248,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 .click(this.clickEventForCelestial)
                 .click(this.clickEventForCreateCelestial)
                 .click(this.clickEventForCelestialWithWiki);
+
+            this.createMiniMap();
         }
     }
 
@@ -460,6 +480,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             let orbitDefinitions: OrbitDefinition[] = OrbitDefinition.getOrbitDefinitionsForExternalStarMap(this.center, this.coords, colors);
             this.drawRadialGroups(this.radialGroups);
             this.drawOrbits(orbitDefinitions);
+
             setTimeout(() => {
                 this.zoomToCenter();
             }, 20);
@@ -468,17 +489,35 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private zoomToCenter() {
-        let level: number = this.smallWidth ? 0.5 : 0.8;
-        this.canvas!.zoom(0).animate().zoom(level, new Point(this.center!.x, this.center!.y));
+        let level: number = this.cinematicMode ? 1 : (this.smallWidth ? 0.5 : 0.8);
+        let x = this.center!.x;
+        let y = this.center!.y;
+        this.canvas!.zoom(0).animate().zoom(level, new Point(x, y));
+
+        const coord: Coords = {
+            x: x,
+            y: y,
+            name: this.highlightedCenterSystemName!
+        }
+
+        let celestialBodyID = this.getCelestialBodyID(coord);
+        let text = this.getTextById(celestialBodyID);
+        this.addResizedText(text);
+        this.panZoomMinimap();
     }
 
     private drawJunctions() {
-        this.canvas!.children().filter(c => c.hasClass(BasicViewHelperData.WORMHOLE_MARKER)).forEach(c => this.canvas!.removeElement(c));
+        this.drawJunctionsToSvg(this.canvas!);
+        this.drawJunctionsToSvg(this.minimap!);
+    }
+
+    private drawJunctionsToSvg(canvas: Svg) {
+        canvas.children().filter(c => c.hasClass(BasicViewHelperData.WORMHOLE_MARKER)).forEach(c => canvas.removeElement(c));
         this.junctions.forEach(junction => {
             junction.termini.forEach(terminus => {
                 let nexus = this.getBySystemName(junction.nexus.name)!;
                 let terminal = this.getBySystemName(terminus.name)!;
-                this.canvas!
+                canvas
                     .line(nexus.x!, nexus.y!, terminal.x!, terminal.y!)
                     .id(this.getIdForWormhole(junction, terminus))
                     .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
@@ -736,7 +775,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         if (!coords) {
             return;
         }
+        let celestialBodyID = this.getCelestialBodyID(coords);
+        let text = this.getTextById(celestialBodyID);
+        this.addResizedText(text);
         this.canvas!.zoom(0).animate().zoom(2, new Point(coords.x, coords.y));
+        this.panZoomMinimap();
     }
 
     private controlsInvalid(key: string) {

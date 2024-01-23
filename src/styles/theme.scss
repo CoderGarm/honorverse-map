@@ -123,7 +123,7 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
   --famous-color: #{variables.$light-famous-color};
   --unfocussed-color: #{variables.$light-unfocussed-color};
 
-  #external-map {
+  #external-map, #universe-minimap {
     box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
   }
 

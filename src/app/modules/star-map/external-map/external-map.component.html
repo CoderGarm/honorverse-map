@@ -1,19 +1,19 @@
 <div id="external-map" [class.waiting]="rebuildMap">
 
-    <div id="year-selector" [ngClass]="smallHeight ? 'wide-stack' : 'high-stack'" [class.hidden]="!yearSelectorOpen">
+    <div id="year-selector" *ngIf="!cinematicMode" [ngClass]="smallHeight ? 'wide-stack' : 'high-stack'" [class.hidden]="!yearSelectorOpen">
         <mat-chip-listbox class="mat-mdc-chip-set-stacked years-selection-chip-list">
             <mat-chip-option *ngFor="let year of YEARS" class="years-chip no-checkmark" (click)="setYear(year)" [selected]="year == 1899">
                 {{ year }} PD
             </mat-chip-option>
         </mat-chip-listbox>
     </div>
-    <button id="year-toggle-btn" type="button" mat-icon-button [ngClass]="yearSelectorOpen ? (smallHeight ? 'wide-btn' : 'high-btn') : ''"
+    <button *ngIf="!cinematicMode" id="year-toggle-btn" type="button" mat-icon-button [ngClass]="yearSelectorOpen ? (smallHeight ? 'wide-btn' : 'high-btn') : ''"
             (click)="yearSelectorOpen = !yearSelectorOpen">
         <mat-icon *ngIf="yearSelectorOpen">switch_right</mat-icon>
         <mat-icon *ngIf="!yearSelectorOpen">switch_left</mat-icon>
     </button>
 
-    <form class="search-box">
+    <form class="search-box" *ngIf="!cinematicMode">
         <mat-form-field class="center-field" appearance="outline">
             <mat-label>Search for system</mat-label>
             <input matInput
@@ -36,17 +36,24 @@
         </button>
     </form>
 
-    <mat-button-toggle-group id="wiki-toggle" matTooltip="Select Fandom Integration">
-        <mat-button-toggle (click)="baseURL = undefined;">NONE</mat-button-toggle>
-        <mat-button-toggle (click)="baseURL = EN_FANDOM_URL;">EN</mat-button-toggle>
-        <mat-button-toggle (click)="baseURL = DE_FANDOM_URL;">DE</mat-button-toggle>
-    </mat-button-toggle-group>
+    <div id="minimap-container">
+        <mat-button-toggle-group *ngIf="!cinematicMode" id="wiki-toggle" matTooltip="Select Fandom Integration">
+            <mat-button-toggle (click)="baseURL = undefined;">NONE</mat-button-toggle>
+            <mat-button-toggle (click)="baseURL = EN_FANDOM_URL;">EN</mat-button-toggle>
+            <mat-button-toggle (click)="baseURL = DE_FANDOM_URL;">DE</mat-button-toggle>
+        </mat-button-toggle-group>
 
-    <button mat-button (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
+        <div id="universe-minimap">
+            <!-- svg elements will be created programmatically -->
+        </div>
+    </div>
 
-    <span id="ctto">Map proudly presented by NovaBallard and <a target="_blank" href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
 
-    <div class="info-div flex-items-container" *ngIf="!!hoveredSystem" [ngClass]="{'red': lockedToBackground }">
+    <button mat-button *ngIf="!cinematicMode" (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
+
+    <span *ngIf="!cinematicMode" id="ctto">Map proudly presented by NovaBallard and <a target="_blank" href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
+
+    <div *ngIf="!cinematicMode && !!hoveredSystem" class="info-div flex-items-container" [ngClass]="{'red': lockedToBackground }">
 
         <app-toggle-view-mode></app-toggle-view-mode>
 
@@ -98,7 +105,7 @@
         </button>
     </div>
 
-    <div class="control-container flex-items-container">
+    <div *ngIf="!cinematicMode" class="control-container flex-items-container">
         <div *ngIf="showBackgroundNav" class="map-nav">
             <app-outlined titleValue="Background controls">
                 <app-outlined titleValue="Upload background">

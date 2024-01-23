@@ -218,7 +218,7 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
 
 
 .info-div {
-  background-color: var(--background-color); // fixme find better color combinations
+  background-color: var(--background-color);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -252,7 +252,7 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
   background-repeat: no-repeat;
 }
 
-#universe-canvas, #star-system-canvas, #combat-arena {
+#universe-canvas, #star-system-canvas, #combat-arena, #universe-minimap-canvas {
   height: 100%;
   width: 100%;
   contain: paint;
