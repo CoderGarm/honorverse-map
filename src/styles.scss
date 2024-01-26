@@ -267,6 +267,15 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
   stroke: dimgray;
 }
 
+.wormhole-highlight {
+  stroke: var(--junction-color);
+}
+
+.minimap-wormhole {
+  stroke-width: 5;
+  stroke: var(--junction-color);
+}
+
 .star {
   opacity: 0.8;
   filter: alpha(opacity=80);
@@ -313,14 +322,15 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
   }
 }
 
-.wormhole-highlight {
-  stroke: orange;
-}
-
 .coordCross {
   stroke: var(--coordinate-system-color);
   opacity: 0.4;
   filter: alpha(opacity=40);
+}
+
+.minimap-coordCross {
+  stroke: var(--coordinate-system-color);
+  stroke-width: 1;
 }
 
 #minimap-indicator {

@@ -517,23 +517,25 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private drawJunctions() {
         this.drawJunctionsToSvg(this.canvas!);
-        this.drawJunctionsToSvg(this.minimap!);
+        this.drawJunctionsToSvg(this.minimap!, 'minimap-');
     }
 
-    private drawJunctionsToSvg(canvas: Svg) {
+    private drawJunctionsToSvg(canvas: Svg, prefix: string = '') {
         canvas.children().filter(c => c.hasClass(BasicViewHelperData.WORMHOLE_MARKER)).forEach(c => canvas.removeElement(c));
         this.junctions.forEach(junction => {
-            junction.termini.forEach(terminus => {
-                let nexus = this.getBySystemName(junction.nexus.name)!;
-                let terminal = this.getBySystemName(terminus.name)!;
-                canvas
-                    .line(nexus.x!, nexus.y!, terminal.x!, terminal.y!)
-                    .id(this.getIdForWormhole(junction, terminus))
-                    .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
-                    .addClass(BasicViewHelperData.WORMHOLE_MARKER)
-                    .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
-                    .stroke({width: 3, color: 'irrelevant'});
-            });
+            junction.termini
+                .filter(t => prefix.length > 0 ? junction.termini.length > 3 : true)
+                .forEach(terminus => {
+                    let nexus = this.getBySystemName(junction.nexus.name)!;
+                    let terminal = this.getBySystemName(terminus.name)!;
+                    canvas
+                        .line(nexus.x!, nexus.y!, terminal.x!, terminal.y!)
+                        .id(this.getIdForWormhole(junction, terminus))
+                        .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
+                        .addClass(prefix + BasicViewHelperData.WORMHOLE_MARKER)
+                        .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
+                        .stroke({width: 3, color: 'irrelevant'});
+                });
         });
     }
 

@@ -51,6 +51,7 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
   --unfocussed-color: #{variables.$dark-unfocussed-color};
   --coordinate-system-color: #{variables.$dark-map-coordinate-system-color};
   --minimap-rect-color: #{variables.$dark-secondary-text-color};
+  --junction-color: #{variables.$dark-junction-color};
 
   .svg-text {
     fill: #FFF;
@@ -126,6 +127,7 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
   --unfocussed-color: #{variables.$light-unfocussed-color};
   --coordinate-system-color: #{variables.$light-map-coordinate-system-color};
   --minimap-rect-color: #{variables.$light-secondary-text-color};
+  --junction-color: #{variables.$light-junction-color};
 
   #external-map, #universe-minimap {
     box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;

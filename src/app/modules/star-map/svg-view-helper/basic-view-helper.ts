@@ -85,7 +85,7 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     createMiniMap(clickMinimap: any) {
-        this.minimap = SVG().id('universe-minimap-canvas').addTo('#universe-minimap').panZoom(BasicViewHelper.PAN_ZOOM_STANDARD_OPTIONS);
+        this.minimap = SVG().id('universe-minimap-canvas').addTo('#universe-minimap');
         this.minimap.click(clickMinimap);
         this.minimapRect = this.minimap.id('minimap-indicator').rect(0, 0).fill('transparent').stroke({width: 5, color: 'irrelevant'});
     }
@@ -574,8 +574,16 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     public setViewBoxForMinimap() {
-        let viewBoxDef: string = '-2200 -3050 3500 3500';
-        this.minimap!.viewbox(viewBoxDef);
+        /* if the universe gets some new clusters - ha ha
+        let smallestX = this.orbits!.reduce((a, b) => a.x >= b.x ? b : a).x;
+        let biggestX = this.orbits!.reduce((a, b) => a.x >= b.x ? a : b).x;
+        let smallestY = this.orbits!.reduce((a, b) => a.y >= b.y ? b : a).y;
+        let biggestY = this.orbits!.reduce((a, b) => a.y >= b.y ? a : b).y;
+        let x = Math.max(Math.abs(smallestX), Math.abs(biggestX));
+        let y = Math.max(Math.abs(smallestY), Math.abs(biggestY));
+        let viewBoxDef: string = smallestX + " " + smallestY + " " + x * 2 + " " + y * 2;
+        */
+        this.minimap!.viewbox('-3367 -3840 5888 6928');
     }
 
     getSvgCoordinateFromMinimapPointerEvent(event: PointerEvent) {
@@ -592,23 +600,22 @@ export class BasicViewHelper extends BasicViewHelperData {
         return Math.sqrt(Math.pow(first.x - second.x, 2) + Math.pow(first.y - second.y, 2));
     }
 
-
     protected override setOrbits(orbits: OrbitDefinition[]) {
         super.setOrbits(orbits);
-        this.createPolarCoordinateSystem();
+        this.createPolarCoordinateSystem(this.canvas!);
+        // nope, it's too unübersichtlich this.createPolarCoordinateSystem(this.minimap!, 'minimap-');
     }
 
-    private createPolarCoordinateSystem() {
+    private createPolarCoordinateSystem(canvas: Svg, prefix: string = '') {
         let {x, y} = this.getWidestExpanse();
         this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y);
         this.radiusOfCoordinateCross *= 1.1;
 
-        this.createLocalPolarCoordinateSystem(0, 0, this.radiusOfCoordinateCross, 'main');
+        this.createLocalPolarCoordinateSystem(canvas, 0, 0, this.radiusOfCoordinateCross, prefix);
     }
 
-    protected createLocalPolarCoordinateSystem(xBase: number, yBase: number, radius: number, idPrefix: string) {
-        let mainGroup = this.canvas!;
-        const group = mainGroup.group().id(idPrefix + "-" + BasicViewHelper.COORD_CROSS);
+    protected createLocalPolarCoordinateSystem(canvas: Svg, xBase: number, yBase: number, radius: number, prefix: string = '') {
+        const group = canvas.group().id(BasicViewHelper.COORD_CROSS);
         let steps = 6;
         const radiusSteps = radius / steps;
         for (let i = 1; i < steps; i++) {
@@ -616,8 +623,8 @@ export class BasicViewHelper extends BasicViewHelperData {
                 .x(xBase)
                 .y(yBase)
                 .fill(BasicViewHelper.NONE_FILL_COLOR)
-                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + i)
-                .addClass(BasicViewHelper.COORD_CROSS)
+                .id(BasicViewHelper.COORD_CROSS + i)
+                .addClass(prefix + BasicViewHelper.COORD_CROSS)
                 .radius(radiusSteps * i);
         }
         const degree = 12;
@@ -627,7 +634,7 @@ export class BasicViewHelper extends BasicViewHelperData {
             const y = radius * Math.sin(angle * Math.PI / 180);
             const points: ArrayXY[] = [[xBase, yBase], [xBase + x, yBase + y]];
             group.line(points)
-                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + "-line" + j)
+                .id(BasicViewHelper.COORD_CROSS + "-line" + j)
                 .addClass(BasicViewHelper.COORD_CROSS)
         }
     }
