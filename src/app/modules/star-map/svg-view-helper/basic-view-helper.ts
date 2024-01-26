@@ -84,8 +84,9 @@ export class BasicViewHelper extends BasicViewHelperData {
         }
     }
 
-    createMiniMap() {
+    createMiniMap(clickMinimap: any) {
         this.minimap = SVG().id('universe-minimap-canvas').addTo('#universe-minimap').panZoom(BasicViewHelper.PAN_ZOOM_STANDARD_OPTIONS);
+        this.minimap.click(clickMinimap);
         this.minimapRect = this.minimap.id('minimap-indicator').rect(0, 0).fill('transparent').stroke({width: 5, color: 'irrelevant'});
     }
 
@@ -124,11 +125,7 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     private resizeMinimapRect() {
         let box = this.canvas!.viewbox();
-        if (Math.abs(box.width) > 3500) {
-            this.minimapRect!.width(1250).height(1250);
-        } else {
-            this.minimapRect!.width(box.width).height(box.height);
-        }
+        this.minimapRect!.width(box.width).height(box.height);
     }
 
     private zoomTexts() {
@@ -581,6 +578,10 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.minimap!.viewbox(viewBoxDef);
     }
 
+    getSvgCoordinateFromMinimapPointerEvent(event: PointerEvent) {
+        let p = new DOMPoint(event.clientX, event.clientY).matrixTransform(this.minimap!.screenCTM().inverse());
+        return {x: p.x, y: p.y};
+    }
 
     getSvgCoordinateFromPointerEvent(event: PointerEvent) {
         let p = new DOMPoint(event.clientX, event.clientY).matrixTransform(this.canvas!.screenCTM().inverse());

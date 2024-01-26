@@ -249,7 +249,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 .click(this.clickEventForCreateCelestial)
                 .click(this.clickEventForCelestialWithWiki);
 
-            this.createMiniMap();
+            this.createMiniMap(this.clickMinimap);
         }
     }
 
@@ -492,18 +492,27 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         let level: number = this.cinematicMode ? 1 : (this.smallWidth ? 0.5 : 0.8);
         let x = this.center!.x;
         let y = this.center!.y;
-        this.canvas!.zoom(0).animate().zoom(level, new Point(x, y));
+        this.canvas!.zoom(0).animate().zoom(level, new Point(x, y)).after(event => {
 
-        const coord: Coords = {
-            x: x,
-            y: y,
-            name: this.highlightedCenterSystemName!
-        }
+            const coord: Coords = {
+                x: x,
+                y: y,
+                name: this.highlightedCenterSystemName!
+            }
 
-        let celestialBodyID = this.getCelestialBodyID(coord);
-        let text = this.getTextById(celestialBodyID);
-        this.addResizedText(text);
-        this.panZoomMinimap();
+            let celestialBodyID = this.getCelestialBodyID(coord);
+            let text = this.getTextById(celestialBodyID);
+            this.addResizedText(text);
+            this.panZoomMinimap();
+        });
+    }
+
+    clickMinimap = (event: PointerEvent) => {
+        let p = this.getSvgCoordinateFromMinimapPointerEvent(event);
+        this.canvas!.zoom(0).animate().zoom(1, new Point(p.x, p.y))
+            .after(event => {
+                this.panZoomMinimap();
+            });
     }
 
     private drawJunctions() {
