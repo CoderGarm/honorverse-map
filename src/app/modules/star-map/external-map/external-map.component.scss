@@ -347,3 +347,8 @@ mat-mdc-chip-set-stacked {
 .hidden-box-title-vertical {
   width: 20px !important;
 }
+
+.visibility-btn {
+  position: absolute;
+  z-index: 99;
+}

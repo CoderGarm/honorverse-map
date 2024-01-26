@@ -46,6 +46,10 @@
         <div id="universe-minimap">
             <!-- svg elements will be created programmatically -->
         </div>
+        <button mat-icon-button class="visibility-btn" (click)="cinematicMode = !cinematicMode">
+            <mat-icon *ngIf="cinematicMode" class="centered-icon">visibility_off</mat-icon>
+            <mat-icon *ngIf="!cinematicMode" class="centered-icon">visibility</mat-icon>
+        </button>
 
         <mat-button-toggle-group *ngIf="!cinematicMode" class="wiki-toggle" matTooltip="Select Fandom Integration">
             <mat-button-toggle (click)="baseURL = undefined;">NONE</mat-button-toggle>
@@ -54,7 +58,6 @@
         </mat-button-toggle-group>
 
     </div>
-
 
     <button mat-button *ngIf="!cinematicMode" (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
 
