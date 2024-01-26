@@ -176,6 +176,11 @@ app-outlined {
   margin: auto;
 }
 
+.minimap-container.widescreen {
+  width: 50%;
+  max-width: 100%;
+}
+
 .minimap-container {
   position: absolute;
   top: 25px;
@@ -350,5 +355,11 @@ mat-mdc-chip-set-stacked {
 
 .visibility-btn {
   position: absolute;
+  z-index: 99;
+}
+
+.widescreen-btn {
+  position: absolute;
+  top: 25px;
   z-index: 99;
 }

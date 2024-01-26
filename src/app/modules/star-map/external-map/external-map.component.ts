@@ -82,6 +82,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     smallHeight: boolean = false;
 
     cinematicMode: boolean = false;
+    widescreenMode: boolean = false;
 
     @ViewChild('centerInput')
     centerInput?: ElementRef<HTMLInputElement>;
@@ -865,4 +866,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     protected readonly SystemAssignmentHelper = SystemAssignmentHelper;
+
+    toggleWidescreenMode() {
+        this.widescreenMode = !this.widescreenMode;
+        this.cinematicMode = this.widescreenMode;
+    }
 }
