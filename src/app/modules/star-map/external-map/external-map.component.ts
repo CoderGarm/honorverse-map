@@ -218,9 +218,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 star.x(x)
                     .y(y)
 
-                if (colorMarker != oldColor) {
-                    star.addClass(colorMarker);
-                }
+                star.removeClass(oldColor);
+                star.addClass(colorMarker);
             });
         this.rebuildMap = false;
     }
