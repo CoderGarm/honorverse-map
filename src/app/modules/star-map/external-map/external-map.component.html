@@ -203,7 +203,7 @@
             </app-outlined>
         </div>
 
-        <div *ngIf="!!selectedStarSystem && !baseURL" class="coord-control flex-items-container">
+        <div *ngIf="!!selectedStarSystem && showBackgroundManipulation && !baseURL" class="coord-control flex-items-container">
             <app-outlined titleValue="Celestial controls" style="margin: auto;">
                 <div class="celestial-controls">
                     <button mat-mini-fab color="primary" (click)="deselectSystem()"

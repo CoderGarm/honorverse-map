@@ -38,11 +38,6 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     protected orbits: Coords[] = [];
 
-    private smallestXOrbit?: Coords;
-    private biggestXOrbit?: Coords;
-    private smallestYOrbit?: Coords;
-    private biggestYOrbit?: Coords;
-
     protected radiusOfCoordinateCross?: number;
     private textById: Map<string, Text> = new Map<string, Text>();
     private celestialObjectById: Map<string, Coords> = new Map<string, Coords>();
@@ -162,22 +157,5 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     protected setOrbits(orbits: OrbitDefinition[]) {
         this.orbits = orbits.map(od => od.celestial);
-        this.sortByOrbit();
-    }
-
-    private sortByOrbit() {
-        if (this.orbits.length == 0) {
-            throw new Error("The orbits must be present to calculate the map view.");
-        }
-        let sortedByX: Coords[] = this.orbits.sort((a, b) => {
-            return a.x < b.x ? -1 : 1;
-        });
-        this.smallestXOrbit = sortedByX[0];
-        this.biggestXOrbit = sortedByX[sortedByX.length - 1];
-        let sortedByY: Coords[] = this.orbits.sort((a, b) => {
-            return a.y < b.y ? -1 : 1;
-        });
-        this.smallestYOrbit = sortedByY[0];
-        this.biggestYOrbit = sortedByY[sortedByY.length - 1];
     }
 }

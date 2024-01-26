@@ -1,4 +1,4 @@
-import {ArrayXY, Box, Circle, CurveCommand, Dom, Element, G, LineCommand, Path, PathArrayAlias, Rect, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
+import {ArrayXY, Box, Circle, CurveCommand, Dom, Element, LineCommand, Path, PathArrayAlias, Rect, Shape, StrokeData, SVG, Svg, Text} from "@svgdotjs/svg.js";
 import {Component, HostListener} from "@angular/core";
 import {BasicViewHelperData} from "./basic-view-helper-data";
 import {OrbitDefinition} from "../payload/orbit-definition";
@@ -44,13 +44,10 @@ export class BasicViewHelper extends BasicViewHelperData {
     public static readonly NONE_FILL_COLOR = "none";
 
     private static readonly COORD_CROSS = "coordCross";
-    protected static readonly HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS = "highlighted";
 
     protected static readonly PLANET_RADIUS = 5;
     protected static readonly STAR_RADIUS = 5;
     protected static readonly STAR_RADIUS_IN_SYSTEM = 15;
-
-    protected static readonly INVISIBLE_CLASS = "invisible";
 
     protected aspectRatio: number = 1;
 
@@ -107,7 +104,6 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.zoomLevel = ev.detail.level;
         this.zoomResizableContents();
         // must be zoomed after all others
-        this.zoomCyclingCircles();
         this.zoomTexts();
     }
 
@@ -138,28 +134,6 @@ export class BasicViewHelper extends BasicViewHelperData {
             .filter(c => c.classes().filter(css => css == BasicViewHelperData.MOVABLE_STATE_DOT_MARKER).length == 0)
             .filter(c => c.classes().filter(css => css == BasicViewHelperData.TEXT_MARKER).length > 0);
         texts.forEach(text => this.resizeText(<Text>text));
-    }
-
-    private zoomCyclingCircles() {
-        if (this.zoomLevel <= 1) {
-            return;
-        }
-
-        const circles: Element[] = this.canvas!.children().filter(elem => elem.id().endsWith(BasicViewHelperData.CYCLING_CIRCLE_SUFFIX));
-        circles.forEach(dot => {
-            if (dot instanceof Circle) {
-                const cssClass = dot.classes().filter(css => css.startsWith(BasicViewHelperData.ICON_ID_MARKER));
-                const id = cssClass![0].replace(BasicViewHelperData.ICON_ID_MARKER, '');
-                const isInvisible = dot.classes().filter(css => css === BasicViewHelper.INVISIBLE_CLASS).length > 0;
-                const fleet: G | undefined = this.getGroupById(id);
-                const celestial: Path | undefined = this.getCelestialByID(id);
-                let element: Element | undefined = !!fleet ? fleet : !!celestial ? celestial : undefined;
-                if (!!element) {
-                    this.canvas?.removeElement(dot)
-                    this.drawCyclingCircle(element.cx(), element.cy(), id, isInvisible);
-                }
-            }
-        });
     }
 
     protected zoomStroke(strokeData: StrokeData) {
@@ -345,21 +319,6 @@ export class BasicViewHelper extends BasicViewHelperData {
         return xFit && yFit;
     }
 
-    createRoundCapMarkerNorth(id: string, x: number, y: number, xShifter?: number, yShifter?: number) {
-        let arr = this.createRoundCapMarkerNorthPoints(x, y, xShifter, yShifter);
-        this.canvas!.path(arr)
-            .fill(BasicViewHelper.NONE_FILL_COLOR)
-            .id(id + BasicViewHelperData.ROUND_CAP_SUFFIX)
-            .addClass(BasicViewHelper.HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS)
-            .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
-            .addClass(BasicViewHelperData.ROUND_CAP_MARKER)
-            .addClass(this.getCenterMarker(x, y));
-    }
-
-    private getCenterMarker(x: number, y: number) {
-        return BasicViewHelperData.CENTER_COORDINATES_MARKER + x + BasicViewHelperData.CENTER_COORDINATES_SEPARATOR + y;
-    }
-
     private getCoordsFromCenterMarker(element: Element): ArrayXY | undefined {
         const markers = element.classes().filter(c => c.startsWith(BasicViewHelperData.CENTER_COORDINATES_MARKER));
         if (!!markers && markers.length == 1) {
@@ -442,7 +401,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         }
     }
 
-    drawCyclingCircle(x: number, y: number, id: string, isInvisible: boolean) {
+    drawCyclingCircle(x: number, y: number, id: string) {
         const zoomFactor = this.getOrDefaultZoomFactor(this.zoomLevel);
 
         const elementToParent = this.findElementAndParentById(id);
@@ -452,14 +411,13 @@ export class BasicViewHelper extends BasicViewHelperData {
             const radius = this.getRadius(element, zoomFactor);
             const circle = new Circle().x(x).y(y)
                 .radius(radius)
+                .fill(BasicViewHelper.NONE_FILL_COLOR)
                 .addClass(BasicViewHelper.CYCLING_CIRCLE_MARKER)
                 .addClass(BasicViewHelper.CLICKABLE_CSS_CLASS)
                 .addClass(BasicViewHelperData.ICON_ID_MARKER + id)
                 .id(this.getCyclingCircleId(id));
 
-            if (isInvisible) {
-                circle.addClass(BasicViewHelper.INVISIBLE_CLASS);
-            }
+            BasicViewHelper.attachClickMarker(circle);
 
             parent.removeElement(element);
             parent.add(circle);
@@ -637,5 +595,15 @@ export class BasicViewHelper extends BasicViewHelperData {
                 .id(BasicViewHelper.COORD_CROSS + "-line" + j)
                 .addClass(BasicViewHelper.COORD_CROSS)
         }
+    }
+
+    static attachClickMarker(shape: Shape) {
+        const number = 1.3;
+        shape
+            .animate(100, 500, 'after').transform({scale: [number, number]}).css({'opacity': '0.5'})
+            .animate(100, 100, 'after').transform({scale: [1, 1]}).css({'opacity': '1'})
+            .animate(100, 100, 'after').transform({scale: [number, number]}).css({'opacity': '0.5'})
+            .animate(100, 100, 'after').transform({scale: [1, 1]}).css({'opacity': '1'})
+            .loop(500, true, 1500);
     }
 }

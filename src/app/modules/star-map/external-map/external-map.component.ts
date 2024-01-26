@@ -361,15 +361,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             let o: OrbitDefinition = new OrbitDefinition(this.selectedStarSystem, false, 'red');
             let celestialBodyID = this.getCelestialBodyID(this.selectedStarSystem);
             this.drawCelestial(o);
-            this.drawCyclingCircle(x, y, celestialBodyID, false);
+            this.drawCyclingCircle(x, y, celestialBodyID);
         }
     }
 
     clickEventForCelestial = (event: PointerEvent) => {
-        if (!this.showBackgroundManipulation || !!this.selectedStarSystem) {
-            return;
-        }
-
         let id = this.getIdFromEvent(event);
         if (!this.isCelestialId(id)) {
             return;
@@ -398,11 +394,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             return;
         }
 
-        if (!!this.selectedStarSystem) {
-            return;
-        }
         // add selected system
-        this.drawCyclingCircle(x, y, id, false);
+        this.drawCyclingCircle(x, y, id);
         this.selectedStarSystem = this.hoveredSystem;
     }
 
@@ -483,6 +476,8 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
             setTimeout(() => {
                 this.zoomToCenter();
+                let celestialBodyID = this.getCelestialBodyID(this.hoveredSystem!);
+                this.drawCyclingCircle(this.hoveredSystem!.x, this.hoveredSystem!.y, celestialBodyID);
             }, 20);
         });
         this.subscriptions.push(sub);
@@ -492,14 +487,12 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         let level: number = this.cinematicMode ? 1 : (this.smallWidth ? 0.5 : 0.8);
         let x = this.center!.x;
         let y = this.center!.y;
-        this.canvas!.zoom(0).animate().zoom(level, new Point(x, y)).after(event => {
-
+        this.canvas!.zoom(0).animate().zoom(level, new Point(x, y)).after(() => {
             const coord: Coords = {
                 x: x,
                 y: y,
                 name: this.highlightedCenterSystemName!
             }
-
             let celestialBodyID = this.getCelestialBodyID(coord);
             let text = this.getTextById(celestialBodyID);
             this.addResizedText(text);
@@ -510,7 +503,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     clickMinimap = (event: PointerEvent) => {
         let p = this.getSvgCoordinateFromMinimapPointerEvent(event);
         this.canvas!.zoom(0).animate().zoom(1, new Point(p.x, p.y))
-            .after(event => {
+            .after(() => {
                 this.panZoomMinimap();
             });
     }
@@ -524,7 +517,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         canvas.children().filter(c => c.hasClass(BasicViewHelperData.WORMHOLE_MARKER)).forEach(c => canvas.removeElement(c));
         this.junctions.forEach(junction => {
             junction.termini
-                .filter(t => prefix.length > 0 ? junction.termini.length > 3 : true)
+                .filter(() => prefix.length > 0 ? junction.termini.length > 3 : true)
                 .forEach(terminus => {
                     let nexus = this.getBySystemName(junction.nexus.name)!;
                     let terminal = this.getBySystemName(terminus.name)!;
@@ -638,7 +631,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.drawJunctions();
         let circle = this.drawCelestial(orbitDefinition);
         this.colorMarkerByCircle.set(circle.id(), selectedColorMarker);
-        this.drawCyclingCircle(this.selectedStarSystem.x, this.selectedStarSystem.y, circle.id(), false);
+        this.drawCyclingCircle(this.selectedStarSystem.x, this.selectedStarSystem.y, circle.id());
     }
 
     private removeSelectedSystemFromCanvas() {
