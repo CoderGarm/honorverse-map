@@ -50,7 +50,7 @@ export class SystemAssignmentEra18 extends MapContainer {
             "Willis", "Hendrikson", "Jarmon", "Terrance", "Tumult", "Sarah", "Carlton", "Silesia",
             "Hillman", "Lutrell", "Hera (Silesia-Sector)", "Harston", "Melbourne",
             "Saginaw", "Sachsen", "Prism", "Casimir", "Trautman's Star", "Hyatt", "Krieger's Star", "Melchor", "Hyperion", "Horus", "Crawford",
-            "Caldwell", "Allen", "Brennan", "Adelaide", "Carson", "Caroline",
+            "Caldwell", "Allen", "Brennan", "Adelaide", "Carson", "Caroline", "Jug", "Quatre Bras",
 
             "Zale", "Howard", "Meyers", "Mobius", "McIntosh", "Seraphim", "Mesa", "Galton", "Kumang", "Włocławek", "Golem",
         );
@@ -108,7 +108,7 @@ export class SystemAssignmentEra18 extends MapContainer {
 
             "Sachsen", "Trellis", "Slocum (Silesia-Sector)", "Schiller", "Magyar", "Zoraster", "Walther", "Psyche", "Cresswell",
             "Sharon's Star", "Posnan", "Libau", "Gosset", "Breslau", "Hume", "Sandhill", "Lau Hiler", "Telmach", "Arendscheldt",
-            "Sigma", "Brinkman", "Schiller", "Posnan", "Sigma", "Creswell", "Tyler's Star", "Cromwell", "Pandora"
+            "Sigma", "Brinkman", "Schiller", "Posnan", "Sigma", "Creswell", "Tyler's Star", "Cromwell", "Pandora", "Heinrich's Star"
         );
 
         this.SOLARIAN_SYSTEMS.push(
@@ -116,7 +116,7 @@ export class SystemAssignmentEra18 extends MapContainer {
             "Galen", "Joshua", "Sankar", "Stotterman", "Mendelschon", "Heimdall",
             "Tasmania", "Dzung", "70 Virginis", "Lima", "Lucas", "Strathmore", "Hirochi",
             "Epsilon Eridani", "Trombone", "Sebastopol", "Mithra", "Cyclops", "Seacrest",
-            "Chattanooga", "Lucastra", "Eris", "Sol", "Stine",
+            "Chattanooga", "Lucastra", "Eris", "Sol", "Stine", "Mfecane", "Franzeki", "Bessie",
 
             "Aflaandacs", "Alcyone", "Alkaphrah", "Altair", "Angetenar", "Aniara", "Anomaly", "Antares", "Asellus Secundus",
             "Barnard's Star", "Belenos", "Black", "Canis Minoris", "Casulli", "Chamukuy", "Chen", "Cleopatra", "Cohagen", "Delilah's Navel",
@@ -131,6 +131,7 @@ export class SystemAssignmentEra18 extends MapContainer {
             "Lytton", "Baten Kaitos", "Madeleine", "Clarence", "Asterope", "Preston", "Sandalwood", "Shingaine", "Siegfried", "Snyder", "Tau Delta",
             "Theseus", "Traccora", "Van Mook", "Winepress", "Grafton", "Yarrow", "Yasotaro", "Ganesh", "Alsephina", "Dickerson", "Ophiuchi", "Maize",
             "Air", "Hope", "Mary", "Crux", "Mirfak", "Mahsati", "Sarduchi", "Warner", "Lynda",
+            "Shanghai", "Tania Australis", "Borman", "Babiiha", "Larawag", "Scheat", "Ajif", "Heritage", "Suhail", "Rasalgethi", "Josephine",
         );
     }
 }

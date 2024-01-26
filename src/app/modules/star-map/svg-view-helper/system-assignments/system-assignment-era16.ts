@@ -44,13 +44,13 @@ export class SystemAssignmentEra16 extends MapContainer {
             "Minorca", "Minette", "Candor", "Talisman",
             "Idaho", "Marsh", "Suchien", "Yalta", "Trevor's Star",
 
-            "Rembrandt", "Celebrant", "Dresden", "Lynx", "Mainwaring","Montana", "Nuncio", "Pequod", "Prairie",
+            "Rembrandt", "Celebrant", "Dresden", "Lynx", "Mainwaring", "Montana", "Nuncio", "Pequod", "Prairie",
             "San Miguel", "Scarlet", "Spindle", "Split", "Talbott", "Tillerman", "Lynx B (Terminus)", "Marian", "Redoubt",
 
             "Willis", "Hendrikson", "Jarmon", "Terrance", "Tumult", "Sarah", "Carlton", "Silesia",
             "Hillman", "Lutrell", "Hera (Silesia-Sector)", "Harston", "Melbourne",
             "Saginaw", "Sachsen", "Prism", "Casimir", "Trautman's Star", "Hyatt", "Krieger's Star", "Melchor", "Hyperion", "Horus", "Crawford",
-            "Caldwell", "Allen", "Brennan", "Adelaide", "Carson", "Caroline",
+            "Caldwell", "Allen", "Brennan", "Adelaide", "Carson", "Caroline", "Jug", "Quatre Bras",
 
             "Zale", "Howard", "Meyers", "Mobius", "McIntosh", "Seraphim", "Mesa", "Kumang", "Włocławek", "Golem",
         );
@@ -92,7 +92,7 @@ export class SystemAssignmentEra16 extends MapContainer {
         );
 
         this.MALIGN_SYSTEMS.push(
-            "Galton", "Felix", "SGC-902-36-G", "Darius", "Mesa"  
+            "Galton", "Felix", "SGC-902-36-G", "Darius", "Mesa"
         );
 
         this.SILESIA_SYSTEMS.push(
@@ -107,7 +107,7 @@ export class SystemAssignmentEra16 extends MapContainer {
 
             "Sachsen", "Trellis", "Slocum (Silesia-Sector)", "Schiller", "Magyar", "Zoraster", "Walther", "Psyche", "Cresswell",
             "Sharon's Star", "Posnan", "Libau", "Gosset", "Breslau", "Hume", "Sandhill", "Lau Hiler", "Telmach", "Arendscheldt",
-            "Sigma", "Brinkman", "Schiller", "Posnan", "Sigma", "Creswell", "Tyler's Star", "Cromwell", "Pandora"
+            "Sigma", "Brinkman", "Schiller", "Posnan", "Sigma", "Creswell", "Tyler's Star", "Cromwell", "Pandora", "Heinrich's Stern"
         );
 
         this.SOLARIAN_SYSTEMS.push(
@@ -115,7 +115,7 @@ export class SystemAssignmentEra16 extends MapContainer {
             "Galen", "Joshua", "Sankar", "Stotterman", "Mendelschon", "Heimdall",
             "Tasmania", "Dzung", "70 Virginis", "Lima", "Lucas", "Strathmore", "Hirochi",
             "Epsilon Eridani", "Trombone", "Sebastopol", "Mithra", "Cyclops", "Seacrest",
-            "Chattanooga", "Lucastra", "Eris", "Sol", "Stine",
+            "Chattanooga", "Lucastra", "Eris", "Sol", "Stine", "Mfecane", "Yildun", "Franzeki", "Bessie",
 
             "Aflaandacs", "Alcyone", "Alkaphrah", "Altair", "Angetenar", "Aniara", "Anomaly", "Antares", "Asellus Secundus",
             "Barnard's Star", "Belenos", "Black", "Canis Minoris", "Casulli", "Chamukuy", "Chen", "Cleopatra", "Cohagen", "Delilah's Navel",
@@ -130,9 +130,9 @@ export class SystemAssignmentEra16 extends MapContainer {
             "Lytton", "Baten Kaitos", "Madeleine", "Clarence", "Asterope", "Preston", "Sandalwood", "Shingaine", "Siegfried", "Snyder", "Tau Delta",
             "Theseus", "Traccora", "Van Mook", "Winepress", "Grafton", "Yarrow", "Yasotaro", "Ganesh", "Alsephina", "Dickerson", "Ophiuchi", "Maize",
             "Air", "Hope", "Mary", "Crux", "Mirfak", "Mahsati", "Sarduchi", "Warner", "Lynda",
-            "Syou-tang", "Shanghai", "Tania Australis", "Borman", "Babiiha", "Larawag", "Scheat", "Ajif", "Heritage", "Suhail", "Rasalgethi", "Josephine", 
-	    
-	    "New Orkney", "Oceana", "Visigoth", "Denver", "Maxwell", "Line", "Matagorda", "Mannerheim", "Thrace", "Comstock", "New Bombay"
+            "Syou-tang", "Shanghai", "Tania Australis", "Borman", "Babiiha", "Larawag", "Scheat", "Ajif", "Heritage", "Suhail", "Rasalgethi", "Josephine",
+
+            "New Orkney", "Oceana", "Visigoth", "Denver", "Maxwell", "Line", "Matagorda", "Mannerheim", "Thrace", "Comstock", "New Bombay"
         );
     }
 }

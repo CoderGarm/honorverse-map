@@ -87,7 +87,7 @@ export class SystemAssignmentEra1 extends MapContainer {
             "Saginaw", "Psyche", "Sachsen", "Trellis", "Slocum (Silesia-Sector)", "Sharon's Star", "Magyar", "Carson", "Cromwell",
 
             "Prism", "Casimir", "Schiller", "Trautman's Star", "Cresswell", "Hyatt", "Krieger's Star", "Melchor", "Hyperion", "Horus", "Crawford",
-            "Caldwell", "Harston", "Melbourne", "Allen", "Brennan", "Sandhill", "Adelaide"
+            "Caldwell", "Harston", "Melbourne", "Allen", "Brennan", "Sandhill", "Adelaide", "Caroline", "Pandora", "Jug", "Quatre Bras", "Heinrich's Stern"
         );
 
         this.ANDERMANI_SYSTEMS.push(
@@ -102,7 +102,7 @@ export class SystemAssignmentEra1 extends MapContainer {
             "Galen", "Joshua", "Sankar", "Stotterman", "Mendelschon", "Heimdall",
             "Tasmania", "Dzung", "70 Virginis", "Lima", "Lucas", "Strathmore", "Hirochi",
             "Epsilon Eridani", "Trombone", "Sebastopol", "Mithra", "Cyclops", "Seacrest",
-            "Chattanooga", "Lucastra", "Eris", "Sol", "Stine",
+            "Chattanooga", "Lucastra", "Eris", "Sol", "Stine", "Mfecane", "Yildun", "Franzeki", "Bessie",
 
             "Aflaandacs", "Alcyone", "Alkaphrah", "Altair", "Angetenar", "Aniara", "Anomaly", "Antares", "Asellus Secundus",
             "Barnard's Star", "Belenos", "Black", "Canis Minoris", "Casulli", "Chamukuy", "Chen", "Cleopatra", "Cohagen", "Delilah's Navel",
@@ -117,7 +117,7 @@ export class SystemAssignmentEra1 extends MapContainer {
             "Lytton", "Baten Kaitos", "Madeleine", "Clarence", "Asterope", "Preston", "Sandalwood", "Shingaine", "Siegfried", "Snyder", "Tau Delta",
             "Theseus", "Traccora", "Van Mook", "Winepress", "Grafton", "Yarrow", "Yasotaro", "Ganesh", "Alsephina", "Dickerson", "Ophiuchi", "Maize",
             "Air", "Hope", "Mary", "Crux", "Mirfak", "Mahsati", "Sarduchi", "Warner", "Lynda",
-            "Mobius", "McIntosh", "Kumang", "Włocławek", "Golem",
+            "Mobius", "McIntosh", "Kumang", "Włocławek", "Golem", 
             "Syou-tang", "Shanghai", "Tania Australis", "Borman", "Babiiha", "Larawag", "Scheat", "Ajif", "Heritage", "Suhail", "Rasalgethi", "Josephine", 
 	    
 	    "New Orkney", "Oceana", "Visigoth", "Denver", "Maxwell", "Line", "Matagorda", "Mannerheim", "Thrace", "Comstock", "New Bombay"
