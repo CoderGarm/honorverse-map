@@ -43,6 +43,7 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     public static readonly NONE_FILL_COLOR = "none";
 
+    private static readonly COORD_CROSS = "coordCross";
     protected static readonly HIGHLIGHTED_SYSTEM_MARKER_CSS_CLASS = "highlighted";
 
     protected static readonly PLANET_RADIUS = 5;
@@ -85,7 +86,7 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     createMiniMap() {
         this.minimap = SVG().id('universe-minimap-canvas').addTo('#universe-minimap').panZoom(BasicViewHelper.PAN_ZOOM_STANDARD_OPTIONS);
-        this.minimapRect = this.minimap.id('minimap-indicator').rect(0, 0).fill('transparent').stroke({width: 5, color: 'black'});
+        this.minimapRect = this.minimap.id('minimap-indicator').rect(0, 0).fill('transparent').stroke({width: 5, color: 'irrelevant'});
     }
 
     createCanvas(id: string, parentCssId: string): Svg {
@@ -588,5 +589,45 @@ export class BasicViewHelper extends BasicViewHelperData {
 
     static calculateDistanceOfPoints(first: SimpleCoord, second: SimpleCoord): number {
         return Math.sqrt(Math.pow(first.x - second.x, 2) + Math.pow(first.y - second.y, 2));
+    }
+
+
+    protected override setOrbits(orbits: OrbitDefinition[]) {
+        super.setOrbits(orbits);
+        this.createPolarCoordinateSystem();
+    }
+
+    private createPolarCoordinateSystem() {
+        let {x, y} = this.getWidestExpanse();
+        this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y);
+        this.radiusOfCoordinateCross *= 1.1;
+
+        this.createLocalPolarCoordinateSystem(0, 0, this.radiusOfCoordinateCross, 'main');
+    }
+
+    protected createLocalPolarCoordinateSystem(xBase: number, yBase: number, radius: number, idPrefix: string) {
+        let mainGroup = this.canvas!;
+        const group = mainGroup.group().id(idPrefix + "-" + BasicViewHelper.COORD_CROSS);
+        let steps = 6;
+        const radiusSteps = radius / steps;
+        for (let i = 1; i < steps; i++) {
+            group.circle()
+                .x(xBase)
+                .y(yBase)
+                .fill(BasicViewHelper.NONE_FILL_COLOR)
+                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + i)
+                .addClass(BasicViewHelper.COORD_CROSS)
+                .radius(radiusSteps * i);
+        }
+        const degree = 12;
+        for (let j = 1; j <= 30; j++) {
+            const angle = j * degree;
+            const x = radius * Math.cos(angle * Math.PI / 180);
+            const y = radius * Math.sin(angle * Math.PI / 180);
+            const points: ArrayXY[] = [[xBase, yBase], [xBase + x, yBase + y]];
+            group.line(points)
+                .id(idPrefix + "-" + BasicViewHelper.COORD_CROSS + "-line" + j)
+                .addClass(BasicViewHelper.COORD_CROSS)
+        }
     }
 }

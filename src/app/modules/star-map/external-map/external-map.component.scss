@@ -33,6 +33,10 @@ button {
   grid-column-gap: 0;
 }
 
+.center-field {
+  margin-right: 15px;
+}
+
 .wider {
   width: 160px;
 }
@@ -119,13 +123,6 @@ app-outlined {
   grid-column-start: 3;
 }
 
-.zoom-btn {
-  grid-row-start: 1;
-  grid-column-start: 3;
-  top: 10px;
-  left: 5px;
-}
-
 .deselect-btn {
   grid-row-start: 1;
   grid-column-start: 1;
@@ -166,68 +163,111 @@ app-outlined {
 
 .search-box {
   position: absolute;
-  left: 25px;
+  left: 15px;
   bottom: 25px;
   z-index: 999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-#minimap-container {
+.zoom-btn {
+  margin: auto;
+}
+
+.minimap-container {
   position: absolute;
   top: 25px;
   right: 25px;
-  width: 400px;
+  width: 250px;
   max-width: 25%;
-  aspect-ratio: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-#wiki-toggle {
-  z-index: 99;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+}
+
+.wiki-toggle {
+  z-index: 99;
   width: fit-content;
   height: fit-content;
-  margin: 0 25px;
+  margin: auto;
 }
 
 #universe-minimap {
   z-index: 99;
-  width: 60%;
+  width: 100%;
   aspect-ratio: 1.3 / 1;
   opacity: 0.9;
   border: solid 1px white;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 $chip-width: 85px;
 
-#year-toggle-btn {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  z-index: 99;
+.scroll-container {
+  overflow-y: auto !important;
+  max-height: 90%;
+  height: 70vh;
+  margin-bottom: 25px;
 }
 
-.wide-btn {
-  left: calc($chip-width * 3 + 25px + 75px) !important;
-}
-
-.high-btn {
-  left: calc($chip-width + 15px + 75px) !important;
-}
-
-#year-selector {
+.years-holder {
   position: absolute;
   left: 25px;
+  width: 120px;
+  height: 100%;
+  display: flex;
+}
+
+.year-selector {
   z-index: 98;
+
+  overflow: hidden;
+  transition: width 1s;
+
+  max-height: 80%;
+  width: calc($chip-width + 25px);
 
   opacity: 0.5;
   border: solid 1px white;
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px 0 15px 10px;
   background: linear-gradient(-45deg, dimgray 20px, transparent 20px) no-repeat border-box, linear-gradient(-135deg, dimgray 20px, transparent 20px) no-repeat border-box;
+  margin: auto;
+}
+
+.years-selection-chip-list {
+  transition: width 1s;
+  width: calc($chip-width);
+}
+
+.years-title {
+  transition: width 1s;
+  width: calc($chip-width);
+}
+
+.year-selector.collapsed {
+  margin-left: 0;
+}
+
+.years-title.collapsed {
+  display: block;
+  width: 10px;
+  word-break: break-all;
+  text-transform: uppercase;
+  top: 30vh;
+  position: relative;
+}
+
+.scroll-container.collapsed {
+  visibility: hidden;
+}
+
+.years-selection-chip-list.collapsed {
+  width: 0 !important;
+  overflow: hidden;
 }
 
 mat-mdc-chip-set-stacked {
@@ -254,15 +294,27 @@ mat-mdc-chip-set-stacked {
   background-color: var(--success-color) !important;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
 .waiting {
   cursor: wait;
 }
 
+.box-title {
+  transition: margin-top 1s;
+  cursor: pointer;
+  width: 100%;
+  height: 34px;
+  font-size: initial;
+  color: var(--map-text-color);
+}
+
+.box-title.collapsed {
+  margin-top: -6px;
+}
+
 .legend-box {
+  overflow: hidden;
+  transition: height 1s;
+  height: 220px;
   z-index: 98;
   position: absolute;
   bottom: 25px;
@@ -272,6 +324,7 @@ mat-mdc-chip-set-stacked {
   border-radius: 5px;
   padding: 15px;
   background: linear-gradient(-45deg, dimgray 20px, transparent 20px) no-repeat border-box, linear-gradient(-135deg, dimgray 20px, transparent 20px) no-repeat border-box;
+  cursor: pointer;
 
   & li {
     z-index: 99;
@@ -286,4 +339,12 @@ mat-mdc-chip-set-stacked {
   padding: 10px;
   bottom: 15px;
   right: 15px;
+}
+
+.hidden-box-title-horizontal {
+  height: 20px !important;
+}
+
+.hidden-box-title-vertical {
+  width: 20px !important;
 }

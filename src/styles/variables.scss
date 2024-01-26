@@ -12,7 +12,9 @@ $new-secondary-background-color: #2E3338;
 
 $dark-background-color: #383838;
 $dark-secondary-background-color: #3b3b3b;
+$dark-map-text-color: rgba(255, 255, 255, 0.7);
 $dark-map-background-color: #000;
+$dark-map-coordinate-system-color: #b8860b;
 
 $tertiary-background-color: hsla(214, 90%, 52%, 0.1);
 $disabled-color: rgba(255, 255, 255, 0.3);
@@ -72,9 +74,11 @@ $dark-unfocussed-color: #FFF;
 
 $light-background-color: #f9f7f1;
 $light-secondary-background-color: #abb3ba;
+$light-map-text-color: #000;
 $light-secondary-text-color: #25242F;
 $light-primary-color: #ff6f6f;
 $light-map-background-color: #fffef0;
+$light-map-coordinate-system-color: #B31616;
 
 $light-palette: (
         50 : #f3e7e7,

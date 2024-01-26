@@ -93,14 +93,15 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private deWikiSystems: string[] = [];
     private wikiSystemsPresence: LanguagePresence[] = [];
 
-    yearSelectorOpen: boolean = true;
-
     readonly YEARS: number[] = [
         1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
         1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
     ];
 
     rebuildMap: boolean = false; // fixme works pretty slow - improve please
+
+    showLegendBox: boolean = false;
+    showLYearBox: boolean = true;
 
     constructor(private route: ActivatedRoute,
                 private colorSchemeService: ColorSchemeService,
@@ -523,7 +524,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                     .addClass(BasicViewHelperData.RESIZE_ON_ZOOM_MARKER)
                     .addClass(BasicViewHelperData.WORMHOLE_MARKER)
                     .addClass(BasicViewHelperData.LOW_OPACITY_MARKER)
-                    .stroke({width: 2, color: 'irrelevant'});
+                    .stroke({width: 3, color: 'irrelevant'});
             });
         });
     }

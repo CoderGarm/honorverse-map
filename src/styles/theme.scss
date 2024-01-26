@@ -30,12 +30,12 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
   --background-color: #{variables.$dark-background-color};
   --secondary-background-color: #{variables.$dark-secondary-background-color};
   --secondary-text-color: #{variables.$dark-secondary-text-color};
+  --map-text-color: #{variables.$dark-map-text-color};
   --success-color: #{variables.$dark-success-color};
   --warning-color: #{variables.$dark-warning-color};
   --error-color: #{variables.$error-color};
   --error-text-color: #{variables.$error-text-color};
   --map-background-color: #{variables.$dark-map-background-color};
-
   --solarian-color: #{variables.$dark-solarian-color};
   --manticore-color: #{variables.$dark-manticore-color};
   --haven-color: #{variables.$dark-haven-color};
@@ -49,6 +49,8 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
   --torch-color: #{variables.$dark-torch-color};
   --famous-color: #{variables.$dark-famous-color};
   --unfocussed-color: #{variables.$dark-unfocussed-color};
+  --coordinate-system-color: #{variables.$dark-map-coordinate-system-color};
+  --minimap-rect-color: #{variables.$dark-secondary-text-color};
 
   .svg-text {
     fill: #FFF;
@@ -103,12 +105,12 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
   --background-color: #{variables.$light-background-color};
   --secondary-background-color: #{variables.$light-secondary-background-color};
   --secondary-text-color: #{variables.$light-secondary-text-color};
+  --map-text-color: #{variables.$light-map-text-color};
   --success-color: #{variables.$dark-success-color};
   --warning-color: #{variables.$dark-warning-color};
   --error-color: #{variables.$error-color};
   --error-text-color: #{variables.$error-text-color};
   --map-background-color: #{variables.$light-map-background-color};
-
   --solarian-color: #{variables.$light-solarian-color};
   --manticore-color: #{variables.$light-manticore-color};
   --haven-color: #{variables.$light-haven-color};
@@ -122,6 +124,8 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
   --torch-color: #{variables.$light-torch-color};
   --famous-color: #{variables.$light-famous-color};
   --unfocussed-color: #{variables.$light-unfocussed-color};
+  --coordinate-system-color: #{variables.$light-map-coordinate-system-color};
+  --minimap-rect-color: #{variables.$light-secondary-text-color};
 
   #external-map, #universe-minimap {
     box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;

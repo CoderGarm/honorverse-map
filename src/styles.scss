@@ -1,4 +1,5 @@
 @import "src/styles/variables";
+@import "src/styles/scrollbar";
 
 html, body {
   height: 100%;
@@ -314,6 +315,20 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
 
 .wormhole-highlight {
   stroke: orange;
+}
+
+.coordCross {
+  stroke: var(--coordinate-system-color);
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+#minimap-indicator {
+  stroke: var(--minimap-rect-color);
+}
+
+mat-icon, .mat-mdc-icon-button {
+  color: var(--map-text-color) !important;
 }
 
 .mat-mdc-form-field-icon-suffix {
