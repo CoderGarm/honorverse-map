@@ -569,7 +569,9 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.radiusOfCoordinateCross = BasicViewHelper.calculateDistance(x, y);
         this.radiusOfCoordinateCross *= 1.1;
 
-        this.createLocalPolarCoordinateSystem(canvas, 0, 0, this.radiusOfCoordinateCross, prefix);
+        let sol = this.orbits.find(o => o.name == 'Sol')!;
+
+        this.createLocalPolarCoordinateSystem(canvas, sol.x, sol.y, this.radiusOfCoordinateCross, prefix);
     }
 
     protected createLocalPolarCoordinateSystem(canvas: Svg, xBase: number, yBase: number, radius: number, prefix: string = '') {
