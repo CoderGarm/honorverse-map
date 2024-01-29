@@ -47,6 +47,7 @@ export class BasicViewHelperData extends SubscriptionManager {
 
     private groupsByID: Map<string, G> = new Map<string, G>();
     widescreenMode: boolean = false;
+    bookMode: boolean = false;
 
     constructor() {
         super();

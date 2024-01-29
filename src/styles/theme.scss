@@ -53,10 +53,6 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
   --minimap-rect-color: #{variables.$dark-secondary-text-color};
   --junction-color: #{variables.$dark-junction-color};
 
-  .svg-text {
-    fill: #FFF;
-  }
-
   #ctto {
     color: hsla(85, 100%, 30%, 0.54);
 

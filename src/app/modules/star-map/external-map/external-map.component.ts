@@ -46,8 +46,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         "Roulette", "Limbo"
     ];
     private static queryParam: string[] = [
-        'highlight', 'center', 'radialGroup', 'cinematicMode', 'widescreenMode',
-        'bookMode'
+        'highlight', 'center', 'radialGroup', 'cinematicMode', 'widescreenMode', 'bookMode'
     ];
     highlight?: ColorGroup[];
     colorMarkerByCircle: Map<string, string> = new Map<string, string>();
@@ -105,7 +104,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     showLegendBox: boolean = false;
     showLYearBox: boolean = true;
-    bookMode: boolean = false;
 
     constructor(private route: ActivatedRoute,
                 private colorSchemeService: ColorSchemeService,
@@ -164,7 +162,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             if (center.includes('{')) {
                 this.highlightedCenter = JSON.parse(center);
             } else {
-                this.highlightedCenterSystemName = encodeURIComponent(center);
+                this.highlightedCenterSystemName = ExternalMapManagerComponent.stripSystemName(encodeURIComponent(center));
             }
         }
     }
@@ -568,12 +566,11 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private getBySystemName(name: string): Coords | undefined {
-        let filteredByName = this.coords!.filter(c => ExternalMapManagerComponent.compareSystemNames(c.name, name));
-        if (filteredByName.length == 0) {
+        let filteredByName = this.coords!.find(c => ExternalMapManagerComponent.compareSystemNames(c.name, name));
+        if (!filteredByName) {
             console.log("A system for the name wasn't found: " + name);
-            return undefined;
         }
-        return filteredByName[0];
+        return filteredByName;
     }
 
     setBackground(file: File) {
