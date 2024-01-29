@@ -46,6 +46,7 @@ export class BasicViewHelperData extends SubscriptionManager {
     private orbitsById: Map<string, Coords> = new Map<string, Coords>();
 
     private groupsByID: Map<string, G> = new Map<string, G>();
+    widescreenMode: boolean = false;
 
     constructor() {
         super();

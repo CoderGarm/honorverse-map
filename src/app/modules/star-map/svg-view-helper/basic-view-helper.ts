@@ -265,7 +265,7 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.setTextOptions(text);
         this.setTextById(celestialBodyID, text);
 
-        if (ExternalMapComponent.CAPITOL_NAMES.includes(name)) {
+        if (this.widescreenMode || ExternalMapComponent.CAPITOL_NAMES.includes(name)) {
             this.canvas?.add(text);
         }
 
@@ -541,7 +541,11 @@ export class BasicViewHelper extends BasicViewHelperData {
         let y = Math.max(Math.abs(smallestY), Math.abs(biggestY));
         let viewBoxDef: string = smallestX + " " + smallestY + " " + x * 2 + " " + y * 2;
         */
-        this.minimap!.viewbox('-3367 -3840 5888 6928');
+        if (this.widescreenMode) {
+            this.minimap!.viewbox('-2585 -3553 4905 5797');
+        } else {
+            this.minimap!.viewbox('-3000 -3500 5500 6500');
+        }
     }
 
     getSvgCoordinateFromMinimapPointerEvent(event: PointerEvent) {

@@ -45,7 +45,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius", "Silesia", "Breslau", "Sachsen",
         "Roulette", "Limbo"
     ];
-    private static queryParam: string[] = ['highlight', 'center', 'radialGroup', 'cinematicMode', 'widescreenMode'];
+    private static queryParam: string[] = [
+        'highlight', 'center', 'radialGroup', 'cinematicMode', 'widescreenMode',
+        'bookMode'
+    ];
     highlight?: ColorGroup[];
     colorMarkerByCircle: Map<string, string> = new Map<string, string>();
     highlightedCenter?: SimpleCoord;
@@ -82,7 +85,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     smallHeight: boolean = false;
 
     cinematicMode: boolean = false;
-    widescreenMode: boolean = false;
 
     @ViewChild('centerInput')
     centerInput?: ElementRef<HTMLInputElement>;
@@ -103,6 +105,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     showLegendBox: boolean = false;
     showLYearBox: boolean = true;
+    bookMode: boolean = false;
 
     constructor(private route: ActivatedRoute,
                 private colorSchemeService: ColorSchemeService,
@@ -134,6 +137,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.route.queryParamMap.subscribe(map => {
             this.detectCinematicMode(map);
             this.detectWidescreenMode(map);
+            this.detectBookMode(map);
             this.detectHighlight(map);
             this.detectCenter(map);
             this.detectRadialGroups(map);
@@ -144,13 +148,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             startWith(null),
             map((c: string | null) => (c ? this._filter(c) : this.coords.slice()))
         );
-    }
-
-    private setUpCinematicMode() {
-        if (this.cinematicMode) {
-            this.colorSchemeService._setColorScheme('light');
-            this.colorSchemeService.load();
-        }
     }
 
     private detectRadialGroups(map: ParamMap) {
@@ -189,13 +186,25 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private detectCinematicMode(map: ParamMap) {
         const cinematicMode = map.get(ExternalMapComponent.queryParam[3]);
         this.cinematicMode = !!cinematicMode && JSON.parse(cinematicMode);
-        this.setUpCinematicMode();
     }
 
     private detectWidescreenMode(map: ParamMap) {
         const widescreenMode = map.get(ExternalMapComponent.queryParam[4]);
         this.widescreenMode = !!widescreenMode && JSON.parse(widescreenMode);
         this.cinematicMode = this.widescreenMode;
+    }
+
+    private detectBookMode(map: ParamMap) {
+        const bookMode = map.get(ExternalMapComponent.queryParam[5]);
+        this.bookMode = !!bookMode && JSON.parse(bookMode);
+        this.setUpBookMode();
+    }
+
+    private setUpBookMode() {
+        if (this.bookMode) {
+            this.colorSchemeService._setColorScheme('light');
+            this.colorSchemeService.load();
+        }
     }
 
     private setUpCanonMap() {
