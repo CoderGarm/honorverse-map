@@ -45,7 +45,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         "Mascot", "Congo", "SGC-902-36-G", "Felix", "SGC-902-36-G", "Darius", "Silesia", "Breslau", "Sachsen",
         "Roulette", "Limbo"
     ];
-    private static queryParam: string[] = ['highlight', 'center', 'radialGroup', 'cinematicMode'];
+    private static queryParam: string[] = ['highlight', 'center', 'radialGroup', 'cinematicMode', 'widescreenMode'];
     highlight?: ColorGroup[];
     colorMarkerByCircle: Map<string, string> = new Map<string, string>();
     highlightedCenter?: SimpleCoord;
@@ -133,6 +133,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.translate.get('star-map.universe-map.loading-spinner-message');
         this.route.queryParamMap.subscribe(map => {
             this.detectCinematicMode(map);
+            this.detectWidescreenMode(map);
             this.detectHighlight(map);
             this.detectCenter(map);
             this.detectRadialGroups(map);
@@ -189,6 +190,12 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         const cinematicMode = map.get(ExternalMapComponent.queryParam[3]);
         this.cinematicMode = !!cinematicMode && JSON.parse(cinematicMode);
         this.setUpCinematicMode();
+    }
+
+    private detectWidescreenMode(map: ParamMap) {
+        const widescreenMode = map.get(ExternalMapComponent.queryParam[4]);
+        this.widescreenMode = !!widescreenMode && JSON.parse(widescreenMode);
+        this.cinematicMode = this.widescreenMode;
     }
 
     private setUpCanonMap() {
@@ -485,9 +492,10 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     }
 
     private zoomToCenter() {
+        let offset: number = this.cinematicMode ? 200 : 0;
         let level: number = this.cinematicMode ? 1 : (this.smallWidth ? 0.5 : 0.8);
-        let x = this.center!.x;
-        let y = this.center!.y;
+        let x = this.center!.x + offset;
+        let y = this.center!.y - offset;
         this.canvas!.zoom(0).animate().zoom(level, new Point(x, y)).after(() => {
             const coord: Coords = {
                 x: x,

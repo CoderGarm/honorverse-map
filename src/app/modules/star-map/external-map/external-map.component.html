@@ -256,6 +256,7 @@
     </div>
 
     <div class="legend-box"
+         *ngIf="!cinematicMode"
          [ngClass]="smallHeight ? 'wide-legend' : 'high-legend'"
          [class.hidden-box-title-horizontal]="!showLegendBox"
          (mouseout)="resetHighlighting()">
