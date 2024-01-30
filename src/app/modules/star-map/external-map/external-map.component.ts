@@ -102,7 +102,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     rebuildMap: boolean = false; // fixme works pretty slow - improve please
 
-    showLegendBox: boolean = false;
+    showLegendBox: boolean = true;
     showLYearBox: boolean = true;
 
     constructor(private route: ActivatedRoute,

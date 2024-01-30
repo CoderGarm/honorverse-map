@@ -318,7 +318,6 @@ mat-mdc-chip-set-stacked {
 .legend-box {
   overflow: hidden;
   transition: height 1s;
-  height: 220px;
   z-index: 98;
   position: absolute;
   bottom: 25px;
@@ -336,9 +335,11 @@ mat-mdc-chip-set-stacked {
 }
 
 .high-legend {
+  height: 280px;
 }
 
 .wide-legend {
+  height: 220px;
   font-size: small;
   padding: 10px;
   bottom: 15px;
