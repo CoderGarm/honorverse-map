@@ -24,6 +24,7 @@ export class SystemAssignmentHelper {
     static readonly ERA_CONNECTOR: Map<number, Era> = new Map<number, Era>();
 
     public static readonly SOLARIAN_LEAGUE_COLOR_MARKER: string = 'solarian';
+    public static readonly SOLARIAN_PROTECTORATES_COLOR_MARKER: string = 'protectorate';
     public static readonly MANTICORE_COLOR_MARKER: string = 'manticore';
     public static readonly HAVEN_COLOR_MARKER: string = 'haven';
     public static readonly MALIGN_COLOR_MARKER: string = 'malign';
@@ -49,6 +50,7 @@ export class SystemAssignmentHelper {
     static readonly TORCH_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
     static readonly PHOENIX_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
     static readonly SOLARIAN_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
+    static readonly SOLARIAN_PROTECTORATES_SYSTEMS: Map<Era, string[]> = new Map<Era, string[]>();
 
     private static readonly MAPS: Map<Era, MapContainer> = new Map<Era, MapContainer>();
 
@@ -113,6 +115,7 @@ export class SystemAssignmentHelper {
             SystemAssignmentHelper.SILESIA_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.SILESIA_SYSTEMS);
             SystemAssignmentHelper.ANDERMANI_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.ANDERMANI_SYSTEMS);
             SystemAssignmentHelper.SOLARIAN_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.SOLARIAN_SYSTEMS);
+            SystemAssignmentHelper.SOLARIAN_PROTECTORATES_SYSTEMS.set(era, SystemAssignmentHelper.MAPS.get(era)!.SOLARIAN_PROTECTORATES_SYSTEMS);
         });
     }
 
@@ -129,6 +132,7 @@ export class SystemAssignmentHelper {
         nations_by_color.set(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER, SystemAssignmentHelper.ANDERMANI_SYSTEMS.has(era) ? SystemAssignmentHelper.ANDERMANI_SYSTEMS.get(era)! : []);
         nations_by_color.set(SystemAssignmentHelper.SILESIA_COLOR_MARKER, SystemAssignmentHelper.SILESIA_SYSTEMS.has(era) ? SystemAssignmentHelper.SILESIA_SYSTEMS.get(era)! : []);
         nations_by_color.set(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER, SystemAssignmentHelper.SOLARIAN_SYSTEMS.has(era) ? SystemAssignmentHelper.SOLARIAN_SYSTEMS.get(era)! : []);
+        nations_by_color.set(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER, SystemAssignmentHelper.SOLARIAN_PROTECTORATES_SYSTEMS.has(era) ? SystemAssignmentHelper.SOLARIAN_PROTECTORATES_SYSTEMS.get(era)! : []);
         nations_by_color.set(SystemAssignmentHelper.MIDGARD_COLOR_MARKER, SystemAssignmentHelper.MIDGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.MIDGARD_SYSTEMS.get(era)! : []);
         nations_by_color.set(SystemAssignmentHelper.MATAPAN_COLOR_MARKER, SystemAssignmentHelper.MATAPAN_SYSTEMS.has(era) ? SystemAssignmentHelper.MATAPAN_SYSTEMS.get(era)! : []);
         nations_by_color.set(SystemAssignmentHelper.ASGARD_COLOR_MARKER, SystemAssignmentHelper.ASGARD_SYSTEMS.has(era) ? SystemAssignmentHelper.ASGARD_SYSTEMS.get(era)! : []);

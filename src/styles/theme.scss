@@ -37,6 +37,7 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
   --error-text-color: #{variables.$error-text-color};
   --map-background-color: #{variables.$dark-map-background-color};
   --solarian-color: #{variables.$dark-solarian-color};
+  --protectorate-color: #{variables.$dark-protectorate-color};
   --manticore-color: #{variables.$dark-manticore-color};
   --haven-color: #{variables.$dark-haven-color};
   --malign-color: #{variables.$dark-malign-color};
@@ -109,6 +110,7 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
   --error-text-color: #{variables.$error-text-color};
   --map-background-color: #{variables.$light-map-background-color};
   --solarian-color: #{variables.$light-solarian-color};
+  --protectorate-color: #{variables.$light-protectorate-color};
   --manticore-color: #{variables.$light-manticore-color};
   --haven-color: #{variables.$light-haven-color};
   --malign-color: #{variables.$light-malign-color};

@@ -11,4 +11,5 @@ export class MapContainer {
     TORCH_SYSTEMS: string[] = [];
     PHOENIX_SYSTEMS: string[] = [];
     SOLARIAN_SYSTEMS: string[] = [];
+    SOLARIAN_PROTECTORATES_SYSTEMS: string[] = [];
 }

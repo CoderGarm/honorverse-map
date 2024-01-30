@@ -67,7 +67,8 @@
 
     <button mat-button *ngIf="!cinematicMode" (click)="showBackgroundManipulation = !showBackgroundManipulation" id="toggleManipulator"></button>
 
-    <span *ngIf="!cinematicMode" id="ctto">Map proudly presented by NovaBallard and <a target="_blank" href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
+    <span *ngIf="!cinematicMode" id="ctto">Map proudly presented by NovaBallard, Isvarian and <a target="_blank"
+                                                                                                 href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
 
     <div *ngIf="!cinematicMode && !!hoveredSystem" class="info-div flex-items-container" [ngClass]="{'red': lockedToBackground }">
 
@@ -263,6 +264,7 @@
         <span class="box-title" [class.collapsed]="!showLegendBox" (click)="showLegendBox = !showLegendBox">Legend</span>
         <ul>
             <li class="solarian" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)">Solarian League</li>
+            <li class="protectorate" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)">Solarian Protectorate</li>
             <li class="manticore" (mouseover)="highlightColor(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)">Manticore Empire</li>
             <li class="haven" (mouseover)="highlightColor(SystemAssignmentHelper.HAVEN_COLOR_MARKER)">Haven Republic</li>
             <li class="malign" (mouseover)="highlightColor(SystemAssignmentHelper.MALIGN_COLOR_MARKER)">Renaissance Factor</li>
