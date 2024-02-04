@@ -178,6 +178,7 @@ export class SystemAssignmentEra4 extends MapContainer {
             "Jouett",
             "Joust",
             "Karavani",
+            "Lafayette",
             "La Martine",
             "Lannes",
             "Laramie",
@@ -516,6 +517,7 @@ export class SystemAssignmentEra4 extends MapContainer {
 
         this.SOLARIAN_PROTECTORATES_SYSTEMS.push(
             "Ain",
+            "Ajax",
             "Ajif",
             "Akron",
             "Alcor",
