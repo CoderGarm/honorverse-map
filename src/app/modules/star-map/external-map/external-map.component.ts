@@ -782,7 +782,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
         let element = document.createElement('a');
         element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(stringify));
-        element.setAttribute('download', 'coordinates.json');
+        element.setAttribute('download', 'systems.json');
         element.style.display = 'none';
         document.body.appendChild(element);
         element.click();

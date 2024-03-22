@@ -1,7 +1,7 @@
 [
   {"nexus": {"name": "Manticore"}, "termini": [{"name": "Basilisk"}, {"name": "Trevor's Star"}, {"name": "Hennesy"}, {"name": "Sigma Draconis"}, {"name": "Lynx B (Terminus)"}, {"name": "Matapan"}, {"name": "Gregor"}]},
   {"nexus": {"name": "Erewhon"}, "termini": [{"name": "Terra Haute"}, {"name": "Joshua"}, {"name": "Sasebo"}]},
-  {"nexus": {"name": "Asgard"}, "termini": [{"name": "Durandel"}, {"name": "Midgard"}]},
+  {"nexus": {"name": "Asgard"}, "termini": [{"name": "Durandel"}, {"name": "Midgard"}, {"name": "Enif"}]},
   {"nexus": {"name": "Prime"}, "termini": [{"name": "Ajay"}]},
   {"nexus": {"name": "Agueda"}, "termini": [{"name": "Stine"}]},
   {"nexus": {"name": "Clarence"}, "termini": [{"name": "Artesia"}]},
