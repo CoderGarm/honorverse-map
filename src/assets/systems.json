@@ -325,11 +325,6 @@
     "y": -1524
   },
   {
-    "name": "Alt",
-    "x": 919,
-    "y": -1434
-  },
-  {
     "name": "Altair",
     "x": -301,
     "y": -562
@@ -480,11 +475,6 @@
     "y": -978
   },
   {
-    "name": "Arkab Posterior",
-    "x": 1175,
-    "y": -1456
-  },
-  {
     "name": "Arkab Prior",
     "x": 893,
     "y": -834
@@ -560,7 +550,7 @@
     "y": -2604
   },
   {
-    "name": "Atlas",
+    "name": "Aral",
     "x": 831,
     "y": -968
   },
@@ -1340,7 +1330,7 @@
     "y": -1884
   },
   {
-    "name": "Dockhorn",
+    "name": "Hanuman",
     "x": -134,
     "y": 305
   },
@@ -1463,11 +1453,6 @@
     "name": "Elvana",
     "x": 896,
     "y": -3189
-  },
-  {
-    "name": "Emiw",
-    "x": 981,
-    "y": -2008
   },
   {
     "name": "Endicott",
@@ -1658,11 +1643,6 @@
     "name": "Fulu",
     "x": 1370,
     "y": -1227
-  },
-  {
-    "name": "Funi",
-    "x": 790,
-    "y": -1478
   },
   {
     "name": "Fuyue",
@@ -2040,7 +2020,7 @@
     "y": -2753
   },
   {
-    "name": "Hanuman",
+    "name": "Dockhorn",
     "x": 1105,
     "y": -917
   },
@@ -2865,7 +2845,7 @@
     "y": -1998
   },
   {
-    "name": "Kondratii",
+    "name": "Alt",
     "x": 694,
     "y": -1256
   },
@@ -3170,11 +3150,6 @@
     "y": -2600
   },
   {
-    "name": "Mago",
-    "x": 1037,
-    "y": -1914
-  },
-  {
     "name": "Magyar",
     "x": -632,
     "y": -2948
@@ -3333,11 +3308,6 @@
     "name": "Meissa",
     "x": -2021,
     "y": -2299
-  },
-  {
-    "name": "Mekbuda",
-    "x": 786,
-    "y": -1565
   },
   {
     "name": "Melbourne",
@@ -3840,11 +3810,6 @@
     "y": -93
   },
   {
-    "name": "Ofaubsils",
-    "x": 675,
-    "y": -1790
-  },
-  {
     "name": "Ogma",
     "x": -1606,
     "y": -2479
@@ -4213,11 +4178,6 @@
     "name": "Rasalgethi",
     "x": 138,
     "y": -822
-  },
-  {
-    "name": "Rasalhague",
-    "x": 605,
-    "y": -1030
   },
   {
     "name": "Rasmussen",
@@ -5470,11 +5430,6 @@
     "y": -935
   },
   {
-    "name": "Banshee",
-    "x": -469,
-    "y": -362
-  },
-  {
     "name": "Włocławek",
     "x": -1126,
     "y": -473
@@ -5625,22 +5580,22 @@
     "y": -2990
   },
   {
-    "name": "Zreof",
+    "name": "Marathon",
     "x": 1645,
     "y": -482
   },
   {
-    "name": "Zubenelgenubi",
+    "name": "Athênai",
     "x": -306,
     "y": -837
   },
   {
-    "name": "Zubenelhakrabi",
+    "name": "Lamanai",
     "x": 802,
     "y": -1051
   },
   {
-    "name": "Zubeneschamali",
+    "name": "Caprica",
     "x": 844,
     "y": -647
   },

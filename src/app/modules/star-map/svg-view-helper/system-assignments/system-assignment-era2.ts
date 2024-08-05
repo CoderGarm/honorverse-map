@@ -357,6 +357,7 @@ export class SystemAssignmentEra2 extends MapContainer {
             "Balthazar",
             "Barnard's Star",
             "Diné",
+            "Belenos",
             "Bessie",
             "Black",
             "Bootstrap",
@@ -470,6 +471,7 @@ export class SystemAssignmentEra2 extends MapContainer {
             "Sirius",
             "Snyder",
             "Sol",
+            "Solschenizyn",
             "Stardrifter",
             "Startman",
             "Hammerfest",
@@ -522,9 +524,9 @@ export class SystemAssignmentEra2 extends MapContainer {
             "Astophel",
             "Atria",
             "Azha",
+            "Balcescu",
             "Basra",
             "Beid",
-            "Belenos",
             "Borman",
             "Bryant",
             "Calpurnia",
@@ -589,6 +591,7 @@ export class SystemAssignmentEra2 extends MapContainer {
             "Phecda",
             "Poul",
             "Prime",
+            "Randal",
             "Rasalgethi",
             "Rasmussen",
             "Reach",
@@ -612,7 +615,6 @@ export class SystemAssignmentEra2 extends MapContainer {
             "Swallow",
             "Syou-tang",
             "Tania Australis",
-            "Tiberian",
             "Uhura",
             "Venice",
             "Visegrad",
@@ -622,8 +624,7 @@ export class SystemAssignmentEra2 extends MapContainer {
             "Wincote",
             "Włocławek",
             "Zaniah",
-        )
-        ;
+        );
     }
 }
 
