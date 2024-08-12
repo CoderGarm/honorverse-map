@@ -337,6 +337,10 @@ mat-icon, .mat-mdc-icon-button {
   // todo resize: both;
 }
 
+.mat-mdc-menu-panel {
+  background-color: transparent !important;
+}
+
 .legend-un-highlighted {
   opacity: 0.3 !important;
 }

@@ -1,6 +1,8 @@
 <div id="external-map" [class.waiting]="rebuildMap">
 
-    <app-era-selector (yearsChange)="setYear($event)" *ngIf="showEraSelector" [cinematicMode]="cinematicMode" [showLYearBox]="enlargeEraSelector"></app-era-selector>
+    <app-era-selector *ngIf="showEraSelector"
+            (yearsChange)="setYear($event)"
+                      [cinematicMode]="cinematicMode" [baseURL]="baseURL" [showLYearBox]="enlargeEraSelector"></app-era-selector>
 
     <form class="search-box" *ngIf="!cinematicMode && showSearch">
         <mat-form-field class="center-field" subscriptSizing="dynamic" appearance="outline">
@@ -40,11 +42,23 @@
             <mat-icon *ngIf="!widescreenMode" class="centered-icon">movie</mat-icon>
         </button>
 
-        <mat-button-toggle-group *ngIf="!cinematicMode" class="wiki-toggle" matTooltip="Select Fandom Integration">
-            <mat-button-toggle (click)="baseURL = undefined;">NONE</mat-button-toggle>
-            <mat-button-toggle (click)="baseURL = EN_FANDOM_URL;">EN</mat-button-toggle>
-            <mat-button-toggle (click)="baseURL = DE_FANDOM_URL;">DE</mat-button-toggle>
-        </mat-button-toggle-group>
+        <button (click)="idFandomSelectorOpen = !idFandomSelectorOpen"
+                cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+                class="wiki-toggle" disableRipple mat-icon-button matTooltip="Toggle Fandom Integration - double click a system after activating">
+            <img alt="fandom icon" src="assets/icons/fandom-heart.png"/>
+        </button>
+        <ng-template
+                cdkConnectedOverlay
+                [cdkConnectedOverlayOrigin]="trigger"
+                [cdkConnectedOverlayOpen]="idFandomSelectorOpen"
+                (overlayOutsideClick)="idFandomSelectorOpen = false">
+            <mat-chip-listbox class="fandom-selector" matTooltip="Select Fandom Integration" (change)="this.baseURL = $event.value">
+                @for (chip of URLS; track chip) {
+                    <mat-chip-option [selected]="chip.link == baseURL" [value]="chip.link">{{ chip.name }}</mat-chip-option>
+                }
+            </mat-chip-listbox>
+        </ng-template>
+
 
     </div>
 

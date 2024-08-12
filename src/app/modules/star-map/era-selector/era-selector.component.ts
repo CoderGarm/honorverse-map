@@ -35,9 +35,13 @@ export class EraSelectorComponent {
     set cinematicMode(value: BooleanInput) {
         this._cinematicMode = coerceBooleanProperty(value);
     }
+    //@formatter:on
+
+    @Input()
+    baseURL?: string;
+
     @Output()
     yearsChange: EventEmitter<number> = new EventEmitter<number>();
-    //@formatter:on
 
     treeControl = new NestedTreeControl<EraNode>(node => node.children);
     dataSource = new MatTreeNestedDataSource<EraNode>();
@@ -150,8 +154,12 @@ export class EraSelectorComponent {
 
     openTimelineWiki(year: number) {
 
+        if (!this.baseURL) {
+            return;
+        }
+
         let substring = ((year + 100) + '').substring(0, 2);
-        const link: string = 'https://honorverse.fandom.com/wiki/' + substring + 'th_Century_PD';
+        const link: string = this.baseURL + substring + 'th_Century_PD';
 
         this.dialog.open(WikiDisplayComponent, {
             data: {

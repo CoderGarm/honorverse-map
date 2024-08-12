@@ -19,6 +19,11 @@ import {Era} from "../svg-view-helper/system-assignments/era";
 import {StarHelper} from "../svg-view-helper/star-helper";
 import {ColorSchemeService} from "../../../services/color-scheme.service";
 
+export interface FandomType {
+    name: string;
+    link?: string;
+}
+
 @Component({
     selector: 'app-external-map',
     templateUrl: './external-map.component.html',
@@ -32,7 +37,13 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/XYZ';
     readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/XYZ';
+    readonly URLS: FandomType[] = [
+        {name: 'no integration'},
+        {name: 'English Fandom', link: this.EN_FANDOM_URL},
+        {name: 'German Fandom', link: this.DE_FANDOM_URL}
+    ]
     baseURL?: string;
+    idFandomSelectorOpen: boolean = false;
 
     static CAPITOL_NAMES: string[] = [
         'Gregor', 'Manticore', 'Haven', 'Sol', 'Erewhon', 'Spindle', 'Mesa', 'Basilisk',

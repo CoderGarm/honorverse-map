@@ -193,10 +193,9 @@ app-outlined {
 }
 
 .wiki-toggle {
+  position: absolute;
+  top: 60px;
   z-index: 99;
-  width: fit-content;
-  height: fit-content;
-  margin: auto;
 }
 
 #universe-minimap {
@@ -272,4 +271,10 @@ app-outlined {
   position: absolute;
   top: 25px;
   z-index: 99;
+}
+
+.fandom-selector {
+  max-width: 200px;
+  position: absolute;
+  right: 50px;
 }

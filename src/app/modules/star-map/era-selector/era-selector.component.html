@@ -26,7 +26,7 @@
                               [class.highlighted-era-node]="toHighlight.includes(node)">
                             {{ node.headYear }} PD
                         </span>
-                        @if (toLink.includes(node)) {
+                        @if (!!baseURL && toLink.includes(node)) {
                             <button (click)="openTimelineWiki(node.headYear)" class="wiki-btn" disableRipple mat-icon-button
                                     matTooltip="Open Wiki Page of the year {{ node.headYear }} PD.">
                                 <mat-icon inline>open_in_new</mat-icon>
