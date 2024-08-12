@@ -2,7 +2,7 @@
 
     <app-era-selector (yearsChange)="setYear($event)" *ngIf="showEraSelector" [cinematicMode]="cinematicMode" [showLYearBox]="enlargeEraSelector"></app-era-selector>
 
-    <form class="search-box" *ngIf="!cinematicMode">
+    <form class="search-box" *ngIf="!cinematicMode && showSearch">
         <mat-form-field class="center-field" subscriptSizing="dynamic" appearance="outline">
             <mat-label>Search for system</mat-label>
             <input matInput
@@ -25,7 +25,7 @@
         </button>
     </form>
 
-    <div class="minimap-container" [class.widescreen]="widescreenMode">
+    <div class="minimap-container" *ngIf="showMinimap" [class.widescreen]="widescreenMode">
         <div id="universe-minimap">
             <!-- svg elements will be created programmatically -->
         </div>
@@ -53,7 +53,7 @@
     <span *ngIf="!cinematicMode" id="ctto">Map proudly presented by NovaBallard, Isvarian and <a target="_blank"
                                                                                                  href="https://www.battleforhonor.de">www.battleforhonor.de</a></span>
 
-    <div *ngIf="!cinematicMode && !!hoveredSystem" class="info-div flex-items-container" [ngClass]="{'red': lockedToBackground }">
+    <div *ngIf="!cinematicMode && !!hoveredSystem && showInfo" class="info-div flex-items-container" [ngClass]="{'red': lockedToBackground }">
 
         <app-toggle-view-mode></app-toggle-view-mode>
 
@@ -240,7 +240,7 @@
     </div>
 
     <div class="legend-box"
-         *ngIf="!cinematicMode"
+         *ngIf="!cinematicMode && showLegendBox"
          [ngClass]="smallHeight ? 'wide-legend' : 'high-legend'"
          [class.hidden-box-title-horizontal]="!enlargeLegendBox"
          (mouseout)="resetHighlighting()">
