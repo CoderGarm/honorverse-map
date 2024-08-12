@@ -1,7 +1,7 @@
 <div id="external-map" [class.waiting]="rebuildMap">
 
     <app-era-selector *ngIf="showEraSelector"
-            (yearsChange)="setYear($event)"
+                      (yearsChange)="setYear($event)"
                       [cinematicMode]="cinematicMode" [baseURL]="baseURL" [showLYearBox]="enlargeEraSelector"></app-era-selector>
 
     <form class="search-box" *ngIf="!cinematicMode && showSearch">
@@ -260,19 +260,51 @@
          (mouseout)="resetHighlighting()">
         <span class="box-title clickable" [class.collapsed]="!enlargeLegendBox" (click)="enlargeLegendBox = !enlargeLegendBox">Legend</span>
         <ul>
-            <li class="solarian" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)">Solarian League</li>
-            <li class="protectorate" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)">Solarian Protectorate</li>
-            <li class="manticore" (mouseover)="highlightColor(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)">Manticore Empire</li>
-            <li class="haven" (mouseover)="highlightColor(SystemAssignmentHelper.HAVEN_COLOR_MARKER)">Haven Republic</li>
-            <li class="malign" (mouseover)="highlightColor(SystemAssignmentHelper.MALIGN_COLOR_MARKER)">Renaissance Factor</li>
-            <li class="anderman" (mouseover)="highlightColor(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER)">Andermani Empire</li>
-            <li class="silesia" (mouseover)="highlightColor(SystemAssignmentHelper.SILESIA_COLOR_MARKER)">Silesia Confederacy</li>
-            <li class="midgard" (mouseover)="highlightColor(SystemAssignmentHelper.MIDGARD_COLOR_MARKER)">Midgard Federation</li>
-            <li class="matapan" (mouseover)="highlightColor(SystemAssignmentHelper.MATAPAN_COLOR_MARKER)">Matapan</li>
-            <li class="asgard" (mouseover)="highlightColor(SystemAssignmentHelper.ASGARD_COLOR_MARKER)">Asgard Association</li>
-            <li class="monica" (mouseover)="highlightColor(SystemAssignmentHelper.MONICA_COLOR_MARKER)">Republic of Monica</li>
-            <li class="torch" (mouseover)="highlightColor(SystemAssignmentHelper.TORCH_COLOR_MARKER)">Kingdom of Torch</li>
-            <li class="famous" (mouseover)="highlightColor(SystemAssignmentHelper.PHOENIX_COLOR_MARKER)">Phoenix clusters</li>
+            <li class="solarian" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)" [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)">
+                Solarian League
+            </li>
+            <li class="protectorate" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)"
+                (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)">Solarian Protectorate
+            </li>
+            <li class="manticore" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.MANTICORE_COLOR_MARKER)">Manticore
+                Empire
+            </li>
+            <li class="haven" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.HAVEN_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.HAVEN_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.HAVEN_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.HAVEN_COLOR_MARKER)">Haven Republic
+            </li>
+            <li class="malign" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.MALIGN_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.MALIGN_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.MALIGN_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.MALIGN_COLOR_MARKER)">Renaissance Factor
+            </li>
+            <li class="anderman" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.ANDERMAN_COLOR_MARKER)">Andermani
+                Empire
+            </li>
+            <li class="silesia" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.SILESIA_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.SILESIA_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.SILESIA_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.SILESIA_COLOR_MARKER)">Silesia
+                Confederacy
+            </li>
+            <li class="midgard" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.MIDGARD_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.MIDGARD_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.MIDGARD_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.MIDGARD_COLOR_MARKER)">Midgard
+                Federation
+            </li>
+            <li class="matapan" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.MATAPAN_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.MATAPAN_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.MATAPAN_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.MATAPAN_COLOR_MARKER)">Matapan
+            </li>
+            <li class="asgard" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.ASGARD_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.ASGARD_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.ASGARD_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.ASGARD_COLOR_MARKER)">Asgard Association
+            </li>
+            <li class="monica" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.MONICA_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.MONICA_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.MONICA_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.MONICA_COLOR_MARKER)">Republic of Monica
+            </li>
+            <li class="torch" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.TORCH_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.TORCH_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.TORCH_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.TORCH_COLOR_MARKER)">Kingdom of Torch
+            </li>
+            <li class="famous" *ngIf="presentColorMarker.includes(SystemAssignmentHelper.PHOENIX_COLOR_MARKER)"  [class.clickable]="!!baseURL && this.getFactionSite(SystemAssignmentHelper.PHOENIX_COLOR_MARKER)"
+                (click)="openFactionSite(SystemAssignmentHelper.PHOENIX_COLOR_MARKER)" (mouseover)="highlightColor(SystemAssignmentHelper.PHOENIX_COLOR_MARKER)">Phoenix clusters
+            </li>
         </ul>
     </div>
 </div>

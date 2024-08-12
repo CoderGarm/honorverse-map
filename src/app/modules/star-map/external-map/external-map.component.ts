@@ -14,7 +14,7 @@ import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {map, startWith} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/wiki-display.component";
-import {SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
+import {FactionColorMarker, SystemAssignmentHelper} from "../svg-view-helper/system-assignment.helper";
 import {Era} from "../svg-view-helper/system-assignments/era";
 import {StarHelper} from "../svg-view-helper/star-helper";
 import {ColorSchemeService} from "../../../services/color-scheme.service";
@@ -35,14 +35,14 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
 
-    readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/XYZ';
-    readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/XYZ';
+    readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/';
+    readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/';
     readonly URLS: FandomType[] = [
         {name: 'no integration'},
         {name: 'English Fandom', link: this.EN_FANDOM_URL},
         {name: 'German Fandom', link: this.DE_FANDOM_URL}
     ]
-    baseURL?: string;
+    baseURL?: string = this.DE_FANDOM_URL;
     idFandomSelectorOpen: boolean = false;
 
     static CAPITOL_NAMES: string[] = [
@@ -60,6 +60,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         'highlight', 'center', 'radialGroup', 'cinematicMode', 'widescreenMode', 'bookMode'
     ];
     highlight?: ColorGroup[];
+    presentColorMarker: string[] = [];
     colorMarkerByCircle: Map<string, string> = new Map<string, string>();
     highlightedCenter?: SimpleCoord;
 
@@ -105,8 +106,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private enWikiSystems: string[] = [];
     private deWikiSystems: string[] = [];
     private wikiSystemsPresence: LanguagePresence[] = [];
-
-    readonly YEARS: number[] = BasicViewHelperData.YEARS;
 
     rebuildMap: boolean = false; // fixme works pretty slow - improve please
 
@@ -271,6 +270,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
             if (!!coord) {
                 const id = ExternalMapComponent.getStarSystemCircleID(coord);
                 this.colorMarkerByCircle.set(id, color);
+                if (!this.presentColorMarker.includes(color)) {
+                    this.presentColorMarker.push(color);
+                }
             }
         });
     }
@@ -365,9 +367,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 name += '_System'
             }
         }
-        const link = this.baseURL
-            .replaceAll('XYZ', name)
-            .replaceAll(' ', '_');
+        const link = (this.baseURL + name).replaceAll(' ', '_');
         let dialogRef = this.dialog.open(WikiDisplayComponent, {
             data: {
                 url: link
@@ -914,4 +914,70 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.widescreenMode = !this.widescreenMode;
         this.cinematicMode = this.widescreenMode;
     }
+
+
+    getFactionSite(faction: string) {
+        // @ts-ignore
+        let factionColorMarker = FactionColorMarker[Object.keys(FactionColorMarker)[Object.values(FactionColorMarker).indexOf(faction)]];
+        let target: string | undefined;
+
+        switch (factionColorMarker) {
+            case FactionColorMarker.SOLARIAN_LEAGUE_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Solare_Liga' : 'Solarian_League';
+                break;
+            case FactionColorMarker.SOLARIAN_PROTECTORATES_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Solare_Liga' : 'Solarian_League';
+                break;
+            case FactionColorMarker.MANTICORE_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Sternenkönigreich_von_Manticore' : 'Star_Kingdom_of_Manticore';
+                break;
+            case FactionColorMarker.HAVEN_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Republik_Haven' : 'Republic_of_Haven';
+                break;
+            case FactionColorMarker.MALIGN_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Mesa' : 'Mesa_(star_nation)';
+                break;
+            case FactionColorMarker.ANDERMAN_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Andermanisches_Kaiserreich' : 'Andermani_Empire';
+                break;
+            case FactionColorMarker.SILESIA_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Silesianische_Konföderation' : 'Silesian_Confederacy';
+                break;
+            case FactionColorMarker.MIDGARD_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Midgard_Föderation' : 'Midgard_Federation';
+                break;
+            case FactionColorMarker.ASGARD_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Asgard_Association' : 'Asgard_Association';
+                break;
+            case FactionColorMarker.MONICA_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Republik_Monica' : 'Republic_of_Monica';
+                break;
+            case FactionColorMarker.TORCH_COLOR_MARKER:
+                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Königreich_von_Torch' : 'Kingdom_of_Torch';
+                break;
+            default:
+                break;
+        }
+        return target;
+    }
+
+    openFactionSite(faction: string) {
+        let target = this.getFactionSite(faction);
+
+        if (!this.baseURL || !target) {
+            return;
+        }
+
+        this.dialog.open(WikiDisplayComponent, {
+            data: {
+                url: this.baseURL + target
+            },
+            panelClass: ['confirm-mat-dialog-panel', 'mat-elevation-z8'],
+            width: '80%',
+            height: '80%',
+            enterAnimationDuration: '500ms',
+            exitAnimationDuration: '500ms'
+        });
+    }
+
 }

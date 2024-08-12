@@ -19,6 +19,23 @@ import {SystemAssignmentEra16} from "./system-assignments/system-assignment-era1
 import {SystemAssignmentEra17} from "./system-assignments/system-assignment-era17";
 import {SystemAssignmentEra18} from "./system-assignments/system-assignment-era18";
 
+export enum FactionColorMarker {
+    SOLARIAN_LEAGUE_COLOR_MARKER = 'solarian',
+    SOLARIAN_PROTECTORATES_COLOR_MARKER = 'protectorate',
+    MANTICORE_COLOR_MARKER = 'manticore',
+    HAVEN_COLOR_MARKER = 'haven',
+    MALIGN_COLOR_MARKER = 'malign',
+    ANDERMAN_COLOR_MARKER = 'anderman',
+    SILESIA_COLOR_MARKER = 'silesia',
+    MIDGARD_COLOR_MARKER = 'midgard',
+    MATAPAN_COLOR_MARKER = 'matapan',
+    ASGARD_COLOR_MARKER = 'asgard',
+    MONICA_COLOR_MARKER = 'monica',
+    TORCH_COLOR_MARKER = 'torch',
+    PHOENIX_COLOR_MARKER = 'famous',
+    UNFOCUSSED_COLOR_MARKER = 'unfocussed',
+}
+
 export class SystemAssignmentHelper {
 
     static readonly ERA_CONNECTOR: Map<number, Era> = new Map<number, Era>();
