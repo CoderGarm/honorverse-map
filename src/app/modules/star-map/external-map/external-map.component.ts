@@ -8,7 +8,7 @@ import {ColorGroup, ExternalMapManagerComponent, NamedThing, RadialGroup, Simple
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
 import {interval, Observable} from "rxjs";
 import {Array, Path, Point, Svg} from "@svgdotjs/svg.js";
-import {BreakpointObserver} from "@angular/cdk/layout";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {FormControl} from "@angular/forms";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {map, startWith} from "rxjs/operators";
@@ -95,15 +95,18 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
     private deWikiSystems: string[] = [];
     private wikiSystemsPresence: LanguagePresence[] = [];
 
-    readonly YEARS: number[] = [
-        1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
-        1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
-    ];
+    readonly YEARS: number[] = BasicViewHelperData.YEARS;
 
     rebuildMap: boolean = false; // fixme works pretty slow - improve please
 
+    enlargeLegendBox: boolean = true;
+    enlargeEraSelector: boolean = true;
+
     showLegendBox: boolean = true;
-    showLYearBox: boolean = true;
+    showEraSelector: boolean = true;
+    showMinimap: boolean = true;
+    showSearch: boolean = true;
+    showInfo: boolean = true;
 
     constructor(private route: ActivatedRoute,
                 private colorSchemeService: ColorSchemeService,
@@ -128,6 +131,19 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
         this.breakpointObserver.observe('(max-height: 1000px)').subscribe(result => {
             this.smallHeight = result.matches;
+        });
+
+        this.breakpointObserver.observe([
+            Breakpoints.Handset,
+            Breakpoints.Tablet
+        ]).subscribe(result => {
+            if (result.matches) {
+                this.showEraSelector = false;
+                this.showLegendBox = false;
+                this.showMinimap = false;
+                this.showSearch = false;
+                this.showInfo = false;
+            }
         });
 
         // just make sure that the key exists

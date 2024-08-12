@@ -76,6 +76,8 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
     &.notification-snackbar {
     }
   }
+
+  --mat-tree-container-background-color: none;
 }
 
 
@@ -184,4 +186,6 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
     &.notification-snackbar {
     }
   }
+
+  --mat-tree-container-background-color: none;
 }

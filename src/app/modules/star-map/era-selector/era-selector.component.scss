@@ -1,0 +1,84 @@
+@import "../external-map/external-map.component";
+
+.scroll-container {
+  overflow-y: auto !important;
+  max-height: 55vh;
+  margin-bottom: 25px;
+}
+
+.years-holder {
+  position: absolute;
+  left: 25px;
+  height: 100%;
+  display: flex;
+}
+
+.year-selector {
+  z-index: 98;
+
+  overflow: hidden;
+  transition: width 1s;
+
+  max-height: 80%;
+
+  backdrop-filter: blur(10px);
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 15px 0 15px 10px;
+  background: linear-gradient(-45deg, dimgray 20px, transparent 20px) no-repeat border-box, linear-gradient(-135deg, dimgray 20px, transparent 20px) no-repeat border-box;
+  margin: auto;
+}
+
+.year-selector.collapsed {
+  margin-left: 0;
+}
+
+.years-title.collapsed {
+  display: block;
+  width: 10px;
+  word-break: break-all;
+  text-transform: uppercase;
+  top: 10vh;
+  position: relative;
+}
+
+.scroll-container.collapsed {
+  visibility: hidden;
+}
+
+.years-selection-chip-list.collapsed {
+  width: 0 !important;
+  overflow: hidden;
+}
+
+mat-mdc-chip-set-stacked {
+  z-index: 99;
+}
+
+.era-tree {
+  margin: 15px 25px 0 0;
+}
+
+.era-tree-invisible {
+  display: none;
+}
+
+.era-tree ul,
+.era-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.era-tree .mat-nested-tree-node div[role=group] {
+  padding-left: 15px;
+}
+
+.era-tree div[role=group] > .mat-tree-node {
+  padding-left: 15px;
+}
+
+.wiki-btn {
+  font-size: 16px;
+  padding: 10px 0 0 0;
+}

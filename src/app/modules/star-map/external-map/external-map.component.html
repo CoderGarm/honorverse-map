@@ -1,23 +1,6 @@
 <div id="external-map" [class.waiting]="rebuildMap">
 
-    <div class="years-holder">
-        <div class="year-selector" *ngIf="!cinematicMode"
-             [class.hidden-box-title-vertical]="!showLYearBox"
-             [class.collapsed]="!showLYearBox">
-
-       <span class="box-title years-title" [class.collapsed]="!showLYearBox"
-             (click)="showLYearBox = !showLYearBox">Year Selector</span>
-
-            <div class="scroll-container" [class.collapsed]="!showLYearBox">
-                <mat-chip-listbox [class.collapsed]="!showLYearBox"
-                                  class="mat-mdc-chip-set-stacked years-selection-chip-list">
-                    <mat-chip-option *ngFor="let year of YEARS" class="years-chip no-checkmark" (click)="setYear(year)" [selected]="year == 1899">
-                        {{ year }} PD
-                    </mat-chip-option>
-                </mat-chip-listbox>
-            </div>
-        </div>
-    </div>
+    <app-era-selector (yearsChange)="setYear($event)" *ngIf="showEraSelector" [cinematicMode]="cinematicMode" [showLYearBox]="enlargeEraSelector"></app-era-selector>
 
     <form class="search-box" *ngIf="!cinematicMode">
         <mat-form-field class="center-field" subscriptSizing="dynamic" appearance="outline">
@@ -259,9 +242,9 @@
     <div class="legend-box"
          *ngIf="!cinematicMode"
          [ngClass]="smallHeight ? 'wide-legend' : 'high-legend'"
-         [class.hidden-box-title-horizontal]="!showLegendBox"
+         [class.hidden-box-title-horizontal]="!enlargeLegendBox"
          (mouseout)="resetHighlighting()">
-        <span class="box-title" [class.collapsed]="!showLegendBox" (click)="showLegendBox = !showLegendBox">Legend</span>
+        <span class="box-title" [class.collapsed]="!enlargeLegendBox" (click)="enlargeLegendBox = !enlargeLegendBox">Legend</span>
         <ul>
             <li class="solarian" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)">Solarian League</li>
             <li class="protectorate" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)">Solarian Protectorate</li>

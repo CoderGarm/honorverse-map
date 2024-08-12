@@ -10,6 +10,11 @@ import {Coords} from "../../../services/swagger";
 })
 export class BasicViewHelperData extends SubscriptionManager {
 
+    static readonly YEARS: number[] = [
+        1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911,
+        1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924
+    ];
+
     protected static readonly GROUP_SELECTOR_SUFFIX: string = "-group";
     protected static readonly CYCLING_CIRCLE_SUFFIX = "-circle-cycle";
     protected static readonly ORBIT_SUFFIX = "-orbit";

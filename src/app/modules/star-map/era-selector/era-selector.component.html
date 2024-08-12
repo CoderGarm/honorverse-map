@@ -1,0 +1,35 @@
+<div class="years-holder">
+    <div *ngIf="!_cinematicMode" [class.collapsed]="!_showLYearBox"
+         [class.hidden-box-title-vertical]="!_showLYearBox"
+         class="year-selector">
+
+       <span (click)="_showLYearBox = !_showLYearBox" [class.collapsed]="!_showLYearBox"
+             class="box-title years-title">Year Selector</span>
+        <div [class.collapsed]="!_showLYearBox" class="scroll-container">
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="era-tree">
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+                    <span (click)="setYear(node.headYear)" class="clickable" matTooltip="Load political affiliations of {{ node. headYear }}.">{{ node.headYear }}</span>
+                    <button (click)="openTimelineWiki(node.headYear)" class="wiki-btn" disableRipple mat-icon-button matTooltip="Open Wiki Page of the year {{ node.headYear }}.">
+                        <mat-icon inline>open_in_new</mat-icon>
+                    </button>
+                </mat-tree-node>
+                <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+                    <div class="mat-tree-node">
+                        <button [attr.aria-label]="'Toggle ' + node.headYear" mat-icon-button
+                                matTreeNodeToggle>
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+                            </mat-icon>
+                        </button>
+                        <span class="clickable" matTreeNodeToggle>{{ node.headYear }}</span>
+                    </div>
+                    <div [class.era-tree-invisible]="!treeControl.isExpanded(node)"
+                         role="group">
+                        <ng-container matTreeNodeOutlet></ng-container>
+                    </div>
+                </mat-nested-tree-node>
+            </mat-tree>
+        </div>
+    </div>
+
+</div>
