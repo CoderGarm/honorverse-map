@@ -209,7 +209,6 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         SystemAssignmentHelper.getByEra(Era.ERA1).forEach((systems, color) => this.setUpColorForSystems(systems, color));
     }
 
-
     setYear(year: number) {
         this.rebuildMap = true;
         const comparatorColorByCircle: Map<string, string> = new Map(this.colorMarkerByCircle);

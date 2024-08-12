@@ -219,13 +219,15 @@ app-numeric-counter > mat-form-field > div.mat-mdc-text-field-wrapper.mdc-text-f
 
 
 .info-div {
-  background-color: var(--background-color);
   position: absolute;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   width: 50%;
   z-index: 999;
   padding: 15px 25px 10px 25px;
+  backdrop-filter: blur(10px);
+  border: solid 1px white;
   border-radius: 5px 5px 20px 20px;
 
   & .mat-mdc-form-field {

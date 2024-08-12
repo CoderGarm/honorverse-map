@@ -8,7 +8,8 @@ export class NavigationCreationService {
     static routes(): Route[] {
         return [
             {path: ExternalMapManagerComponent.path, component: ExternalMapManagerComponent},
-            {path: ExternalMapComponent.path, component: ExternalMapComponent}
+            {path: ExternalMapComponent.path, component: ExternalMapComponent},
+            {path: '', component: ExternalMapComponent}
         ];
     }
 }

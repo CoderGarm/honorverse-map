@@ -43,7 +43,7 @@ export class ExternalMapManagerComponent extends SubscriptionManager implements 
 
     public static readonly LS_TO_LY_FACTOR = 3.159;
 
-    static path: string = '';
+    static path: string = 'map-manager';
 
     allCoords: Coords[] = [];
     coords: Coords[] = [];

@@ -234,7 +234,7 @@ $chip-width: 85px;
   max-height: 80%;
   width: calc($chip-width + 25px);
 
-  opacity: 0.5;
+  backdrop-filter: blur(10px);
   border: solid 1px white;
   border-radius: 5px;
   padding: 15px 0 15px 10px;
@@ -322,7 +322,7 @@ mat-mdc-chip-set-stacked {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  opacity: 0.5;
+  backdrop-filter: blur(10px);
   border: solid 1px white;
   border-radius: 5px;
   padding: 15px;
