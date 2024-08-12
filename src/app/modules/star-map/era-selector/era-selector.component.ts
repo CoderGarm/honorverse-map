@@ -5,6 +5,7 @@ import {MatTreeNestedDataSource} from "@angular/material/tree";
 import {WikiDisplayComponent} from "../../shared-module/components/wiki-display/wiki-display.component";
 import {MatDialog} from "@angular/material/dialog";
 import {BasicViewHelperData} from "../svg-view-helper/basic-view-helper-data";
+import {ExternalMapComponent} from "../external-map/external-map.component";
 
 interface EraNode {
     headYear: number;
@@ -159,7 +160,7 @@ export class EraSelectorComponent {
         }
 
         let substring = ((year + 100) + '').substring(0, 2);
-        const link: string = this.baseURL + substring + 'th_Century_PD';
+        const link: string = this.baseURL + substring + (ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? '.Jahrhundert_PD' : 'th_Century_PD');
 
         this.dialog.open(WikiDisplayComponent, {
             data: {

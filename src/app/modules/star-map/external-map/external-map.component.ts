@@ -35,14 +35,14 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private static readonly RADIAL_HIGHLIGHTING_COLOR: string = '#872727';
 
-    readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/';
-    readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/';
+    static readonly EN_FANDOM_URL: string = 'https://honorverse.fandom.com/wiki/';
+    static readonly DE_FANDOM_URL: string = 'https://honor-harrington.fandom.com/de/wiki/';
     readonly URLS: FandomType[] = [
         {name: 'no integration'},
-        {name: 'English Fandom', link: this.EN_FANDOM_URL},
-        {name: 'German Fandom', link: this.DE_FANDOM_URL}
+        {name: 'English Fandom', link: ExternalMapComponent.EN_FANDOM_URL},
+        {name: 'German Fandom', link: ExternalMapComponent.DE_FANDOM_URL}
     ]
-    baseURL?: string = this.DE_FANDOM_URL;
+    baseURL?: string = ExternalMapComponent.DE_FANDOM_URL;
     idFandomSelectorOpen: boolean = false;
 
     static CAPITOL_NAMES: string[] = [
@@ -354,7 +354,7 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
         this.handleClickedStarSystem(x, y, id);
 
         let name = this.selectedStarSystem!.name;
-        if (this.EN_FANDOM_URL === this.baseURL) {
+        if (ExternalMapComponent.EN_FANDOM_URL === this.baseURL) {
             if (this.enWikiSystems.includes(name + ' System')) {
                 name += '_System'
             }
@@ -923,37 +923,37 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
         switch (factionColorMarker) {
             case FactionColorMarker.SOLARIAN_LEAGUE_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Solare_Liga' : 'Solarian_League';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Solare_Liga' : 'Solarian_League';
                 break;
             case FactionColorMarker.SOLARIAN_PROTECTORATES_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Solare_Liga' : 'Solarian_League';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Solare_Liga' : 'Solarian_League';
                 break;
             case FactionColorMarker.MANTICORE_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Sternenkönigreich_von_Manticore' : 'Star_Kingdom_of_Manticore';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Sternenkönigreich_von_Manticore' : 'Star_Kingdom_of_Manticore';
                 break;
             case FactionColorMarker.HAVEN_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Republik_Haven' : 'Republic_of_Haven';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Republik_Haven' : 'Republic_of_Haven';
                 break;
             case FactionColorMarker.MALIGN_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Mesa' : 'Mesa_(star_nation)';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Mesa' : 'Mesa_(star_nation)';
                 break;
             case FactionColorMarker.ANDERMAN_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Andermanisches_Kaiserreich' : 'Andermani_Empire';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Andermanisches_Kaiserreich' : 'Andermani_Empire';
                 break;
             case FactionColorMarker.SILESIA_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Silesianische_Konföderation' : 'Silesian_Confederacy';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Silesianische_Konföderation' : 'Silesian_Confederacy';
                 break;
             case FactionColorMarker.MIDGARD_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Midgard_Föderation' : 'Midgard_Federation';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Midgard_Föderation' : 'Midgard_Federation';
                 break;
             case FactionColorMarker.ASGARD_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Asgard_Association' : 'Asgard_Association';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Asgard_Association' : 'Asgard_Association';
                 break;
             case FactionColorMarker.MONICA_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Republik_Monica' : 'Republic_of_Monica';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Republik_Monica' : 'Republic_of_Monica';
                 break;
             case FactionColorMarker.TORCH_COLOR_MARKER:
-                target = this.DE_FANDOM_URL == this.baseURL ? target = 'Königreich_von_Torch' : 'Kingdom_of_Torch';
+                target = ExternalMapComponent.DE_FANDOM_URL == this.baseURL ? target = 'Königreich_von_Torch' : 'Kingdom_of_Torch';
                 break;
             default:
                 break;
