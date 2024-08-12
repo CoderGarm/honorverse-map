@@ -289,8 +289,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
                 .click(this.clickEventForCelestial)
                 .click(this.clickEventForCreateCelestial)
                 .click(this.clickEventForCelestialWithWiki);
-
-            this.createMiniMap(this.clickMinimap);
+            if (this.showMinimap) {
+                this.createMiniMap(this.clickMinimap);
+            }
         }
     }
 
@@ -552,7 +553,9 @@ export class ExternalMapComponent extends InterstellarViewHelper implements Afte
 
     private drawJunctions() {
         this.drawJunctionsToSvg(this.canvas!);
-        this.drawJunctionsToSvg(this.minimap!, 'minimap-');
+        if (this.showMinimap) {
+            this.drawJunctionsToSvg(this.minimap!, 'minimap-');
+        }
     }
 
     private drawJunctionsToSvg(canvas: Svg, prefix: string = '') {

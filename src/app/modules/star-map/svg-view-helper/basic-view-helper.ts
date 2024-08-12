@@ -108,8 +108,10 @@ export class BasicViewHelper extends BasicViewHelperData {
     }
 
     panZoomMinimap = () => {
-        this.resizeMinimapRect();
-        this.centerMinimapRect();
+        if (!!this.minimap) {
+            this.resizeMinimapRect();
+            this.centerMinimapRect();
+        }
     }
 
     private centerMinimapRect() {
@@ -224,8 +226,10 @@ export class BasicViewHelper extends BasicViewHelperData {
         this.setCelestialObjectById(celestialBodyID, orbitDefinition.celestial);
         this.createTextForCelestial(celestialBodyID, orbitDefinition.celestial.name, circle);
 
-        let circleMinimap = this.createStarSystemPath(orbitDefinition);
-        this.minimap!.add(circleMinimap);
+        if (!!this.minimap) {
+            let circleMinimap = this.createStarSystemPath(orbitDefinition);
+            this.minimap.add(circleMinimap);
+        }
 
         return circle;
     }
@@ -541,6 +545,9 @@ export class BasicViewHelper extends BasicViewHelperData {
         let y = Math.max(Math.abs(smallestY), Math.abs(biggestY));
         let viewBoxDef: string = smallestX + " " + smallestY + " " + x * 2 + " " + y * 2;
         */
+        if (!this.minimap) {
+            return;
+        }
         if (this.widescreenMode) {
             this.minimap!.viewbox('-2585 -3553 4905 5797');
         } else {
