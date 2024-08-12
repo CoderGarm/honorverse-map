@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BooleanInput, coerceBooleanProperty} from "@angular/cdk/coercion";
 import {NestedTreeControl} from "@angular/cdk/tree";
 import {MatTreeNestedDataSource} from "@angular/material/tree";
@@ -16,7 +16,7 @@ interface EraNode {
     templateUrl: './era-selector.component.html',
     styleUrls: ['./era-selector.component.scss']
 })
-export class EraSelectorComponent implements AfterViewInit {
+export class EraSelectorComponent {
 
     readonly YEARS: number[] = BasicViewHelperData.YEARS;
 
@@ -42,9 +42,13 @@ export class EraSelectorComponent implements AfterViewInit {
     treeControl = new NestedTreeControl<EraNode>(node => node.children);
     dataSource = new MatTreeNestedDataSource<EraNode>();
 
+    toLink: EraNode[] = [];
+    toHighlight: EraNode[] = [];
+
     constructor(private dialog: MatDialog) {
 
         let map = this.groupByDecade(this.YEARS);
+        const toExpand: EraNode[] = [];
         map.forEach((value, headYear) => {
             let eraNode: EraNode | undefined = this.dataSource.data.find(era => era.headYear == headYear);
             if (!eraNode) {
@@ -53,6 +57,8 @@ export class EraSelectorComponent implements AfterViewInit {
                     children: []
                 }
                 this.dataSource.data.push(eraNode);
+                toExpand.push(eraNode);
+                this.toLink.push(eraNode);
             }
 
             value.forEach(decadeYears => {
@@ -66,14 +72,15 @@ export class EraSelectorComponent implements AfterViewInit {
                     eraNode!.children.push(decadeNode);
                 }
                 decadeYears.forEach(year => {
-                    decadeNode!.children.push({headYear: year, children: []})
+                    let yearsNode = {headYear: year, children: []};
+                    decadeNode!.children.push(yearsNode);
                 });
             });
         });
-    }
-
-    ngAfterViewInit() {
-        //this.dataSource.data.flatMap(a => a.children).filter(a => a.headYear == 3000 || a.headYear == 3020).forEach(node => this.treeControl.expand(node)); fixme expand 3000 and 3020
+        this.treeControl.dataNodes = this.dataSource.data;
+        toExpand.forEach(node => this.treeControl.expand(node));
+        this.detectNodesToHighlight(BasicViewHelperData.BASE_YEAR);
+        this.toHighlight.forEach(node => this.treeControl.expand(node));
     }
 
     hasChild = (_: number, node: EraNode) => !!node.children && node.children.length > 0;
@@ -114,12 +121,41 @@ export class EraSelectorComponent implements AfterViewInit {
 
     setYear(year: number) {
         this.yearsChange.emit(year);
+
+        this.detectNodesToHighlight(year);
+    }
+
+    private detectNodesToHighlight(year: number) {
+        this.toHighlight = [];
+        let century = (year + '').substring(0, 2);
+        let decade = (year + '').substring(2, 3);
+        let yearCode = (year + '').substring(3, 4);
+
+        this.dataSource.data.forEach(eraNode => {
+            if ((eraNode.headYear + '').substring(0, 2) == century) {
+                this.toHighlight.push(eraNode);
+                eraNode.children.forEach(decadeNode => {
+                    if ((decadeNode.headYear + '').substring(2, 3) == decade) {
+                        this.toHighlight.push(decadeNode);
+                        decadeNode.children.forEach(yearsNode => {
+                            if ((yearsNode.headYear + '').substring(3, 4) == yearCode) {
+                                this.toHighlight.push(yearsNode);
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
 
     openTimelineWiki(year: number) {
+
+        let substring = ((year + 100) + '').substring(0, 2);
+        const link: string = 'https://honorverse.fandom.com/wiki/' + substring + 'th_Century_PD';
+
         this.dialog.open(WikiDisplayComponent, {
             data: {
-                url: 'https://www.sarna.net/wiki/' + year /* fixme change link */
+                url: link
             },
             panelClass: ['confirm-mat-dialog-panel', 'mat-elevation-z8'],
             width: '80%',

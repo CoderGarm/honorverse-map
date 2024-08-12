@@ -244,7 +244,7 @@
          [ngClass]="smallHeight ? 'wide-legend' : 'high-legend'"
          [class.hidden-box-title-horizontal]="!enlargeLegendBox"
          (mouseout)="resetHighlighting()">
-        <span class="box-title" [class.collapsed]="!enlargeLegendBox" (click)="enlargeLegendBox = !enlargeLegendBox">Legend</span>
+        <span class="box-title clickable" [class.collapsed]="!enlargeLegendBox" (click)="enlargeLegendBox = !enlargeLegendBox">Legend</span>
         <ul>
             <li class="solarian" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_LEAGUE_COLOR_MARKER)">Solarian League</li>
             <li class="protectorate" (mouseover)="highlightColor(SystemAssignmentHelper.SOLARIAN_PROTECTORATES_COLOR_MARKER)">Solarian Protectorate</li>

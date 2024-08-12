@@ -53,6 +53,10 @@ $theme-dark: palette-helper.modify-text-color($theme-dark, variables.$dark-secon
   --coordinate-system-color: #{variables.$dark-map-coordinate-system-color};
   --minimap-rect-color: #{variables.$dark-secondary-text-color};
   --junction-color: #{variables.$dark-junction-color};
+  --era-highlight-left-color: #{variables.$dark-era-highlight-left-color};
+  --era-highlight-right-color: #{variables.$dark-era-highlight-left-color};
+  --year-highlight-left-color: #{variables.$dark-year-highlight-left-color};
+  --year-highlight-right-color: #{variables.$dark-year-highlight-right-color};
 
   #ctto {
     color: hsla(85, 100%, 30%, 0.54);
@@ -128,6 +132,10 @@ $theme-light: palette-helper.modify-text-color($theme-light, variables.$light-se
   --coordinate-system-color: #{variables.$light-map-coordinate-system-color};
   --minimap-rect-color: #{variables.$light-secondary-text-color};
   --junction-color: #{variables.$light-junction-color};
+  --era-highlight-left-color: #{variables.$light-era-highlight-left-color};
+  --era-highlight-right-color: #{variables.$light-era-highlight-left-color};
+  --year-highlight-left-color: #{variables.$light-year-highlight-left-color};
+  --year-highlight-right-color: #{variables.$light-year-highlight-right-color};
 
   #external-map, #universe-minimap {
     box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;

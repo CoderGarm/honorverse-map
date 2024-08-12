@@ -16,6 +16,10 @@ $dark-map-text-color: rgba(255, 255, 255, 0.7);
 $dark-map-background-color: #000;
 $dark-map-coordinate-system-color: #b8860b;
 $dark-junction-color: orange;
+$dark-era-highlight-left-color: rgb(198, 57, 57, 0.1);
+$dark-era-highlight-right-color: rgb(198, 198, 57, 0.1);
+$dark-year-highlight-left-color: rgb(198, 57, 57, 0.3);
+$dark-year-highlight-right-color: rgb(198, 198, 57, 0.3);
 
 $tertiary-background-color: hsla(214, 90%, 52%, 0.1);
 $disabled-color: rgba(255, 255, 255, 0.3);
@@ -79,9 +83,13 @@ $light-secondary-background-color: #abb3ba;
 $light-map-text-color: #000;
 $light-secondary-text-color: #25242F;
 $light-primary-color: #ff6f6f;
-$light-map-background-color: #fffef0;
+$light-map-background-color: #e4e0a9;
 $light-map-coordinate-system-color: #B31616;
 $light-junction-color: green;
+$light-era-highlight-left-color: rgb(198, 57, 57, 0.2);
+$light-era-highlight-right-color: rgb(198, 198, 57, 0.2);
+$light-year-highlight-left-color: rgb(198, 57, 57, 0.7);
+$light-year-highlight-right-color: rgb(198, 198, 57, 0.7);
 
 $light-palette: (
         50 : #f3e7e7,
